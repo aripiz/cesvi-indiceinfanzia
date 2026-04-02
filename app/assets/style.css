@@ -1,0 +1,137 @@
+/* style.css — Cesvi Indice Infanzia */
+
+/* Brand colors + Bootstrap primary override */
+:root {
+    --cesvi-orange: #ea7a2d;
+    --cesvi-orange-dark: #c9621f;
+    --cesvi-teal: #2DA89B;
+    --cesvi-text: #3e4444;
+
+    /* sovrascrive il teal di Minty con l'arancione Cesvi */
+    --bs-primary: #ea7a2d;
+    --bs-primary-rgb: 234, 122, 45;
+    --bs-link-color: #ea7a2d;
+    --bs-link-color-rgb: 234, 122, 45;
+    --bs-link-hover-color: #c9621f;
+}
+
+/* Testo globale */
+body,
+h1, h2, h3, h4, h5, h6,
+p, label, .form-label, .form-check-label {
+    color: var(--cesvi-text);
+}
+
+/* Navbar bianca */
+.navbar-cesvi {
+    background-color: #ffffff !important;
+    box-shadow: 0 1px 4px rgba(0,0,0,.08);
+}
+.navbar-cesvi .nav-link,
+.navbar-cesvi .navbar-brand {
+    color: #4a4a4a !important;
+}
+.navbar-cesvi .nav-link:hover,
+.navbar-cesvi .navbar-brand:hover {
+    color: var(--cesvi-orange) !important;
+}
+.navbar-cesvi .nav-link.active {
+    color: var(--cesvi-orange) !important;
+    font-weight: 600;
+}
+
+/* Primary buttons */
+.btn-primary {
+    background-color: var(--cesvi-orange) !important;
+    border-color: var(--cesvi-orange) !important;
+    color: #fff !important;
+}
+.btn-primary:hover {
+    background-color: var(--cesvi-orange-dark) !important;
+    border-color: var(--cesvi-orange-dark) !important;
+    color: #fff !important;
+}
+
+/* Tabs di navigazione (dbc / Bootstrap) */
+.nav-tabs .nav-link {
+    color: var(--cesvi-text) !important;
+}
+.nav-tabs .nav-link.active {
+    color: var(--cesvi-orange) !important;
+    border-bottom: 2px solid var(--cesvi-orange) !important;
+}
+.nav-tabs .nav-link:hover:not(.active) {
+    color: var(--cesvi-orange) !important;
+}
+
+/* dcc.Tabs (Dash core component) */
+.tab {
+    color: var(--cesvi-text) !important;
+}
+.tab--selected {
+    color: var(--cesvi-orange) !important;
+    border-top: 3px solid var(--cesvi-orange) !important;
+}
+
+/* Dropdown / Select focus e selezione */
+.Select-control:hover,
+.Select-control.is-focused:not(.is-open) {
+    border-color: var(--cesvi-orange) !important;
+    box-shadow: 0 0 0 0.2rem rgba(234,122,45,.2) !important;
+}
+.Select-value-label,
+.Select-placeholder {
+    color: var(--cesvi-text) !important;
+}
+
+/* Input / select Bootstrap focus */
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--cesvi-orange) !important;
+    box-shadow: 0 0 0 0.25rem rgba(234,122,45,.25) !important;
+}
+
+/* Highlighted z-score badges */
+.badge-zscore-positive {
+    background-color: var(--cesvi-orange);
+    color: #fff;
+}
+.badge-zscore-negative {
+    background-color: var(--cesvi-teal);
+    color: white;
+}
+.badge-zscore-neutral {
+    background-color: #888;
+    color: white;
+}
+
+/* Score card badges */
+.rank-badge {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+/* Arrow indicators */
+.arrow-up    { color: var(--cesvi-orange); }
+.arrow-down  { color: var(--cesvi-teal); }
+.arrow-right { color: #888; }
+
+/* Plotly chart container */
+.chart-container {
+    min-height: 400px;
+}
+
+/* Footer link */
+.link {
+    color: var(--cesvi-red) !important;
+    text-decoration: none;
+}
+.link:hover {
+    text-decoration: underline;
+}

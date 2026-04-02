@@ -1,0 +1,9 @@
+﻿indicatore,descrizione,fonte,unita,anni_disponibili
+indice_totale,Z-score indice composito (fattori di rischio + risorse). Positivo = migliore della media nazionale.,Rapporto Cesvi Indice Infanzia,z-score,2018-2024
+indice_capacita,Z-score indice di capacità (aggregato 6 sub-dimensioni). Disponibile solo 2022 e 2024.,Tabella capacità — Rapporto Cesvi,z-score,"2022, 2024"
+rk_cura,Ranking regionale — dimensione CURA (1=migliore).,Tabella capacità — Rapporto Cesvi,rank 1-20,"2022, 2024"
+rk_vita_sana,Ranking regionale — dimensione VITA SANA (1=migliore).,Tabella capacità — Rapporto Cesvi,rank 1-20,"2022, 2024"
+rk_vita_sicura,Ranking regionale — dimensione VITA SICURA (1=migliore).,Tabella capacità — Rapporto Cesvi,rank 1-20,"2022, 2024"
+rk_conoscenza_sapere,Ranking regionale — dimensione CONOSCENZA E SAPERE (1=migliore).,Tabella capacità — Rapporto Cesvi,rank 1-20,"2022, 2024"
+rk_lavorare,Ranking regionale — dimensione LAVORARE (1=migliore).,Tabella capacità — Rapporto Cesvi,rank 1-20,"2022, 2024"
+rk_accedere_risorse,Ranking regionale — dimensione ACCEDERE RISORSE (1=migliore).,Tabella capacità — Rapporto Cesvi,rank 1-20,"2022, 2024"

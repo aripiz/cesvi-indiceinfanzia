@@ -1,0 +1,401 @@
+﻿territory,year,indicatore,valore
+Abruzzo,2018,indice_totale,-0.727686456526136
+Basilicata,2018,indice_totale,-0.8012498946479709
+Calabria,2018,indice_totale,-0.009479239522517701
+Campania,2018,indice_totale,-0.6682232828151256
+Emilia-Romagna,2018,indice_totale,0.3806106975103211
+Friuli-Venezia Giulia,2018,indice_totale,0.7212043122254911
+Lazio,2018,indice_totale,0.5154677802379473
+Liguria,2018,indice_totale,0.07600848872740755
+Lombardia,2018,indice_totale,0.14574438462438027
+Marche,2018,indice_totale,0.5189316049039233
+Molise,2018,indice_totale,-0.6906198277546473
+Piemonte,2018,indice_totale,0.3275881051937762
+Puglia,2018,indice_totale,-0.9833155065013284
+Sardegna,2018,indice_totale,-0.8385171971937428
+Sicilia,2018,indice_totale,-0.6830293324440904
+Toscana,2018,indice_totale,0.49191716680793035
+Trentino Alto Adige,2018,indice_totale,0.862458211711491
+Umbria,2018,indice_totale,0.2033330056223705
+Valle d'Aosta,2018,indice_totale,0.7461413491298826
+Veneto,2018,indice_totale,0.41271563071064127
+Abruzzo,2019,indice_totale,-0.20680020573684138
+Basilicata,2019,indice_totale,0.01594942605442848
+Calabria,2019,indice_totale,-0.2415824790493312
+Campania,2019,indice_totale,-1.6469443035630609
+Emilia-Romagna,2019,indice_totale,0.40251204614199265
+Friuli-Venezia Giulia,2019,indice_totale,0.4166698477551135
+Lazio,2019,indice_totale,-0.2695636841235928
+Liguria,2019,indice_totale,0.2144236808820047
+Lombardia,2019,indice_totale,0.45787678611252597
+Marche,2019,indice_totale,0.21550753346761167
+Molise,2019,indice_totale,0.23392194958757612
+Piemonte,2019,indice_totale,0.3929591981598121
+Puglia,2019,indice_totale,-0.8056302016298789
+Sardegna,2019,indice_totale,0.042840500257924984
+Sicilia,2019,indice_totale,-1.2239082734273388
+Toscana,2019,indice_totale,0.23692199895885419
+Trentino Alto Adige,2019,indice_totale,1.011895201873062
+Umbria,2019,indice_totale,0.03777705988206308
+Valle d'Aosta,2019,indice_totale,0.10985524323726843
+Veneto,2019,indice_totale,0.6053186751597849
+Abruzzo,2020,indice_totale,-0.19405048308430972
+Basilicata,2020,indice_totale,0.3306919999515972
+Calabria,2020,indice_totale,-0.2599639495807917
+Campania,2020,indice_totale,-1.8206924560557867
+Emilia-Romagna,2020,indice_totale,0.4637359613421768
+Friuli-Venezia Giulia,2020,indice_totale,0.4772204520947394
+Lazio,2020,indice_totale,-0.4418982175904805
+Liguria,2020,indice_totale,0.2764003710062464
+Lombardia,2020,indice_totale,0.5118187388902207
+Marche,2020,indice_totale,0.09659752701401796
+Molise,2020,indice_totale,-0.15350564389947666
+Piemonte,2020,indice_totale,0.12331079435721508
+Puglia,2020,indice_totale,-0.792044312487535
+Sardegna,2020,indice_totale,0.35933980181760505
+Sicilia,2020,indice_totale,-1.2349774901359198
+Toscana,2020,indice_totale,0.2586172506500021
+Trentino Alto Adige,2020,indice_totale,0.8071676303070061
+Umbria,2020,indice_totale,0.19763282557090125
+Valle d'Aosta,2020,indice_totale,0.4683642474478805
+Veneto,2020,indice_totale,0.5262349523847321
+Abruzzo,2021,indice_totale,-0.22581138680143908
+Basilicata,2021,indice_totale,0.19098126540369953
+Calabria,2021,indice_totale,-0.5535487332774515
+Campania,2021,indice_totale,-1.6692895401527732
+Emilia-Romagna,2021,indice_totale,0.4080472847576519
+Friuli-Venezia Giulia,2021,indice_totale,0.3654329119776781
+Lazio,2021,indice_totale,-0.2226223060815019
+Liguria,2021,indice_totale,0.35385832654735244
+Lombardia,2021,indice_totale,0.5330139345283135
+Marche,2021,indice_totale,-0.1377701015022235
+Molise,2021,indice_totale,0.2778052553141989
+Piemonte,2021,indice_totale,0.19076776570917117
+Puglia,2021,indice_totale,-0.9152058272828294
+Sardegna,2021,indice_totale,0.14311398855534047
+Sicilia,2021,indice_totale,-1.0678398345468358
+Toscana,2021,indice_totale,0.17120432312428446
+Trentino Alto Adige,2021,indice_totale,0.9706076658094014
+Umbria,2021,indice_totale,0.3400926797016025
+Valle d'Aosta,2021,indice_totale,0.40222472583994384
+Veneto,2021,indice_totale,0.444937602376419
+Abruzzo,2022,indice_totale,-0.3132768789000122
+Basilicata,2022,indice_totale,0.29248085976530885
+Calabria,2022,indice_totale,-0.26781366194937484
+Campania,2022,indice_totale,-1.6748970824442724
+Emilia-Romagna,2022,indice_totale,0.3904809620411791
+Friuli-Venezia Giulia,2022,indice_totale,0.5301335482527416
+Lazio,2022,indice_totale,-0.19828515346008413
+Liguria,2022,indice_totale,0.48879627031881345
+Lombardia,2022,indice_totale,0.5605472050863033
+Marche,2022,indice_totale,0.03882076107058359
+Molise,2022,indice_totale,-0.02036247198538918
+Piemonte,2022,indice_totale,0.1537713444056349
+Puglia,2022,indice_totale,-0.8949758037242748
+Sardegna,2022,indice_totale,-0.02696084700456089
+Sicilia,2022,indice_totale,-1.2772499667876949
+Toscana,2022,indice_totale,0.25484834894421515
+Trentino Alto Adige,2022,indice_totale,0.9177907167279744
+Umbria,2022,indice_totale,0.14796598606600117
+Valle d'Aosta,2022,indice_totale,0.3074422242648639
+Veneto,2022,indice_totale,0.5907436393120491
+Abruzzo,2024,indice_totale,-0.5559072505730678
+Basilicata,2024,indice_totale,0.021970320117746384
+Calabria,2024,indice_totale,-0.48625765984954233
+Campania,2024,indice_totale,-1.8232426899696406
+Emilia-Romagna,2024,indice_totale,0.39398243404824224
+Friuli-Venezia Giulia,2024,indice_totale,0.4300940498633502
+Lazio,2024,indice_totale,-0.22371314385346086
+Liguria,2024,indice_totale,0.41485672875012486
+Lombardia,2024,indice_totale,0.6420356089142564
+Marche,2024,indice_totale,0.044125597253863974
+Molise,2024,indice_totale,-0.23847357874735042
+Piemonte,2024,indice_totale,0.5127382020556327
+Puglia,2024,indice_totale,-0.8448906188080295
+Sardegna,2024,indice_totale,0.16594701631850034
+Sicilia,2024,indice_totale,-1.2663713694705967
+Toscana,2024,indice_totale,0.18846969877008254
+Trentino Alto Adige,2024,indice_totale,0.8952391655398365
+Umbria,2024,indice_totale,0.2726946308403243
+Valle d'Aosta,2024,indice_totale,0.19126771397999204
+Veneto,2024,indice_totale,0.4257509207986457
+Abruzzo,2022,indice_capacita,-0.13
+Basilicata,2022,indice_capacita,-0.174
+Calabria,2022,indice_capacita,-0.774
+Campania,2022,indice_capacita,-1.09
+Emilia-Romagna,2022,indice_capacita,0.71
+Friuli-Venezia Giulia,2022,indice_capacita,0.535
+Lazio,2022,indice_capacita,-0.129
+Liguria,2022,indice_capacita,0.322
+Lombardia,2022,indice_capacita,0.106
+Marche,2022,indice_capacita,0.041
+Molise,2022,indice_capacita,-0.253
+Piemonte,2022,indice_capacita,0.238
+Puglia,2022,indice_capacita,-0.527
+Sardegna,2022,indice_capacita,-0.006
+Sicilia,2022,indice_capacita,-0.957
+Toscana,2022,indice_capacita,0.336
+Trentino Alto Adige,2022,indice_capacita,0.703
+Umbria,2022,indice_capacita,0.279
+Valle d'Aosta,2022,indice_capacita,0.304
+Veneto,2022,indice_capacita,0.575
+Abruzzo,2024,indice_capacita,-0.09505797055749217
+Basilicata,2024,indice_capacita,-0.12319108322543541
+Calabria,2024,indice_capacita,-0.546050555595828
+Campania,2024,indice_capacita,-1.0566895774250593
+Emilia-Romagna,2024,indice_capacita,0.6965379619673842
+Friuli-Venezia Giulia,2024,indice_capacita,0.3579498371720358
+Lazio,2024,indice_capacita,-0.13362009378968587
+Liguria,2024,indice_capacita,0.18596993225975367
+Lombardia,2024,indice_capacita,0.10899503786808722
+Marche,2024,indice_capacita,0.20381382418161498
+Molise,2024,indice_capacita,-0.1259557582515617
+Piemonte,2024,indice_capacita,-0.07093012992401683
+Puglia,2024,indice_capacita,-0.6907244874752196
+Sardegna,2024,indice_capacita,-0.06035446414163307
+Sicilia,2024,indice_capacita,-0.8649120161328003
+Toscana,2024,indice_capacita,0.33768098989398526
+Trentino Alto Adige,2024,indice_capacita,0.6444125456152239
+Umbria,2024,indice_capacita,0.3223169878623031
+Valle d'Aosta,2024,indice_capacita,0.34392949147597585
+Veneto,2024,indice_capacita,0.5321820808335284
+Abruzzo,2022,rk_cura,15.0
+Basilicata,2022,rk_cura,9.0
+Calabria,2022,rk_cura,19.0
+Campania,2022,rk_cura,20.0
+Emilia-Romagna,2022,rk_cura,1.0
+Friuli-Venezia Giulia,2022,rk_cura,12.0
+Lazio,2022,rk_cura,16.0
+Liguria,2022,rk_cura,2.0
+Lombardia,2022,rk_cura,11.0
+Marche,2022,rk_cura,14.0
+Molise,2022,rk_cura,13.0
+Piemonte,2022,rk_cura,5.0
+Puglia,2022,rk_cura,17.0
+Sardegna,2022,rk_cura,8.0
+Sicilia,2022,rk_cura,18.0
+Toscana,2022,rk_cura,10.0
+Trentino Alto Adige,2022,rk_cura,6.0
+Umbria,2022,rk_cura,7.0
+Valle d'Aosta,2022,rk_cura,3.0
+Veneto,2022,rk_cura,4.0
+Abruzzo,2024,rk_cura,14.0
+Basilicata,2024,rk_cura,10.0
+Calabria,2024,rk_cura,19.0
+Campania,2024,rk_cura,20.0
+Emilia-Romagna,2024,rk_cura,1.0
+Friuli-Venezia Giulia,2024,rk_cura,12.0
+Lazio,2024,rk_cura,16.0
+Liguria,2024,rk_cura,4.0
+Lombardia,2024,rk_cura,11.0
+Marche,2024,rk_cura,13.0
+Molise,2024,rk_cura,15.0
+Piemonte,2024,rk_cura,3.0
+Puglia,2024,rk_cura,17.0
+Sardegna,2024,rk_cura,6.0
+Sicilia,2024,rk_cura,18.0
+Toscana,2024,rk_cura,9.0
+Trentino Alto Adige,2024,rk_cura,8.0
+Umbria,2024,rk_cura,2.0
+Valle d'Aosta,2024,rk_cura,5.0
+Veneto,2024,rk_cura,7.0
+Abruzzo,2022,rk_vita_sana,13.0
+Basilicata,2022,rk_vita_sana,18.0
+Calabria,2022,rk_vita_sana,19.0
+Campania,2022,rk_vita_sana,20.0
+Emilia-Romagna,2022,rk_vita_sana,6.0
+Friuli-Venezia Giulia,2022,rk_vita_sana,10.0
+Lazio,2022,rk_vita_sana,7.0
+Liguria,2022,rk_vita_sana,3.0
+Lombardia,2022,rk_vita_sana,14.0
+Marche,2022,rk_vita_sana,9.0
+Molise,2022,rk_vita_sana,12.0
+Piemonte,2022,rk_vita_sana,16.0
+Puglia,2022,rk_vita_sana,15.0
+Sardegna,2022,rk_vita_sana,11.0
+Sicilia,2022,rk_vita_sana,17.0
+Toscana,2022,rk_vita_sana,2.0
+Trentino Alto Adige,2022,rk_vita_sana,4.0
+Umbria,2022,rk_vita_sana,8.0
+Valle d'Aosta,2022,rk_vita_sana,1.0
+Veneto,2022,rk_vita_sana,5.0
+Abruzzo,2024,rk_vita_sana,16.0
+Basilicata,2024,rk_vita_sana,17.0
+Calabria,2024,rk_vita_sana,18.0
+Campania,2024,rk_vita_sana,20.0
+Emilia-Romagna,2024,rk_vita_sana,4.0
+Friuli-Venezia Giulia,2024,rk_vita_sana,14.0
+Lazio,2024,rk_vita_sana,8.0
+Liguria,2024,rk_vita_sana,5.0
+Lombardia,2024,rk_vita_sana,12.0
+Marche,2024,rk_vita_sana,10.0
+Molise,2024,rk_vita_sana,11.0
+Piemonte,2024,rk_vita_sana,15.0
+Puglia,2024,rk_vita_sana,13.0
+Sardegna,2024,rk_vita_sana,9.0
+Sicilia,2024,rk_vita_sana,19.0
+Toscana,2024,rk_vita_sana,1.0
+Trentino Alto Adige,2024,rk_vita_sana,3.0
+Umbria,2024,rk_vita_sana,7.0
+Valle d'Aosta,2024,rk_vita_sana,2.0
+Veneto,2024,rk_vita_sana,6.0
+Abruzzo,2022,rk_vita_sicura,12.0
+Basilicata,2022,rk_vita_sicura,15.0
+Calabria,2022,rk_vita_sicura,17.0
+Campania,2022,rk_vita_sicura,20.0
+Emilia-Romagna,2022,rk_vita_sicura,3.0
+Friuli-Venezia Giulia,2022,rk_vita_sicura,2.0
+Lazio,2022,rk_vita_sicura,19.0
+Liguria,2022,rk_vita_sicura,9.0
+Lombardia,2022,rk_vita_sicura,11.0
+Marche,2022,rk_vita_sicura,7.0
+Molise,2022,rk_vita_sicura,14.0
+Piemonte,2022,rk_vita_sicura,13.0
+Puglia,2022,rk_vita_sicura,16.0
+Sardegna,2022,rk_vita_sicura,6.0
+Sicilia,2022,rk_vita_sicura,18.0
+Toscana,2022,rk_vita_sicura,10.0
+Trentino Alto Adige,2022,rk_vita_sicura,1.0
+Umbria,2022,rk_vita_sicura,5.0
+Valle d'Aosta,2022,rk_vita_sicura,4.0
+Veneto,2022,rk_vita_sicura,8.0
+Abruzzo,2024,rk_vita_sicura,12.0
+Basilicata,2024,rk_vita_sicura,17.0
+Calabria,2024,rk_vita_sicura,6.0
+Campania,2024,rk_vita_sicura,20.0
+Emilia-Romagna,2024,rk_vita_sicura,3.0
+Friuli-Venezia Giulia,2024,rk_vita_sicura,2.0
+Lazio,2024,rk_vita_sicura,19.0
+Liguria,2024,rk_vita_sicura,10.0
+Lombardia,2024,rk_vita_sicura,5.0
+Marche,2024,rk_vita_sicura,8.0
+Molise,2024,rk_vita_sicura,14.0
+Piemonte,2024,rk_vita_sicura,15.0
+Puglia,2024,rk_vita_sicura,18.0
+Sardegna,2024,rk_vita_sicura,9.0
+Sicilia,2024,rk_vita_sicura,16.0
+Toscana,2024,rk_vita_sicura,13.0
+Trentino Alto Adige,2024,rk_vita_sicura,4.0
+Umbria,2024,rk_vita_sicura,1.0
+Valle d'Aosta,2024,rk_vita_sicura,11.0
+Veneto,2024,rk_vita_sicura,7.0
+Abruzzo,2022,rk_conoscenza_sapere,2.0
+Basilicata,2022,rk_conoscenza_sapere,9.0
+Calabria,2022,rk_conoscenza_sapere,19.0
+Campania,2022,rk_conoscenza_sapere,18.0
+Emilia-Romagna,2022,rk_conoscenza_sapere,7.0
+Friuli-Venezia Giulia,2022,rk_conoscenza_sapere,6.0
+Lazio,2022,rk_conoscenza_sapere,1.0
+Liguria,2022,rk_conoscenza_sapere,5.0
+Lombardia,2022,rk_conoscenza_sapere,14.0
+Marche,2022,rk_conoscenza_sapere,12.0
+Molise,2022,rk_conoscenza_sapere,11.0
+Piemonte,2022,rk_conoscenza_sapere,15.0
+Puglia,2022,rk_conoscenza_sapere,17.0
+Sardegna,2022,rk_conoscenza_sapere,13.0
+Sicilia,2022,rk_conoscenza_sapere,20.0
+Toscana,2022,rk_conoscenza_sapere,4.0
+Trentino Alto Adige,2022,rk_conoscenza_sapere,8.0
+Umbria,2022,rk_conoscenza_sapere,3.0
+Valle d'Aosta,2022,rk_conoscenza_sapere,16.0
+Veneto,2022,rk_conoscenza_sapere,10.0
+Abruzzo,2024,rk_conoscenza_sapere,5.0
+Basilicata,2024,rk_conoscenza_sapere,9.0
+Calabria,2024,rk_conoscenza_sapere,17.0
+Campania,2024,rk_conoscenza_sapere,18.0
+Emilia-Romagna,2024,rk_conoscenza_sapere,11.0
+Friuli-Venezia Giulia,2024,rk_conoscenza_sapere,8.0
+Lazio,2024,rk_conoscenza_sapere,3.0
+Liguria,2024,rk_conoscenza_sapere,13.0
+Lombardia,2024,rk_conoscenza_sapere,14.0
+Marche,2024,rk_conoscenza_sapere,4.0
+Molise,2024,rk_conoscenza_sapere,7.0
+Piemonte,2024,rk_conoscenza_sapere,16.0
+Puglia,2024,rk_conoscenza_sapere,19.0
+Sardegna,2024,rk_conoscenza_sapere,10.0
+Sicilia,2024,rk_conoscenza_sapere,20.0
+Toscana,2024,rk_conoscenza_sapere,2.0
+Trentino Alto Adige,2024,rk_conoscenza_sapere,1.0
+Umbria,2024,rk_conoscenza_sapere,12.0
+Valle d'Aosta,2024,rk_conoscenza_sapere,6.0
+Veneto,2024,rk_conoscenza_sapere,15.0
+Abruzzo,2022,rk_lavorare,12.0
+Basilicata,2022,rk_lavorare,16.0
+Calabria,2022,rk_lavorare,18.0
+Campania,2022,rk_lavorare,20.0
+Emilia-Romagna,2022,rk_lavorare,3.0
+Friuli-Venezia Giulia,2022,rk_lavorare,6.0
+Lazio,2022,rk_lavorare,15.0
+Liguria,2022,rk_lavorare,9.0
+Lombardia,2022,rk_lavorare,5.0
+Marche,2022,rk_lavorare,10.0
+Molise,2022,rk_lavorare,17.0
+Piemonte,2022,rk_lavorare,2.0
+Puglia,2022,rk_lavorare,14.0
+Sardegna,2022,rk_lavorare,13.0
+Sicilia,2022,rk_lavorare,19.0
+Toscana,2022,rk_lavorare,8.0
+Trentino Alto Adige,2022,rk_lavorare,7.0
+Umbria,2022,rk_lavorare,11.0
+Valle d'Aosta,2022,rk_lavorare,4.0
+Veneto,2022,rk_lavorare,1.0
+Abruzzo,2024,rk_lavorare,12.0
+Basilicata,2024,rk_lavorare,14.0
+Calabria,2024,rk_lavorare,18.0
+Campania,2024,rk_lavorare,20.0
+Emilia-Romagna,2024,rk_lavorare,6.0
+Friuli-Venezia Giulia,2024,rk_lavorare,2.0
+Lazio,2024,rk_lavorare,13.0
+Liguria,2024,rk_lavorare,7.0
+Lombardia,2024,rk_lavorare,5.0
+Marche,2024,rk_lavorare,10.0
+Molise,2024,rk_lavorare,15.0
+Piemonte,2024,rk_lavorare,9.0
+Puglia,2024,rk_lavorare,17.0
+Sardegna,2024,rk_lavorare,16.0
+Sicilia,2024,rk_lavorare,19.0
+Toscana,2024,rk_lavorare,8.0
+Trentino Alto Adige,2024,rk_lavorare,3.0
+Umbria,2024,rk_lavorare,11.0
+Valle d'Aosta,2024,rk_lavorare,4.0
+Veneto,2024,rk_lavorare,1.0
+Abruzzo,2022,rk_accedere_risorse,18.0
+Basilicata,2022,rk_accedere_risorse,14.0
+Calabria,2022,rk_accedere_risorse,15.0
+Campania,2022,rk_accedere_risorse,20.0
+Emilia-Romagna,2022,rk_accedere_risorse,3.0
+Friuli-Venezia Giulia,2022,rk_accedere_risorse,2.0
+Lazio,2022,rk_accedere_risorse,13.0
+Liguria,2022,rk_accedere_risorse,10.0
+Lombardia,2022,rk_accedere_risorse,6.0
+Marche,2022,rk_accedere_risorse,9.0
+Molise,2022,rk_accedere_risorse,17.0
+Piemonte,2022,rk_accedere_risorse,5.0
+Puglia,2022,rk_accedere_risorse,16.0
+Sardegna,2022,rk_accedere_risorse,12.0
+Sicilia,2022,rk_accedere_risorse,19.0
+Toscana,2022,rk_accedere_risorse,7.0
+Trentino Alto Adige,2022,rk_accedere_risorse,1.0
+Umbria,2022,rk_accedere_risorse,8.0
+Valle d'Aosta,2022,rk_accedere_risorse,11.0
+Veneto,2022,rk_accedere_risorse,4.0
+Abruzzo,2024,rk_accedere_risorse,15.0
+Basilicata,2024,rk_accedere_risorse,12.0
+Calabria,2024,rk_accedere_risorse,18.0
+Campania,2024,rk_accedere_risorse,20.0
+Emilia-Romagna,2024,rk_accedere_risorse,1.0
+Friuli-Venezia Giulia,2024,rk_accedere_risorse,4.0
+Lazio,2024,rk_accedere_risorse,13.0
+Liguria,2024,rk_accedere_risorse,9.0
+Lombardia,2024,rk_accedere_risorse,10.0
+Marche,2024,rk_accedere_risorse,6.0
+Molise,2024,rk_accedere_risorse,14.0
+Piemonte,2024,rk_accedere_risorse,11.0
+Puglia,2024,rk_accedere_risorse,17.0
+Sardegna,2024,rk_accedere_risorse,16.0
+Sicilia,2024,rk_accedere_risorse,19.0
+Toscana,2024,rk_accedere_risorse,5.0
+Trentino Alto Adige,2024,rk_accedere_risorse,2.0
+Umbria,2024,rk_accedere_risorse,8.0
+Valle d'Aosta,2024,rk_accedere_risorse,7.0
+Veneto,2024,rk_accedere_risorse,3.0
