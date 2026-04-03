@@ -2,6 +2,7 @@ numpy
 pandas
 xlsxwriter
 geopandas
+pyogrio
 plotly
 dash
 dash-bootstrap-components
