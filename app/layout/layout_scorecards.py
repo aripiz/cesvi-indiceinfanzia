@@ -4,23 +4,19 @@ from dash import dcc, html
 import dash_bootstrap_components as dbc
 
 from index import data
-from configuration import (
-    SEQUENCE_COLOR,
-    INDEX_KEY,
-    CAPACITY_DIMS,
-    YEARS_AVAILABLE,
-    YEAR_DEFAULT,
-)
+from configuration import SEQUENCE_COLOR, YEARS, YEAR_DEFAULT
 
 territories_list = sorted(data["territory"].unique().tolist())
 
 scorecard_layout = dbc.Container(
     children=[
+        # ── Selezione territorio ──────────────────────────────────────────────
         dbc.Row(
             [
                 dbc.Col(
                     html.P(
-                        "Seleziona una regione per visualizzare la scheda di valutazione con i punteggi storici e il profilo dimensionale."
+                        "Seleziona una regione per visualizzare la scheda con il "
+                        "profilo e i dati sintetici."
                     ),
                     lg=8,
                     xs=12,
@@ -42,13 +38,12 @@ scorecard_layout = dbc.Container(
             className="mt-2",
             justify="evenly",
         ),
-        # Header regione
+        # ── Header regione ────────────────────────────────────────────────────
         dbc.Row(
             dbc.Col(html.H2(id="scorecard_header"), lg=12),
             className="mt-3",
-            justify="evenly",
         ),
-        # Mappa + score sintetico
+        # ── Mappa + dati sintetici ────────────────────────────────────────────
         dbc.Row(
             [
                 dbc.Col(
@@ -66,14 +61,14 @@ scorecard_layout = dbc.Container(
                 ),
                 dbc.Col(
                     [
-                        html.H5("Indice totale (z-score)"),
+                        html.H5("Indice totale"),
                         html.P(id="scorecard_score"),
                         html.H5("Posizione in classifica"),
                         html.P(id="scorecard_rank"),
                         html.H5("Anno"),
                         dbc.RadioItems(
                             id="scorecard_year",
-                            options=[{"label": str(y), "value": y} for y in YEARS_AVAILABLE],
+                            options=[{"label": str(y), "value": y} for y in YEARS],
                             value=YEAR_DEFAULT,
                             inline=True,
                         ),
@@ -86,7 +81,7 @@ scorecard_layout = dbc.Container(
                     [
                         html.H5("Fascia"),
                         html.P(id="scorecard_tier"),
-                        html.H5("Variazione vs anno precedente"),
+                        html.H5("Variazione"),
                         html.P(id="scorecard_change"),
                     ],
                     lg=5,
@@ -97,12 +92,12 @@ scorecard_layout = dbc.Container(
             className="mt-3",
             justify="evenly",
         ),
-        # Serie storica indice totale
+        # ── Grafici: ranking + radar ──────────────────────────────────────────
         dbc.Row(
             [
                 dbc.Col(
                     [
-                        html.H4("Serie storica — Indice totale"),
+                        html.H4("Andamento posizione in classifica"),
                         dcc.Loading(
                             dcc.Graph(
                                 id="scorecard_evolution",
@@ -117,24 +112,12 @@ scorecard_layout = dbc.Container(
                             color=SEQUENCE_COLOR[0],
                         ),
                     ],
-                    lg=12,
+                    lg=6,
                     xs=12,
                 ),
-            ],
-            className="mt-4",
-        ),
-        # Profilo dimensionale radar (2022/2024)
-        dbc.Row(
-            [
                 dbc.Col(
                     [
-                        html.H4("Profilo dimensionale (2022 – 2024)"),
-                        dbc.Alert(
-                            "I dati dimensionali sono disponibili solo per il 2022 e il 2024.",
-                            color="info",
-                            dismissable=True,
-                            className="mt-2",
-                        ),
+                        html.H4("Profilo per capacità"),
                         dcc.Loading(
                             dcc.Graph(
                                 id="scorecard_radar",
@@ -143,19 +126,22 @@ scorecard_layout = dbc.Container(
                             color=SEQUENCE_COLOR[0],
                         ),
                     ],
-                    lg=8,
+                    lg=6,
                     xs=12,
-                ),
-                dbc.Col(
-                    [
-                        html.H4("Ranking dimensionale 2024"),
-                        html.Div(id="scorecard_dim_table"),
-                    ],
-                    lg=4,
-                    xs=12,
-                    align="center",
                 ),
             ],
+            className="mt-4",
+        ),
+        # ── Tabella ranking per capacità ──────────────────────────────────────
+        dbc.Row(
+            dbc.Col(
+                [
+                    html.H4("Posizione per capacità"),
+                    html.Div(id="scorecard_dim_table"),
+                ],
+                lg=12,
+                xs=12,
+            ),
             className="mt-4",
         ),
     ],

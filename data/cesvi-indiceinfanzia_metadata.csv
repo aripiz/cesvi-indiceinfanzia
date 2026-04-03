@@ -1,16 +1,14 @@
-﻿indicator,label,index
-i1,Capacità di cura di sé e degli altri,Indice regionale fattori di rischio potenziali maltrattanti
-i2,Capacità di cura di sé e degli altri,Indice regionale servizi per potenziali maltrattanti
-i3,Capacità di ricevere cura,Indice regionale servizi per bambini/e
-i4,Capacità di vivere una vita sana,Indice regionale fattori di rischio potenziali maltrattanti
-i5,Capacità di vivere una vita sana,Indice regionale sintomi potenziale maltrattamento dei bambini/e
-i6,Capacità di vivere una vita sana,Indice regionale servizi per potenziali maltrattanti
-i7,Capacità di vivere una vita sana,Indice regionale servizi per bambini/e
-i8,Capacità di vivere una vita sicura,Indice regionale fattori di rischio potenziali maltrattanti
-i9,Capacità di vivere una vita sicura,Indice regionale servizi per potenziali maltrattanti
-i10,Capacità di acquisire conoscenza e sapere,Indice regionale fattori di rischio potenziali maltrattanti
-i11,Capacità di acquisire conoscenza e sapere,Indice regionale servizi per potenziali maltrattanti
-i12,Capacità di lavorare,Indice regionale fattori di rischio potenziali maltrattanti
-i13,Capacità di lavorare,Indice regionale servizi per potenziali maltrattanti
-i14,Capacità di accedere alle risorse e ai servizi,Indice regionale fattori di rischio potenziali maltrattanti
-i15,Capacità di accedere alle risorse e ai servizi,Indice regionale servizi per potenziali maltrattanti
+field,prefix,label
+rischio_adulti,Indice regionale,Fattori di Rischio Potenziali Maltrattanti
+servizi_adulti,Indice regionale,Servizi per Potenziali Maltrattanti
+servizi_bambini,Indice regionale,Servizi per Bambini/e
+rischio_bambini,Indice regionale,Sintomi Potenziale Maltrattamento dei Bambini/e
+cura,Capacità di,Cura
+vita_sana,Capacità di,Vivere una Vita Sana
+vita_sicura,Capacità di,Vivere una Vita Sicura
+conoscenza_sapere,Capacità di,Acquisire Conoscenza e Sapere
+lavorare,Capacità di,Lavorare
+accedere_risorse,Capacità di,Accedere alle Risorse e ai Servizi
+rischio,Indice regionale,Fattori di rischio
+servizi,Indice regionale,Servizi
+totale,Indice regionale,Maltrattamento e Cura all'Infanzia in Italia

@@ -6,9 +6,8 @@ from configuration import TITLE
 
 register_page(__name__, name=TITLE, path="/methodology")
 
-from layout.layout_methodology import methodology_layout
-
+# TODO: implementare layout metodologia
 layout = dbc.Container(
-    children=methodology_layout,
+    html.P("Metodologia — in costruzione.", className="mt-4 text-muted"),
     class_name="mt-4",
 )

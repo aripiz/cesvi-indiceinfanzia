@@ -15,11 +15,10 @@ from configuration import (
     SEQUENCE_COLOR,
     ZSCORE_BINS,
     ZSCORE_LABELS,
-    ZSCORE_TIER_COLORS,
-    DIVERGING_COLORS,
     CAPACITY_DIMS,
-    INDEX_KEY,
-    YEARS_AVAILABLE,
+    INDEX_LABELS,
+    YEARS,
+    BRAND_COLOR,
 )
 from index import app, data, geodata
 from utilis import zscore_format, get_zscore_tier
@@ -27,27 +26,85 @@ from utilis import zscore_format, get_zscore_tier
 load_figure_template(FIGURE_TEMPLATE)
 pio.templates.default = FIGURE_TEMPLATE
 
-def _ind(territory, year, indicator):
-    """Ritorna la riga long-format per territory/year/indicator."""
+
+# ── Helpers ───────────────────────────────────────────────────────────────────
+
+def _totale(year):
+    """Righe dell'indice totale per un dato anno (tutti i territori)."""
     return data[
+        (data["year"] == year) & (data["index"] == "totale") & data["capacity"].isna()
+    ][["territory", "code", "score"]].copy()
+
+
+def _get_score(territory, year):
+    df = _totale(year)
+    row = df[df["territory"] == territory]
+    if row.empty:
+        return None
+    v = row["score"].values[0]
+    return float(v) if pd.notna(v) else None
+
+
+def _get_rank(territory, year):
+    """Posizione (1 = migliore z-score) del territorio nell'anno (indice totale)."""
+    return _get_rank_by_index(territory, year, "totale")
+
+
+def _get_rank_by_index(territory, year, index_key):
+    """Posizione (1 = migliore) per un qualsiasi index_key (capacity isNaN)."""
+    df = data[
+        (data["year"] == year) & (data["index"] == index_key) & data["capacity"].isna()
+    ][["territory", "score"]].dropna(subset=["score"])
+    if df.empty:
+        return None
+    df = df.sort_values("score", ascending=False).reset_index(drop=True)
+    df["rank"] = range(1, len(df) + 1)
+    row = df[df["territory"] == territory]
+    if row.empty:
+        return None
+    return int(row["rank"].values[0])
+
+
+def _cap_avg(territory, year, capacity):
+    """Media dei sotto-indici di una capacità per territorio/anno."""
+    df = data[
         (data["territory"] == territory)
         & (data["year"] == year)
-        & (data["indicator"] == indicator)
+        & (data["capacity"] == capacity)
     ]
+    if df.empty:
+        return None
+    v = df["score"].mean()
+    return float(v) if pd.notna(v) else None
 
-# ── Header ────────────────────────────────────────────────────────────────────
 
-# Aggiorna il valore del dropdown quando si naviga dallo store
+def _cap_rank(territory, year, capacity):
+    """Posizione del territorio per la capacità indicata (media sotto-indici)."""
+    df = data[(data["year"] == year) & (data["capacity"] == capacity)].copy()
+    if df.empty:
+        return None
+    agg = df.groupby("territory")["score"].mean().reset_index()
+    agg = agg.dropna(subset=["score"]).sort_values("score", ascending=False).reset_index(drop=True)
+    agg["rank"] = range(1, len(agg) + 1)
+    row = agg[agg["territory"] == territory]
+    if row.empty:
+        return None
+    return int(row["rank"].values[0])
+
+
+# ── Navigazione da store ──────────────────────────────────────────────────────
+
 @app.callback(
     Output("scorecard_territory", "value"),
     Input("store_territory", "data"),
-    prevent_initial_call=True,
 )
 def set_territory_from_store(stored_territory):
     if stored_territory:
         return stored_territory
     raise PreventUpdate
 
+
+# ── Header ────────────────────────────────────────────────────────────────────
 
 @app.callback(
     Output("scorecard_header", "children"),
@@ -57,7 +114,7 @@ def update_scorecard_header(territory):
     return territory or "—"
 
 
-# ── Score + Rank + Tier + Change ──────────────────────────────────────────────
+# ── Score / Rank / Tier / Variazione ─────────────────────────────────────────
 
 @app.callback(
     Output("scorecard_score", "children"),
@@ -68,33 +125,34 @@ def update_scorecard_header(territory):
     Input("scorecard_year", "value"),
 )
 def update_scorecard_info(territory, year):
-    row = _ind(territory, year, INDEX_KEY)
-    if row.empty:
-        return "N/D", "N/D", "N/D", "N/D"
+    score = _get_score(territory, year)
+    rank  = _get_rank(territory, year)
 
-    score    = row["value"].values[0]
-    rank_val = row["rank"].values[0]
-    score_str = zscore_format(score) if pd.notna(score) else "N/D"
-    tier_str  = get_zscore_tier(score) if pd.notna(score) else "N/D"
-    rank_str  = f"{int(rank_val)} / 20" if pd.notna(rank_val) else "N/D"
+    score_str = zscore_format(score) if score is not None else "N/D"
+    tier_str  = get_zscore_tier(score) if score is not None else "N/D"
+    rank_str  = f"{rank} / 20" if rank is not None else "N/D"
 
-    # Variazione rispetto all'anno precedente
-    prev_years = [y for y in YEARS_AVAILABLE if y < year]
-    if prev_years:
-        prev_year = max(prev_years)
-        prev_row = _ind(territory, prev_year, INDEX_KEY)
-        if not prev_row.empty and pd.notna(prev_row["value"].values[0]):
-            delta = score - prev_row["value"].values[0]
-            delta_str = f"{delta:+.2f} (rispetto al {prev_year})"
+    prev_years = [y for y in YEARS if y < year]
+    if prev_years and rank is not None:
+        prev_year  = max(prev_years)
+        prev_rank  = _get_rank(territory, prev_year)
+        if prev_rank is not None:
+            delta = rank - prev_rank          # negativo = miglioramento
+            if delta < 0:
+                delta_str = f"▲ {abs(delta)} posizioni (rispetto al {prev_year})"
+            elif delta > 0:
+                delta_str = f"▼ {delta} posizioni (rispetto al {prev_year})"
+            else:
+                delta_str = f"Stabile (rispetto al {prev_year})"
         else:
             delta_str = "N/D"
     else:
-        delta_str = "Non disponibile (primo anno)"
+        delta_str = "Non disponibile"
 
     return score_str, rank_str, tier_str, delta_str
 
 
-# ── Mappa regione ─────────────────────────────────────────────────────────────
+# ── Mappa ─────────────────────────────────────────────────────────────────────
 
 @app.callback(
     Output("scorecard_map", "figure"),
@@ -102,172 +160,166 @@ def update_scorecard_info(territory, year):
     Input("scorecard_year", "value"),
 )
 def update_scorecard_map(territory, year):
-    df = data[(data["year"] == year) & (data["indicator"] == INDEX_KEY)][
-        ["territory", "code", "value"]
-    ].copy()
-
-    fig_base = px.choropleth(
+    df = _totale(year)
+    df["highlight"] = df["territory"].apply(
+        lambda t: "Regione selezionata" if t == territory else "Altre regioni"
+    )
+    fig = px.choropleth(
         df,
         locations="code",
         geojson=geodata,
         featureidkey=GEO_KEY,
-        color="value",
-        color_continuous_scale=DIVERGING_COLORS,
-        range_color=[df["value"].min(), df["value"].max()],
+        color="highlight",
+        color_discrete_map={
+            "Regione selezionata": BRAND_COLOR,
+            "Altre regioni": "#D0DADB",
+        },
+        category_orders={"highlight": ["Regione selezionata", "Altre regioni"]},
         custom_data=["territory"],
     )
-    fig_base.update_traces(
+    fig.update_traces(
         hovertemplate="<b>%{customdata[0]}</b><extra></extra>",
     )
-    fig_base.update_layout(
+    fig.update_layout(
         dragmode=False,
         showlegend=False,
-        coloraxis_showscale=False,
         margin={"r": 0, "t": 0, "l": 0, "b": 0},
         geo=dict(
-            projection_type="natural earth",
-            projection_scale=15.4,
+            fitbounds="locations", # Applica lo zoom dinamico sulla regione
+            projection_type="mercator",
             showland=False,
             showocean=False,
             showlakes=False,
             showrivers=False,
             visible=False,
-            center=dict(lat=41.9, lon=12.5),
         ),
     )
-    return fig_base
+    return fig
 
 
-# ── Serie storica (scorecard) ─────────────────────────────────────────────────
+# ── Andamento posizione in classifica ────────────────────────────────────────
+
+# Usa le etichette definite in configuration
+_EVOLUTION_SERIES = INDEX_LABELS  # {"totale": "Indice totale", ...}
 
 @app.callback(
     Output("scorecard_evolution", "figure"),
     Input("scorecard_territory", "value"),
 )
 def update_scorecard_evolution(territory):
-    df = data[
-        (data["territory"] == territory) & (data["indicator"] == INDEX_KEY)
-    ][["year", "value"]].copy()
+    rows = []
+    for y in YEARS:
+        for idx_key, idx_label in _EVOLUTION_SERIES.items():
+            rank = _get_rank_by_index(territory, y, idx_key)
+            if rank is not None:
+                rows.append({"year": y, "rank": rank, "serie": idx_label})
+    df = pd.DataFrame(rows)
+
+    if df.empty:
+        return go.Figure()
+
+    color_map = {
+        lbl: SEQUENCE_COLOR[i]
+        for i, lbl in enumerate(_EVOLUTION_SERIES.values())
+    }
 
     fig = px.line(
         df,
         x="year",
-        y="value",
+        y="rank",
+        color="serie",
         markers=True,
-        labels={"year": "Anno", "value": "Indice totale (z-score)"},
-        color_discrete_sequence=[SEQUENCE_COLOR[0]],
+        labels={"year": "Anno", "rank": "Posizione", "serie": ""},
+        color_discrete_map=color_map,
+        category_orders={"serie": list(_EVOLUTION_SERIES.values())},
     )
-    fig.add_hline(y=0, line_dash="dash", line_color="gray", line_width=1)
+    fig.update_yaxes(
+        range=[20.5, 0.5],   # invertito: 1 in cima, 20 in fondo — fisso
+        tickvals=list(range(1, 21)),
+        title_text="Posizione",
+    )
+    fig.update_xaxes(
+        tickvals=YEARS,
+        ticktext=[str(y) for y in YEARS],
+        title_text="Anno",
+    )
     fig.update_layout(
-        xaxis=dict(
-            tickvals=YEARS_AVAILABLE,
-            ticktext=[str(y) for y in YEARS_AVAILABLE],
-        ),
-        showlegend=False,
+        showlegend=True,
+        legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="left", x=0),
     )
     fig.update_traces(
-        hovertemplate=(
-            "Anno: %{x}<br>"
-            + "Indice: %{y:.2f}<br>"
-            + "<extra></extra>"
-        )
+        hovertemplate="<b>%{fullData.name}</b><br>Anno: %{x}<br>Posizione: %{y}<extra></extra>"
     )
     return fig
 
 
-# ── Radar dimensionale ────────────────────────────────────────────────────────
+# ── Profilo per capacità (radar) ──────────────────────────────────────────────
 
 @app.callback(
     Output("scorecard_radar", "figure"),
     Input("scorecard_territory", "value"),
+    Input("scorecard_year", "value"),
 )
-def update_scorecard_radar(territory):
-    dim_keys   = list(CAPACITY_DIMS.keys())
-    dim_labels = list(CAPACITY_DIMS.values())
-    years_dim  = [2022, 2024]
+def update_scorecard_radar(territory, year):
+    cap_keys   = list(CAPACITY_DIMS.keys())
+    cap_labels = list(CAPACITY_DIMS.values())
+
+    values = [_cap_avg(territory, year, k) for k in cap_keys]
+    values = [v if v is not None else 0.0 for v in values]
+
+    # Chiudi il poligono
+    vals_closed   = values + [values[0]]
+    labels_closed = cap_labels + [cap_labels[0]]
 
     fig = go.Figure()
-    for i, year in enumerate(years_dim):
-        df_year = data[
-            (data["territory"] == territory)
-            & (data["year"] == year)
-            & (data["indicator"].isin(dim_keys))
-        ]
-        if df_year.empty:
-            continue
-        values = []
-        for k in dim_keys:
-            sub = df_year[df_year["indicator"] == k]
-            values.append(sub["value"].values[0] if not sub.empty else float("nan"))
-        if all(pd.isna(v) for v in values):
-            continue
-        values = [v if pd.notna(v) else 0 for v in values]
-        values_closed = values + [values[0]]
-        labels_closed = dim_labels + [dim_labels[0]]
-        fig.add_trace(
-            go.Scatterpolar(
-                r=values_closed,
-                theta=labels_closed,
-                fill="toself",
-                name=str(year),
-                line_color=SEQUENCE_COLOR[i],
-                opacity=0.7,
-            )
+    fig.add_trace(
+        go.Scatterpolar(
+            r=vals_closed,
+            theta=labels_closed,
+            fill="toself",
+            name=str(year),
+            line_color=SEQUENCE_COLOR[0],
+            fillcolor=SEQUENCE_COLOR[0],
+            opacity=0.55,
         )
-
-    all_cap = data[
-        (data["territory"] == territory) & (data["indicator"].isin(dim_keys))
-    ]["value"].dropna()
-    r_min = min(-2.0, float(all_cap.min()) - 0.2) if not all_cap.empty else -2.0
-    r_max = max(2.0,  float(all_cap.max()) + 0.2) if not all_cap.empty else  2.0
-
+    )
     fig.update_layout(
         polar=dict(
-            radialaxis=dict(visible=True, title="z-score", range=[r_min, r_max])
+            radialaxis=dict(
+                visible=True,
+                range=[-2.5, 2.5],
+                tickformat=".1f",
+            )
         ),
-        title=f"Profilo dimensionale — {territory}",
-        showlegend=True,
-        legend=dict(title_text="Anno"),
+        showlegend=False,
+        margin={"r": 40, "t": 20, "l": 40, "b": 20},
     )
     return fig
 
 
-# ── Tabella dimensionale ──────────────────────────────────────────────────────
+# ── Tabella ranking per capacità ──────────────────────────────────────────────
 
 @app.callback(
     Output("scorecard_dim_table", "children"),
     Input("scorecard_territory", "value"),
+    Input("scorecard_year", "value"),
 )
-def update_scorecard_dim_table(territory):
-    def _rank(yr, key):
-        r = _ind(territory, yr, key)
-        if r.empty or pd.isna(r["rank"].values[0]):
-            return "N/D"
-        return str(int(r["rank"].values[0]))
-
+def update_scorecard_dim_table(territory, year):
     rows = []
     for key, label in CAPACITY_DIMS.items():
+        rank = _cap_rank(territory, year, key)
         rows.append(
-            html.Tr(
-                [
-                    html.Td(label),
-                    html.Td(_rank(2024, key), className="text-center"),
-                    html.Td(_rank(2022, key), className="text-center"),
-                ]
-            )
+            html.Tr([
+                html.Td(label),
+                html.Td(str(rank) if rank is not None else "N/D", className="text-center"),
+            ])
         )
-
     table = dbc.Table(
         [
-            html.Thead(
-                html.Tr(
-                    [
-                        html.Th("Dimensione"),
-                        html.Th("Rank 2024", className="text-center"),
-                        html.Th("Rank 2022", className="text-center"),
-                    ]
-                )
-            ),
+            html.Thead(html.Tr([
+                html.Th("Capacità"),
+                html.Th(f"Posizione {year}", className="text-center"),
+            ])),
             html.Tbody(rows),
         ],
         bordered=True,

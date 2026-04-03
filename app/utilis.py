@@ -26,7 +26,7 @@ def zscore_format(x):
     if pd.isna(x):
         return "N/A"
     sign = "+" if float(x) >= 0 else ""
-    return f"{sign}{float(x):.2f}"
+    return f"{sign}{float(x):.3f}"
 
 
 def get_zscore_tier(z):

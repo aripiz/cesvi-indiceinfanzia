@@ -4,28 +4,33 @@ from index import app
 from dash import dcc, html, page_container
 import dash_bootstrap_components as dbc
 
-from layout.callbacks import (
-    render_data,
-    navigation,
-    render_scorecards,
-)
-from configuration import BRAND_LINK, CREDITS_LINK, TITLE
+from layout.callbacks import render_scorecards, navigation
+# TODO: aggiungere render_data quando implementato
+
+from configuration import BRAND_LINK, CREDITS_LINK, TITLE, LOGO, BRAND_SECONDARY_COLOR
 
 # ── Navbar ────────────────────────────────────────────────────────────────────
 
 navbar = dbc.NavbarSimple(
     children=[
-        dbc.NavItem(dbc.NavLink("Home", active="exact", href="/")),
-        dbc.NavItem(dbc.NavLink("Schede regionali", active="exact", href="/scorecards")),
-        dbc.NavItem(dbc.NavLink("Dati", active="exact", href="/data")),
-        dbc.NavItem(dbc.NavLink("Metodologia", active="exact", href="/methodology")),
+        dbc.NavItem(dbc.NavLink("Panoramica",   active="exact", href="/")),
+        dbc.NavItem(dbc.NavLink("Regioni",      active="exact", href="/scorecards")),
+        dbc.NavItem(dbc.NavLink("Esplora",      active="exact", href="/data")),
+        dbc.NavItem(dbc.NavLink("Metodologia",  active="exact", href="/methodology")),
     ],
-    brand=html.Span([
-        html.Img(src="assets/logo.png", height="30px",
-                 style={"marginRight": "8px"}),
-        TITLE,
-    ]),
-    brand_href="/",
+   brand=html.Div([
+        html.Img(
+            src="assets/cesvi-logo_horizontal.png", 
+            height="30px",
+            # Rimosso verticalAlign, teniamo solo il margine
+            style={"marginRight": "10px"} 
+        ),
+        html.Span(
+            "Indice sul Maltrattamento e la Cura all'Infanzia", 
+            className="fw-bold d-none d-md-inline mb-0",# style={"color": BRAND_SECONDARY_COLOR}
+        ),
+    ], className="d-flex align-items-center"), 
+    brand_href=BRAND_LINK,
     fixed="top",
     color="white",
     dark=False,

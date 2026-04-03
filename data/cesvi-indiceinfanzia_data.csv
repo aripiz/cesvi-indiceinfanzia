@@ -1,1801 +1,1801 @@
-territory,year,indicator,score
-Abruzzo,2018,i1,-0.219
-Basilicata,2018,i1,-0.053
-Calabria,2018,i1,-0.252
-Campania,2018,i1,-1.712
-Emilia-Romagna,2018,i1,0.278
-Friuli-Venezia Giulia,2018,i1,0.263
-Lazio,2018,i1,-0.451
-Liguria,2018,i1,0.225
-Lombardia,2018,i1,0.489
-Marche,2018,i1,0.043
-Molise,2018,i1,0.204
-Piemonte,2018,i1,0.337
-Puglia,2018,i1,-0.656
-Sardegna,2018,i1,0.012
-Sicilia,2018,i1,-1.058
-Toscana,2018,i1,0.147
-Trentino-Alto Adige,2018,i1,1.067
-Umbria,2018,i1,0.235
-Valle d'Aosta,2018,i1,0.528
-Veneto,2018,i1,0.574
-Abruzzo,2018,i10,0.451
-Basilicata,2018,i10,-0.077
-Calabria,2018,i10,-1.372
-Campania,2018,i10,-1.705
-Emilia-Romagna,2018,i10,0.55
-Friuli-Venezia Giulia,2018,i10,0.093
-Lazio,2018,i10,1.043
-Liguria,2018,i10,-0.044
-Lombardia,2018,i10,0.561
-Marche,2018,i10,0.993
-Molise,2018,i10,0.416
-Piemonte,2018,i10,0.342
-Puglia,2018,i10,-1.602
-Sardegna,2018,i10,-0.82
-Sicilia,2018,i10,-1.76
-Toscana,2018,i10,0.397
-Trentino-Alto Adige,2018,i10,0.937
-Umbria,2018,i10,1.038
-Valle d'Aosta,2018,i10,0.2
-Veneto,2018,i10,0.361
-Abruzzo,2018,i11,1.178
-Basilicata,2018,i11,-0.572
-Calabria,2018,i11,-0.553
-Campania,2018,i11,-0.941
-Emilia-Romagna,2018,i11,0.304
-Friuli-Venezia Giulia,2018,i11,1.516
-Lazio,2018,i11,0.616
-Liguria,2018,i11,-0.572
-Lombardia,2018,i11,-0.238
-Marche,2018,i11,0.048
-Molise,2018,i11,1.253
-Piemonte,2018,i11,-0.584
-Puglia,2018,i11,-0.977
-Sardegna,2018,i11,-0.401
-Sicilia,2018,i11,-1.756
-Toscana,2018,i11,1.592
-Trentino-Alto Adige,2018,i11,1.681
-Umbria,2018,i11,0.408
-Valle d'Aosta,2018,i11,-1.388
-Veneto,2018,i11,-0.615
-Abruzzo,2018,i12,-0.198
-Basilicata,2018,i12,-0.333
-Calabria,2018,i12,-1.735
-Campania,2018,i12,-1.764
-Emilia-Romagna,2018,i12,0.866
-Friuli-Venezia Giulia,2018,i12,0.824
-Lazio,2018,i12,0.001
-Liguria,2018,i12,0.551
-Lombardia,2018,i12,0.698
-Marche,2018,i12,0.646
-Molise,2018,i12,-0.596
-Piemonte,2018,i12,0.489
-Puglia,2018,i12,-0.978
-Sardegna,2018,i12,-0.762
-Sicilia,2018,i12,-1.797
-Toscana,2018,i12,0.63
-Trentino-Alto Adige,2018,i12,1.418
-Umbria,2018,i12,0.413
-Valle d'Aosta,2018,i12,0.716
-Veneto,2018,i12,0.913
-Abruzzo,2018,i13,-0.8
-Basilicata,2018,i13,-0.74
-Calabria,2018,i13,-0.863
-Campania,2018,i13,-0.897
-Emilia-Romagna,2018,i13,3.444
-Friuli-Venezia Giulia,2018,i13,0.094
-Lazio,2018,i13,-0.509
-Liguria,2018,i13,0.512
-Lombardia,2018,i13,-0.369
-Marche,2018,i13,-0.543
-Molise,2018,i13,-0.434
-Piemonte,2018,i13,0.235
-Puglia,2018,i13,-0.546
-Sardegna,2018,i13,0.839
-Sicilia,2018,i13,-0.047
-Toscana,2018,i13,-0.407
-Trentino-Alto Adige,2018,i13,-0.92
-Umbria,2018,i13,0.859
-Valle d'Aosta,2018,i13,-0.105
-Veneto,2018,i13,1.197
-Abruzzo,2018,i14,-0.18
-Basilicata,2018,i14,-0.182
-Calabria,2018,i14,-0.791
-Campania,2018,i14,-1.552
-Emilia-Romagna,2018,i14,0.689
-Friuli-Venezia Giulia,2018,i14,0.664
-Lazio,2018,i14,0.035
-Liguria,2018,i14,0.176
-Lombardia,2018,i14,0.332
-Marche,2018,i14,0.087
-Molise,2018,i14,0.168
-Piemonte,2018,i14,0.289
-Puglia,2018,i14,-0.743
-Sardegna,2018,i14,-0.562
-Sicilia,2018,i14,-1.109
-Toscana,2018,i14,0.57
-Trentino-Alto Adige,2018,i14,0.666
-Umbria,2018,i14,0.169
-Valle d'Aosta,2018,i14,0.439
-Veneto,2018,i14,0.835
-Abruzzo,2018,i15,-0.693
-Basilicata,2018,i15,-0.864
-Calabria,2018,i15,-0.703
-Campania,2018,i15,-0.841
-Emilia-Romagna,2018,i15,0.907
-Friuli-Venezia Giulia,2018,i15,2.426
-Lazio,2018,i15,-0.493
-Liguria,2018,i15,-0.58
-Lombardia,2018,i15,-0.325
-Marche,2018,i15,-0.014
-Molise,2018,i15,-0.703
-Piemonte,2018,i15,1.345
-Puglia,2018,i15,-0.666
-Sardegna,2018,i15,-0.102
-Sicilia,2018,i15,-0.785
-Toscana,2018,i15,0.66
-Trentino-Alto Adige,2018,i15,-0.475
-Umbria,2018,i15,0.29
-Valle d'Aosta,2018,i15,0.015
-Veneto,2018,i15,1.511
-Abruzzo,2018,i2,-0.164
-Basilicata,2018,i2,-0.125
-Calabria,2018,i2,-0.852
-Campania,2018,i2,-1.003
-Emilia-Romagna,2018,i2,1.593
-Friuli-Venezia Giulia,2018,i2,-0.419
-Lazio,2018,i2,-0.055
-Liguria,2018,i2,0.051
-Lombardia,2018,i2,-0.134
-Marche,2018,i2,-0.505
-Molise,2018,i2,-0.493
-Piemonte,2018,i2,0.222
-Puglia,2018,i2,-0.174
-Sardegna,2018,i2,0.079
-Sicilia,2018,i2,-0.011
-Toscana,2018,i2,0.096
-Trentino-Alto Adige,2018,i2,0.433
-Umbria,2018,i2,0.448
-Valle d'Aosta,2018,i2,0.634
-Veneto,2018,i2,0.38
-Abruzzo,2018,i3,-0.398
-Basilicata,2018,i3,-0.443
-Calabria,2018,i3,-0.618
-Campania,2018,i3,-1.193
-Emilia-Romagna,2018,i3,0.55
-Friuli-Venezia Giulia,2018,i3,0.104
-Lazio,2018,i3,-0.439
-Liguria,2018,i3,1.364
-Lombardia,2018,i3,-0.212
-Marche,2018,i3,-0.153
-Molise,2018,i3,-0.571
-Piemonte,2018,i3,0.772
-Puglia,2018,i3,-0.658
-Sardegna,2018,i3,0.347
-Sicilia,2018,i3,-0.182
-Toscana,2018,i3,0.386
-Trentino-Alto Adige,2018,i3,0.126
-Umbria,2018,i3,0.616
-Valle d'Aosta,2018,i3,0.256
-Veneto,2018,i3,0.347
-Abruzzo,2018,i4,0.113
-Basilicata,2018,i4,0.066
-Calabria,2018,i4,-0.2
-Campania,2018,i4,-0.386
-Emilia-Romagna,2018,i4,0.068
-Friuli-Venezia Giulia,2018,i4,0.526
-Lazio,2018,i4,0.174
-Liguria,2018,i4,0.505
-Lombardia,2018,i4,0.219
-Marche,2018,i4,-1.078
-Molise,2018,i4,0.461
-Piemonte,2018,i4,-0.181
-Puglia,2018,i4,-0.019
-Sardegna,2018,i4,-0.585
-Sicilia,2018,i4,0.065
-Toscana,2018,i4,-0.503
-Trentino-Alto Adige,2018,i4,0.905
-Umbria,2018,i4,-0.317
-Valle d'Aosta,2018,i4,-0.494
-Veneto,2018,i4,0.661
-Abruzzo,2018,i5,-0.728
-Basilicata,2018,i5,-0.801
-Calabria,2018,i5,-0.009
-Campania,2018,i5,-0.668
-Emilia-Romagna,2018,i5,0.381
-Friuli-Venezia Giulia,2018,i5,0.721
-Lazio,2018,i5,0.515
-Liguria,2018,i5,0.076
-Lombardia,2018,i5,0.146
-Marche,2018,i5,0.519
-Molise,2018,i5,-0.691
-Piemonte,2018,i5,0.328
-Puglia,2018,i5,-0.983
-Sardegna,2018,i5,-0.839
-Sicilia,2018,i5,-0.683
-Toscana,2018,i5,0.492
-Trentino-Alto Adige,2018,i5,0.862
-Umbria,2018,i5,0.203
-Valle d'Aosta,2018,i5,0.746
-Veneto,2018,i5,0.413
-Abruzzo,2018,i6,0.076
-Basilicata,2018,i6,-0.495
-Calabria,2018,i6,-1.06
-Campania,2018,i6,-1.051
-Emilia-Romagna,2018,i6,0.017
-Friuli-Venezia Giulia,2018,i6,-0.315
-Lazio,2018,i6,-0.615
-Liguria,2018,i6,1.499
-Lombardia,2018,i6,-0.039
-Marche,2018,i6,0.782
-Molise,2018,i6,0.074
-Piemonte,2018,i6,0.227
-Puglia,2018,i6,-0.26
-Sardegna,2018,i6,-0.037
-Sicilia,2018,i6,-0.761
-Toscana,2018,i6,0.55
-Trentino-Alto Adige,2018,i6,-0.303
-Umbria,2018,i6,0.432
-Valle d'Aosta,2018,i6,0.85
-Veneto,2018,i6,0.429
-Abruzzo,2018,i7,0.553
-Basilicata,2018,i7,-0.638
-Calabria,2018,i7,0.164
-Campania,2018,i7,-0.449
-Emilia-Romagna,2018,i7,0.147
-Friuli-Venezia Giulia,2018,i7,-0.695
-Lazio,2018,i7,0.733
-Liguria,2018,i7,-0.046
-Lombardia,2018,i7,-0.535
-Marche,2018,i7,-0.271
-Molise,2018,i7,-0.118
-Piemonte,2018,i7,-0.825
-Puglia,2018,i7,0.22
-Sardegna,2018,i7,1.593
-Sicilia,2018,i7,0.473
-Toscana,2018,i7,0.385
-Trentino-Alto Adige,2018,i7,-0.441
-Umbria,2018,i7,0.344
-Valle d'Aosta,2018,i7,-0.054
-Veneto,2018,i7,-0.54
-Abruzzo,2018,i8,-0.46
-Basilicata,2018,i8,-0.078
-Calabria,2018,i8,-0.42
-Campania,2018,i8,-1.113
-Emilia-Romagna,2018,i8,0.16
-Friuli-Venezia Giulia,2018,i8,0.679
-Lazio,2018,i8,-0.447
-Liguria,2018,i8,0.164
-Lombardia,2018,i8,0.499
-Marche,2018,i8,0.087
-Molise,2018,i8,-0.468
-Piemonte,2018,i8,0.132
-Puglia,2018,i8,-0.815
-Sardegna,2018,i8,0.385
-Sicilia,2018,i8,-0.417
-Toscana,2018,i8,-0.03
-Trentino-Alto Adige,2018,i8,1.071
-Umbria,2018,i8,-0.192
-Valle d'Aosta,2018,i8,1.065
-Veneto,2018,i8,0.198
-Abruzzo,2018,i9,0.129
-Basilicata,2018,i9,-0.759
-Calabria,2018,i9,-0.438
-Campania,2018,i9,-0.25
-Emilia-Romagna,2018,i9,1.154
-Friuli-Venezia Giulia,2018,i9,-0.179
-Lazio,2018,i9,-0.975
-Liguria,2018,i9,0.293
-Lombardia,2018,i9,-0.643
-Marche,2018,i9,0.654
-Molise,2018,i9,-0.579
-Piemonte,2018,i9,-0.831
-Puglia,2018,i9,-0.588
-Sardegna,2018,i9,0.341
-Sicilia,2018,i9,0.444
-Toscana,2018,i9,0.003
-Trentino-Alto Adige,2018,i9,-0.324
-Umbria,2018,i9,0.782
-Valle d'Aosta,2018,i9,0.968
-Veneto,2018,i9,0.798
-Abruzzo,2019,i1,-0.207
-Basilicata,2019,i1,0.016
-Calabria,2019,i1,-0.242
-Campania,2019,i1,-1.647
-Emilia-Romagna,2019,i1,0.403
-Friuli-Venezia Giulia,2019,i1,0.417
-Lazio,2019,i1,-0.27
-Liguria,2019,i1,0.214
-Lombardia,2019,i1,0.458
-Marche,2019,i1,0.216
-Molise,2019,i1,0.234
-Piemonte,2019,i1,0.393
-Puglia,2019,i1,-0.806
-Sardegna,2019,i1,0.043
-Sicilia,2019,i1,-1.224
-Toscana,2019,i1,0.237
-Trentino-Alto Adige,2019,i1,1.012
-Umbria,2019,i1,0.038
-Valle d'Aosta,2019,i1,0.11
-Veneto,2019,i1,0.605
-Abruzzo,2019,i10,0.519
-Basilicata,2019,i10,-0.132
-Calabria,2019,i10,-1.783
-Campania,2019,i10,-1.714
-Emilia-Romagna,2019,i10,0.561
-Friuli-Venezia Giulia,2019,i10,0.486
-Lazio,2019,i10,1.143
-Liguria,2019,i10,0.106
-Lombardia,2019,i10,0.855
-Marche,2019,i10,0.755
-Molise,2019,i10,-0.023
-Piemonte,2019,i10,0.438
-Puglia,2019,i10,-1.53
-Sardegna,2019,i10,-0.764
-Sicilia,2019,i10,-1.895
-Toscana,2019,i10,0.286
-Trentino-Alto Adige,2019,i10,0.828
-Umbria,2019,i10,1.04
-Valle d'Aosta,2019,i10,0.437
-Veneto,2019,i10,0.388
-Abruzzo,2019,i11,-1.161
-Basilicata,2019,i11,0.461
-Calabria,2019,i11,-0.926
-Campania,2019,i11,-0.972
-Emilia-Romagna,2019,i11,0.846
-Friuli-Venezia Giulia,2019,i11,1.42
-Lazio,2019,i11,1.262
-Liguria,2019,i11,0.513
-Lombardia,2019,i11,-0.459
-Marche,2019,i11,-0.688
-Molise,2019,i11,1.414
-Piemonte,2019,i11,-0.75
-Puglia,2019,i11,-1.71
-Sardegna,2019,i11,0.568
-Sicilia,2019,i11,-1.782
-Toscana,2019,i11,1.318
-Trentino-Alto Adige,2019,i11,0.62
-Umbria,2019,i11,0.411
-Valle d'Aosta,2019,i11,-0.288
-Veneto,2019,i11,-0.096
-Abruzzo,2019,i12,-0.261
-Basilicata,2019,i12,-0.364
-Calabria,2019,i12,-1.807
-Campania,2019,i12,-1.686
-Emilia-Romagna,2019,i12,0.949
-Friuli-Venezia Giulia,2019,i12,0.712
-Lazio,2019,i12,-0.026
-Liguria,2019,i12,0.427
-Lombardia,2019,i12,0.754
-Marche,2019,i12,0.465
-Molise,2019,i12,-0.716
-Piemonte,2019,i12,0.477
-Puglia,2019,i12,-0.706
-Sardegna,2019,i12,-0.787
-Sicilia,2019,i12,-1.689
-Toscana,2019,i12,0.631
-Trentino-Alto Adige,2019,i12,1.424
-Umbria,2019,i12,0.398
-Valle d'Aosta,2019,i12,0.788
-Veneto,2019,i12,1.017
-Abruzzo,2019,i13,-0.889
-Basilicata,2019,i13,-0.649
-Calabria,2019,i13,-1.023
-Campania,2019,i13,-0.958
-Emilia-Romagna,2019,i13,2.063
-Friuli-Venezia Giulia,2019,i13,0.569
-Lazio,2019,i13,-0.823
-Liguria,2019,i13,-0.136
-Lombardia,2019,i13,0.801
-Marche,2019,i13,-0.775
-Molise,2019,i13,1.213
-Piemonte,2019,i13,0.456
-Puglia,2019,i13,-0.604
-Sardegna,2019,i13,1.791
-Sicilia,2019,i13,-0.482
-Toscana,2019,i13,-0.303
-Trentino-Alto Adige,2019,i13,-1.034
-Umbria,2019,i13,-0.19
-Valle d'Aosta,2019,i13,-0.767
-Veneto,2019,i13,1.742
-Abruzzo,2019,i14,-0.776
-Basilicata,2019,i14,-0.271
-Calabria,2019,i14,-0.854
-Campania,2019,i14,-1.156
-Emilia-Romagna,2019,i14,0.842
-Friuli-Venezia Giulia,2019,i14,0.733
-Lazio,2019,i14,-0.021
-Liguria,2019,i14,-0.067
-Lombardia,2019,i14,0.446
-Marche,2019,i14,0.096
-Molise,2019,i14,0.234
-Piemonte,2019,i14,0.18
-Puglia,2019,i14,-0.872
-Sardegna,2019,i14,-0.769
-Sicilia,2019,i14,-1.166
-Toscana,2019,i14,0.774
-Trentino-Alto Adige,2019,i14,0.914
-Umbria,2019,i14,0.362
-Valle d'Aosta,2019,i14,0.517
-Veneto,2019,i14,0.855
-Abruzzo,2019,i15,-0.635
-Basilicata,2019,i15,-0.725
-Calabria,2019,i15,-0.624
-Campania,2019,i15,-0.741
-Emilia-Romagna,2019,i15,1.062
-Friuli-Venezia Giulia,2019,i15,1.552
-Lazio,2019,i15,-0.132
-Liguria,2019,i15,-0.596
-Lombardia,2019,i15,0.095
-Marche,2019,i15,-0.167
-Molise,2019,i15,-0.502
-Piemonte,2019,i15,0.566
-Puglia,2019,i15,-0.649
-Sardegna,2019,i15,-0.39
-Sicilia,2019,i15,-0.808
-Toscana,2019,i15,-0.182
-Trentino-Alto Adige,2019,i15,2.3
-Umbria,2019,i15,-0.243
-Valle d'Aosta,2019,i15,-0.649
-Veneto,2019,i15,1.47
-Abruzzo,2019,i2,-0.282
-Basilicata,2019,i2,-0.068
-Calabria,2019,i2,-0.902
-Campania,2019,i2,-0.906
-Emilia-Romagna,2019,i2,1.571
-Friuli-Venezia Giulia,2019,i2,-0.305
-Lazio,2019,i2,-0.111
-Liguria,2019,i2,0.078
-Lombardia,2019,i2,-0.048
-Marche,2019,i2,-0.318
-Molise,2019,i2,-0.497
-Piemonte,2019,i2,0.388
-Puglia,2019,i2,-0.162
-Sardegna,2019,i2,-0.036
-Sicilia,2019,i2,-0.161
-Toscana,2019,i2,-0.015
-Trentino-Alto Adige,2019,i2,0.258
-Umbria,2019,i2,0.421
-Valle d'Aosta,2019,i2,0.634
-Veneto,2019,i2,0.46
-Abruzzo,2019,i3,-0.537
-Basilicata,2019,i3,-0.337
-Calabria,2019,i3,-0.814
-Campania,2019,i3,-1.084
-Emilia-Romagna,2019,i3,0.538
-Friuli-Venezia Giulia,2019,i3,0.114
-Lazio,2019,i3,-0.643
-Liguria,2019,i3,1.116
-Lombardia,2019,i3,-0.37
-Marche,2019,i3,-0.032
-Molise,2019,i3,-0.192
-Piemonte,2019,i3,0.734
-Puglia,2019,i3,-0.67
-Sardegna,2019,i3,0.22
-Sicilia,2019,i3,-0.216
-Toscana,2019,i3,0.46
-Trentino-Alto Adige,2019,i3,0.055
-Umbria,2019,i3,0.689
-Valle d'Aosta,2019,i3,0.512
-Veneto,2019,i3,0.458
-Abruzzo,2019,i4,0.178
-Basilicata,2019,i4,-0.138
-Calabria,2019,i4,-0.137
-Campania,2019,i4,-0.384
-Emilia-Romagna,2019,i4,0.177
-Friuli-Venezia Giulia,2019,i4,0.6
-Lazio,2019,i4,0.371
-Liguria,2019,i4,0.228
-Lombardia,2019,i4,0.186
-Marche,2019,i4,-1.001
-Molise,2019,i4,0.573
-Piemonte,2019,i4,-0.366
-Puglia,2019,i4,0.01
-Sardegna,2019,i4,-0.424
-Sicilia,2019,i4,0.198
-Toscana,2019,i4,-0.156
-Trentino-Alto Adige,2019,i4,0.999
-Umbria,2019,i4,-0.769
-Valle d'Aosta,2019,i4,-0.479
-Veneto,2019,i4,0.334
-Abruzzo,2019,i5,-0.716
-Basilicata,2019,i5,-0.523
-Calabria,2019,i5,0.036
-Campania,2019,i5,-0.671
-Emilia-Romagna,2019,i5,0.351
-Friuli-Venezia Giulia,2019,i5,0.632
-Lazio,2019,i5,0.437
-Liguria,2019,i5,0.144
-Lombardia,2019,i5,0.208
-Marche,2019,i5,0.86
-Molise,2019,i5,-0.831
-Piemonte,2019,i5,0.219
-Puglia,2019,i5,-0.938
-Sardegna,2019,i5,-0.749
-Sicilia,2019,i5,-0.907
-Toscana,2019,i5,0.599
-Trentino-Alto Adige,2019,i5,0.811
-Umbria,2019,i5,-0.014
-Valle d'Aosta,2019,i5,0.808
-Veneto,2019,i5,0.245
-Abruzzo,2019,i6,0.052
-Basilicata,2019,i6,-0.23
-Calabria,2019,i6,-1.215
-Campania,2019,i6,-0.997
-Emilia-Romagna,2019,i6,0.024
-Friuli-Venezia Giulia,2019,i6,-0.171
-Lazio,2019,i6,-0.499
-Liguria,2019,i6,1.361
-Lombardia,2019,i6,-0.043
-Marche,2019,i6,0.832
-Molise,2019,i6,0.182
-Piemonte,2019,i6,0.199
-Puglia,2019,i6,-0.298
-Sardegna,2019,i6,-0.382
-Sicilia,2019,i6,-0.887
-Toscana,2019,i6,0.341
-Trentino-Alto Adige,2019,i6,0.069
-Umbria,2019,i6,0.505
-Valle d'Aosta,2019,i6,0.822
-Veneto,2019,i6,0.336
-Abruzzo,2019,i7,0.68
-Basilicata,2019,i7,-0.336
-Calabria,2019,i7,-0.023
-Campania,2019,i7,-0.769
-Emilia-Romagna,2019,i7,0.353
-Friuli-Venezia Giulia,2019,i7,-0.925
-Lazio,2019,i7,0.384
-Liguria,2019,i7,-0.175
-Lombardia,2019,i7,-0.823
-Marche,2019,i7,-0.486
-Molise,2019,i7,-0.386
-Piemonte,2019,i7,-0.929
-Puglia,2019,i7,0.09
-Sardegna,2019,i7,1.298
-Sicilia,2019,i7,0.328
-Toscana,2019,i7,1.01
-Trentino-Alto Adige,2019,i7,-0.344
-Umbria,2019,i7,0.353
-Valle d'Aosta,2019,i7,1.265
-Veneto,2019,i7,-0.567
-Abruzzo,2019,i8,-0.345
-Basilicata,2019,i8,-0.335
-Calabria,2019,i8,-0.454
-Campania,2019,i8,-1.245
-Emilia-Romagna,2019,i8,0.087
-Friuli-Venezia Giulia,2019,i8,0.619
-Lazio,2019,i8,-0.56
-Liguria,2019,i8,0.324
-Lombardia,2019,i8,0.101
-Marche,2019,i8,-0.039
-Molise,2019,i8,-0.37
-Piemonte,2019,i8,0.171
-Puglia,2019,i8,-1.286
-Sardegna,2019,i8,0.243
-Sicilia,2019,i8,-0.615
-Toscana,2019,i8,0.013
-Trentino-Alto Adige,2019,i8,1.339
-Umbria,2019,i8,0.073
-Valle d'Aosta,2019,i8,0.212
-Veneto,2019,i8,-0.003
-Abruzzo,2019,i9,-0.177
-Basilicata,2019,i9,-0.876
-Calabria,2019,i9,-0.42
-Campania,2019,i9,0.029
-Emilia-Romagna,2019,i9,0.968
-Friuli-Venezia Giulia,2019,i9,0.308
-Lazio,2019,i9,-0.971
-Liguria,2019,i9,0.015
-Lombardia,2019,i9,-0.352
-Marche,2019,i9,1.047
-Molise,2019,i9,-0.6
-Piemonte,2019,i9,-0.994
-Puglia,2019,i9,-0.676
-Sardegna,2019,i9,0.45
-Sicilia,2019,i9,0.168
-Toscana,2019,i9,0.178
-Trentino-Alto Adige,2019,i9,0.182
-Umbria,2019,i9,0.696
-Valle d'Aosta,2019,i9,0.83
-Veneto,2019,i9,0.195
-Abruzzo,2020,i1,-0.194
-Basilicata,2020,i1,0.331
-Calabria,2020,i1,-0.26
-Campania,2020,i1,-1.821
-Emilia-Romagna,2020,i1,0.464
-Friuli-Venezia Giulia,2020,i1,0.477
-Lazio,2020,i1,-0.442
-Liguria,2020,i1,0.276
-Lombardia,2020,i1,0.512
-Marche,2020,i1,0.097
-Molise,2020,i1,-0.154
-Piemonte,2020,i1,0.123
-Puglia,2020,i1,-0.792
-Sardegna,2020,i1,0.359
-Sicilia,2020,i1,-1.235
-Toscana,2020,i1,0.259
-Trentino-Alto Adige,2020,i1,0.807
-Umbria,2020,i1,0.198
-Valle d'Aosta,2020,i1,0.468
-Veneto,2020,i1,0.526
-Abruzzo,2020,i10,-0.016
-Basilicata,2020,i10,-0.542
-Calabria,2020,i10,-1.993
-Campania,2020,i10,-1.743
-Emilia-Romagna,2020,i10,0.692
-Friuli-Venezia Giulia,2020,i10,0.792
-Lazio,2020,i10,0.751
-Liguria,2020,i10,0.81
-Lombardia,2020,i10,0.715
-Marche,2020,i10,0.051
-Molise,2020,i10,-0.123
-Piemonte,2020,i10,0.718
-Puglia,2020,i10,-1.295
-Sardegna,2020,i10,-0.717
-Sicilia,2020,i10,-1.483
-Toscana,2020,i10,0.194
-Trentino-Alto Adige,2020,i10,1.112
-Umbria,2020,i10,0.508
-Valle d'Aosta,2020,i10,1.036
-Veneto,2020,i10,0.532
-Abruzzo,2020,i11,0.155
-Basilicata,2020,i11,0.936
-Calabria,2020,i11,-1.461
-Campania,2020,i11,-1.29
-Emilia-Romagna,2020,i11,0.395
-Friuli-Venezia Giulia,2020,i11,1.126
-Lazio,2020,i11,0.124
-Liguria,2020,i11,0.273
-Lombardia,2020,i11,-0.604
-Marche,2020,i11,0.671
-Molise,2020,i11,1.621
-Piemonte,2020,i11,-0.353
-Puglia,2020,i11,-1.752
-Sardegna,2020,i11,0.115
-Sicilia,2020,i11,-1.87
-Toscana,2020,i11,1.397
-Trentino-Alto Adige,2020,i11,1.084
-Umbria,2020,i11,0.304
-Valle d'Aosta,2020,i11,-0.579
-Veneto,2020,i11,-0.294
-Abruzzo,2020,i12,-0.273
-Basilicata,2020,i12,-0.65
-Calabria,2020,i12,-1.555
-Campania,2020,i12,-1.636
-Emilia-Romagna,2020,i12,0.981
-Friuli-Venezia Giulia,2020,i12,0.831
-Lazio,2020,i12,-0.233
-Liguria,2020,i12,0.332
-Lombardia,2020,i12,0.735
-Marche,2020,i12,0.554
-Molise,2020,i12,-0.518
-Piemonte,2020,i12,0.405
-Puglia,2020,i12,-0.702
-Sardegna,2020,i12,-0.681
-Sicilia,2020,i12,-1.895
-Toscana,2020,i12,0.733
-Trentino-Alto Adige,2020,i12,1.438
-Umbria,2020,i12,0.241
-Valle d'Aosta,2020,i12,0.928
-Veneto,2020,i12,0.964
-Abruzzo,2020,i13,-0.568
-Basilicata,2020,i13,-0.727
-Calabria,2020,i13,-0.885
-Campania,2020,i13,-0.807
-Emilia-Romagna,2020,i13,2.148
-Friuli-Venezia Giulia,2020,i13,0.036
-Lazio,2020,i13,-0.559
-Liguria,2020,i13,0.086
-Lombardia,2020,i13,0.309
-Marche,2020,i13,-0.762
-Molise,2020,i13,-0.292
-Piemonte,2020,i13,2.445
-Puglia,2020,i13,-0.54
-Sardegna,2020,i13,1.224
-Sicilia,2020,i13,-0.459
-Toscana,2020,i13,-0.261
-Trentino-Alto Adige,2020,i13,-0.799
-Umbria,2020,i13,-0.438
-Valle d'Aosta,2020,i13,-0.756
-Veneto,2020,i13,1.604
-Abruzzo,2020,i14,-0.065
-Basilicata,2020,i14,-0.485
-Calabria,2020,i14,-0.972
-Campania,2020,i14,-1.532
-Emilia-Romagna,2020,i14,0.786
-Friuli-Venezia Giulia,2020,i14,0.607
-Lazio,2020,i14,-0.251
-Liguria,2020,i14,0.46
-Lombardia,2020,i14,0.766
-Marche,2020,i14,0.087
-Molise,2020,i14,-0.349
-Piemonte,2020,i14,0.49
-Puglia,2020,i14,-0.523
-Sardegna,2020,i14,-1.079
-Sicilia,2020,i14,-1.194
-Toscana,2020,i14,0.515
-Trentino-Alto Adige,2020,i14,0.381
-Umbria,2020,i14,-0.042
-Valle d'Aosta,2020,i14,0.846
-Veneto,2020,i14,0.952
-Abruzzo,2020,i15,-0.91
-Basilicata,2020,i15,-0.835
-Calabria,2020,i15,-0.771
-Campania,2020,i15,-0.91
-Emilia-Romagna,2020,i15,1.146
-Friuli-Venezia Giulia,2020,i15,1.561
-Lazio,2020,i15,-0.202
-Liguria,2020,i15,-0.448
-Lombardia,2020,i15,0.194
-Marche,2020,i15,0.249
-Molise,2020,i15,-0.298
-Piemonte,2020,i15,0.22
-Puglia,2020,i15,-0.609
-Sardegna,2020,i15,0.253
-Sicilia,2020,i15,-0.927
-Toscana,2020,i15,0.122
-Trentino-Alto Adige,2020,i15,2.491
-Umbria,2020,i15,-0.217
-Valle d'Aosta,2020,i15,-0.836
-Veneto,2020,i15,0.729
-Abruzzo,2020,i2,-0.221
-Basilicata,2020,i2,-0.164
-Calabria,2020,i2,-0.743
-Campania,2020,i2,-0.843
-Emilia-Romagna,2020,i2,1.694
-Friuli-Venezia Giulia,2020,i2,-0.27
-Lazio,2020,i2,-0.162
-Liguria,2020,i2,0.312
-Lombardia,2020,i2,-0.046
-Marche,2020,i2,-0.64
-Molise,2020,i2,-0.543
-Piemonte,2020,i2,0.256
-Puglia,2020,i2,-0.248
-Sardegna,2020,i2,0.002
-Sicilia,2020,i2,-0.258
-Toscana,2020,i2,0.114
-Trentino-Alto Adige,2020,i2,0.146
-Umbria,2020,i2,0.575
-Valle d'Aosta,2020,i2,0.634
-Veneto,2020,i2,0.668
-Abruzzo,2020,i3,-0.56
-Basilicata,2020,i3,-0.251
-Calabria,2020,i3,-0.809
-Campania,2020,i3,-1.077
-Emilia-Romagna,2020,i3,0.392
-Friuli-Venezia Giulia,2020,i3,0.013
-Lazio,2020,i3,-0.742
-Liguria,2020,i3,1.141
-Lombardia,2020,i3,-0.269
-Marche,2020,i3,0.071
-Molise,2020,i3,-0.211
-Piemonte,2020,i3,0.83
-Puglia,2020,i3,-0.663
-Sardegna,2020,i3,0.323
-Sicilia,2020,i3,-0.276
-Toscana,2020,i3,0.324
-Trentino-Alto Adige,2020,i3,0.044
-Umbria,2020,i3,0.612
-Valle d'Aosta,2020,i3,0.694
-Veneto,2020,i3,0.414
-Abruzzo,2020,i4,0.121
-Basilicata,2020,i4,-0.333
-Calabria,2020,i4,-0.199
-Campania,2020,i4,-0.257
-Emilia-Romagna,2020,i4,-0.015
-Friuli-Venezia Giulia,2020,i4,0.323
-Lazio,2020,i4,0.275
-Liguria,2020,i4,0.528
-Lombardia,2020,i4,0.509
-Marche,2020,i4,-0.647
-Molise,2020,i4,0.617
-Piemonte,2020,i4,-0.545
-Puglia,2020,i4,0.087
-Sardegna,2020,i4,-0.243
-Sicilia,2020,i4,0.206
-Toscana,2020,i4,-0.246
-Trentino-Alto Adige,2020,i4,0.686
-Umbria,2020,i4,-0.594
-Valle d'Aosta,2020,i4,-0.683
-Veneto,2020,i4,0.41
-Abruzzo,2020,i5,-0.68
-Basilicata,2020,i5,-0.554
-Calabria,2020,i5,-0.12
-Campania,2020,i5,-0.58
-Emilia-Romagna,2020,i5,0.459
-Friuli-Venezia Giulia,2020,i5,0.6
-Lazio,2020,i5,0.527
-Liguria,2020,i5,0.092
-Lombardia,2020,i5,0.085
-Marche,2020,i5,0.672
-Molise,2020,i5,-0.812
-Piemonte,2020,i5,0.32
-Puglia,2020,i5,-0.937
-Sardegna,2020,i5,-0.72
-Sicilia,2020,i5,-0.986
-Toscana,2020,i5,0.48
-Trentino-Alto Adige,2020,i5,0.928
-Umbria,2020,i5,0.276
-Valle d'Aosta,2020,i5,0.754
-Veneto,2020,i5,0.194
-Abruzzo,2020,i6,-0.154
-Basilicata,2020,i6,-0.617
-Calabria,2020,i6,-0.981
-Campania,2020,i6,-1.147
-Emilia-Romagna,2020,i6,0.113
-Friuli-Venezia Giulia,2020,i6,-0.229
-Lazio,2020,i6,-0.514
-Liguria,2020,i6,1.287
-Lombardia,2020,i6,-0.027
-Marche,2020,i6,0.913
-Molise,2020,i6,-0.064
-Piemonte,2020,i6,0.42
-Puglia,2020,i6,-0.202
-Sardegna,2020,i6,-0.403
-Sicilia,2020,i6,-0.853
-Toscana,2020,i6,0.702
-Trentino-Alto Adige,2020,i6,0.082
-Umbria,2020,i6,0.476
-Valle d'Aosta,2020,i6,0.62
-Veneto,2020,i6,0.577
-Abruzzo,2020,i7,0.287
-Basilicata,2020,i7,-0.133
-Calabria,2020,i7,-0.091
-Campania,2020,i7,-0.706
-Emilia-Romagna,2020,i7,0.386
-Friuli-Venezia Giulia,2020,i7,-0.932
-Lazio,2020,i7,0.256
-Liguria,2020,i7,0.115
-Lombardia,2020,i7,-0.833
-Marche,2020,i7,-0.484
-Molise,2020,i7,-0.093
-Piemonte,2020,i7,-0.995
-Puglia,2020,i7,0.342
-Sardegna,2020,i7,1.219
-Sicilia,2020,i7,0.259
-Toscana,2020,i7,1.131
-Trentino-Alto Adige,2020,i7,-0.4
-Umbria,2020,i7,-0.025
-Valle d'Aosta,2020,i7,1.217
-Veneto,2020,i7,-0.521
-Abruzzo,2020,i8,-0.242
-Basilicata,2020,i8,-0.514
-Calabria,2020,i8,-0.486
-Campania,2020,i8,-1.066
-Emilia-Romagna,2020,i8,0.224
-Friuli-Venezia Giulia,2020,i8,0.678
-Lazio,2020,i8,-0.591
-Liguria,2020,i8,0.35
-Lombardia,2020,i8,0.249
-Marche,2020,i8,0.139
-Molise,2020,i8,-0.546
-Piemonte,2020,i8,0.256
-Puglia,2020,i8,-0.673
-Sardegna,2020,i8,0.341
-Sicilia,2020,i8,-0.297
-Toscana,2020,i8,0.265
-Trentino-Alto Adige,2020,i8,1.248
-Umbria,2020,i8,0.202
-Valle d'Aosta,2020,i8,0.203
-Veneto,2020,i8,0.26
-Abruzzo,2020,i9,0.003
-Basilicata,2020,i9,-0.659
-Calabria,2020,i9,-0.717
-Campania,2020,i9,-0.304
-Emilia-Romagna,2020,i9,0.748
-Friuli-Venezia Giulia,2020,i9,0.41
-Lazio,2020,i9,-0.971
-Liguria,2020,i9,0.258
-Lombardia,2020,i9,-0.137
-Marche,2020,i9,-0.003
-Molise,2020,i9,-0.41
-Piemonte,2020,i9,-0.717
-Puglia,2020,i9,-0.557
-Sardegna,2020,i9,0.441
-Sicilia,2020,i9,0.198
-Toscana,2020,i9,0.223
-Trentino-Alto Adige,2020,i9,0.121
-Umbria,2020,i9,1.902
-Valle d'Aosta,2020,i9,0.264
-Veneto,2020,i9,-0.095
-Abruzzo,2021,i1,-0.226
-Basilicata,2021,i1,0.191
-Calabria,2021,i1,-0.554
-Campania,2021,i1,-1.669
-Emilia-Romagna,2021,i1,0.408
-Friuli-Venezia Giulia,2021,i1,0.365
-Lazio,2021,i1,-0.223
-Liguria,2021,i1,0.354
-Lombardia,2021,i1,0.533
-Marche,2021,i1,-0.138
-Molise,2021,i1,0.278
-Piemonte,2021,i1,0.191
-Puglia,2021,i1,-0.915
-Sardegna,2021,i1,0.143
-Sicilia,2021,i1,-1.068
-Toscana,2021,i1,0.171
-Trentino-Alto Adige,2021,i1,0.971
-Umbria,2021,i1,0.34
-Valle d'Aosta,2021,i1,0.402
-Veneto,2021,i1,0.445
-Abruzzo,2021,i10,-0.223
-Basilicata,2021,i10,-0.447
-Calabria,2021,i10,-0.459
-Campania,2021,i10,-1.22
-Emilia-Romagna,2021,i10,0.283
-Friuli-Venezia Giulia,2021,i10,0.608
-Lazio,2021,i10,-0.431
-Liguria,2021,i10,0.544
-Lombardia,2021,i10,0.161
-Marche,2021,i10,0.039
-Molise,2021,i10,-0.556
-Piemonte,2021,i10,0.494
-Puglia,2021,i10,-0.603
-Sardegna,2021,i10,0.291
-Sicilia,2021,i10,-0.232
-Toscana,2021,i10,0.113
-Trentino-Alto Adige,2021,i10,1.166
-Umbria,2021,i10,0.254
-Valle d'Aosta,2021,i10,0.08
-Veneto,2021,i10,0.136
-Abruzzo,2021,i11,-0.047
-Basilicata,2021,i11,-0.358
-Calabria,2021,i11,-1.042
-Campania,2021,i11,-1.299
-Emilia-Romagna,2021,i11,0.244
-Friuli-Venezia Giulia,2021,i11,2.302
-Lazio,2021,i11,0.424
-Liguria,2021,i11,-0.183
-Lombardia,2021,i11,-0.495
-Marche,2021,i11,0.679
-Molise,2021,i11,0.01
-Piemonte,2021,i11,0.504
-Puglia,2021,i11,-1.006
-Sardegna,2021,i11,-0.502
-Sicilia,2021,i11,-1.797
-Toscana,2021,i11,0.568
-Trentino-Alto Adige,2021,i11,1.443
-Umbria,2021,i11,1.249
-Valle d'Aosta,2021,i11,-1.312
-Veneto,2021,i11,0.618
-Abruzzo,2021,i12,-0.063
-Basilicata,2021,i12,-0.306
-Calabria,2021,i12,-1.464
-Campania,2021,i12,-1.726
-Emilia-Romagna,2021,i12,1.012
-Friuli-Venezia Giulia,2021,i12,0.791
-Lazio,2021,i12,-0.203
-Liguria,2021,i12,0.136
-Lombardia,2021,i12,0.713
-Marche,2021,i12,0.527
-Molise,2021,i12,-0.826
-Piemonte,2021,i12,0.416
-Puglia,2021,i12,-0.744
-Sardegna,2021,i12,-0.744
-Sicilia,2021,i12,-1.938
-Toscana,2021,i12,0.58
-Trentino-Alto Adige,2021,i12,1.359
-Umbria,2021,i12,0.378
-Valle d'Aosta,2021,i12,1.097
-Veneto,2021,i12,1.006
-Abruzzo,2021,i13,-0.701
-Basilicata,2021,i13,-0.801
-Calabria,2021,i13,-0.905
-Campania,2021,i13,-0.881
-Emilia-Romagna,2021,i13,1.195
-Friuli-Venezia Giulia,2021,i13,0.35
-Lazio,2021,i13,-0.675
-Liguria,2021,i13,0.014
-Lombardia,2021,i13,0.314
-Marche,2021,i13,-0.728
-Molise,2021,i13,-0.638
-Piemonte,2021,i13,2.584
-Puglia,2021,i13,-0.03
-Sardegna,2021,i13,0.046
-Sicilia,2021,i13,-0.544
-Toscana,2021,i13,0.115
-Trentino-Alto Adige,2021,i13,-0.384
-Umbria,2021,i13,-0.712
-Valle d'Aosta,2021,i13,0.0
-Veneto,2021,i13,2.382
-Abruzzo,2021,i14,-0.929
-Basilicata,2021,i14,0.195
-Calabria,2021,i14,-0.09
-Campania,2021,i14,-1.813
-Emilia-Romagna,2021,i14,0.485
-Friuli-Venezia Giulia,2021,i14,0.728
-Lazio,2021,i14,-0.044
-Liguria,2021,i14,0.305
-Lombardia,2021,i14,0.228
-Marche,2021,i14,0.163
-Molise,2021,i14,-0.601
-Piemonte,2021,i14,0.326
-Puglia,2021,i14,-0.483
-Sardegna,2021,i14,0.156
-Sicilia,2021,i14,-1.316
-Toscana,2021,i14,0.533
-Trentino-Alto Adige,2021,i14,0.542
-Umbria,2021,i14,0.507
-Valle d'Aosta,2021,i14,0.479
-Veneto,2021,i14,0.631
-Abruzzo,2021,i15,-0.653
-Basilicata,2021,i15,-0.662
-Calabria,2021,i15,-0.669
-Campania,2021,i15,-0.685
-Emilia-Romagna,2021,i15,1.03
-Friuli-Venezia Giulia,2021,i15,1.507
-Lazio,2021,i15,-0.431
-Liguria,2021,i15,-0.39
-Lombardia,2021,i15,0.415
-Marche,2021,i15,-0.102
-Molise,2021,i15,-0.421
-Piemonte,2021,i15,0.281
-Puglia,2021,i15,-0.508
-Sardegna,2021,i15,-0.362
-Sicilia,2021,i15,-0.621
-Toscana,2021,i15,-0.177
-Trentino-Alto Adige,2021,i15,3.104
-Umbria,2021,i15,-0.29
-Valle d'Aosta,2021,i15,-0.555
-Veneto,2021,i15,0.192
-Abruzzo,2021,i2,-0.232
-Basilicata,2021,i2,0.176
-Calabria,2021,i2,-0.848
-Campania,2021,i2,-0.765
-Emilia-Romagna,2021,i2,1.771
-Friuli-Venezia Giulia,2021,i2,-0.371
-Lazio,2021,i2,-0.223
-Liguria,2021,i2,0.033
-Lombardia,2021,i2,0.067
-Marche,2021,i2,-0.506
-Molise,2021,i2,-0.419
-Piemonte,2021,i2,0.154
-Puglia,2021,i2,-0.053
-Sardegna,2021,i2,0.514
-Sicilia,2021,i2,-0.274
-Toscana,2021,i2,-0.072
-Trentino-Alto Adige,2021,i2,-0.006
-Umbria,2021,i2,0.131
-Valle d'Aosta,2021,i2,0.529
-Veneto,2021,i2,0.394
-Abruzzo,2021,i3,-0.389
-Basilicata,2021,i3,-0.251
-Calabria,2021,i3,-0.662
-Campania,2021,i3,-0.685
-Emilia-Romagna,2021,i3,1.03
-Friuli-Venezia Giulia,2021,i3,0.013
-Lazio,2021,i3,-0.827
-Liguria,2021,i3,0.141
-Lombardia,2021,i3,-0.411
-Marche,2021,i3,-0.102
-Molise,2021,i3,-0.421
-Piemonte,2021,i3,0.281
-Puglia,2021,i3,-0.326
-Sardegna,2021,i3,0.323
-Sicilia,2021,i3,-0.172
-Toscana,2021,i3,0.223
-Trentino-Alto Adige,2021,i3,-0.15
-Umbria,2021,i3,0.127
-Valle d'Aosta,2021,i3,0.694
-Veneto,2021,i3,0.414
-Abruzzo,2021,i4,-0.063
-Basilicata,2021,i4,-0.306
-Calabria,2021,i4,-1.464
-Campania,2021,i4,-1.726
-Emilia-Romagna,2021,i4,1.03
-Friuli-Venezia Giulia,2021,i4,0.791
-Lazio,2021,i4,-0.203
-Liguria,2021,i4,0.136
-Lombardia,2021,i4,0.713
-Marche,2021,i4,0.527
-Molise,2021,i4,-0.826
-Piemonte,2021,i4,0.416
-Puglia,2021,i4,-0.744
-Sardegna,2021,i4,-0.744
-Sicilia,2021,i4,-1.938
-Toscana,2021,i4,0.58
-Trentino-Alto Adige,2021,i4,1.359
-Umbria,2021,i4,0.378
-Valle d'Aosta,2021,i4,0.831
-Veneto,2021,i4,1.006
-Abruzzo,2021,i5,-0.645
-Basilicata,2021,i5,-1.013
-Calabria,2021,i5,0.191
-Campania,2021,i5,-0.569
-Emilia-Romagna,2021,i5,0.527
-Friuli-Venezia Giulia,2021,i5,0.593
-Lazio,2021,i5,0.624
-Liguria,2021,i5,0.138
-Lombardia,2021,i5,0.179
-Marche,2021,i5,0.628
-Molise,2021,i5,-0.7
-Piemonte,2021,i5,0.295
-Puglia,2021,i5,-1.055
-Sardegna,2021,i5,-0.733
-Sicilia,2021,i5,-0.854
-Toscana,2021,i5,0.608
-Trentino-Alto Adige,2021,i5,0.887
-Umbria,2021,i5,0.132
-Valle d'Aosta,2021,i5,0.512
-Veneto,2021,i5,0.254
-Abruzzo,2021,i6,-0.029
-Basilicata,2021,i6,-0.398
-Calabria,2021,i6,-0.877
-Campania,2021,i6,-1.19
-Emilia-Romagna,2021,i6,-0.004
-Friuli-Venezia Giulia,2021,i6,-0.263
-Lazio,2021,i6,-0.499
-Liguria,2021,i6,1.11
-Lombardia,2021,i6,-0.065
-Marche,2021,i6,0.753
-Molise,2021,i6,0.117
-Piemonte,2021,i6,0.389
-Puglia,2021,i6,-0.386
-Sardegna,2021,i6,-0.405
-Sicilia,2021,i6,-0.74
-Toscana,2021,i6,0.591
-Trentino-Alto Adige,2021,i6,0.007
-Umbria,2021,i6,0.564
-Valle d'Aosta,2021,i6,0.831
-Veneto,2021,i6,0.494
-Abruzzo,2021,i7,-0.645
-Basilicata,2021,i7,-1.013
-Calabria,2021,i7,0.191
-Campania,2021,i7,-0.569
-Emilia-Romagna,2021,i7,0.527
-Friuli-Venezia Giulia,2021,i7,0.593
-Lazio,2021,i7,0.624
-Liguria,2021,i7,0.138
-Lombardia,2021,i7,0.179
-Marche,2021,i7,0.628
-Molise,2021,i7,-0.7
-Piemonte,2021,i7,0.295
-Puglia,2021,i7,-1.055
-Sardegna,2021,i7,-0.733
-Sicilia,2021,i7,-0.854
-Toscana,2021,i7,0.608
-Trentino-Alto Adige,2021,i7,0.887
-Umbria,2021,i7,0.132
-Valle d'Aosta,2021,i7,0.512
-Veneto,2021,i7,0.254
-Abruzzo,2021,i8,-0.223
-Basilicata,2021,i8,-0.447
-Calabria,2021,i8,-0.459
-Campania,2021,i8,-1.22
-Emilia-Romagna,2021,i8,0.283
-Friuli-Venezia Giulia,2021,i8,0.608
-Lazio,2021,i8,-0.431
-Liguria,2021,i8,0.544
-Lombardia,2021,i8,0.161
-Marche,2021,i8,0.039
-Molise,2021,i8,-0.556
-Piemonte,2021,i8,0.494
-Puglia,2021,i8,-0.603
-Sardegna,2021,i8,0.291
-Sicilia,2021,i8,-0.232
-Toscana,2021,i8,0.113
-Trentino-Alto Adige,2021,i8,1.166
-Umbria,2021,i8,0.254
-Valle d'Aosta,2021,i8,0.08
-Veneto,2021,i8,0.136
-Abruzzo,2021,i9,0.138
-Basilicata,2021,i9,-1.013
-Calabria,2021,i9,-0.645
-Campania,2021,i9,-0.733
-Emilia-Romagna,2021,i9,0.628
-Friuli-Venezia Giulia,2021,i9,0.624
-Lazio,2021,i9,-1.055
-Liguria,2021,i9,0.512
-Lombardia,2021,i9,0.179
-Marche,2021,i9,0.593
-Molise,2021,i9,0.254
-Piemonte,2021,i9,-0.7
-Puglia,2021,i9,0.132
-Sardegna,2021,i9,0.527
-Sicilia,2021,i9,-0.854
-Toscana,2021,i9,0.191
-Trentino-Alto Adige,2021,i9,-0.569
-Umbria,2021,i9,0.887
-Valle d'Aosta,2021,i9,0.608
-Veneto,2021,i9,0.295
-Abruzzo,2022,i1,-0.313
-Basilicata,2022,i1,0.292
-Calabria,2022,i1,-0.268
-Campania,2022,i1,-1.675
-Emilia-Romagna,2022,i1,0.39
-Friuli-Venezia Giulia,2022,i1,0.53
-Lazio,2022,i1,-0.198
-Liguria,2022,i1,0.489
-Lombardia,2022,i1,0.561
-Marche,2022,i1,0.039
-Molise,2022,i1,-0.02
-Piemonte,2022,i1,0.154
-Puglia,2022,i1,-0.895
-Sardegna,2022,i1,-0.027
-Sicilia,2022,i1,-1.277
-Toscana,2022,i1,0.255
-Trentino-Alto Adige,2022,i1,0.918
-Umbria,2022,i1,0.148
-Valle d'Aosta,2022,i1,0.307
-Veneto,2022,i1,0.591
-Abruzzo,2022,i10,0.538
-Basilicata,2022,i10,-0.471
-Calabria,2022,i10,-1.603
-Campania,2022,i10,-1.536
-Emilia-Romagna,2022,i10,0.858
-Friuli-Venezia Giulia,2022,i10,1.012
-Lazio,2022,i10,1.255
-Liguria,2022,i10,0.684
-Lombardia,2022,i10,0.682
-Marche,2022,i10,0.711
-Molise,2022,i10,-0.255
-Piemonte,2022,i10,0.043
-Puglia,2022,i10,-1.633
-Sardegna,2022,i10,-0.545
-Sicilia,2022,i10,-1.734
-Toscana,2022,i10,0.321
-Trentino-Alto Adige,2022,i10,0.947
-Umbria,2022,i10,0.794
-Valle d'Aosta,2022,i10,0.558
-Veneto,2022,i10,0.353
-Abruzzo,2022,i11,1.294
-Basilicata,2022,i11,1.274
-Calabria,2022,i11,-1.446
-Campania,2022,i11,-0.998
-Emilia-Romagna,2022,i11,0.25
-Friuli-Venezia Giulia,2022,i11,0.489
-Lazio,2022,i11,0.716
-Liguria,2022,i11,0.82
-Lombardia,2022,i11,-1.114
-Marche,2022,i11,-0.467
-Molise,2022,i11,0.715
-Piemonte,2022,i11,-0.569
-Puglia,2022,i11,-0.642
-Sardegna,2022,i11,0.56
-Sicilia,2022,i11,-2.171
-Toscana,2022,i11,1.257
-Trentino-Alto Adige,2022,i11,0.099
-Umbria,2022,i11,0.873
-Valle d'Aosta,2022,i11,-1.365
-Veneto,2022,i11,0.425
-Abruzzo,2022,i12,-0.049
-Basilicata,2022,i12,-0.217
-Calabria,2022,i12,-1.581
-Campania,2022,i12,-1.658
-Emilia-Romagna,2022,i12,0.867
-Friuli-Venezia Giulia,2022,i12,0.678
-Lazio,2022,i12,-0.212
-Liguria,2022,i12,0.328
-Lombardia,2022,i12,0.762
-Marche,2022,i12,0.536
-Molise,2022,i12,-0.607
-Piemonte,2022,i12,0.298
-Puglia,2022,i12,-0.83
-Sardegna,2022,i12,-0.829
-Sicilia,2022,i12,-1.963
-Toscana,2022,i12,0.525
-Trentino-Alto Adige,2022,i12,1.31
-Umbria,2022,i12,0.446
-Valle d'Aosta,2022,i12,1.11
-Veneto,2022,i12,1.086
-Abruzzo,2022,i13,-0.701
-Basilicata,2022,i13,-0.801
-Calabria,2022,i13,-0.905
-Campania,2022,i13,-0.881
-Emilia-Romagna,2022,i13,1.195
-Friuli-Venezia Giulia,2022,i13,0.35
-Lazio,2022,i13,-0.675
-Liguria,2022,i13,0.014
-Lombardia,2022,i13,0.314
-Marche,2022,i13,-0.728
-Molise,2022,i13,-0.638
-Piemonte,2022,i13,2.584
-Puglia,2022,i13,-0.03
-Sardegna,2022,i13,0.046
-Sicilia,2022,i13,-0.544
-Toscana,2022,i13,0.115
-Trentino-Alto Adige,2022,i13,-0.384
-Umbria,2022,i13,-0.712
-Valle d'Aosta,2022,i13,0.0
-Veneto,2022,i13,2.382
-Abruzzo,2022,i14,-0.859
-Basilicata,2022,i14,-0.034
-Calabria,2022,i14,-0.057
-Campania,2022,i14,-1.821
-Emilia-Romagna,2022,i14,0.451
-Friuli-Venezia Giulia,2022,i14,0.681
-Lazio,2022,i14,-0.006
-Liguria,2022,i14,0.354
-Lombardia,2022,i14,0.202
-Marche,2022,i14,0.155
-Molise,2022,i14,-0.684
-Piemonte,2022,i14,0.353
-Puglia,2022,i14,-0.413
-Sardegna,2022,i14,0.108
-Sicilia,2022,i14,-1.177
-Toscana,2022,i14,0.523
-Trentino-Alto Adige,2022,i14,0.55
-Umbria,2022,i14,0.519
-Valle d'Aosta,2022,i14,0.443
-Veneto,2022,i14,0.713
-Abruzzo,2022,i15,-0.653
-Basilicata,2022,i15,-0.662
-Calabria,2022,i15,-0.669
-Campania,2022,i15,-0.685
-Emilia-Romagna,2022,i15,1.03
-Friuli-Venezia Giulia,2022,i15,1.507
-Lazio,2022,i15,-0.431
-Liguria,2022,i15,-0.39
-Lombardia,2022,i15,0.415
-Marche,2022,i15,-0.102
-Molise,2022,i15,-0.421
-Piemonte,2022,i15,0.281
-Puglia,2022,i15,-0.508
-Sardegna,2022,i15,-0.362
-Sicilia,2022,i15,-0.621
-Toscana,2022,i15,-0.177
-Trentino-Alto Adige,2022,i15,3.104
-Umbria,2022,i15,-0.29
-Valle d'Aosta,2022,i15,-0.555
-Veneto,2022,i15,0.192
-Abruzzo,2022,i2,-0.232
-Basilicata,2022,i2,0.176
-Calabria,2022,i2,-0.848
-Campania,2022,i2,-0.765
-Emilia-Romagna,2022,i2,1.771
-Friuli-Venezia Giulia,2022,i2,-0.371
-Lazio,2022,i2,-0.223
-Liguria,2022,i2,0.033
-Lombardia,2022,i2,0.067
-Marche,2022,i2,-0.506
-Molise,2022,i2,-0.419
-Piemonte,2022,i2,0.154
-Puglia,2022,i2,-0.053
-Sardegna,2022,i2,0.514
-Sicilia,2022,i2,-0.274
-Toscana,2022,i2,-0.072
-Trentino-Alto Adige,2022,i2,-0.006
-Umbria,2022,i2,0.131
-Valle d'Aosta,2022,i2,0.529
-Veneto,2022,i2,0.394
-Abruzzo,2022,i3,-0.389
-Basilicata,2022,i3,0.051
-Calabria,2022,i3,-0.624
-Campania,2022,i3,-0.766
-Emilia-Romagna,2022,i3,0.837
-Friuli-Venezia Giulia,2022,i3,0.005
-Lazio,2022,i3,-0.827
-Liguria,2022,i3,0.972
-Lombardia,2022,i3,-0.411
-Marche,2022,i3,-0.126
-Molise,2022,i3,0.127
-Piemonte,2022,i3,0.674
-Puglia,2022,i3,-0.326
-Sardegna,2022,i3,0.232
-Sicilia,2022,i3,-0.172
-Toscana,2022,i3,0.223
-Trentino-Alto Adige,2022,i3,-0.15
-Umbria,2022,i3,0.481
-Valle d'Aosta,2022,i3,0.425
-Veneto,2022,i3,0.221
-Abruzzo,2022,i4,-0.017
-Basilicata,2022,i4,-0.046
-Calabria,2022,i4,-0.164
-Campania,2022,i4,-0.194
-Emilia-Romagna,2022,i4,-0.04
-Friuli-Venezia Giulia,2022,i4,0.487
-Lazio,2022,i4,0.457
-Liguria,2022,i4,0.292
-Lombardia,2022,i4,0.161
-Marche,2022,i4,-0.656
-Molise,2022,i4,0.039
-Piemonte,2022,i4,-0.523
-Puglia,2022,i4,0.1
-Sardegna,2022,i4,-0.339
-Sicilia,2022,i4,0.333
-Toscana,2022,i4,-0.246
-Trentino-Alto Adige,2022,i4,0.913
-Umbria,2022,i4,-0.424
-Valle d'Aosta,2022,i4,-0.674
-Veneto,2022,i4,0.54
-Abruzzo,2022,i5,-0.525
-Basilicata,2022,i5,-0.669
-Calabria,2022,i5,-0.139
-Campania,2022,i5,-0.563
-Emilia-Romagna,2022,i5,0.391
-Friuli-Venezia Giulia,2022,i5,0.595
-Lazio,2022,i5,0.634
-Liguria,2022,i5,0.067
-Lombardia,2022,i5,0.202
-Marche,2022,i5,0.532
-Molise,2022,i5,-0.472
-Piemonte,2022,i5,0.151
-Puglia,2022,i5,-1.005
-Sardegna,2022,i5,-0.848
-Sicilia,2022,i5,-0.963
-Toscana,2022,i5,0.607
-Trentino-Alto Adige,2022,i5,0.663
-Umbria,2022,i5,-0.002
-Valle d'Aosta,2022,i5,0.931
-Veneto,2022,i5,0.411
-Abruzzo,2022,i6,-0.121
-Basilicata,2022,i6,-0.31
-Calabria,2022,i6,-1.257
-Campania,2022,i6,-1.195
-Emilia-Romagna,2022,i6,-0.015
-Friuli-Venezia Giulia,2022,i6,-0.236
-Lazio,2022,i6,-0.53
-Liguria,2022,i6,1.203
-Lombardia,2022,i6,-0.121
-Marche,2022,i6,0.728
-Molise,2022,i6,0.194
-Piemonte,2022,i6,0.352
-Puglia,2022,i6,-0.363
-Sardegna,2022,i6,-0.261
-Sicilia,2022,i6,-0.769
-Toscana,2022,i6,0.363
-Trentino-Alto Adige,2022,i6,0.083
-Umbria,2022,i6,0.467
-Valle d'Aosta,2022,i6,1.223
-Veneto,2022,i6,0.564
-Abruzzo,2022,i7,0.136
-Basilicata,2022,i7,-0.39
-Calabria,2022,i7,-0.19
-Campania,2022,i7,-0.719
-Emilia-Romagna,2022,i7,0.675
-Friuli-Venezia Giulia,2022,i7,-0.991
-Lazio,2022,i7,0.091
-Liguria,2022,i7,0.014
-Lombardia,2022,i7,-0.921
-Marche,2022,i7,-0.237
-Molise,2022,i7,-0.24
-Piemonte,2022,i7,-1.018
-Puglia,2022,i7,0.313
-Sardegna,2022,i7,1.112
-Sicilia,2022,i7,0.191
-Toscana,2022,i7,1.233
-Trentino-Alto Adige,2022,i7,-0.514
-Umbria,2022,i7,0.372
-Valle d'Aosta,2022,i7,1.552
-Veneto,2022,i7,-0.47
-Abruzzo,2022,i8,-0.132
-Basilicata,2022,i8,-0.271
-Calabria,2022,i8,-0.402
-Campania,2022,i8,-1.169
-Emilia-Romagna,2022,i8,0.264
-Friuli-Venezia Giulia,2022,i8,0.792
-Lazio,2022,i8,-0.66
-Liguria,2022,i8,0.474
-Lombardia,2022,i8,0.292
-Marche,2022,i8,-0.117
-Molise,2022,i8,-0.642
-Piemonte,2022,i8,0.472
-Puglia,2022,i8,-0.714
-Sardegna,2022,i8,0.151
-Sicilia,2022,i8,-0.578
-Toscana,2022,i8,0.175
-Trentino-Alto Adige,2022,i8,1.397
-Umbria,2022,i8,-0.162
-Valle d'Aosta,2022,i8,0.495
-Veneto,2022,i8,0.336
-Abruzzo,2022,i9,-0.113
-Basilicata,2022,i9,-0.551
-Calabria,2022,i9,-0.587
-Campania,2022,i9,-0.861
-Emilia-Romagna,2022,i9,1.107
-Friuli-Venezia Giulia,2022,i9,0.88
-Lazio,2022,i9,-1.032
-Liguria,2022,i9,-0.208
-Lombardia,2022,i9,-0.09
-Marche,2022,i9,0.716
-Molise,2022,i9,-0.056
-Piemonte,2022,i9,-0.746
-Puglia,2022,i9,-0.23
-Sardegna,2022,i9,0.482
-Sicilia,2022,i9,-0.943
-Toscana,2022,i9,0.045
-Trentino-Alto Adige,2022,i9,0.334
-Umbria,2022,i9,1.167
-Valle d'Aosta,2022,i9,0.603
-Veneto,2022,i9,0.083
-Abruzzo,2024,i1,-0.556
-Basilicata,2024,i1,0.022
-Calabria,2024,i1,-0.486
-Campania,2024,i1,-1.823
-Emilia-Romagna,2024,i1,0.394
-Friuli-Venezia Giulia,2024,i1,0.43
-Lazio,2024,i1,-0.224
-Liguria,2024,i1,0.415
-Lombardia,2024,i1,0.642
-Marche,2024,i1,0.044
-Molise,2024,i1,-0.238
-Piemonte,2024,i1,0.513
-Puglia,2024,i1,-0.845
-Sardegna,2024,i1,0.166
-Sicilia,2024,i1,-1.266
-Toscana,2024,i1,0.188
-Trentino-Alto Adige,2024,i1,0.895
-Umbria,2024,i1,0.273
-Valle d'Aosta,2024,i1,0.191
-Veneto,2024,i1,0.426
-Abruzzo,2024,i10,0.334
-Basilicata,2024,i10,-0.126
-Calabria,2024,i10,-1.724
-Campania,2024,i10,-1.572
-Emilia-Romagna,2024,i10,1.168
-Friuli-Venezia Giulia,2024,i10,0.965
-Lazio,2024,i10,1.01
-Liguria,2024,i10,0.061
-Lombardia,2024,i10,0.643
-Marche,2024,i10,0.636
-Molise,2024,i10,0.074
-Piemonte,2024,i10,-0.182
-Puglia,2024,i10,-1.613
-Sardegna,2024,i10,-0.501
-Sicilia,2024,i10,-1.863
-Toscana,2024,i10,0.307
-Trentino-Alto Adige,2024,i10,0.742
-Umbria,2024,i10,0.349
-Valle d'Aosta,2024,i10,0.842
-Veneto,2024,i10,0.451
-Abruzzo,2024,i11,0.965
-Basilicata,2024,i11,0.948
-Calabria,2024,i11,0.269
-Campania,2024,i11,-1.122
-Emilia-Romagna,2024,i11,-0.751
-Friuli-Venezia Giulia,2024,i11,-0.086
-Lazio,2024,i11,0.638
-Liguria,2024,i11,-0.24
-Lombardia,2024,i11,-1.153
-Marche,2024,i11,0.783
-Molise,2024,i11,1.066
-Piemonte,2024,i11,-0.662
-Puglia,2024,i11,-1.797
-Sardegna,2024,i11,0.967
-Sicilia,2024,i11,-1.584
-Toscana,2024,i11,1.4
-Trentino-Alto Adige,2024,i11,1.429
-Umbria,2024,i11,-0.252
-Valle d'Aosta,2024,i11,0.369
-Veneto,2024,i11,-1.189
-Abruzzo,2024,i12,-0.055
-Basilicata,2024,i12,-0.283
-Calabria,2024,i12,-1.582
-Campania,2024,i12,-1.737
-Emilia-Romagna,2024,i12,0.685
-Friuli-Venezia Giulia,2024,i12,0.71
-Lazio,2024,i12,-0.146
-Liguria,2024,i12,0.395
-Lombardia,2024,i12,0.711
-Marche,2024,i12,0.544
-Molise,2024,i12,-0.529
-Piemonte,2024,i12,0.377
-Puglia,2024,i12,-0.86
-Sardegna,2024,i12,-0.747
-Sicilia,2024,i12,-1.941
-Toscana,2024,i12,0.634
-Trentino-Alto Adige,2024,i12,1.441
-Umbria,2024,i12,0.586
-Valle d'Aosta,2024,i12,0.892
-Veneto,2024,i12,0.905
-Abruzzo,2024,i13,-0.424
-Basilicata,2024,i13,-0.516
-Calabria,2024,i13,-0.639
-Campania,2024,i13,-0.595
-Emilia-Romagna,2024,i13,0.08
-Friuli-Venezia Giulia,2024,i13,1.112
-Lazio,2024,i13,-0.508
-Liguria,2024,i13,0.235
-Lombardia,2024,i13,0.086
-Marche,2024,i13,-0.155
-Molise,2024,i13,-0.315
-Piemonte,2024,i13,0.032
-Puglia,2024,i13,-0.407
-Sardegna,2024,i13,-0.37
-Sicilia,2024,i13,-0.346
-Toscana,2024,i13,-0.197
-Trentino-Alto Adige,2024,i13,-0.445
-Umbria,2024,i13,-0.579
-Valle d'Aosta,2024,i13,0.0
-Veneto,2024,i13,3.949
-Abruzzo,2024,i14,-0.149
-Basilicata,2024,i14,0.089
-Calabria,2024,i14,-0.895
-Campania,2024,i14,-1.375
-Emilia-Romagna,2024,i14,0.75
-Friuli-Venezia Giulia,2024,i14,0.327
-Lazio,2024,i14,-0.344
-Liguria,2024,i14,0.538
-Lombardia,2024,i14,0.43
-Marche,2024,i14,0.587
-Molise,2024,i14,-0.259
-Piemonte,2024,i14,-0.026
-Puglia,2024,i14,-0.662
-Sardegna,2024,i14,-0.705
-Sicilia,2024,i14,-1.231
-Toscana,2024,i14,0.55
-Trentino-Alto Adige,2024,i14,0.383
-Umbria,2024,i14,0.58
-Valle d'Aosta,2024,i14,0.726
-Veneto,2024,i14,0.689
-Abruzzo,2024,i15,-0.624
-Basilicata,2024,i15,-0.488
-Calabria,2024,i15,-0.483
-Campania,2024,i15,-0.532
-Emilia-Romagna,2024,i15,2.949
-Friuli-Venezia Giulia,2024,i15,0.347
-Lazio,2024,i15,-0.195
-Liguria,2024,i15,-0.41
-Lombardia,2024,i15,-0.308
-Marche,2024,i15,0.044
-Molise,2024,i15,-0.414
-Piemonte,2024,i15,-0.29
-Puglia,2024,i15,-0.507
-Sardegna,2024,i15,-0.192
-Sicilia,2024,i15,-0.571
-Toscana,2024,i15,0.101
-Trentino-Alto Adige,2024,i15,2.138
-Umbria,2024,i15,-0.334
-Valle d'Aosta,2024,i15,-0.429
-Veneto,2024,i15,0.199
-Abruzzo,2024,i2,0.048
-Basilicata,2024,i2,0.181
-Calabria,2024,i2,-0.739
-Campania,2024,i2,-1.018
-Emilia-Romagna,2024,i2,1.696
-Friuli-Venezia Giulia,2024,i2,-0.142
-Lazio,2024,i2,-0.208
-Liguria,2024,i2,0.077
-Lombardia,2024,i2,0.115
-Marche,2024,i2,-0.477
-Molise,2024,i2,-0.84
-Piemonte,2024,i2,0.081
-Puglia,2024,i2,0.049
-Sardegna,2024,i2,0.362
-Sicilia,2024,i2,-0.123
-Toscana,2024,i2,-0.036
-Trentino-Alto Adige,2024,i2,-0.086
-Umbria,2024,i2,0.484
-Valle d'Aosta,2024,i2,0.445
-Veneto,2024,i2,0.364
-Abruzzo,2024,i3,-0.546
-Basilicata,2024,i3,0.209
-Calabria,2024,i3,-0.679
-Campania,2024,i3,-0.855
-Emilia-Romagna,2024,i3,0.744
-Friuli-Venezia Giulia,2024,i3,0.005
-Lazio,2024,i3,-0.662
-Liguria,2024,i3,0.705
-Lombardia,2024,i3,-0.42
-Marche,2024,i3,0.022
-Molise,2024,i3,-0.014
-Piemonte,2024,i3,0.713
-Puglia,2024,i3,-0.516
-Sardegna,2024,i3,0.264
-Sicilia,2024,i3,-0.268
-Toscana,2024,i3,0.317
-Trentino-Alto Adige,2024,i3,-0.292
-Umbria,2024,i3,0.943
-Valle d'Aosta,2024,i3,0.333
-Veneto,2024,i3,-0.002
-Abruzzo,2024,i4,0.131
-Basilicata,2024,i4,0.014
-Calabria,2024,i4,0.106
-Campania,2024,i4,-0.285
-Emilia-Romagna,2024,i4,0.151
-Friuli-Venezia Giulia,2024,i4,-0.086
-Lazio,2024,i4,0.578
-Liguria,2024,i4,-0.131
-Lombardia,2024,i4,0.381
-Marche,2024,i4,-1.311
-Molise,2024,i4,0.63
-Piemonte,2024,i4,-0.558
-Puglia,2024,i4,0.156
-Sardegna,2024,i4,-0.146
-Sicilia,2024,i4,0.197
-Toscana,2024,i4,-0.257
-Trentino-Alto Adige,2024,i4,1.194
-Umbria,2024,i4,-0.083
-Valle d'Aosta,2024,i4,-0.807
-Veneto,2024,i4,0.125
-Abruzzo,2024,i5,-0.593
-Basilicata,2024,i5,-0.623
-Calabria,2024,i5,0.047
-Campania,2024,i5,-0.462
-Emilia-Romagna,2024,i5,0.444
-Friuli-Venezia Giulia,2024,i5,0.965
-Lazio,2024,i5,0.421
-Liguria,2024,i5,0.02
-Lombardia,2024,i5,0.311
-Marche,2024,i5,0.592
-Molise,2024,i5,-0.852
-Piemonte,2024,i5,0.34
-Puglia,2024,i5,-0.931
-Sardegna,2024,i5,-0.661
-Sicilia,2024,i5,-1.207
-Toscana,2024,i5,0.638
-Trentino-Alto Adige,2024,i5,0.885
-Umbria,2024,i5,-0.001
-Valle d'Aosta,2024,i5,0.455
-Veneto,2024,i5,0.21
-Abruzzo,2024,i6,-0.321
-Basilicata,2024,i6,-0.15
-Calabria,2024,i6,-0.812
-Campania,2024,i6,-1.19
-Emilia-Romagna,2024,i6,-0.018
-Friuli-Venezia Giulia,2024,i6,-0.66
-Lazio,2024,i6,-0.521
-Liguria,2024,i6,1.267
-Lombardia,2024,i6,-0.03
-Marche,2024,i6,0.682
-Molise,2024,i6,-0.036
-Piemonte,2024,i6,0.443
-Puglia,2024,i6,-0.388
-Sardegna,2024,i6,-0.267
-Sicilia,2024,i6,-0.707
-Toscana,2024,i6,0.413
-Trentino-Alto Adige,2024,i6,0.085
-Umbria,2024,i6,0.331
-Valle d'Aosta,2024,i6,1.105
-Veneto,2024,i6,0.774
-Abruzzo,2024,i7,-0.049
-Basilicata,2024,i7,-0.145
-Calabria,2024,i7,-0.868
-Campania,2024,i7,-0.584
-Emilia-Romagna,2024,i7,0.802
-Friuli-Venezia Giulia,2024,i7,-0.908
-Lazio,2024,i7,0.204
-Liguria,2024,i7,0.079
-Lombardia,2024,i7,-0.941
-Marche,2024,i7,-0.159
-Molise,2024,i7,0.006
-Piemonte,2024,i7,-1.055
-Puglia,2024,i7,0.513
-Sardegna,2024,i7,1.003
-Sicilia,2024,i7,0.01
-Toscana,2024,i7,1.467
-Trentino-Alto Adige,2024,i7,-0.538
-Umbria,2024,i7,0.482
-Valle d'Aosta,2024,i7,1.013
-Veneto,2024,i7,-0.333
-Abruzzo,2024,i8,-0.311
-Basilicata,2024,i8,-0.248
-Calabria,2024,i8,-0.038
-Campania,2024,i8,-1.398
-Emilia-Romagna,2024,i8,0.185
-Friuli-Venezia Giulia,2024,i8,0.808
-Lazio,2024,i8,-0.494
-Liguria,2024,i8,0.441
-Lombardia,2024,i8,0.2
-Marche,2024,i8,0.068
-Molise,2024,i8,-0.473
-Piemonte,2024,i8,0.317
-Puglia,2024,i8,-0.933
-Sardegna,2024,i8,0.184
-Sicilia,2024,i8,-0.327
-Toscana,2024,i8,0.047
-Trentino-Alto Adige,2024,i8,1.333
-Umbria,2024,i8,0.446
-Valle d'Aosta,2024,i8,-0.1
-Veneto,2024,i8,0.293
-Abruzzo,2024,i9,0.242
-Basilicata,2024,i9,-0.678
-Calabria,2024,i9,0.574
-Campania,2024,i9,-0.624
-Emilia-Romagna,2024,i9,0.714
-Friuli-Venezia Giulia,2024,i9,0.262
-Lazio,2024,i9,-1.176
-Liguria,2024,i9,-0.204
-Lombardia,2024,i9,0.613
-Marche,2024,i9,0.311
-Molise,2024,i9,0.192
-Piemonte,2024,i9,-0.874
-Puglia,2024,i9,-0.312
-Sardegna,2024,i9,0.148
-Sicilia,2024,i9,-0.556
-Toscana,2024,i9,-0.234
-Trentino-Alto Adige,2024,i9,-0.445
-Umbria,2024,i9,1.574
-Valle d'Aosta,2024,i9,0.298
-Veneto,2024,i9,0.176
+territory,year,capacity,index,score
+Abruzzo,2019,,rischio,-0.23
+Basilicata,2019,,rischio,-0.25
+Calabria,2019,,rischio,-0.749
+Campania,2019,,rischio,-1.215
+Emilia-Romagna,2019,,rischio,0.481
+Friuli-Venezia Giulia,2019,,rischio,0.6
+Lazio,2019,,rischio,0.153
+Liguria,2019,,rischio,0.197
+Lombardia,2019,,rischio,0.43
+Marche,2019,,rischio,0.193
+Molise,2019,,rischio,-0.128
+Piemonte,2019,,rischio,0.216
+Puglia,2019,,rischio,-0.875
+Sardegna,2019,,rischio,-0.458
+Sicilia,2019,,rischio,-1.043
+Toscana,2019,,rischio,0.341
+Trentino-Alto Adige/Südtirol,2019,,rischio,1.047
+Umbria,2019,,rischio,0.161
+Valle d'Aosta/Vallée d'Aoste,2019,,rischio,0.342
+Veneto,2019,,rischio,0.492
+Abruzzo,2019,,servizi,0.875
+Basilicata,2019,,servizi,1.434
+Calabria,2019,,servizi,1.908
+Campania,2019,,servizi,1.7
+Emilia-Romagna,2019,,servizi,2.3
+Friuli-Venezia Giulia,2019,,servizi,1.967
+Lazio,2019,,servizi,1.996
+Liguria,2019,,servizi,0.227
+Lombardia,2019,,servizi,1.356
+Marche,2019,,servizi,0.073
+Molise,2019,,servizi,1.056
+Piemonte,2019,,servizi,0.809
+Puglia,2019,,servizi,1.327
+Sardegna,2019,,servizi,2.488
+Sicilia,2019,,servizi,1.881
+Toscana,2019,,servizi,0.933
+Trentino-Alto Adige/Südtirol,2019,,servizi,1.38
+Umbria,2019,,servizi,0.767
+Valle d'Aosta/Vallée d'Aoste,2019,,servizi,0.567
+Veneto,2019,,servizi,1.208
+Abruzzo,2019,,totale,0.055
+Basilicata,2019,,totale,0.279
+Calabria,2019,,totale,0.062
+Campania,2019,,totale,-0.19
+Emilia-Romagna,2019,,totale,1.249
+Friuli-Venezia Giulia,2019,,totale,1.1
+Lazio,2019,,totale,0.69
+Liguria,2019,,totale,0.177
+Lombardia,2019,,totale,0.671
+Marche,2019,,totale,0.108
+Molise,2019,,totale,0.335
+Piemonte,2019,,totale,0.376
+Puglia,2019,,totale,-0.17
+Sardegna,2019,,totale,0.713
+Sicilia,2019,,totale,-0.044
+Toscana,2019,,totale,0.533
+Trentino-Alto Adige/Südtirol,2019,,totale,1.057
+Umbria,2019,,totale,0.425
+Valle d'Aosta/Vallée d'Aoste,2019,,totale,0.351
+Veneto,2019,,totale,0.799
+Abruzzo,2019,accedere_risorse,rischio_adulti,-0.776
+Basilicata,2019,accedere_risorse,rischio_adulti,-0.271
+Calabria,2019,accedere_risorse,rischio_adulti,-0.854
+Campania,2019,accedere_risorse,rischio_adulti,-1.156
+Emilia-Romagna,2019,accedere_risorse,rischio_adulti,0.842
+Friuli-Venezia Giulia,2019,accedere_risorse,rischio_adulti,0.733
+Lazio,2019,accedere_risorse,rischio_adulti,-0.021
+Liguria,2019,accedere_risorse,rischio_adulti,-0.067
+Lombardia,2019,accedere_risorse,rischio_adulti,0.446
+Marche,2019,accedere_risorse,rischio_adulti,0.096
+Molise,2019,accedere_risorse,rischio_adulti,0.234
+Piemonte,2019,accedere_risorse,rischio_adulti,0.18
+Puglia,2019,accedere_risorse,rischio_adulti,-0.872
+Sardegna,2019,accedere_risorse,rischio_adulti,-0.769
+Sicilia,2019,accedere_risorse,rischio_adulti,-1.166
+Toscana,2019,accedere_risorse,rischio_adulti,0.774
+Trentino-Alto Adige/Südtirol,2019,accedere_risorse,rischio_adulti,0.914
+Umbria,2019,accedere_risorse,rischio_adulti,0.362
+Valle d'Aosta/Vallée d'Aoste,2019,accedere_risorse,rischio_adulti,0.517
+Veneto,2019,accedere_risorse,rischio_adulti,0.855
+Abruzzo,2019,accedere_risorse,servizi_adulti,-0.635
+Basilicata,2019,accedere_risorse,servizi_adulti,-0.725
+Calabria,2019,accedere_risorse,servizi_adulti,-0.624
+Campania,2019,accedere_risorse,servizi_adulti,-0.741
+Emilia-Romagna,2019,accedere_risorse,servizi_adulti,1.062
+Friuli-Venezia Giulia,2019,accedere_risorse,servizi_adulti,1.552
+Lazio,2019,accedere_risorse,servizi_adulti,-0.132
+Liguria,2019,accedere_risorse,servizi_adulti,-0.596
+Lombardia,2019,accedere_risorse,servizi_adulti,0.095
+Marche,2019,accedere_risorse,servizi_adulti,-0.167
+Molise,2019,accedere_risorse,servizi_adulti,-0.502
+Piemonte,2019,accedere_risorse,servizi_adulti,0.566
+Puglia,2019,accedere_risorse,servizi_adulti,-0.649
+Sardegna,2019,accedere_risorse,servizi_adulti,-0.39
+Sicilia,2019,accedere_risorse,servizi_adulti,-0.808
+Toscana,2019,accedere_risorse,servizi_adulti,-0.182
+Trentino-Alto Adige/Südtirol,2019,accedere_risorse,servizi_adulti,2.3
+Umbria,2019,accedere_risorse,servizi_adulti,-0.243
+Valle d'Aosta/Vallée d'Aoste,2019,accedere_risorse,servizi_adulti,-0.649
+Veneto,2019,accedere_risorse,servizi_adulti,1.47
+Abruzzo,2019,conoscenza_sapere,rischio_adulti,0.519
+Basilicata,2019,conoscenza_sapere,rischio_adulti,-0.132
+Calabria,2019,conoscenza_sapere,rischio_adulti,-1.783
+Campania,2019,conoscenza_sapere,rischio_adulti,-1.714
+Emilia-Romagna,2019,conoscenza_sapere,rischio_adulti,0.561
+Friuli-Venezia Giulia,2019,conoscenza_sapere,rischio_adulti,0.486
+Lazio,2019,conoscenza_sapere,rischio_adulti,1.143
+Liguria,2019,conoscenza_sapere,rischio_adulti,0.106
+Lombardia,2019,conoscenza_sapere,rischio_adulti,0.855
+Marche,2019,conoscenza_sapere,rischio_adulti,0.755
+Molise,2019,conoscenza_sapere,rischio_adulti,-0.023
+Piemonte,2019,conoscenza_sapere,rischio_adulti,0.438
+Puglia,2019,conoscenza_sapere,rischio_adulti,-1.53
+Sardegna,2019,conoscenza_sapere,rischio_adulti,-0.764
+Sicilia,2019,conoscenza_sapere,rischio_adulti,-1.895
+Toscana,2019,conoscenza_sapere,rischio_adulti,0.286
+Trentino-Alto Adige/Südtirol,2019,conoscenza_sapere,rischio_adulti,0.828
+Umbria,2019,conoscenza_sapere,rischio_adulti,1.04
+Valle d'Aosta/Vallée d'Aoste,2019,conoscenza_sapere,rischio_adulti,0.437
+Veneto,2019,conoscenza_sapere,rischio_adulti,0.388
+Abruzzo,2019,conoscenza_sapere,servizi_adulti,-1.161
+Basilicata,2019,conoscenza_sapere,servizi_adulti,0.461
+Calabria,2019,conoscenza_sapere,servizi_adulti,-0.926
+Campania,2019,conoscenza_sapere,servizi_adulti,-0.972
+Emilia-Romagna,2019,conoscenza_sapere,servizi_adulti,0.846
+Friuli-Venezia Giulia,2019,conoscenza_sapere,servizi_adulti,1.42
+Lazio,2019,conoscenza_sapere,servizi_adulti,1.262
+Liguria,2019,conoscenza_sapere,servizi_adulti,0.513
+Lombardia,2019,conoscenza_sapere,servizi_adulti,-0.459
+Marche,2019,conoscenza_sapere,servizi_adulti,-0.688
+Molise,2019,conoscenza_sapere,servizi_adulti,1.414
+Piemonte,2019,conoscenza_sapere,servizi_adulti,-0.75
+Puglia,2019,conoscenza_sapere,servizi_adulti,-1.71
+Sardegna,2019,conoscenza_sapere,servizi_adulti,0.568
+Sicilia,2019,conoscenza_sapere,servizi_adulti,-1.782
+Toscana,2019,conoscenza_sapere,servizi_adulti,1.318
+Trentino-Alto Adige/Südtirol,2019,conoscenza_sapere,servizi_adulti,0.62
+Umbria,2019,conoscenza_sapere,servizi_adulti,0.411
+Valle d'Aosta/Vallée d'Aoste,2019,conoscenza_sapere,servizi_adulti,-0.288
+Veneto,2019,conoscenza_sapere,servizi_adulti,-0.096
+Abruzzo,2019,cura,rischio_adulti,-0.207
+Basilicata,2019,cura,rischio_adulti,0.016
+Calabria,2019,cura,rischio_adulti,-0.242
+Campania,2019,cura,rischio_adulti,-1.647
+Emilia-Romagna,2019,cura,rischio_adulti,0.403
+Friuli-Venezia Giulia,2019,cura,rischio_adulti,0.417
+Lazio,2019,cura,rischio_adulti,-0.27
+Liguria,2019,cura,rischio_adulti,0.214
+Lombardia,2019,cura,rischio_adulti,0.458
+Marche,2019,cura,rischio_adulti,0.216
+Molise,2019,cura,rischio_adulti,0.234
+Piemonte,2019,cura,rischio_adulti,0.393
+Puglia,2019,cura,rischio_adulti,-0.806
+Sardegna,2019,cura,rischio_adulti,0.043
+Sicilia,2019,cura,rischio_adulti,-1.224
+Toscana,2019,cura,rischio_adulti,0.237
+Trentino-Alto Adige/Südtirol,2019,cura,rischio_adulti,1.012
+Umbria,2019,cura,rischio_adulti,0.038
+Valle d'Aosta/Vallée d'Aoste,2019,cura,rischio_adulti,0.11
+Veneto,2019,cura,rischio_adulti,0.605
+Abruzzo,2019,cura,servizi_adulti,-0.282
+Basilicata,2019,cura,servizi_adulti,-0.068
+Calabria,2019,cura,servizi_adulti,-0.902
+Campania,2019,cura,servizi_adulti,-0.906
+Emilia-Romagna,2019,cura,servizi_adulti,1.571
+Friuli-Venezia Giulia,2019,cura,servizi_adulti,-0.305
+Lazio,2019,cura,servizi_adulti,-0.111
+Liguria,2019,cura,servizi_adulti,0.078
+Lombardia,2019,cura,servizi_adulti,-0.048
+Marche,2019,cura,servizi_adulti,-0.318
+Molise,2019,cura,servizi_adulti,-0.497
+Piemonte,2019,cura,servizi_adulti,0.388
+Puglia,2019,cura,servizi_adulti,-0.162
+Sardegna,2019,cura,servizi_adulti,-0.036
+Sicilia,2019,cura,servizi_adulti,-0.161
+Toscana,2019,cura,servizi_adulti,-0.015
+Trentino-Alto Adige/Südtirol,2019,cura,servizi_adulti,0.258
+Umbria,2019,cura,servizi_adulti,0.421
+Valle d'Aosta/Vallée d'Aoste,2019,cura,servizi_adulti,0.634
+Veneto,2019,cura,servizi_adulti,0.46
+Abruzzo,2019,cura,servizi_bambini,-0.537
+Basilicata,2019,cura,servizi_bambini,-0.337
+Calabria,2019,cura,servizi_bambini,-0.814
+Campania,2019,cura,servizi_bambini,-1.084
+Emilia-Romagna,2019,cura,servizi_bambini,0.538
+Friuli-Venezia Giulia,2019,cura,servizi_bambini,0.114
+Lazio,2019,cura,servizi_bambini,-0.643
+Liguria,2019,cura,servizi_bambini,1.116
+Lombardia,2019,cura,servizi_bambini,-0.37
+Marche,2019,cura,servizi_bambini,-0.032
+Molise,2019,cura,servizi_bambini,-0.192
+Piemonte,2019,cura,servizi_bambini,0.734
+Puglia,2019,cura,servizi_bambini,-0.67
+Sardegna,2019,cura,servizi_bambini,0.22
+Sicilia,2019,cura,servizi_bambini,-0.216
+Toscana,2019,cura,servizi_bambini,0.46
+Trentino-Alto Adige/Südtirol,2019,cura,servizi_bambini,0.055
+Umbria,2019,cura,servizi_bambini,0.689
+Valle d'Aosta/Vallée d'Aoste,2019,cura,servizi_bambini,0.512
+Veneto,2019,cura,servizi_bambini,0.458
+Abruzzo,2019,lavorare,rischio_adulti,-0.261
+Basilicata,2019,lavorare,rischio_adulti,-0.364
+Calabria,2019,lavorare,rischio_adulti,-1.807
+Campania,2019,lavorare,rischio_adulti,-1.686
+Emilia-Romagna,2019,lavorare,rischio_adulti,0.949
+Friuli-Venezia Giulia,2019,lavorare,rischio_adulti,0.712
+Lazio,2019,lavorare,rischio_adulti,-0.026
+Liguria,2019,lavorare,rischio_adulti,0.427
+Lombardia,2019,lavorare,rischio_adulti,0.754
+Marche,2019,lavorare,rischio_adulti,0.465
+Molise,2019,lavorare,rischio_adulti,-0.716
+Piemonte,2019,lavorare,rischio_adulti,0.477
+Puglia,2019,lavorare,rischio_adulti,-0.706
+Sardegna,2019,lavorare,rischio_adulti,-0.787
+Sicilia,2019,lavorare,rischio_adulti,-1.689
+Toscana,2019,lavorare,rischio_adulti,0.631
+Trentino-Alto Adige/Südtirol,2019,lavorare,rischio_adulti,1.424
+Umbria,2019,lavorare,rischio_adulti,0.398
+Valle d'Aosta/Vallée d'Aoste,2019,lavorare,rischio_adulti,0.788
+Veneto,2019,lavorare,rischio_adulti,1.017
+Abruzzo,2019,lavorare,servizi_adulti,-0.889
+Basilicata,2019,lavorare,servizi_adulti,-0.649
+Calabria,2019,lavorare,servizi_adulti,-1.023
+Campania,2019,lavorare,servizi_adulti,-0.958
+Emilia-Romagna,2019,lavorare,servizi_adulti,2.063
+Friuli-Venezia Giulia,2019,lavorare,servizi_adulti,0.569
+Lazio,2019,lavorare,servizi_adulti,-0.823
+Liguria,2019,lavorare,servizi_adulti,-0.136
+Lombardia,2019,lavorare,servizi_adulti,0.801
+Marche,2019,lavorare,servizi_adulti,-0.775
+Molise,2019,lavorare,servizi_adulti,1.213
+Piemonte,2019,lavorare,servizi_adulti,0.456
+Puglia,2019,lavorare,servizi_adulti,-0.604
+Sardegna,2019,lavorare,servizi_adulti,1.791
+Sicilia,2019,lavorare,servizi_adulti,-0.482
+Toscana,2019,lavorare,servizi_adulti,-0.303
+Trentino-Alto Adige/Südtirol,2019,lavorare,servizi_adulti,-1.034
+Umbria,2019,lavorare,servizi_adulti,-0.19
+Valle d'Aosta/Vallée d'Aoste,2019,lavorare,servizi_adulti,-0.767
+Veneto,2019,lavorare,servizi_adulti,1.742
+Abruzzo,2019,vita_sana,rischio_adulti,0.178
+Basilicata,2019,vita_sana,rischio_adulti,-0.138
+Calabria,2019,vita_sana,rischio_adulti,-0.137
+Campania,2019,vita_sana,rischio_adulti,-0.384
+Emilia-Romagna,2019,vita_sana,rischio_adulti,0.177
+Friuli-Venezia Giulia,2019,vita_sana,rischio_adulti,0.6
+Lazio,2019,vita_sana,rischio_adulti,0.371
+Liguria,2019,vita_sana,rischio_adulti,0.228
+Lombardia,2019,vita_sana,rischio_adulti,0.186
+Marche,2019,vita_sana,rischio_adulti,-1.001
+Molise,2019,vita_sana,rischio_adulti,0.573
+Piemonte,2019,vita_sana,rischio_adulti,-0.366
+Puglia,2019,vita_sana,rischio_adulti,0.01
+Sardegna,2019,vita_sana,rischio_adulti,-0.424
+Sicilia,2019,vita_sana,rischio_adulti,0.198
+Toscana,2019,vita_sana,rischio_adulti,-0.156
+Trentino-Alto Adige/Südtirol,2019,vita_sana,rischio_adulti,0.999
+Umbria,2019,vita_sana,rischio_adulti,-0.769
+Valle d'Aosta/Vallée d'Aoste,2019,vita_sana,rischio_adulti,-0.479
+Veneto,2019,vita_sana,rischio_adulti,0.334
+Abruzzo,2019,vita_sana,rischio_bambini,-0.716
+Basilicata,2019,vita_sana,rischio_bambini,-0.523
+Calabria,2019,vita_sana,rischio_bambini,0.036
+Campania,2019,vita_sana,rischio_bambini,-0.671
+Emilia-Romagna,2019,vita_sana,rischio_bambini,0.351
+Friuli-Venezia Giulia,2019,vita_sana,rischio_bambini,0.632
+Lazio,2019,vita_sana,rischio_bambini,0.437
+Liguria,2019,vita_sana,rischio_bambini,0.144
+Lombardia,2019,vita_sana,rischio_bambini,0.208
+Marche,2019,vita_sana,rischio_bambini,0.86
+Molise,2019,vita_sana,rischio_bambini,-0.831
+Piemonte,2019,vita_sana,rischio_bambini,0.219
+Puglia,2019,vita_sana,rischio_bambini,-0.938
+Sardegna,2019,vita_sana,rischio_bambini,-0.749
+Sicilia,2019,vita_sana,rischio_bambini,-0.907
+Toscana,2019,vita_sana,rischio_bambini,0.599
+Trentino-Alto Adige/Südtirol,2019,vita_sana,rischio_bambini,0.811
+Umbria,2019,vita_sana,rischio_bambini,-0.014
+Valle d'Aosta/Vallée d'Aoste,2019,vita_sana,rischio_bambini,0.808
+Veneto,2019,vita_sana,rischio_bambini,0.245
+Abruzzo,2019,vita_sana,servizi_adulti,10.0
+Basilicata,2019,vita_sana,servizi_adulti,14.0
+Calabria,2019,vita_sana,servizi_adulti,20.0
+Campania,2019,vita_sana,servizi_adulti,19.0
+Emilia-Romagna,2019,vita_sana,servizi_adulti,11.0
+Friuli-Venezia Giulia,2019,vita_sana,servizi_adulti,13.0
+Lazio,2019,vita_sana,servizi_adulti,17.0
+Liguria,2019,vita_sana,servizi_adulti,1.0
+Lombardia,2019,vita_sana,servizi_adulti,12.0
+Marche,2019,vita_sana,servizi_adulti,2.0
+Molise,2019,vita_sana,servizi_adulti,8.0
+Piemonte,2019,vita_sana,servizi_adulti,7.0
+Puglia,2019,vita_sana,servizi_adulti,15.0
+Sardegna,2019,vita_sana,servizi_adulti,16.0
+Sicilia,2019,vita_sana,servizi_adulti,18.0
+Toscana,2019,vita_sana,servizi_adulti,5.0
+Trentino-Alto Adige/Südtirol,2019,vita_sana,servizi_adulti,9.0
+Umbria,2019,vita_sana,servizi_adulti,4.0
+Valle d'Aosta/Vallée d'Aoste,2019,vita_sana,servizi_adulti,3.0
+Veneto,2019,vita_sana,servizi_adulti,6.0
+Abruzzo,2019,vita_sana,servizi_bambini,0.68
+Basilicata,2019,vita_sana,servizi_bambini,-0.336
+Calabria,2019,vita_sana,servizi_bambini,-0.023
+Campania,2019,vita_sana,servizi_bambini,-0.769
+Emilia-Romagna,2019,vita_sana,servizi_bambini,0.353
+Friuli-Venezia Giulia,2019,vita_sana,servizi_bambini,-0.925
+Lazio,2019,vita_sana,servizi_bambini,0.384
+Liguria,2019,vita_sana,servizi_bambini,-0.175
+Lombardia,2019,vita_sana,servizi_bambini,-0.823
+Marche,2019,vita_sana,servizi_bambini,-0.486
+Molise,2019,vita_sana,servizi_bambini,-0.386
+Piemonte,2019,vita_sana,servizi_bambini,-0.929
+Puglia,2019,vita_sana,servizi_bambini,0.09
+Sardegna,2019,vita_sana,servizi_bambini,1.298
+Sicilia,2019,vita_sana,servizi_bambini,0.328
+Toscana,2019,vita_sana,servizi_bambini,1.01
+Trentino-Alto Adige/Südtirol,2019,vita_sana,servizi_bambini,-0.344
+Umbria,2019,vita_sana,servizi_bambini,0.353
+Valle d'Aosta/Vallée d'Aoste,2019,vita_sana,servizi_bambini,1.265
+Veneto,2019,vita_sana,servizi_bambini,-0.567
+Abruzzo,2019,vita_sicura,rischio_adulti,-0.345
+Basilicata,2019,vita_sicura,rischio_adulti,-0.335
+Calabria,2019,vita_sicura,rischio_adulti,-0.454
+Campania,2019,vita_sicura,rischio_adulti,-1.245
+Emilia-Romagna,2019,vita_sicura,rischio_adulti,0.087
+Friuli-Venezia Giulia,2019,vita_sicura,rischio_adulti,0.619
+Lazio,2019,vita_sicura,rischio_adulti,-0.56
+Liguria,2019,vita_sicura,rischio_adulti,0.324
+Lombardia,2019,vita_sicura,rischio_adulti,0.101
+Marche,2019,vita_sicura,rischio_adulti,-0.039
+Molise,2019,vita_sicura,rischio_adulti,-0.37
+Piemonte,2019,vita_sicura,rischio_adulti,0.171
+Puglia,2019,vita_sicura,rischio_adulti,-1.286
+Sardegna,2019,vita_sicura,rischio_adulti,0.243
+Sicilia,2019,vita_sicura,rischio_adulti,-0.615
+Toscana,2019,vita_sicura,rischio_adulti,0.013
+Trentino-Alto Adige/Südtirol,2019,vita_sicura,rischio_adulti,1.339
+Umbria,2019,vita_sicura,rischio_adulti,0.073
+Valle d'Aosta/Vallée d'Aoste,2019,vita_sicura,rischio_adulti,0.212
+Veneto,2019,vita_sicura,rischio_adulti,-0.003
+Abruzzo,2019,vita_sicura,servizi_adulti,-0.177
+Basilicata,2019,vita_sicura,servizi_adulti,-0.876
+Calabria,2019,vita_sicura,servizi_adulti,-0.42
+Campania,2019,vita_sicura,servizi_adulti,0.029
+Emilia-Romagna,2019,vita_sicura,servizi_adulti,0.968
+Friuli-Venezia Giulia,2019,vita_sicura,servizi_adulti,0.308
+Lazio,2019,vita_sicura,servizi_adulti,-0.971
+Liguria,2019,vita_sicura,servizi_adulti,0.015
+Lombardia,2019,vita_sicura,servizi_adulti,-0.352
+Marche,2019,vita_sicura,servizi_adulti,1.047
+Molise,2019,vita_sicura,servizi_adulti,-0.6
+Piemonte,2019,vita_sicura,servizi_adulti,-0.994
+Puglia,2019,vita_sicura,servizi_adulti,-0.676
+Sardegna,2019,vita_sicura,servizi_adulti,0.45
+Sicilia,2019,vita_sicura,servizi_adulti,0.168
+Toscana,2019,vita_sicura,servizi_adulti,0.178
+Trentino-Alto Adige/Südtirol,2019,vita_sicura,servizi_adulti,0.182
+Umbria,2019,vita_sicura,servizi_adulti,0.696
+Valle d'Aosta/Vallée d'Aoste,2019,vita_sicura,servizi_adulti,0.83
+Veneto,2019,vita_sicura,servizi_adulti,0.195
+Abruzzo,2020,,rischio,-0.193
+Basilicata,2020,,rischio,-0.392
+Calabria,2020,,rischio,-0.798
+Campania,2020,,rischio,-1.234
+Emilia-Romagna,2020,,rischio,0.513
+Friuli-Venezia Giulia,2020,,rischio,0.615
+Lazio,2020,,rischio,0.005
+Liguria,2020,,rischio,0.407
+Lombardia,2020,,rischio,0.51
+Marche,2020,,rischio,0.136
+Molise,2020,,rischio,-0.269
+Piemonte,2020,,rischio,0.252
+Puglia,2020,,rischio,-0.691
+Sardegna,2020,,rischio,-0.391
+Sicilia,2020,,rischio,-0.983
+Toscana,2020,,rischio,0.314
+Trentino-Alto Adige/Südtirol,2020,,rischio,0.943
+Umbria,2020,,rischio,0.113
+Valle d'Aosta/Vallée d'Aoste,2020,,rischio,0.507
+Veneto,2020,,rischio,0.548
+Abruzzo,2020,,servizi,-0.246
+Basilicata,2020,,servizi,-0.306
+Calabria,2020,,servizi,-0.807
+Campania,2020,,servizi,-0.886
+Emilia-Romagna,2020,,servizi,0.878
+Friuli-Venezia Giulia,2020,,servizi,0.214
+Lazio,2020,,servizi,-0.346
+Liguria,2020,,servizi,0.378
+Lombardia,2020,,servizi,-0.177
+Marche,2020,,servizi,0.002
+Molise,2020,,servizi,-0.036
+Piemonte,2020,,servizi,0.263
+Puglia,2020,,servizi,-0.529
+Sardegna,2020,,servizi,0.397
+Sicilia,2020,,servizi,-0.523
+Toscana,2020,,servizi,0.469
+Trentino-Alto Adige/Südtirol,2020,,servizi,0.346
+Umbria,2020,,servizi,0.399
+Valle d'Aosta/Vallée d'Aoste,2020,,servizi,0.157
+Veneto,2020,,servizi,0.385
+Abruzzo,2020,,totale,-0.232
+Basilicata,2020,,totale,-0.363
+Calabria,2020,,totale,-0.895
+Campania,2020,,totale,-1.094
+Emilia-Romagna,2020,,totale,0.774
+Friuli-Venezia Giulia,2020,,totale,0.506
+Lazio,2020,,totale,-0.213
+Liguria,2020,,totale,0.357
+Lombardia,2020,,totale,0.185
+Marche,2020,,totale,0.075
+Molise,2020,,totale,-0.141
+Piemonte,2020,,totale,0.322
+Puglia,2020,,totale,-0.678
+Sardegna,2020,,totale,0.023
+Sicilia,2020,,totale,-0.816
+Toscana,2020,,totale,0.391
+Trentino-Alto Adige/Südtirol,2020,,totale,0.699
+Umbria,2020,,totale,0.287
+Valle d'Aosta/Vallée d'Aoste,2020,,totale,0.271
+Veneto,2020,,totale,0.505
+Abruzzo,2020,accedere_risorse,rischio_adulti,-0.065
+Basilicata,2020,accedere_risorse,rischio_adulti,-0.485
+Calabria,2020,accedere_risorse,rischio_adulti,-0.972
+Campania,2020,accedere_risorse,rischio_adulti,-1.532
+Emilia-Romagna,2020,accedere_risorse,rischio_adulti,0.786
+Friuli-Venezia Giulia,2020,accedere_risorse,rischio_adulti,0.607
+Lazio,2020,accedere_risorse,rischio_adulti,-0.251
+Liguria,2020,accedere_risorse,rischio_adulti,0.46
+Lombardia,2020,accedere_risorse,rischio_adulti,0.766
+Marche,2020,accedere_risorse,rischio_adulti,0.087
+Molise,2020,accedere_risorse,rischio_adulti,-0.349
+Piemonte,2020,accedere_risorse,rischio_adulti,0.49
+Puglia,2020,accedere_risorse,rischio_adulti,-0.523
+Sardegna,2020,accedere_risorse,rischio_adulti,-1.079
+Sicilia,2020,accedere_risorse,rischio_adulti,-1.194
+Toscana,2020,accedere_risorse,rischio_adulti,0.515
+Trentino-Alto Adige/Südtirol,2020,accedere_risorse,rischio_adulti,0.381
+Umbria,2020,accedere_risorse,rischio_adulti,-0.042
+Valle d'Aosta/Vallée d'Aoste,2020,accedere_risorse,rischio_adulti,0.846
+Veneto,2020,accedere_risorse,rischio_adulti,0.952
+Abruzzo,2020,accedere_risorse,servizi_adulti,-0.91
+Basilicata,2020,accedere_risorse,servizi_adulti,-0.835
+Calabria,2020,accedere_risorse,servizi_adulti,-0.771
+Campania,2020,accedere_risorse,servizi_adulti,-0.91
+Emilia-Romagna,2020,accedere_risorse,servizi_adulti,1.146
+Friuli-Venezia Giulia,2020,accedere_risorse,servizi_adulti,1.561
+Lazio,2020,accedere_risorse,servizi_adulti,-0.202
+Liguria,2020,accedere_risorse,servizi_adulti,-0.448
+Lombardia,2020,accedere_risorse,servizi_adulti,0.194
+Marche,2020,accedere_risorse,servizi_adulti,0.249
+Molise,2020,accedere_risorse,servizi_adulti,-0.298
+Piemonte,2020,accedere_risorse,servizi_adulti,0.22
+Puglia,2020,accedere_risorse,servizi_adulti,-0.609
+Sardegna,2020,accedere_risorse,servizi_adulti,0.253
+Sicilia,2020,accedere_risorse,servizi_adulti,-0.927
+Toscana,2020,accedere_risorse,servizi_adulti,0.122
+Trentino-Alto Adige/Südtirol,2020,accedere_risorse,servizi_adulti,2.491
+Umbria,2020,accedere_risorse,servizi_adulti,-0.217
+Valle d'Aosta/Vallée d'Aoste,2020,accedere_risorse,servizi_adulti,-0.836
+Veneto,2020,accedere_risorse,servizi_adulti,0.729
+Abruzzo,2020,conoscenza_sapere,rischio_adulti,-0.016
+Basilicata,2020,conoscenza_sapere,rischio_adulti,-0.542
+Calabria,2020,conoscenza_sapere,rischio_adulti,-1.993
+Campania,2020,conoscenza_sapere,rischio_adulti,-1.743
+Emilia-Romagna,2020,conoscenza_sapere,rischio_adulti,0.692
+Friuli-Venezia Giulia,2020,conoscenza_sapere,rischio_adulti,0.792
+Lazio,2020,conoscenza_sapere,rischio_adulti,0.751
+Liguria,2020,conoscenza_sapere,rischio_adulti,0.81
+Lombardia,2020,conoscenza_sapere,rischio_adulti,0.715
+Marche,2020,conoscenza_sapere,rischio_adulti,0.051
+Molise,2020,conoscenza_sapere,rischio_adulti,-0.123
+Piemonte,2020,conoscenza_sapere,rischio_adulti,0.718
+Puglia,2020,conoscenza_sapere,rischio_adulti,-1.295
+Sardegna,2020,conoscenza_sapere,rischio_adulti,-0.717
+Sicilia,2020,conoscenza_sapere,rischio_adulti,-1.483
+Toscana,2020,conoscenza_sapere,rischio_adulti,0.194
+Trentino-Alto Adige/Südtirol,2020,conoscenza_sapere,rischio_adulti,1.112
+Umbria,2020,conoscenza_sapere,rischio_adulti,0.508
+Valle d'Aosta/Vallée d'Aoste,2020,conoscenza_sapere,rischio_adulti,1.036
+Veneto,2020,conoscenza_sapere,rischio_adulti,0.532
+Abruzzo,2020,conoscenza_sapere,servizi_adulti,0.155
+Basilicata,2020,conoscenza_sapere,servizi_adulti,0.936
+Calabria,2020,conoscenza_sapere,servizi_adulti,-1.461
+Campania,2020,conoscenza_sapere,servizi_adulti,-1.29
+Emilia-Romagna,2020,conoscenza_sapere,servizi_adulti,0.395
+Friuli-Venezia Giulia,2020,conoscenza_sapere,servizi_adulti,1.126
+Lazio,2020,conoscenza_sapere,servizi_adulti,0.124
+Liguria,2020,conoscenza_sapere,servizi_adulti,0.273
+Lombardia,2020,conoscenza_sapere,servizi_adulti,-0.604
+Marche,2020,conoscenza_sapere,servizi_adulti,0.671
+Molise,2020,conoscenza_sapere,servizi_adulti,1.621
+Piemonte,2020,conoscenza_sapere,servizi_adulti,-0.353
+Puglia,2020,conoscenza_sapere,servizi_adulti,-1.752
+Sardegna,2020,conoscenza_sapere,servizi_adulti,0.115
+Sicilia,2020,conoscenza_sapere,servizi_adulti,-1.87
+Toscana,2020,conoscenza_sapere,servizi_adulti,1.397
+Trentino-Alto Adige/Südtirol,2020,conoscenza_sapere,servizi_adulti,1.084
+Umbria,2020,conoscenza_sapere,servizi_adulti,0.304
+Valle d'Aosta/Vallée d'Aoste,2020,conoscenza_sapere,servizi_adulti,-0.579
+Veneto,2020,conoscenza_sapere,servizi_adulti,-0.294
+Abruzzo,2020,cura,rischio_adulti,-0.194
+Basilicata,2020,cura,rischio_adulti,0.331
+Calabria,2020,cura,rischio_adulti,-0.26
+Campania,2020,cura,rischio_adulti,-1.821
+Emilia-Romagna,2020,cura,rischio_adulti,0.464
+Friuli-Venezia Giulia,2020,cura,rischio_adulti,0.477
+Lazio,2020,cura,rischio_adulti,-0.442
+Liguria,2020,cura,rischio_adulti,0.276
+Lombardia,2020,cura,rischio_adulti,0.512
+Marche,2020,cura,rischio_adulti,0.097
+Molise,2020,cura,rischio_adulti,-0.154
+Piemonte,2020,cura,rischio_adulti,0.123
+Puglia,2020,cura,rischio_adulti,-0.792
+Sardegna,2020,cura,rischio_adulti,0.359
+Sicilia,2020,cura,rischio_adulti,-1.235
+Toscana,2020,cura,rischio_adulti,0.259
+Trentino-Alto Adige/Südtirol,2020,cura,rischio_adulti,0.807
+Umbria,2020,cura,rischio_adulti,0.198
+Valle d'Aosta/Vallée d'Aoste,2020,cura,rischio_adulti,0.468
+Veneto,2020,cura,rischio_adulti,0.526
+Abruzzo,2020,cura,servizi_adulti,-0.221
+Basilicata,2020,cura,servizi_adulti,-0.164
+Calabria,2020,cura,servizi_adulti,-0.743
+Campania,2020,cura,servizi_adulti,-0.843
+Emilia-Romagna,2020,cura,servizi_adulti,1.694
+Friuli-Venezia Giulia,2020,cura,servizi_adulti,-0.27
+Lazio,2020,cura,servizi_adulti,-0.162
+Liguria,2020,cura,servizi_adulti,0.312
+Lombardia,2020,cura,servizi_adulti,-0.046
+Marche,2020,cura,servizi_adulti,-0.64
+Molise,2020,cura,servizi_adulti,-0.543
+Piemonte,2020,cura,servizi_adulti,0.256
+Puglia,2020,cura,servizi_adulti,-0.248
+Sardegna,2020,cura,servizi_adulti,0.002
+Sicilia,2020,cura,servizi_adulti,-0.258
+Toscana,2020,cura,servizi_adulti,0.114
+Trentino-Alto Adige/Südtirol,2020,cura,servizi_adulti,0.146
+Umbria,2020,cura,servizi_adulti,0.575
+Valle d'Aosta/Vallée d'Aoste,2020,cura,servizi_adulti,0.634
+Veneto,2020,cura,servizi_adulti,0.668
+Abruzzo,2020,cura,servizi_bambini,-0.56
+Basilicata,2020,cura,servizi_bambini,-0.251
+Calabria,2020,cura,servizi_bambini,-0.809
+Campania,2020,cura,servizi_bambini,-1.077
+Emilia-Romagna,2020,cura,servizi_bambini,0.392
+Friuli-Venezia Giulia,2020,cura,servizi_bambini,0.013
+Lazio,2020,cura,servizi_bambini,-0.742
+Liguria,2020,cura,servizi_bambini,1.141
+Lombardia,2020,cura,servizi_bambini,-0.269
+Marche,2020,cura,servizi_bambini,0.071
+Molise,2020,cura,servizi_bambini,-0.211
+Piemonte,2020,cura,servizi_bambini,0.83
+Puglia,2020,cura,servizi_bambini,-0.663
+Sardegna,2020,cura,servizi_bambini,0.323
+Sicilia,2020,cura,servizi_bambini,-0.276
+Toscana,2020,cura,servizi_bambini,0.324
+Trentino-Alto Adige/Südtirol,2020,cura,servizi_bambini,0.044
+Umbria,2020,cura,servizi_bambini,0.612
+Valle d'Aosta/Vallée d'Aoste,2020,cura,servizi_bambini,0.694
+Veneto,2020,cura,servizi_bambini,0.414
+Abruzzo,2020,lavorare,rischio_adulti,-0.273
+Basilicata,2020,lavorare,rischio_adulti,-0.65
+Calabria,2020,lavorare,rischio_adulti,-1.555
+Campania,2020,lavorare,rischio_adulti,-1.636
+Emilia-Romagna,2020,lavorare,rischio_adulti,0.981
+Friuli-Venezia Giulia,2020,lavorare,rischio_adulti,0.831
+Lazio,2020,lavorare,rischio_adulti,-0.233
+Liguria,2020,lavorare,rischio_adulti,0.332
+Lombardia,2020,lavorare,rischio_adulti,0.735
+Marche,2020,lavorare,rischio_adulti,0.554
+Molise,2020,lavorare,rischio_adulti,-0.518
+Piemonte,2020,lavorare,rischio_adulti,0.405
+Puglia,2020,lavorare,rischio_adulti,-0.702
+Sardegna,2020,lavorare,rischio_adulti,-0.681
+Sicilia,2020,lavorare,rischio_adulti,-1.895
+Toscana,2020,lavorare,rischio_adulti,0.733
+Trentino-Alto Adige/Südtirol,2020,lavorare,rischio_adulti,1.438
+Umbria,2020,lavorare,rischio_adulti,0.241
+Valle d'Aosta/Vallée d'Aoste,2020,lavorare,rischio_adulti,0.928
+Veneto,2020,lavorare,rischio_adulti,0.964
+Abruzzo,2020,lavorare,servizi_adulti,-0.568
+Basilicata,2020,lavorare,servizi_adulti,-0.727
+Calabria,2020,lavorare,servizi_adulti,-0.885
+Campania,2020,lavorare,servizi_adulti,-0.807
+Emilia-Romagna,2020,lavorare,servizi_adulti,2.148
+Friuli-Venezia Giulia,2020,lavorare,servizi_adulti,0.036
+Lazio,2020,lavorare,servizi_adulti,-0.559
+Liguria,2020,lavorare,servizi_adulti,0.086
+Lombardia,2020,lavorare,servizi_adulti,0.309
+Marche,2020,lavorare,servizi_adulti,-0.762
+Molise,2020,lavorare,servizi_adulti,-0.292
+Piemonte,2020,lavorare,servizi_adulti,2.445
+Puglia,2020,lavorare,servizi_adulti,-0.54
+Sardegna,2020,lavorare,servizi_adulti,1.224
+Sicilia,2020,lavorare,servizi_adulti,-0.459
+Toscana,2020,lavorare,servizi_adulti,-0.261
+Trentino-Alto Adige/Südtirol,2020,lavorare,servizi_adulti,-0.799
+Umbria,2020,lavorare,servizi_adulti,-0.438
+Valle d'Aosta/Vallée d'Aoste,2020,lavorare,servizi_adulti,-0.756
+Veneto,2020,lavorare,servizi_adulti,1.604
+Abruzzo,2020,vita_sana,rischio_adulti,0.121
+Basilicata,2020,vita_sana,rischio_adulti,-0.333
+Calabria,2020,vita_sana,rischio_adulti,-0.199
+Campania,2020,vita_sana,rischio_adulti,-0.257
+Emilia-Romagna,2020,vita_sana,rischio_adulti,-0.015
+Friuli-Venezia Giulia,2020,vita_sana,rischio_adulti,0.323
+Lazio,2020,vita_sana,rischio_adulti,0.275
+Liguria,2020,vita_sana,rischio_adulti,0.528
+Lombardia,2020,vita_sana,rischio_adulti,0.509
+Marche,2020,vita_sana,rischio_adulti,-0.647
+Molise,2020,vita_sana,rischio_adulti,0.617
+Piemonte,2020,vita_sana,rischio_adulti,-0.545
+Puglia,2020,vita_sana,rischio_adulti,0.087
+Sardegna,2020,vita_sana,rischio_adulti,-0.243
+Sicilia,2020,vita_sana,rischio_adulti,0.206
+Toscana,2020,vita_sana,rischio_adulti,-0.246
+Trentino-Alto Adige/Südtirol,2020,vita_sana,rischio_adulti,0.686
+Umbria,2020,vita_sana,rischio_adulti,-0.594
+Valle d'Aosta/Vallée d'Aoste,2020,vita_sana,rischio_adulti,-0.683
+Veneto,2020,vita_sana,rischio_adulti,0.41
+Abruzzo,2020,vita_sana,rischio_bambini,-0.68
+Basilicata,2020,vita_sana,rischio_bambini,-0.554
+Calabria,2020,vita_sana,rischio_bambini,-0.12
+Campania,2020,vita_sana,rischio_bambini,-0.58
+Emilia-Romagna,2020,vita_sana,rischio_bambini,0.459
+Friuli-Venezia Giulia,2020,vita_sana,rischio_bambini,0.6
+Lazio,2020,vita_sana,rischio_bambini,0.527
+Liguria,2020,vita_sana,rischio_bambini,0.092
+Lombardia,2020,vita_sana,rischio_bambini,0.085
+Marche,2020,vita_sana,rischio_bambini,0.672
+Molise,2020,vita_sana,rischio_bambini,-0.812
+Piemonte,2020,vita_sana,rischio_bambini,0.32
+Puglia,2020,vita_sana,rischio_bambini,-0.937
+Sardegna,2020,vita_sana,rischio_bambini,-0.72
+Sicilia,2020,vita_sana,rischio_bambini,-0.986
+Toscana,2020,vita_sana,rischio_bambini,0.48
+Trentino-Alto Adige/Südtirol,2020,vita_sana,rischio_bambini,0.928
+Umbria,2020,vita_sana,rischio_bambini,0.276
+Valle d'Aosta/Vallée d'Aoste,2020,vita_sana,rischio_bambini,0.754
+Veneto,2020,vita_sana,rischio_bambini,0.194
+Abruzzo,2020,vita_sana,servizi_adulti,-0.154
+Basilicata,2020,vita_sana,servizi_adulti,-0.617
+Calabria,2020,vita_sana,servizi_adulti,-0.981
+Campania,2020,vita_sana,servizi_adulti,-1.147
+Emilia-Romagna,2020,vita_sana,servizi_adulti,0.113
+Friuli-Venezia Giulia,2020,vita_sana,servizi_adulti,-0.229
+Lazio,2020,vita_sana,servizi_adulti,-0.514
+Liguria,2020,vita_sana,servizi_adulti,1.287
+Lombardia,2020,vita_sana,servizi_adulti,-0.027
+Marche,2020,vita_sana,servizi_adulti,0.913
+Molise,2020,vita_sana,servizi_adulti,-0.064
+Piemonte,2020,vita_sana,servizi_adulti,0.42
+Puglia,2020,vita_sana,servizi_adulti,-0.202
+Sardegna,2020,vita_sana,servizi_adulti,-0.403
+Sicilia,2020,vita_sana,servizi_adulti,-0.853
+Toscana,2020,vita_sana,servizi_adulti,0.702
+Trentino-Alto Adige/Südtirol,2020,vita_sana,servizi_adulti,0.082
+Umbria,2020,vita_sana,servizi_adulti,0.476
+Valle d'Aosta/Vallée d'Aoste,2020,vita_sana,servizi_adulti,0.62
+Veneto,2020,vita_sana,servizi_adulti,0.577
+Abruzzo,2020,vita_sana,servizi_bambini,0.287
+Basilicata,2020,vita_sana,servizi_bambini,-0.133
+Calabria,2020,vita_sana,servizi_bambini,-0.091
+Campania,2020,vita_sana,servizi_bambini,-0.706
+Emilia-Romagna,2020,vita_sana,servizi_bambini,0.386
+Friuli-Venezia Giulia,2020,vita_sana,servizi_bambini,-0.932
+Lazio,2020,vita_sana,servizi_bambini,0.256
+Liguria,2020,vita_sana,servizi_bambini,0.115
+Lombardia,2020,vita_sana,servizi_bambini,-0.833
+Marche,2020,vita_sana,servizi_bambini,-0.484
+Molise,2020,vita_sana,servizi_bambini,-0.093
+Piemonte,2020,vita_sana,servizi_bambini,-0.995
+Puglia,2020,vita_sana,servizi_bambini,0.342
+Sardegna,2020,vita_sana,servizi_bambini,1.219
+Sicilia,2020,vita_sana,servizi_bambini,0.259
+Toscana,2020,vita_sana,servizi_bambini,1.131
+Trentino-Alto Adige/Südtirol,2020,vita_sana,servizi_bambini,-0.4
+Umbria,2020,vita_sana,servizi_bambini,-0.025
+Valle d'Aosta/Vallée d'Aoste,2020,vita_sana,servizi_bambini,1.217
+Veneto,2020,vita_sana,servizi_bambini,-0.521
+Abruzzo,2020,vita_sicura,rischio_adulti,-0.242
+Basilicata,2020,vita_sicura,rischio_adulti,-0.514
+Calabria,2020,vita_sicura,rischio_adulti,-0.486
+Campania,2020,vita_sicura,rischio_adulti,-1.066
+Emilia-Romagna,2020,vita_sicura,rischio_adulti,0.224
+Friuli-Venezia Giulia,2020,vita_sicura,rischio_adulti,0.678
+Lazio,2020,vita_sicura,rischio_adulti,-0.591
+Liguria,2020,vita_sicura,rischio_adulti,0.35
+Lombardia,2020,vita_sicura,rischio_adulti,0.249
+Marche,2020,vita_sicura,rischio_adulti,0.139
+Molise,2020,vita_sicura,rischio_adulti,-0.546
+Piemonte,2020,vita_sicura,rischio_adulti,0.256
+Puglia,2020,vita_sicura,rischio_adulti,-0.673
+Sardegna,2020,vita_sicura,rischio_adulti,0.341
+Sicilia,2020,vita_sicura,rischio_adulti,-0.297
+Toscana,2020,vita_sicura,rischio_adulti,0.265
+Trentino-Alto Adige/Südtirol,2020,vita_sicura,rischio_adulti,1.248
+Umbria,2020,vita_sicura,rischio_adulti,0.202
+Valle d'Aosta/Vallée d'Aoste,2020,vita_sicura,rischio_adulti,0.203
+Veneto,2020,vita_sicura,rischio_adulti,0.26
+Abruzzo,2020,vita_sicura,servizi_adulti,0.003
+Basilicata,2020,vita_sicura,servizi_adulti,-0.659
+Calabria,2020,vita_sicura,servizi_adulti,-0.717
+Campania,2020,vita_sicura,servizi_adulti,-0.304
+Emilia-Romagna,2020,vita_sicura,servizi_adulti,0.748
+Friuli-Venezia Giulia,2020,vita_sicura,servizi_adulti,0.41
+Lazio,2020,vita_sicura,servizi_adulti,-0.971
+Liguria,2020,vita_sicura,servizi_adulti,0.258
+Lombardia,2020,vita_sicura,servizi_adulti,-0.137
+Marche,2020,vita_sicura,servizi_adulti,-0.003
+Molise,2020,vita_sicura,servizi_adulti,-0.41
+Piemonte,2020,vita_sicura,servizi_adulti,-0.717
+Puglia,2020,vita_sicura,servizi_adulti,-0.557
+Sardegna,2020,vita_sicura,servizi_adulti,0.441
+Sicilia,2020,vita_sicura,servizi_adulti,0.198
+Toscana,2020,vita_sicura,servizi_adulti,0.223
+Trentino-Alto Adige/Südtirol,2020,vita_sicura,servizi_adulti,0.121
+Umbria,2020,vita_sicura,servizi_adulti,1.902
+Valle d'Aosta/Vallée d'Aoste,2020,vita_sicura,servizi_adulti,0.264
+Veneto,2020,vita_sicura,servizi_adulti,-0.095
+Abruzzo,2021,,rischio,-0.251
+Basilicata,2021,,rischio,-0.204
+Calabria,2021,,rischio,-0.656
+Campania,2021,,rischio,-1.219
+Emilia-Romagna,2021,,rischio,0.492
+Friuli-Venezia Giulia,2021,,rischio,0.604
+Lazio,2021,,rischio,0.164
+Liguria,2021,,rischio,0.379
+Lombardia,2021,,rischio,0.441
+Marche,2021,,rischio,0.141
+Molise,2021,,rischio,-0.363
+Piemonte,2021,,rischio,0.195
+Puglia,2021,,rischio,-0.752
+Sardegna,2021,,rischio,-0.29
+Sicilia,2021,,rischio,-0.969
+Toscana,2021,,rischio,0.251
+Trentino-Alto Adige/Südtirol,2021,,rischio,1.028
+Umbria,2021,,rischio,0.259
+Valle d'Aosta/Vallée d'Aoste,2021,,rischio,0.308
+Veneto,2021,,rischio,0.442
+Abruzzo,2021,,servizi,-0.245
+Basilicata,2021,,servizi,-0.42
+Calabria,2021,,servizi,-0.71
+Campania,2021,,servizi,-0.871
+Emilia-Romagna,2021,,servizi,0.825
+Friuli-Venezia Giulia,2021,,servizi,0.415
+Lazio,2021,,servizi,-0.396
+Liguria,2021,,servizi,0.271
+Lombardia,2021,,servizi,-0.142
+Marche,2021,,servizi,0.039
+Molise,2021,,servizi,-0.174
+Piemonte,2021,,servizi,0.349
+Puglia,2021,,servizi,-0.258
+Sardegna,2021,,servizi,0.166
+Sicilia,2021,,servizi,-0.6
+Toscana,2021,,servizi,0.297
+Trentino-Alto Adige/Südtirol,2021,,servizi,0.401
+Umbria,2021,,servizi,0.412
+Valle d'Aosta/Vallée d'Aoste,2021,,servizi,0.234
+Veneto,2021,,servizi,0.496
+Abruzzo,2021,,totale,-0.261
+Basilicata,2021,,totale,-0.335
+Calabria,2021,,totale,-0.752
+Campania,2021,,totale,-1.103
+Emilia-Romagna,2021,,totale,0.713
+Friuli-Venezia Giulia,2021,,totale,0.641
+Lazio,2021,,totale,-0.159
+Liguria,2021,,totale,0.286
+Lombardia,2021,,totale,0.17
+Marche,2021,,totale,0.106
+Molise,2021,,totale,-0.298
+Piemonte,2021,,totale,0.35
+Puglia,2021,,totale,-0.537
+Sardegna,2021,,totale,-0.075
+Sicilia,2021,,totale,-0.872
+Toscana,2021,,totale,0.254
+Trentino-Alto Adige/Südtirol,2021,,totale,0.787
+Umbria,2021,,totale,0.366
+Valle d'Aosta/Vallée d'Aoste,2021,,totale,0.231
+Veneto,2021,,totale,0.528
+Abruzzo,2021,accedere_risorse,rischio_adulti,-0.929
+Basilicata,2021,accedere_risorse,rischio_adulti,0.195
+Calabria,2021,accedere_risorse,rischio_adulti,-0.09
+Campania,2021,accedere_risorse,rischio_adulti,-1.813
+Emilia-Romagna,2021,accedere_risorse,rischio_adulti,0.485
+Friuli-Venezia Giulia,2021,accedere_risorse,rischio_adulti,0.728
+Lazio,2021,accedere_risorse,rischio_adulti,-0.044
+Liguria,2021,accedere_risorse,rischio_adulti,0.305
+Lombardia,2021,accedere_risorse,rischio_adulti,0.228
+Marche,2021,accedere_risorse,rischio_adulti,0.163
+Molise,2021,accedere_risorse,rischio_adulti,-0.601
+Piemonte,2021,accedere_risorse,rischio_adulti,0.326
+Puglia,2021,accedere_risorse,rischio_adulti,-0.483
+Sardegna,2021,accedere_risorse,rischio_adulti,0.156
+Sicilia,2021,accedere_risorse,rischio_adulti,-1.316
+Toscana,2021,accedere_risorse,rischio_adulti,0.533
+Trentino-Alto Adige/Südtirol,2021,accedere_risorse,rischio_adulti,0.542
+Umbria,2021,accedere_risorse,rischio_adulti,0.507
+Valle d'Aosta/Vallée d'Aoste,2021,accedere_risorse,rischio_adulti,0.479
+Veneto,2021,accedere_risorse,rischio_adulti,0.631
+Abruzzo,2021,accedere_risorse,servizi_adulti,-0.653
+Basilicata,2021,accedere_risorse,servizi_adulti,-0.662
+Calabria,2021,accedere_risorse,servizi_adulti,-0.669
+Campania,2021,accedere_risorse,servizi_adulti,-0.685
+Emilia-Romagna,2021,accedere_risorse,servizi_adulti,1.03
+Friuli-Venezia Giulia,2021,accedere_risorse,servizi_adulti,1.507
+Lazio,2021,accedere_risorse,servizi_adulti,-0.431
+Liguria,2021,accedere_risorse,servizi_adulti,-0.39
+Lombardia,2021,accedere_risorse,servizi_adulti,0.415
+Marche,2021,accedere_risorse,servizi_adulti,-0.102
+Molise,2021,accedere_risorse,servizi_adulti,-0.421
+Piemonte,2021,accedere_risorse,servizi_adulti,0.281
+Puglia,2021,accedere_risorse,servizi_adulti,-0.508
+Sardegna,2021,accedere_risorse,servizi_adulti,-0.362
+Sicilia,2021,accedere_risorse,servizi_adulti,-0.621
+Toscana,2021,accedere_risorse,servizi_adulti,-0.177
+Trentino-Alto Adige/Südtirol,2021,accedere_risorse,servizi_adulti,3.104
+Umbria,2021,accedere_risorse,servizi_adulti,-0.29
+Valle d'Aosta/Vallée d'Aoste,2021,accedere_risorse,servizi_adulti,-0.555
+Veneto,2021,accedere_risorse,servizi_adulti,0.192
+Abruzzo,2021,conoscenza_sapere,rischio_adulti,0.419
+Basilicata,2021,conoscenza_sapere,rischio_adulti,-0.117
+Calabria,2021,conoscenza_sapere,rischio_adulti,-1.905
+Campania,2021,conoscenza_sapere,rischio_adulti,-1.592
+Emilia-Romagna,2021,conoscenza_sapere,rischio_adulti,0.871
+Friuli-Venezia Giulia,2021,conoscenza_sapere,rischio_adulti,0.698
+Lazio,2021,conoscenza_sapere,rischio_adulti,1.01
+Liguria,2021,conoscenza_sapere,rischio_adulti,0.914
+Lombardia,2021,conoscenza_sapere,rischio_adulti,0.772
+Marche,2021,conoscenza_sapere,rischio_adulti,0.362
+Molise,2021,conoscenza_sapere,rischio_adulti,-0.268
+Piemonte,2021,conoscenza_sapere,rischio_adulti,0.005
+Puglia,2021,conoscenza_sapere,rischio_adulti,-1.59
+Sardegna,2021,conoscenza_sapere,rischio_adulti,-0.774
+Sicilia,2021,conoscenza_sapere,rischio_adulti,-1.578
+Toscana,2021,conoscenza_sapere,rischio_adulti,0.074
+Trentino-Alto Adige/Südtirol,2021,conoscenza_sapere,rischio_adulti,1.199
+Umbria,2021,conoscenza_sapere,rischio_adulti,0.702
+Valle d'Aosta/Vallée d'Aoste,2021,conoscenza_sapere,rischio_adulti,0.646
+Veneto,2021,conoscenza_sapere,rischio_adulti,0.152
+Abruzzo,2021,conoscenza_sapere,servizi_adulti,-0.047
+Basilicata,2021,conoscenza_sapere,servizi_adulti,-0.358
+Calabria,2021,conoscenza_sapere,servizi_adulti,-1.042
+Campania,2021,conoscenza_sapere,servizi_adulti,-1.299
+Emilia-Romagna,2021,conoscenza_sapere,servizi_adulti,0.244
+Friuli-Venezia Giulia,2021,conoscenza_sapere,servizi_adulti,2.302
+Lazio,2021,conoscenza_sapere,servizi_adulti,0.424
+Liguria,2021,conoscenza_sapere,servizi_adulti,-0.183
+Lombardia,2021,conoscenza_sapere,servizi_adulti,-0.495
+Marche,2021,conoscenza_sapere,servizi_adulti,0.679
+Molise,2021,conoscenza_sapere,servizi_adulti,0.01
+Piemonte,2021,conoscenza_sapere,servizi_adulti,0.504
+Puglia,2021,conoscenza_sapere,servizi_adulti,-1.006
+Sardegna,2021,conoscenza_sapere,servizi_adulti,-0.502
+Sicilia,2021,conoscenza_sapere,servizi_adulti,-1.797
+Toscana,2021,conoscenza_sapere,servizi_adulti,0.568
+Trentino-Alto Adige/Südtirol,2021,conoscenza_sapere,servizi_adulti,1.443
+Umbria,2021,conoscenza_sapere,servizi_adulti,1.249
+Valle d'Aosta/Vallée d'Aoste,2021,conoscenza_sapere,servizi_adulti,-1.312
+Veneto,2021,conoscenza_sapere,servizi_adulti,0.618
+Abruzzo,2021,cura,rischio_adulti,-0.226
+Basilicata,2021,cura,rischio_adulti,0.191
+Calabria,2021,cura,rischio_adulti,-0.554
+Campania,2021,cura,rischio_adulti,-1.669
+Emilia-Romagna,2021,cura,rischio_adulti,0.408
+Friuli-Venezia Giulia,2021,cura,rischio_adulti,0.365
+Lazio,2021,cura,rischio_adulti,-0.223
+Liguria,2021,cura,rischio_adulti,0.354
+Lombardia,2021,cura,rischio_adulti,0.533
+Marche,2021,cura,rischio_adulti,-0.138
+Molise,2021,cura,rischio_adulti,0.278
+Piemonte,2021,cura,rischio_adulti,0.191
+Puglia,2021,cura,rischio_adulti,-0.915
+Sardegna,2021,cura,rischio_adulti,0.143
+Sicilia,2021,cura,rischio_adulti,-1.068
+Toscana,2021,cura,rischio_adulti,0.171
+Trentino-Alto Adige/Südtirol,2021,cura,rischio_adulti,0.971
+Umbria,2021,cura,rischio_adulti,0.34
+Valle d'Aosta/Vallée d'Aoste,2021,cura,rischio_adulti,0.402
+Veneto,2021,cura,rischio_adulti,0.445
+Abruzzo,2021,cura,servizi_adulti,-0.231
+Basilicata,2021,cura,servizi_adulti,0.033
+Calabria,2021,cura,servizi_adulti,-0.782
+Campania,2021,cura,servizi_adulti,-0.744
+Emilia-Romagna,2021,cura,servizi_adulti,1.692
+Friuli-Venezia Giulia,2021,cura,servizi_adulti,-0.427
+Lazio,2021,cura,servizi_adulti,-0.133
+Liguria,2021,cura,servizi_adulti,0.32
+Lombardia,2021,cura,servizi_adulti,0.096
+Marche,2021,cura,servizi_adulti,-0.475
+Molise,2021,cura,servizi_adulti,-0.437
+Piemonte,2021,cura,servizi_adulti,0.13
+Puglia,2021,cura,servizi_adulti,-0.05
+Sardegna,2021,cura,servizi_adulti,0.439
+Sicilia,2021,cura,servizi_adulti,-0.319
+Toscana,2021,cura,servizi_adulti,-0.013
+Trentino-Alto Adige/Südtirol,2021,cura,servizi_adulti,-0.091
+Umbria,2021,cura,servizi_adulti,0.301
+Valle d'Aosta/Vallée d'Aoste,2021,cura,servizi_adulti,0.522
+Veneto,2021,cura,servizi_adulti,0.446
+Abruzzo,2021,cura,servizi_bambini,-0.379
+Basilicata,2021,cura,servizi_bambini,0.069
+Calabria,2021,cura,servizi_bambini,-0.589
+Campania,2021,cura,servizi_bambini,-0.757
+Emilia-Romagna,2021,cura,servizi_bambini,0.796
+Friuli-Venezia Giulia,2021,cura,servizi_bambini,-0.034
+Lazio,2021,cura,servizi_bambini,-0.834
+Liguria,2021,cura,servizi_bambini,0.987
+Lombardia,2021,cura,servizi_bambini,-0.41
+Marche,2021,cura,servizi_bambini,-0.153
+Molise,2021,cura,servizi_bambini,0.158
+Piemonte,2021,cura,servizi_bambini,0.629
+Puglia,2021,cura,servizi_bambini,-0.336
+Sardegna,2021,cura,servizi_bambini,0.253
+Sicilia,2021,cura,servizi_bambini,-0.199
+Toscana,2021,cura,servizi_bambini,0.252
+Trentino-Alto Adige/Südtirol,2021,cura,servizi_bambini,-0.128
+Umbria,2021,cura,servizi_bambini,0.51
+Valle d'Aosta/Vallée d'Aoste,2021,cura,servizi_bambini,0.416
+Veneto,2021,cura,servizi_bambini,0.206
+Abruzzo,2021,lavorare,rischio_adulti,-0.063
+Basilicata,2021,lavorare,rischio_adulti,-0.306
+Calabria,2021,lavorare,rischio_adulti,-1.464
+Campania,2021,lavorare,rischio_adulti,-1.726
+Emilia-Romagna,2021,lavorare,rischio_adulti,1.012
+Friuli-Venezia Giulia,2021,lavorare,rischio_adulti,0.791
+Lazio,2021,lavorare,rischio_adulti,-0.203
+Liguria,2021,lavorare,rischio_adulti,0.136
+Lombardia,2021,lavorare,rischio_adulti,0.713
+Marche,2021,lavorare,rischio_adulti,0.527
+Molise,2021,lavorare,rischio_adulti,-0.826
+Piemonte,2021,lavorare,rischio_adulti,0.416
+Puglia,2021,lavorare,rischio_adulti,-0.744
+Sardegna,2021,lavorare,rischio_adulti,-0.744
+Sicilia,2021,lavorare,rischio_adulti,-1.938
+Toscana,2021,lavorare,rischio_adulti,0.58
+Trentino-Alto Adige/Südtirol,2021,lavorare,rischio_adulti,1.359
+Umbria,2021,lavorare,rischio_adulti,0.378
+Valle d'Aosta/Vallée d'Aoste,2021,lavorare,rischio_adulti,1.097
+Veneto,2021,lavorare,rischio_adulti,1.006
+Abruzzo,2021,lavorare,servizi_adulti,-0.701
+Basilicata,2021,lavorare,servizi_adulti,-0.801
+Calabria,2021,lavorare,servizi_adulti,-0.905
+Campania,2021,lavorare,servizi_adulti,-0.881
+Emilia-Romagna,2021,lavorare,servizi_adulti,1.195
+Friuli-Venezia Giulia,2021,lavorare,servizi_adulti,0.35
+Lazio,2021,lavorare,servizi_adulti,-0.675
+Liguria,2021,lavorare,servizi_adulti,0.014
+Lombardia,2021,lavorare,servizi_adulti,0.314
+Marche,2021,lavorare,servizi_adulti,-0.728
+Molise,2021,lavorare,servizi_adulti,-0.638
+Piemonte,2021,lavorare,servizi_adulti,2.584
+Puglia,2021,lavorare,servizi_adulti,-0.03
+Sardegna,2021,lavorare,servizi_adulti,0.046
+Sicilia,2021,lavorare,servizi_adulti,-0.544
+Toscana,2021,lavorare,servizi_adulti,0.115
+Trentino-Alto Adige/Südtirol,2021,lavorare,servizi_adulti,-0.384
+Umbria,2021,lavorare,servizi_adulti,-0.712
+Valle d'Aosta/Vallée d'Aoste,2021,lavorare,servizi_adulti,0.0
+Veneto,2021,lavorare,servizi_adulti,2.382
+Abruzzo,2021,vita_sana,rischio_adulti,-0.088
+Basilicata,2021,vita_sana,rischio_adulti,0.066
+Calabria,2021,vita_sana,rischio_adulti,-0.309
+Campania,2021,vita_sana,rischio_adulti,0.053
+Emilia-Romagna,2021,vita_sana,rischio_adulti,-0.144
+Friuli-Venezia Giulia,2021,vita_sana,rischio_adulti,0.442
+Lazio,2021,vita_sana,rischio_adulti,0.417
+Liguria,2021,vita_sana,rischio_adulti,0.26
+Lombardia,2021,vita_sana,rischio_adulti,0.498
+Marche,2021,vita_sana,rischio_adulti,-0.594
+Molise,2021,vita_sana,rischio_adulti,0.134
+Piemonte,2021,vita_sana,rischio_adulti,-0.359
+Puglia,2021,vita_sana,rischio_adulti,0.129
+Sardegna,2021,vita_sana,rischio_adulti,-0.369
+Sicilia,2021,vita_sana,rischio_adulti,0.204
+Toscana,2021,vita_sana,rischio_adulti,-0.324
+Trentino-Alto Adige/Südtirol,2021,vita_sana,rischio_adulti,1.073
+Umbria,2021,vita_sana,rischio_adulti,-0.498
+Valle d'Aosta/Vallée d'Aoste,2021,vita_sana,rischio_adulti,-1.057
+Veneto,2021,vita_sana,rischio_adulti,0.467
+Abruzzo,2021,vita_sana,rischio_bambini,-0.645
+Basilicata,2021,vita_sana,rischio_bambini,-1.013
+Calabria,2021,vita_sana,rischio_bambini,0.191
+Campania,2021,vita_sana,rischio_bambini,-0.569
+Emilia-Romagna,2021,vita_sana,rischio_bambini,0.527
+Friuli-Venezia Giulia,2021,vita_sana,rischio_bambini,0.593
+Lazio,2021,vita_sana,rischio_bambini,0.624
+Liguria,2021,vita_sana,rischio_bambini,0.138
+Lombardia,2021,vita_sana,rischio_bambini,0.179
+Marche,2021,vita_sana,rischio_bambini,0.628
+Molise,2021,vita_sana,rischio_bambini,-0.7
+Piemonte,2021,vita_sana,rischio_bambini,0.295
+Puglia,2021,vita_sana,rischio_bambini,-1.055
+Sardegna,2021,vita_sana,rischio_bambini,-0.733
+Sicilia,2021,vita_sana,rischio_bambini,-0.854
+Toscana,2021,vita_sana,rischio_bambini,0.608
+Trentino-Alto Adige/Südtirol,2021,vita_sana,rischio_bambini,0.887
+Umbria,2021,vita_sana,rischio_bambini,0.132
+Valle d'Aosta/Vallée d'Aoste,2021,vita_sana,rischio_bambini,0.512
+Veneto,2021,vita_sana,rischio_bambini,0.254
+Abruzzo,2021,vita_sana,servizi_adulti,-0.029
+Basilicata,2021,vita_sana,servizi_adulti,-0.398
+Calabria,2021,vita_sana,servizi_adulti,-0.877
+Campania,2021,vita_sana,servizi_adulti,-1.19
+Emilia-Romagna,2021,vita_sana,servizi_adulti,-0.004
+Friuli-Venezia Giulia,2021,vita_sana,servizi_adulti,-0.263
+Lazio,2021,vita_sana,servizi_adulti,-0.499
+Liguria,2021,vita_sana,servizi_adulti,1.11
+Lombardia,2021,vita_sana,servizi_adulti,-0.065
+Marche,2021,vita_sana,servizi_adulti,0.753
+Molise,2021,vita_sana,servizi_adulti,0.117
+Piemonte,2021,vita_sana,servizi_adulti,0.389
+Puglia,2021,vita_sana,servizi_adulti,-0.386
+Sardegna,2021,vita_sana,servizi_adulti,-0.405
+Sicilia,2021,vita_sana,servizi_adulti,-0.74
+Toscana,2021,vita_sana,servizi_adulti,0.591
+Trentino-Alto Adige/Südtirol,2021,vita_sana,servizi_adulti,0.007
+Umbria,2021,vita_sana,servizi_adulti,0.564
+Valle d'Aosta/Vallée d'Aoste,2021,vita_sana,servizi_adulti,0.831
+Veneto,2021,vita_sana,servizi_adulti,0.494
+Abruzzo,2021,vita_sana,servizi_bambini,0.155
+Basilicata,2021,vita_sana,servizi_bambini,-0.379
+Calabria,2021,vita_sana,servizi_bambini,-0.204
+Campania,2021,vita_sana,servizi_bambini,-0.723
+Emilia-Romagna,2021,vita_sana,servizi_bambini,0.661
+Friuli-Venezia Giulia,2021,vita_sana,servizi_bambini,-1.001
+Lazio,2021,vita_sana,servizi_bambini,0.049
+Liguria,2021,vita_sana,servizi_bambini,0.148
+Lombardia,2021,vita_sana,servizi_bambini,-0.923
+Marche,2021,vita_sana,servizi_bambini,-0.23
+Molise,2021,vita_sana,servizi_bambini,-0.266
+Piemonte,2021,vita_sana,servizi_bambini,-1.049
+Puglia,2021,vita_sana,servizi_bambini,0.422
+Sardegna,2021,vita_sana,servizi_bambini,1.354
+Sicilia,2021,vita_sana,servizi_bambini,0.203
+Toscana,2021,vita_sana,servizi_bambini,1.029
+Trentino-Alto Adige/Südtirol,2021,vita_sana,servizi_bambini,-0.548
+Umbria,2021,vita_sana,servizi_bambini,0.471
+Valle d'Aosta/Vallée d'Aoste,2021,vita_sana,servizi_bambini,1.335
+Veneto,2021,vita_sana,servizi_bambini,-0.505
+Abruzzo,2021,vita_sicura,rischio_adulti,-0.223
+Basilicata,2021,vita_sicura,rischio_adulti,-0.447
+Calabria,2021,vita_sicura,rischio_adulti,-0.459
+Campania,2021,vita_sicura,rischio_adulti,-1.22
+Emilia-Romagna,2021,vita_sicura,rischio_adulti,0.283
+Friuli-Venezia Giulia,2021,vita_sicura,rischio_adulti,0.608
+Lazio,2021,vita_sicura,rischio_adulti,-0.431
+Liguria,2021,vita_sicura,rischio_adulti,0.544
+Lombardia,2021,vita_sicura,rischio_adulti,0.161
+Marche,2021,vita_sicura,rischio_adulti,0.039
+Molise,2021,vita_sicura,rischio_adulti,-0.556
+Piemonte,2021,vita_sicura,rischio_adulti,0.494
+Puglia,2021,vita_sicura,rischio_adulti,-0.603
+Sardegna,2021,vita_sicura,rischio_adulti,0.291
+Sicilia,2021,vita_sicura,rischio_adulti,-0.232
+Toscana,2021,vita_sicura,rischio_adulti,0.113
+Trentino-Alto Adige/Südtirol,2021,vita_sicura,rischio_adulti,1.166
+Umbria,2021,vita_sicura,rischio_adulti,0.254
+Valle d'Aosta/Vallée d'Aoste,2021,vita_sicura,rischio_adulti,0.08
+Veneto,2021,vita_sicura,rischio_adulti,0.136
+Abruzzo,2021,vita_sicura,servizi_adulti,-0.072
+Basilicata,2021,vita_sicura,servizi_adulti,-0.862
+Calabria,2021,vita_sicura,servizi_adulti,-0.612
+Campania,2021,vita_sicura,servizi_adulti,-0.689
+Emilia-Romagna,2021,vita_sicura,servizi_adulti,0.987
+Friuli-Venezia Giulia,2021,vita_sicura,servizi_adulti,0.889
+Lazio,2021,vita_sicura,servizi_adulti,-1.065
+Liguria,2021,vita_sicura,servizi_adulti,0.162
+Lombardia,2021,vita_sicura,servizi_adulti,-0.064
+Marche,2021,vita_sicura,servizi_adulti,0.569
+Molise,2021,vita_sicura,servizi_adulti,0.085
+Piemonte,2021,vita_sicura,servizi_adulti,-0.68
+Puglia,2021,vita_sicura,servizi_adulti,-0.173
+Sardegna,2021,vita_sicura,servizi_adulti,0.509
+Sicilia,2021,vita_sicura,servizi_adulti,-0.782
+Toscana,2021,vita_sicura,servizi_adulti,0.014
+Trentino-Alto Adige/Südtirol,2021,vita_sicura,servizi_adulti,-0.196
+Umbria,2021,vita_sicura,servizi_adulti,1.206
+Valle d'Aosta/Vallée d'Aoste,2021,vita_sicura,servizi_adulti,0.637
+Veneto,2021,vita_sicura,servizi_adulti,0.138
+Abruzzo,2022,,rischio,-0.194
+Basilicata,2022,,rischio,-0.202
+Calabria,2022,,rischio,-0.602
+Campania,2022,,rischio,-1.231
+Emilia-Romagna,2022,,rischio,0.454
+Friuli-Venezia Giulia,2022,,rischio,0.682
+Lazio,2022,,rischio,0.181
+Liguria,2022,,rischio,0.384
+Lombardia,2022,,rischio,0.409
+Marche,2022,,rischio,0.171
+Molise,2022,,rischio,-0.377
+Piemonte,2022,,rischio,0.135
+Puglia,2022,,rischio,-0.77
+Sardegna,2022,,rischio,-0.333
+Sicilia,2022,,rischio,-1.051
+Toscana,2022,,rischio,0.309
+Trentino-Alto Adige/Südtirol,2022,,rischio,0.957
+Umbria,2022,,rischio,0.188
+Valle d'Aosta/Vallée d'Aoste,2022,,rischio,0.453
+Veneto,2022,,rischio,0.576
+Abruzzo,2022,,servizi,-0.097
+Basilicata,2022,,servizi,-0.152
+Calabria,2022,,servizi,-0.816
+Campania,2022,,servizi,-0.859
+Emilia-Romagna,2022,,servizi,0.856
+Friuli-Venezia Giulia,2022,,servizi,0.204
+Lazio,2022,,servizi,-0.364
+Liguria,2022,,servizi,0.307
+Lombardia,2022,,servizi,-0.233
+Marche,2022,,servizi,-0.09
+Molise,2022,,servizi,-0.092
+Piemonte,2022,,servizi,0.214
+Puglia,2022,,servizi,-0.23
+Sardegna,2022,,servizi,0.29
+Sicilia,2022,,servizi,-0.663
+Toscana,2022,,servizi,0.373
+Trentino-Alto Adige/Südtirol,2022,,servizi,0.321
+Umbria,2022,,servizi,0.311
+Valle d'Aosta/Vallée d'Aoste,2022,,servizi,0.302
+Veneto,2022,,servizi,0.474
+Abruzzo,2022,,totale,-0.13
+Basilicata,2022,,totale,-0.175
+Calabria,2022,,totale,-0.774
+Campania,2022,,totale,-1.09
+Emilia-Romagna,2022,,totale,0.711
+Friuli-Venezia Giulia,2022,,totale,0.535
+Lazio,2022,,totale,-0.129
+Liguria,2022,,totale,0.322
+Lombardia,2022,,totale,0.106
+Marche,2022,,totale,0.041
+Molise,2022,,totale,-0.253
+Piemonte,2022,,totale,0.238
+Puglia,2022,,totale,-0.527
+Sardegna,2022,,totale,-0.006
+Sicilia,2022,,totale,-0.957
+Toscana,2022,,totale,0.336
+Trentino-Alto Adige/Südtirol,2022,,totale,0.703
+Umbria,2022,,totale,0.279
+Valle d'Aosta/Vallée d'Aoste,2022,,totale,0.304
+Veneto,2022,,totale,0.575
+Abruzzo,2022,accedere_risorse,rischio_adulti,-0.859
+Basilicata,2022,accedere_risorse,rischio_adulti,-0.034
+Calabria,2022,accedere_risorse,rischio_adulti,-0.057
+Campania,2022,accedere_risorse,rischio_adulti,-1.821
+Emilia-Romagna,2022,accedere_risorse,rischio_adulti,0.451
+Friuli-Venezia Giulia,2022,accedere_risorse,rischio_adulti,0.681
+Lazio,2022,accedere_risorse,rischio_adulti,-0.006
+Liguria,2022,accedere_risorse,rischio_adulti,0.354
+Lombardia,2022,accedere_risorse,rischio_adulti,0.202
+Marche,2022,accedere_risorse,rischio_adulti,0.155
+Molise,2022,accedere_risorse,rischio_adulti,-0.684
+Piemonte,2022,accedere_risorse,rischio_adulti,0.353
+Puglia,2022,accedere_risorse,rischio_adulti,-0.413
+Sardegna,2022,accedere_risorse,rischio_adulti,0.108
+Sicilia,2022,accedere_risorse,rischio_adulti,-1.177
+Toscana,2022,accedere_risorse,rischio_adulti,0.523
+Trentino-Alto Adige/Südtirol,2022,accedere_risorse,rischio_adulti,0.55
+Umbria,2022,accedere_risorse,rischio_adulti,0.519
+Valle d'Aosta/Vallée d'Aoste,2022,accedere_risorse,rischio_adulti,0.443
+Veneto,2022,accedere_risorse,rischio_adulti,0.713
+Abruzzo,2022,accedere_risorse,servizi_adulti,-0.653
+Basilicata,2022,accedere_risorse,servizi_adulti,-0.662
+Calabria,2022,accedere_risorse,servizi_adulti,-0.669
+Campania,2022,accedere_risorse,servizi_adulti,-0.685
+Emilia-Romagna,2022,accedere_risorse,servizi_adulti,1.03
+Friuli-Venezia Giulia,2022,accedere_risorse,servizi_adulti,1.507
+Lazio,2022,accedere_risorse,servizi_adulti,-0.431
+Liguria,2022,accedere_risorse,servizi_adulti,-0.39
+Lombardia,2022,accedere_risorse,servizi_adulti,0.415
+Marche,2022,accedere_risorse,servizi_adulti,-0.102
+Molise,2022,accedere_risorse,servizi_adulti,-0.421
+Piemonte,2022,accedere_risorse,servizi_adulti,0.281
+Puglia,2022,accedere_risorse,servizi_adulti,-0.508
+Sardegna,2022,accedere_risorse,servizi_adulti,-0.362
+Sicilia,2022,accedere_risorse,servizi_adulti,-0.621
+Toscana,2022,accedere_risorse,servizi_adulti,-0.177
+Trentino-Alto Adige/Südtirol,2022,accedere_risorse,servizi_adulti,3.104
+Umbria,2022,accedere_risorse,servizi_adulti,-0.29
+Valle d'Aosta/Vallée d'Aoste,2022,accedere_risorse,servizi_adulti,-0.555
+Veneto,2022,accedere_risorse,servizi_adulti,0.192
+Abruzzo,2022,conoscenza_sapere,rischio_adulti,0.538
+Basilicata,2022,conoscenza_sapere,rischio_adulti,-0.471
+Calabria,2022,conoscenza_sapere,rischio_adulti,-1.603
+Campania,2022,conoscenza_sapere,rischio_adulti,-1.536
+Emilia-Romagna,2022,conoscenza_sapere,rischio_adulti,0.858
+Friuli-Venezia Giulia,2022,conoscenza_sapere,rischio_adulti,1.012
+Lazio,2022,conoscenza_sapere,rischio_adulti,1.255
+Liguria,2022,conoscenza_sapere,rischio_adulti,0.684
+Lombardia,2022,conoscenza_sapere,rischio_adulti,0.682
+Marche,2022,conoscenza_sapere,rischio_adulti,0.711
+Molise,2022,conoscenza_sapere,rischio_adulti,-0.255
+Piemonte,2022,conoscenza_sapere,rischio_adulti,0.043
+Puglia,2022,conoscenza_sapere,rischio_adulti,-1.633
+Sardegna,2022,conoscenza_sapere,rischio_adulti,-0.545
+Sicilia,2022,conoscenza_sapere,rischio_adulti,-1.734
+Toscana,2022,conoscenza_sapere,rischio_adulti,0.321
+Trentino-Alto Adige/Südtirol,2022,conoscenza_sapere,rischio_adulti,0.947
+Umbria,2022,conoscenza_sapere,rischio_adulti,0.794
+Valle d'Aosta/Vallée d'Aoste,2022,conoscenza_sapere,rischio_adulti,0.558
+Veneto,2022,conoscenza_sapere,rischio_adulti,0.353
+Abruzzo,2022,conoscenza_sapere,servizi_adulti,1.294
+Basilicata,2022,conoscenza_sapere,servizi_adulti,1.274
+Calabria,2022,conoscenza_sapere,servizi_adulti,-1.446
+Campania,2022,conoscenza_sapere,servizi_adulti,-0.998
+Emilia-Romagna,2022,conoscenza_sapere,servizi_adulti,0.25
+Friuli-Venezia Giulia,2022,conoscenza_sapere,servizi_adulti,0.489
+Lazio,2022,conoscenza_sapere,servizi_adulti,0.716
+Liguria,2022,conoscenza_sapere,servizi_adulti,0.82
+Lombardia,2022,conoscenza_sapere,servizi_adulti,-1.114
+Marche,2022,conoscenza_sapere,servizi_adulti,-0.467
+Molise,2022,conoscenza_sapere,servizi_adulti,0.715
+Piemonte,2022,conoscenza_sapere,servizi_adulti,-0.569
+Puglia,2022,conoscenza_sapere,servizi_adulti,-0.642
+Sardegna,2022,conoscenza_sapere,servizi_adulti,0.56
+Sicilia,2022,conoscenza_sapere,servizi_adulti,-2.171
+Toscana,2022,conoscenza_sapere,servizi_adulti,1.257
+Trentino-Alto Adige/Südtirol,2022,conoscenza_sapere,servizi_adulti,0.099
+Umbria,2022,conoscenza_sapere,servizi_adulti,0.873
+Valle d'Aosta/Vallée d'Aoste,2022,conoscenza_sapere,servizi_adulti,-1.365
+Veneto,2022,conoscenza_sapere,servizi_adulti,0.425
+Abruzzo,2022,cura,rischio_adulti,-0.313
+Basilicata,2022,cura,rischio_adulti,0.292
+Calabria,2022,cura,rischio_adulti,-0.268
+Campania,2022,cura,rischio_adulti,-1.675
+Emilia-Romagna,2022,cura,rischio_adulti,0.39
+Friuli-Venezia Giulia,2022,cura,rischio_adulti,0.53
+Lazio,2022,cura,rischio_adulti,-0.198
+Liguria,2022,cura,rischio_adulti,0.489
+Lombardia,2022,cura,rischio_adulti,0.561
+Marche,2022,cura,rischio_adulti,0.039
+Molise,2022,cura,rischio_adulti,-0.02
+Piemonte,2022,cura,rischio_adulti,0.154
+Puglia,2022,cura,rischio_adulti,-0.895
+Sardegna,2022,cura,rischio_adulti,-0.027
+Sicilia,2022,cura,rischio_adulti,-1.277
+Toscana,2022,cura,rischio_adulti,0.255
+Trentino-Alto Adige/Südtirol,2022,cura,rischio_adulti,0.918
+Umbria,2022,cura,rischio_adulti,0.148
+Valle d'Aosta/Vallée d'Aoste,2022,cura,rischio_adulti,0.307
+Veneto,2022,cura,rischio_adulti,0.591
+Abruzzo,2022,cura,servizi_adulti,-0.232
+Basilicata,2022,cura,servizi_adulti,0.176
+Calabria,2022,cura,servizi_adulti,-0.848
+Campania,2022,cura,servizi_adulti,-0.765
+Emilia-Romagna,2022,cura,servizi_adulti,1.771
+Friuli-Venezia Giulia,2022,cura,servizi_adulti,-0.371
+Lazio,2022,cura,servizi_adulti,-0.223
+Liguria,2022,cura,servizi_adulti,0.033
+Lombardia,2022,cura,servizi_adulti,0.067
+Marche,2022,cura,servizi_adulti,-0.506
+Molise,2022,cura,servizi_adulti,-0.419
+Piemonte,2022,cura,servizi_adulti,0.154
+Puglia,2022,cura,servizi_adulti,-0.053
+Sardegna,2022,cura,servizi_adulti,0.514
+Sicilia,2022,cura,servizi_adulti,-0.274
+Toscana,2022,cura,servizi_adulti,-0.072
+Trentino-Alto Adige/Südtirol,2022,cura,servizi_adulti,-0.006
+Umbria,2022,cura,servizi_adulti,0.131
+Valle d'Aosta/Vallée d'Aoste,2022,cura,servizi_adulti,0.529
+Veneto,2022,cura,servizi_adulti,0.394
+Abruzzo,2022,cura,servizi_bambini,-0.389
+Basilicata,2022,cura,servizi_bambini,0.051
+Calabria,2022,cura,servizi_bambini,-0.624
+Campania,2022,cura,servizi_bambini,-0.766
+Emilia-Romagna,2022,cura,servizi_bambini,0.837
+Friuli-Venezia Giulia,2022,cura,servizi_bambini,0.005
+Lazio,2022,cura,servizi_bambini,-0.827
+Liguria,2022,cura,servizi_bambini,0.972
+Lombardia,2022,cura,servizi_bambini,-0.411
+Marche,2022,cura,servizi_bambini,-0.126
+Molise,2022,cura,servizi_bambini,0.127
+Piemonte,2022,cura,servizi_bambini,0.674
+Puglia,2022,cura,servizi_bambini,-0.326
+Sardegna,2022,cura,servizi_bambini,0.232
+Sicilia,2022,cura,servizi_bambini,-0.172
+Toscana,2022,cura,servizi_bambini,0.223
+Trentino-Alto Adige/Südtirol,2022,cura,servizi_bambini,-0.15
+Umbria,2022,cura,servizi_bambini,0.481
+Valle d'Aosta/Vallée d'Aoste,2022,cura,servizi_bambini,0.425
+Veneto,2022,cura,servizi_bambini,0.221
+Abruzzo,2022,lavorare,rischio_adulti,-0.049
+Basilicata,2022,lavorare,rischio_adulti,-0.217
+Calabria,2022,lavorare,rischio_adulti,-1.581
+Campania,2022,lavorare,rischio_adulti,-1.658
+Emilia-Romagna,2022,lavorare,rischio_adulti,0.867
+Friuli-Venezia Giulia,2022,lavorare,rischio_adulti,0.678
+Lazio,2022,lavorare,rischio_adulti,-0.212
+Liguria,2022,lavorare,rischio_adulti,0.328
+Lombardia,2022,lavorare,rischio_adulti,0.762
+Marche,2022,lavorare,rischio_adulti,0.536
+Molise,2022,lavorare,rischio_adulti,-0.607
+Piemonte,2022,lavorare,rischio_adulti,0.298
+Puglia,2022,lavorare,rischio_adulti,-0.83
+Sardegna,2022,lavorare,rischio_adulti,-0.829
+Sicilia,2022,lavorare,rischio_adulti,-1.963
+Toscana,2022,lavorare,rischio_adulti,0.525
+Trentino-Alto Adige/Südtirol,2022,lavorare,rischio_adulti,1.31
+Umbria,2022,lavorare,rischio_adulti,0.446
+Valle d'Aosta/Vallée d'Aoste,2022,lavorare,rischio_adulti,1.11
+Veneto,2022,lavorare,rischio_adulti,1.086
+Abruzzo,2022,lavorare,servizi_adulti,-0.701
+Basilicata,2022,lavorare,servizi_adulti,-0.801
+Calabria,2022,lavorare,servizi_adulti,-0.905
+Campania,2022,lavorare,servizi_adulti,-0.881
+Emilia-Romagna,2022,lavorare,servizi_adulti,1.195
+Friuli-Venezia Giulia,2022,lavorare,servizi_adulti,0.35
+Lazio,2022,lavorare,servizi_adulti,-0.675
+Liguria,2022,lavorare,servizi_adulti,0.014
+Lombardia,2022,lavorare,servizi_adulti,0.314
+Marche,2022,lavorare,servizi_adulti,-0.728
+Molise,2022,lavorare,servizi_adulti,-0.638
+Piemonte,2022,lavorare,servizi_adulti,2.584
+Puglia,2022,lavorare,servizi_adulti,-0.03
+Sardegna,2022,lavorare,servizi_adulti,0.046
+Sicilia,2022,lavorare,servizi_adulti,-0.544
+Toscana,2022,lavorare,servizi_adulti,0.115
+Trentino-Alto Adige/Südtirol,2022,lavorare,servizi_adulti,-0.384
+Umbria,2022,lavorare,servizi_adulti,-0.712
+Valle d'Aosta/Vallée d'Aoste,2022,lavorare,servizi_adulti,0.0
+Veneto,2022,lavorare,servizi_adulti,2.382
+Abruzzo,2022,vita_sana,rischio_adulti,-0.017
+Basilicata,2022,vita_sana,rischio_adulti,-0.046
+Calabria,2022,vita_sana,rischio_adulti,-0.164
+Campania,2022,vita_sana,rischio_adulti,-0.194
+Emilia-Romagna,2022,vita_sana,rischio_adulti,-0.04
+Friuli-Venezia Giulia,2022,vita_sana,rischio_adulti,0.487
+Lazio,2022,vita_sana,rischio_adulti,0.457
+Liguria,2022,vita_sana,rischio_adulti,0.292
+Lombardia,2022,vita_sana,rischio_adulti,0.161
+Marche,2022,vita_sana,rischio_adulti,-0.656
+Molise,2022,vita_sana,rischio_adulti,0.039
+Piemonte,2022,vita_sana,rischio_adulti,-0.523
+Puglia,2022,vita_sana,rischio_adulti,0.1
+Sardegna,2022,vita_sana,rischio_adulti,-0.339
+Sicilia,2022,vita_sana,rischio_adulti,0.333
+Toscana,2022,vita_sana,rischio_adulti,-0.246
+Trentino-Alto Adige/Südtirol,2022,vita_sana,rischio_adulti,0.913
+Umbria,2022,vita_sana,rischio_adulti,-0.424
+Valle d'Aosta/Vallée d'Aoste,2022,vita_sana,rischio_adulti,-0.674
+Veneto,2022,vita_sana,rischio_adulti,0.54
+Abruzzo,2022,vita_sana,rischio_bambini,-0.525
+Basilicata,2022,vita_sana,rischio_bambini,-0.669
+Calabria,2022,vita_sana,rischio_bambini,-0.139
+Campania,2022,vita_sana,rischio_bambini,-0.563
+Emilia-Romagna,2022,vita_sana,rischio_bambini,0.391
+Friuli-Venezia Giulia,2022,vita_sana,rischio_bambini,0.595
+Lazio,2022,vita_sana,rischio_bambini,0.634
+Liguria,2022,vita_sana,rischio_bambini,0.067
+Lombardia,2022,vita_sana,rischio_bambini,0.202
+Marche,2022,vita_sana,rischio_bambini,0.532
+Molise,2022,vita_sana,rischio_bambini,-0.472
+Piemonte,2022,vita_sana,rischio_bambini,0.151
+Puglia,2022,vita_sana,rischio_bambini,-1.005
+Sardegna,2022,vita_sana,rischio_bambini,-0.848
+Sicilia,2022,vita_sana,rischio_bambini,-0.963
+Toscana,2022,vita_sana,rischio_bambini,0.607
+Trentino-Alto Adige/Südtirol,2022,vita_sana,rischio_bambini,0.663
+Umbria,2022,vita_sana,rischio_bambini,-0.002
+Valle d'Aosta/Vallée d'Aoste,2022,vita_sana,rischio_bambini,0.931
+Veneto,2022,vita_sana,rischio_bambini,0.411
+Abruzzo,2022,vita_sana,servizi_adulti,-0.121
+Basilicata,2022,vita_sana,servizi_adulti,-0.31
+Calabria,2022,vita_sana,servizi_adulti,-1.257
+Campania,2022,vita_sana,servizi_adulti,-1.195
+Emilia-Romagna,2022,vita_sana,servizi_adulti,-0.015
+Friuli-Venezia Giulia,2022,vita_sana,servizi_adulti,-0.236
+Lazio,2022,vita_sana,servizi_adulti,-0.53
+Liguria,2022,vita_sana,servizi_adulti,1.203
+Lombardia,2022,vita_sana,servizi_adulti,-0.121
+Marche,2022,vita_sana,servizi_adulti,0.728
+Molise,2022,vita_sana,servizi_adulti,0.194
+Piemonte,2022,vita_sana,servizi_adulti,0.352
+Puglia,2022,vita_sana,servizi_adulti,-0.363
+Sardegna,2022,vita_sana,servizi_adulti,-0.261
+Sicilia,2022,vita_sana,servizi_adulti,-0.769
+Toscana,2022,vita_sana,servizi_adulti,0.363
+Trentino-Alto Adige/Südtirol,2022,vita_sana,servizi_adulti,0.083
+Umbria,2022,vita_sana,servizi_adulti,0.467
+Valle d'Aosta/Vallée d'Aoste,2022,vita_sana,servizi_adulti,1.223
+Veneto,2022,vita_sana,servizi_adulti,0.564
+Abruzzo,2022,vita_sana,servizi_bambini,0.136
+Basilicata,2022,vita_sana,servizi_bambini,-0.39
+Calabria,2022,vita_sana,servizi_bambini,-0.19
+Campania,2022,vita_sana,servizi_bambini,-0.719
+Emilia-Romagna,2022,vita_sana,servizi_bambini,0.675
+Friuli-Venezia Giulia,2022,vita_sana,servizi_bambini,-0.991
+Lazio,2022,vita_sana,servizi_bambini,0.091
+Liguria,2022,vita_sana,servizi_bambini,0.014
+Lombardia,2022,vita_sana,servizi_bambini,-0.921
+Marche,2022,vita_sana,servizi_bambini,-0.237
+Molise,2022,vita_sana,servizi_bambini,-0.24
+Piemonte,2022,vita_sana,servizi_bambini,-1.018
+Puglia,2022,vita_sana,servizi_bambini,0.313
+Sardegna,2022,vita_sana,servizi_bambini,1.112
+Sicilia,2022,vita_sana,servizi_bambini,0.191
+Toscana,2022,vita_sana,servizi_bambini,1.233
+Trentino-Alto Adige/Südtirol,2022,vita_sana,servizi_bambini,-0.514
+Umbria,2022,vita_sana,servizi_bambini,0.372
+Valle d'Aosta/Vallée d'Aoste,2022,vita_sana,servizi_bambini,1.552
+Veneto,2022,vita_sana,servizi_bambini,-0.47
+Abruzzo,2022,vita_sicura,rischio_adulti,-0.132
+Basilicata,2022,vita_sicura,rischio_adulti,-0.271
+Calabria,2022,vita_sicura,rischio_adulti,-0.402
+Campania,2022,vita_sicura,rischio_adulti,-1.169
+Emilia-Romagna,2022,vita_sicura,rischio_adulti,0.264
+Friuli-Venezia Giulia,2022,vita_sicura,rischio_adulti,0.792
+Lazio,2022,vita_sicura,rischio_adulti,-0.66
+Liguria,2022,vita_sicura,rischio_adulti,0.474
+Lombardia,2022,vita_sicura,rischio_adulti,0.292
+Marche,2022,vita_sicura,rischio_adulti,-0.117
+Molise,2022,vita_sicura,rischio_adulti,-0.642
+Piemonte,2022,vita_sicura,rischio_adulti,0.472
+Puglia,2022,vita_sicura,rischio_adulti,-0.714
+Sardegna,2022,vita_sicura,rischio_adulti,0.151
+Sicilia,2022,vita_sicura,rischio_adulti,-0.578
+Toscana,2022,vita_sicura,rischio_adulti,0.175
+Trentino-Alto Adige/Südtirol,2022,vita_sicura,rischio_adulti,1.397
+Umbria,2022,vita_sicura,rischio_adulti,-0.162
+Valle d'Aosta/Vallée d'Aoste,2022,vita_sicura,rischio_adulti,0.495
+Veneto,2022,vita_sicura,rischio_adulti,0.336
+Abruzzo,2022,vita_sicura,servizi_adulti,-0.113
+Basilicata,2022,vita_sicura,servizi_adulti,-0.551
+Calabria,2022,vita_sicura,servizi_adulti,-0.587
+Campania,2022,vita_sicura,servizi_adulti,-0.861
+Emilia-Romagna,2022,vita_sicura,servizi_adulti,1.107
+Friuli-Venezia Giulia,2022,vita_sicura,servizi_adulti,0.88
+Lazio,2022,vita_sicura,servizi_adulti,-1.032
+Liguria,2022,vita_sicura,servizi_adulti,-0.208
+Lombardia,2022,vita_sicura,servizi_adulti,-0.09
+Marche,2022,vita_sicura,servizi_adulti,0.716
+Molise,2022,vita_sicura,servizi_adulti,-0.056
+Piemonte,2022,vita_sicura,servizi_adulti,-0.746
+Puglia,2022,vita_sicura,servizi_adulti,-0.23
+Sardegna,2022,vita_sicura,servizi_adulti,0.482
+Sicilia,2022,vita_sicura,servizi_adulti,-0.943
+Toscana,2022,vita_sicura,servizi_adulti,0.045
+Trentino-Alto Adige/Südtirol,2022,vita_sicura,servizi_adulti,0.334
+Umbria,2022,vita_sicura,servizi_adulti,1.167
+Valle d'Aosta/Vallée d'Aoste,2022,vita_sicura,servizi_adulti,0.603
+Veneto,2022,vita_sicura,servizi_adulti,0.083
+Abruzzo,2024,,rischio,-0.171
+Basilicata,2024,,rischio,-0.165
+Calabria,2024,,rischio,-0.653
+Campania,2024,,rischio,-1.236
+Emilia-Romagna,2024,,rischio,0.54
+Friuli-Venezia Giulia,2024,,rischio,0.588
+Lazio,2024,,rischio,0.114
+Liguria,2024,,rischio,0.248
+Lombardia,2024,,rischio,0.474
+Marche,2024,,rischio,0.166
+Molise,2024,,rischio,-0.235
+Piemonte,2024,,rischio,0.112
+Puglia,2024,,rischio,-0.813
+Sardegna,2024,,rischio,-0.344
+Sicilia,2024,,rischio,-1.091
+Toscana,2024,,rischio,0.301
+Trentino-Alto Adige/Südtirol,2024,,rischio,0.982
+Umbria,2024,,rischio,0.307
+Valle d'Aosta/Vallée d'Aoste,2024,,rischio,0.314
+Veneto,2024,,rischio,0.443
+Abruzzo,2024,,servizi,-0.089
+Basilicata,2024,,servizi,-0.08
+Calabria,2024,,servizi,-0.422
+Campania,2024,,servizi,-0.815
+Emilia-Romagna,2024,,servizi,0.777
+Friuli-Venezia Giulia,2024,,servizi,-0.009
+Lazio,2024,,servizi,-0.304
+Liguria,2024,,servizi,0.189
+Lombardia,2024,,servizi,-0.255
+Marche,2024,,servizi,0.131
+Molise,2024,,servizi,-0.044
+Piemonte,2024,,servizi,-0.202
+Puglia,2024,,servizi,-0.421
+Sardegna,2024,,servizi,0.239
+Sicilia,2024,,servizi,-0.518
+Toscana,2024,,servizi,0.404
+Trentino-Alto Adige/Südtirol,2024,,servizi,0.231
+Umbria,2024,,servizi,0.331
+Valle d'Aosta/Vallée d'Aoste,2024,,servizi,0.392
+Veneto,2024,,servizi,0.492
+Abruzzo,2024,,totale,-0.095
+Basilicata,2024,,totale,-0.123
+Calabria,2024,,totale,-0.546
+Campania,2024,,totale,-1.057
+Emilia-Romagna,2024,,totale,0.697
+Friuli-Venezia Giulia,2024,,totale,0.358
+Lazio,2024,,totale,-0.134
+Liguria,2024,,totale,0.186
+Lombardia,2024,,totale,0.109
+Marche,2024,,totale,0.204
+Molise,2024,,totale,-0.126
+Piemonte,2024,,totale,-0.071
+Puglia,2024,,totale,-0.691
+Sardegna,2024,,totale,-0.06
+Sicilia,2024,,totale,-0.865
+Toscana,2024,,totale,0.338
+Trentino-Alto Adige/Südtirol,2024,,totale,0.644
+Umbria,2024,,totale,0.322
+Valle d'Aosta/Vallée d'Aoste,2024,,totale,0.344
+Veneto,2024,,totale,0.532
+Abruzzo,2024,accedere_risorse,rischio_adulti,-0.149
+Basilicata,2024,accedere_risorse,rischio_adulti,0.089
+Calabria,2024,accedere_risorse,rischio_adulti,-0.895
+Campania,2024,accedere_risorse,rischio_adulti,-1.375
+Emilia-Romagna,2024,accedere_risorse,rischio_adulti,0.75
+Friuli-Venezia Giulia,2024,accedere_risorse,rischio_adulti,0.327
+Lazio,2024,accedere_risorse,rischio_adulti,-0.344
+Liguria,2024,accedere_risorse,rischio_adulti,0.538
+Lombardia,2024,accedere_risorse,rischio_adulti,0.43
+Marche,2024,accedere_risorse,rischio_adulti,0.587
+Molise,2024,accedere_risorse,rischio_adulti,-0.259
+Piemonte,2024,accedere_risorse,rischio_adulti,-0.026
+Puglia,2024,accedere_risorse,rischio_adulti,-0.662
+Sardegna,2024,accedere_risorse,rischio_adulti,-0.705
+Sicilia,2024,accedere_risorse,rischio_adulti,-1.231
+Toscana,2024,accedere_risorse,rischio_adulti,0.55
+Trentino-Alto Adige/Südtirol,2024,accedere_risorse,rischio_adulti,0.383
+Umbria,2024,accedere_risorse,rischio_adulti,0.58
+Valle d'Aosta/Vallée d'Aoste,2024,accedere_risorse,rischio_adulti,0.726
+Veneto,2024,accedere_risorse,rischio_adulti,0.689
+Abruzzo,2024,accedere_risorse,servizi_adulti,-0.624
+Basilicata,2024,accedere_risorse,servizi_adulti,-0.488
+Calabria,2024,accedere_risorse,servizi_adulti,-0.483
+Campania,2024,accedere_risorse,servizi_adulti,-0.532
+Emilia-Romagna,2024,accedere_risorse,servizi_adulti,2.949
+Friuli-Venezia Giulia,2024,accedere_risorse,servizi_adulti,0.347
+Lazio,2024,accedere_risorse,servizi_adulti,-0.195
+Liguria,2024,accedere_risorse,servizi_adulti,-0.41
+Lombardia,2024,accedere_risorse,servizi_adulti,-0.308
+Marche,2024,accedere_risorse,servizi_adulti,0.044
+Molise,2024,accedere_risorse,servizi_adulti,-0.414
+Piemonte,2024,accedere_risorse,servizi_adulti,-0.29
+Puglia,2024,accedere_risorse,servizi_adulti,-0.507
+Sardegna,2024,accedere_risorse,servizi_adulti,-0.192
+Sicilia,2024,accedere_risorse,servizi_adulti,-0.571
+Toscana,2024,accedere_risorse,servizi_adulti,0.101
+Trentino-Alto Adige/Südtirol,2024,accedere_risorse,servizi_adulti,2.138
+Umbria,2024,accedere_risorse,servizi_adulti,-0.334
+Valle d'Aosta/Vallée d'Aoste,2024,accedere_risorse,servizi_adulti,-0.429
+Veneto,2024,accedere_risorse,servizi_adulti,0.199
+Abruzzo,2024,conoscenza_sapere,rischio_adulti,0.334
+Basilicata,2024,conoscenza_sapere,rischio_adulti,-0.126
+Calabria,2024,conoscenza_sapere,rischio_adulti,-1.724
+Campania,2024,conoscenza_sapere,rischio_adulti,-1.572
+Emilia-Romagna,2024,conoscenza_sapere,rischio_adulti,1.168
+Friuli-Venezia Giulia,2024,conoscenza_sapere,rischio_adulti,0.965
+Lazio,2024,conoscenza_sapere,rischio_adulti,1.01
+Liguria,2024,conoscenza_sapere,rischio_adulti,0.061
+Lombardia,2024,conoscenza_sapere,rischio_adulti,0.643
+Marche,2024,conoscenza_sapere,rischio_adulti,0.636
+Molise,2024,conoscenza_sapere,rischio_adulti,0.074
+Piemonte,2024,conoscenza_sapere,rischio_adulti,-0.182
+Puglia,2024,conoscenza_sapere,rischio_adulti,-1.613
+Sardegna,2024,conoscenza_sapere,rischio_adulti,-0.501
+Sicilia,2024,conoscenza_sapere,rischio_adulti,-1.863
+Toscana,2024,conoscenza_sapere,rischio_adulti,0.307
+Trentino-Alto Adige/Südtirol,2024,conoscenza_sapere,rischio_adulti,0.742
+Umbria,2024,conoscenza_sapere,rischio_adulti,0.349
+Valle d'Aosta/Vallée d'Aoste,2024,conoscenza_sapere,rischio_adulti,0.842
+Veneto,2024,conoscenza_sapere,rischio_adulti,0.451
+Abruzzo,2024,conoscenza_sapere,servizi_adulti,0.965
+Basilicata,2024,conoscenza_sapere,servizi_adulti,0.948
+Calabria,2024,conoscenza_sapere,servizi_adulti,0.269
+Campania,2024,conoscenza_sapere,servizi_adulti,-1.122
+Emilia-Romagna,2024,conoscenza_sapere,servizi_adulti,-0.751
+Friuli-Venezia Giulia,2024,conoscenza_sapere,servizi_adulti,-0.086
+Lazio,2024,conoscenza_sapere,servizi_adulti,0.638
+Liguria,2024,conoscenza_sapere,servizi_adulti,-0.24
+Lombardia,2024,conoscenza_sapere,servizi_adulti,-1.153
+Marche,2024,conoscenza_sapere,servizi_adulti,0.783
+Molise,2024,conoscenza_sapere,servizi_adulti,1.066
+Piemonte,2024,conoscenza_sapere,servizi_adulti,-0.662
+Puglia,2024,conoscenza_sapere,servizi_adulti,-1.797
+Sardegna,2024,conoscenza_sapere,servizi_adulti,0.967
+Sicilia,2024,conoscenza_sapere,servizi_adulti,-1.584
+Toscana,2024,conoscenza_sapere,servizi_adulti,1.4
+Trentino-Alto Adige/Südtirol,2024,conoscenza_sapere,servizi_adulti,1.429
+Umbria,2024,conoscenza_sapere,servizi_adulti,-0.252
+Valle d'Aosta/Vallée d'Aoste,2024,conoscenza_sapere,servizi_adulti,0.369
+Veneto,2024,conoscenza_sapere,servizi_adulti,-1.189
+Abruzzo,2024,cura,rischio_adulti,-0.556
+Basilicata,2024,cura,rischio_adulti,0.022
+Calabria,2024,cura,rischio_adulti,-0.486
+Campania,2024,cura,rischio_adulti,-1.823
+Emilia-Romagna,2024,cura,rischio_adulti,0.394
+Friuli-Venezia Giulia,2024,cura,rischio_adulti,0.43
+Lazio,2024,cura,rischio_adulti,-0.224
+Liguria,2024,cura,rischio_adulti,0.415
+Lombardia,2024,cura,rischio_adulti,0.642
+Marche,2024,cura,rischio_adulti,0.044
+Molise,2024,cura,rischio_adulti,-0.238
+Piemonte,2024,cura,rischio_adulti,0.513
+Puglia,2024,cura,rischio_adulti,-0.845
+Sardegna,2024,cura,rischio_adulti,0.166
+Sicilia,2024,cura,rischio_adulti,-1.266
+Toscana,2024,cura,rischio_adulti,0.188
+Trentino-Alto Adige/Südtirol,2024,cura,rischio_adulti,0.895
+Umbria,2024,cura,rischio_adulti,0.273
+Valle d'Aosta/Vallée d'Aoste,2024,cura,rischio_adulti,0.191
+Veneto,2024,cura,rischio_adulti,0.426
+Abruzzo,2024,cura,servizi_adulti,0.048
+Basilicata,2024,cura,servizi_adulti,0.181
+Calabria,2024,cura,servizi_adulti,-0.739
+Campania,2024,cura,servizi_adulti,-1.018
+Emilia-Romagna,2024,cura,servizi_adulti,1.696
+Friuli-Venezia Giulia,2024,cura,servizi_adulti,-0.142
+Lazio,2024,cura,servizi_adulti,-0.208
+Liguria,2024,cura,servizi_adulti,0.077
+Lombardia,2024,cura,servizi_adulti,0.115
+Marche,2024,cura,servizi_adulti,-0.477
+Molise,2024,cura,servizi_adulti,-0.84
+Piemonte,2024,cura,servizi_adulti,0.081
+Puglia,2024,cura,servizi_adulti,0.049
+Sardegna,2024,cura,servizi_adulti,0.362
+Sicilia,2024,cura,servizi_adulti,-0.123
+Toscana,2024,cura,servizi_adulti,-0.036
+Trentino-Alto Adige/Südtirol,2024,cura,servizi_adulti,-0.086
+Umbria,2024,cura,servizi_adulti,0.484
+Valle d'Aosta/Vallée d'Aoste,2024,cura,servizi_adulti,0.445
+Veneto,2024,cura,servizi_adulti,0.364
+Abruzzo,2024,cura,servizi_bambini,-0.546
+Basilicata,2024,cura,servizi_bambini,0.209
+Calabria,2024,cura,servizi_bambini,-0.679
+Campania,2024,cura,servizi_bambini,-0.855
+Emilia-Romagna,2024,cura,servizi_bambini,0.744
+Friuli-Venezia Giulia,2024,cura,servizi_bambini,0.005
+Lazio,2024,cura,servizi_bambini,-0.662
+Liguria,2024,cura,servizi_bambini,0.705
+Lombardia,2024,cura,servizi_bambini,-0.42
+Marche,2024,cura,servizi_bambini,0.022
+Molise,2024,cura,servizi_bambini,-0.014
+Piemonte,2024,cura,servizi_bambini,0.713
+Puglia,2024,cura,servizi_bambini,-0.516
+Sardegna,2024,cura,servizi_bambini,0.264
+Sicilia,2024,cura,servizi_bambini,-0.268
+Toscana,2024,cura,servizi_bambini,0.317
+Trentino-Alto Adige/Südtirol,2024,cura,servizi_bambini,-0.292
+Umbria,2024,cura,servizi_bambini,0.943
+Valle d'Aosta/Vallée d'Aoste,2024,cura,servizi_bambini,0.333
+Veneto,2024,cura,servizi_bambini,-0.002
+Abruzzo,2024,lavorare,rischio_adulti,-0.055
+Basilicata,2024,lavorare,rischio_adulti,-0.283
+Calabria,2024,lavorare,rischio_adulti,-1.582
+Campania,2024,lavorare,rischio_adulti,-1.737
+Emilia-Romagna,2024,lavorare,rischio_adulti,0.685
+Friuli-Venezia Giulia,2024,lavorare,rischio_adulti,0.71
+Lazio,2024,lavorare,rischio_adulti,-0.146
+Liguria,2024,lavorare,rischio_adulti,0.395
+Lombardia,2024,lavorare,rischio_adulti,0.711
+Marche,2024,lavorare,rischio_adulti,0.544
+Molise,2024,lavorare,rischio_adulti,-0.529
+Piemonte,2024,lavorare,rischio_adulti,0.377
+Puglia,2024,lavorare,rischio_adulti,-0.86
+Sardegna,2024,lavorare,rischio_adulti,-0.747
+Sicilia,2024,lavorare,rischio_adulti,-1.941
+Toscana,2024,lavorare,rischio_adulti,0.634
+Trentino-Alto Adige/Südtirol,2024,lavorare,rischio_adulti,1.441
+Umbria,2024,lavorare,rischio_adulti,0.586
+Valle d'Aosta/Vallée d'Aoste,2024,lavorare,rischio_adulti,0.892
+Veneto,2024,lavorare,rischio_adulti,0.905
+Abruzzo,2024,lavorare,servizi_adulti,-0.424
+Basilicata,2024,lavorare,servizi_adulti,-0.516
+Calabria,2024,lavorare,servizi_adulti,-0.639
+Campania,2024,lavorare,servizi_adulti,-0.595
+Emilia-Romagna,2024,lavorare,servizi_adulti,0.08
+Friuli-Venezia Giulia,2024,lavorare,servizi_adulti,1.112
+Lazio,2024,lavorare,servizi_adulti,-0.508
+Liguria,2024,lavorare,servizi_adulti,0.235
+Lombardia,2024,lavorare,servizi_adulti,0.086
+Marche,2024,lavorare,servizi_adulti,-0.155
+Molise,2024,lavorare,servizi_adulti,-0.315
+Piemonte,2024,lavorare,servizi_adulti,0.032
+Puglia,2024,lavorare,servizi_adulti,-0.407
+Sardegna,2024,lavorare,servizi_adulti,-0.37
+Sicilia,2024,lavorare,servizi_adulti,-0.346
+Toscana,2024,lavorare,servizi_adulti,-0.197
+Trentino-Alto Adige/Südtirol,2024,lavorare,servizi_adulti,-0.445
+Umbria,2024,lavorare,servizi_adulti,-0.579
+Valle d'Aosta/Vallée d'Aoste,2024,lavorare,servizi_adulti,0.0
+Veneto,2024,lavorare,servizi_adulti,3.949
+Abruzzo,2024,vita_sana,rischio_adulti,0.131
+Basilicata,2024,vita_sana,rischio_adulti,0.014
+Calabria,2024,vita_sana,rischio_adulti,0.106
+Campania,2024,vita_sana,rischio_adulti,-0.285
+Emilia-Romagna,2024,vita_sana,rischio_adulti,0.151
+Friuli-Venezia Giulia,2024,vita_sana,rischio_adulti,-0.086
+Lazio,2024,vita_sana,rischio_adulti,0.578
+Liguria,2024,vita_sana,rischio_adulti,-0.131
+Lombardia,2024,vita_sana,rischio_adulti,0.381
+Marche,2024,vita_sana,rischio_adulti,-1.311
+Molise,2024,vita_sana,rischio_adulti,0.63
+Piemonte,2024,vita_sana,rischio_adulti,-0.558
+Puglia,2024,vita_sana,rischio_adulti,0.156
+Sardegna,2024,vita_sana,rischio_adulti,-0.146
+Sicilia,2024,vita_sana,rischio_adulti,0.197
+Toscana,2024,vita_sana,rischio_adulti,-0.257
+Trentino-Alto Adige/Südtirol,2024,vita_sana,rischio_adulti,1.194
+Umbria,2024,vita_sana,rischio_adulti,-0.083
+Valle d'Aosta/Vallée d'Aoste,2024,vita_sana,rischio_adulti,-0.807
+Veneto,2024,vita_sana,rischio_adulti,0.125
+Abruzzo,2024,vita_sana,rischio_bambini,-0.593
+Basilicata,2024,vita_sana,rischio_bambini,-0.623
+Calabria,2024,vita_sana,rischio_bambini,0.047
+Campania,2024,vita_sana,rischio_bambini,-0.462
+Emilia-Romagna,2024,vita_sana,rischio_bambini,0.444
+Friuli-Venezia Giulia,2024,vita_sana,rischio_bambini,0.965
+Lazio,2024,vita_sana,rischio_bambini,0.421
+Liguria,2024,vita_sana,rischio_bambini,0.02
+Lombardia,2024,vita_sana,rischio_bambini,0.311
+Marche,2024,vita_sana,rischio_bambini,0.592
+Molise,2024,vita_sana,rischio_bambini,-0.852
+Piemonte,2024,vita_sana,rischio_bambini,0.34
+Puglia,2024,vita_sana,rischio_bambini,-0.931
+Sardegna,2024,vita_sana,rischio_bambini,-0.661
+Sicilia,2024,vita_sana,rischio_bambini,-1.207
+Toscana,2024,vita_sana,rischio_bambini,0.638
+Trentino-Alto Adige/Südtirol,2024,vita_sana,rischio_bambini,0.885
+Umbria,2024,vita_sana,rischio_bambini,-0.001
+Valle d'Aosta/Vallée d'Aoste,2024,vita_sana,rischio_bambini,0.455
+Veneto,2024,vita_sana,rischio_bambini,0.21
+Abruzzo,2024,vita_sana,servizi_adulti,-0.321
+Basilicata,2024,vita_sana,servizi_adulti,-0.15
+Calabria,2024,vita_sana,servizi_adulti,-0.812
+Campania,2024,vita_sana,servizi_adulti,-1.19
+Emilia-Romagna,2024,vita_sana,servizi_adulti,-0.018
+Friuli-Venezia Giulia,2024,vita_sana,servizi_adulti,-0.66
+Lazio,2024,vita_sana,servizi_adulti,-0.521
+Liguria,2024,vita_sana,servizi_adulti,1.267
+Lombardia,2024,vita_sana,servizi_adulti,-0.03
+Marche,2024,vita_sana,servizi_adulti,0.682
+Molise,2024,vita_sana,servizi_adulti,-0.036
+Piemonte,2024,vita_sana,servizi_adulti,0.443
+Puglia,2024,vita_sana,servizi_adulti,-0.388
+Sardegna,2024,vita_sana,servizi_adulti,-0.267
+Sicilia,2024,vita_sana,servizi_adulti,-0.707
+Toscana,2024,vita_sana,servizi_adulti,0.413
+Trentino-Alto Adige/Südtirol,2024,vita_sana,servizi_adulti,0.085
+Umbria,2024,vita_sana,servizi_adulti,0.331
+Valle d'Aosta/Vallée d'Aoste,2024,vita_sana,servizi_adulti,1.105
+Veneto,2024,vita_sana,servizi_adulti,0.774
+Abruzzo,2024,vita_sana,servizi_bambini,-0.049
+Basilicata,2024,vita_sana,servizi_bambini,-0.145
+Calabria,2024,vita_sana,servizi_bambini,-0.868
+Campania,2024,vita_sana,servizi_bambini,-0.584
+Emilia-Romagna,2024,vita_sana,servizi_bambini,0.802
+Friuli-Venezia Giulia,2024,vita_sana,servizi_bambini,-0.908
+Lazio,2024,vita_sana,servizi_bambini,0.204
+Liguria,2024,vita_sana,servizi_bambini,0.079
+Lombardia,2024,vita_sana,servizi_bambini,-0.941
+Marche,2024,vita_sana,servizi_bambini,-0.159
+Molise,2024,vita_sana,servizi_bambini,0.006
+Piemonte,2024,vita_sana,servizi_bambini,-1.055
+Puglia,2024,vita_sana,servizi_bambini,0.513
+Sardegna,2024,vita_sana,servizi_bambini,1.003
+Sicilia,2024,vita_sana,servizi_bambini,0.01
+Toscana,2024,vita_sana,servizi_bambini,1.467
+Trentino-Alto Adige/Südtirol,2024,vita_sana,servizi_bambini,-0.538
+Umbria,2024,vita_sana,servizi_bambini,0.482
+Valle d'Aosta/Vallée d'Aoste,2024,vita_sana,servizi_bambini,1.013
+Veneto,2024,vita_sana,servizi_bambini,-0.333
+Abruzzo,2024,vita_sicura,rischio_adulti,-0.311
+Basilicata,2024,vita_sicura,rischio_adulti,-0.248
+Calabria,2024,vita_sicura,rischio_adulti,-0.038
+Campania,2024,vita_sicura,rischio_adulti,-1.398
+Emilia-Romagna,2024,vita_sicura,rischio_adulti,0.185
+Friuli-Venezia Giulia,2024,vita_sicura,rischio_adulti,0.808
+Lazio,2024,vita_sicura,rischio_adulti,-0.494
+Liguria,2024,vita_sicura,rischio_adulti,0.441
+Lombardia,2024,vita_sicura,rischio_adulti,0.2
+Marche,2024,vita_sicura,rischio_adulti,0.068
+Molise,2024,vita_sicura,rischio_adulti,-0.473
+Piemonte,2024,vita_sicura,rischio_adulti,0.317
+Puglia,2024,vita_sicura,rischio_adulti,-0.933
+Sardegna,2024,vita_sicura,rischio_adulti,0.184
+Sicilia,2024,vita_sicura,rischio_adulti,-0.327
+Toscana,2024,vita_sicura,rischio_adulti,0.047
+Trentino-Alto Adige/Südtirol,2024,vita_sicura,rischio_adulti,1.333
+Umbria,2024,vita_sicura,rischio_adulti,0.446
+Valle d'Aosta/Vallée d'Aoste,2024,vita_sicura,rischio_adulti,-0.1
+Veneto,2024,vita_sicura,rischio_adulti,0.293
+Abruzzo,2024,vita_sicura,servizi_adulti,0.242
+Basilicata,2024,vita_sicura,servizi_adulti,-0.678
+Calabria,2024,vita_sicura,servizi_adulti,0.574
+Campania,2024,vita_sicura,servizi_adulti,-0.624
+Emilia-Romagna,2024,vita_sicura,servizi_adulti,0.714
+Friuli-Venezia Giulia,2024,vita_sicura,servizi_adulti,0.262
+Lazio,2024,vita_sicura,servizi_adulti,-1.176
+Liguria,2024,vita_sicura,servizi_adulti,-0.204
+Lombardia,2024,vita_sicura,servizi_adulti,0.613
+Marche,2024,vita_sicura,servizi_adulti,0.311
+Molise,2024,vita_sicura,servizi_adulti,0.192
+Piemonte,2024,vita_sicura,servizi_adulti,-0.874
+Puglia,2024,vita_sicura,servizi_adulti,-0.312
+Sardegna,2024,vita_sicura,servizi_adulti,0.148
+Sicilia,2024,vita_sicura,servizi_adulti,-0.556
+Toscana,2024,vita_sicura,servizi_adulti,-0.234
+Trentino-Alto Adige/Südtirol,2024,vita_sicura,servizi_adulti,-0.445
+Umbria,2024,vita_sicura,servizi_adulti,1.574
+Valle d'Aosta/Vallée d'Aoste,2024,vita_sicura,servizi_adulti,0.298
+Veneto,2024,vita_sicura,servizi_adulti,0.176

@@ -11,11 +11,10 @@ from index import data, geodata
 from configuration import (
     FIGURE_TEMPLATE,
     GEO_KEY,
-    INDEX_KEY,
+    INDEX_LABELS,
     ZSCORE_BINS,
     ZSCORE_LABELS,
     ZSCORE_TIER_COLORS,
-    DIVERGING_COLORS,
     BRAND_LINK,
     SEQUENCE_COLOR,
     YEAR_DEFAULT,
@@ -27,12 +26,11 @@ pio.templates.default = FIGURE_TEMPLATE
 
 def display_home_map():
     year = YEAR_DEFAULT
-    feature = INDEX_KEY
-    df = data[(data["year"] == year) & (data["indicator"] == feature)][
-        ["territory", "code", "value"]
-    ].copy()
+    df = data[
+        (data["year"] == year) & (data["index"] == "totale") & data["capacity"].isna()
+    ][["territory", "code", "score"]].copy()
     df["tier"] = pd.cut(
-        df["value"],
+        df["score"],
         bins=ZSCORE_BINS,
         labels=ZSCORE_LABELS,
         right=False,
@@ -46,7 +44,7 @@ def display_home_map():
         color="tier",
         color_discrete_map=ZSCORE_TIER_COLORS,
         category_orders={"tier": ZSCORE_LABELS},
-        custom_data=["territory", "value", "tier"],
+        custom_data=["territory", "score", "tier"],
     )
     fig.update_layout(
         dragmode=False,
@@ -54,107 +52,134 @@ def display_home_map():
         autosize=True,
         margin={"r": 0, "t": 0, "l": 0, "b": 0, "pad": 0},
         geo=dict(
-            projection_type="natural earth",
-            projection_scale=15.4,
+            fitbounds="locations",
+            projection_type="mercator",
             showland=False,
             showocean=False,
             showlakes=False,
             showrivers=False,
             visible=False,
-            center=dict(lat=41.9, lon=12.5),
         ),
     )
-    template = (
-        "<b>%{customdata[0]}</b><br><br>"
-        + f"Indice totale (z-score): "
-        + "%{customdata[1]:.2f}<br>"
-        + "Fascia: %{customdata[2]}<br>"
-        + "<extra></extra>"
+    fig.update_traces(
+        hovertemplate=(
+            "<b>%{customdata[0]}</b><br><br>"
+            "Indice totale: "
+            "%{customdata[1]}<br>"
+            "Fascia: %{customdata[2]}<br>"
+            "<extra></extra>"
+        )
     )
-    fig.update_traces(hovertemplate=template)
     return fig
 
 
 # ── Testi ────────────────────────────────────────────────────────────────────
 
-opening_text = f"""
-L'**Indice regionale sul maltrattamento e la cura all'infanzia in Italia** è uno strumento di analisi originale di **[Cesvi]({BRAND_LINK})** che da sette anni monitora i punti di forza e di debolezza delle regioni italiane rispetto ai fattori di rischio e ai servizi che riguardano il maltrattamento minorile.
+intro_text = f"""
+L'*Indice regionale sul maltrattamento e la cura all'infanzia in Italia* è uno strumento
+di analisi originale di **[Cesvi]({BRAND_LINK})** che dal 2018 monitora annualmente
+la capacità delle regioni italiane di prevenire e contrastare il maltrattamento minorile.
 
-Costruito sulla base di **64 indicatori statistici**, l'Indice misura la capacità dei sistemi territoriali di affrontare un tema così importante — e troppo spesso nascosto al dibattito pubblico — offrendo ai portatori di interesse una lettura articolata per individuare le aree di criticità e gli spiragli di miglioramento.
+Costruito su **64 indicatori statistici** aggregati in **6 capacità territoriali**
+secondo l'approccio delle capacità di Amartya Sen, l'Indice restituisce una
+**classifica decrescente delle 20 regioni italiane**: in testa le regioni con
+minori fattori di rischio e sistemi di servizi più solidi, in fondo quelle con
+maggiori criticità strutturali.
+
+Il quadro che emerge è quello di **un'Italia a due velocità**: le regioni del Nord
+si confermano generalmente più virtuose, mentre il Mezzogiorno presenta criticità
+persistenti che richiedono interventi strutturali di lungo periodo.
 """
 
-description_text = """
-L'indice classifica le **20 regioni italiane** su **6 anni di osservazione** (2018–2024) analizzando sei capacità territoriali:
+edition_text = f"""
+#### Sesta edizione · *Le parole sono importanti* · {YEAR_DEFAULT}
 
-| Dimensione | Cosa misura |
-|---|---|
-| **Cura** | Servizi di cura e protezione dell'infanzia |
-| **Vita sana** | Salute, dipendenze e vulnerabilità dei minori |
-| **Vita sicura** | Sicurezza domestica e violenza di genere |
-| **Conoscenza e sapere** | Istruzione e livello culturale |
-| **Lavorare** | Condizioni economiche e occupazione |
-| **Accedere alle risorse** | Povertà, servizi e inclusione sociale |
+Il focus dell'edizione {YEAR_DEFAULT} è dedicato al ruolo del **linguaggio nel maltrattamento
+e nella cura all'infanzia**. Secondo l'OMS, l'abuso psicologico — di cui la violenza
+verbale fa parte — è la forma più diffusa di maltrattamento infantile in Europa,
+con una prevalenza del **36,1%** tra i 55 milioni di bambine e bambini che subiscono abusi.
 
-Gli indicatori sono aggregati tramite **z-score** — valori standardizzati rispetto alla media nazionale:
+Investire sull'educazione al linguaggio positivo — nelle famiglie, nelle scuole,
+nei tavoli di coordinamento territoriale — è una delle leve di prevenzione
+che l'Indice indica come prioritaria.
+"""
 
-- Un valore **positivo** indica una situazione **migliore della media**
-- Un valore **negativo** indica una situazione **peggiore della media**
-- Il valore **0** corrisponde alla media nazionale
-
+cta_text = """
 Esplora la dashboard:
-- **[Schede regionali](/scorecards):** Panoramica per singola regione, con storico e confronto dimensionale.
-- **[Dati](/data):** Mappa interattiva, classifica, serie storica e profilo dimensionale.
-- **[Metodologia](/methodology):** Come è costruito l'indice e cosa misura.
+**[Regioni](/scorecards)** · **[Esplora](/data)** · **[Metodologia](/methodology)**
 """
 
 # ── Layout ───────────────────────────────────────────────────────────────────
 
 home_layout = dbc.Container(
     children=[
-        # dbc.Row(
-        #     dbc.Col(
-        #         html.H1("Indice regionale sul maltrattamento e la cura all'infanzia in Italia", className="text-center"),
-        #         lg=12,
-        #     ),
-        #     className="mt-2",
-        # ),
+        # Titolo
         dbc.Row(
             dbc.Col(
-                dcc.Markdown(opening_text, className="my-3"),
+                html.Div(
+                    children=[
+                        html.H2(
+                            "Indice regionale sul maltrattamento e la cura all'infanzia in Italia",
+                            className="fw-bold",
+                        ),
+                        html.P(
+                            f"Le parole sono importanti · Sesta edizione · {YEAR_DEFAULT}",
+                            className="text-muted mb-0",
+                            style={"font-size": "0.9rem", "letter-spacing": "0.05em"},
+                        ),
+                        html.Hr(
+                            style={
+                                "border-color": "#eb6608",
+                                "border-width": "2px",
+                                "opacity": "1",
+                                "width": "100%",
+                                "margin": "0.75rem 0 0 0",
+                            }
+                        ),
+                    ]
+                ),
                 lg=12,
             ),
+            className="mt-4 mb-3",
         ),
-        # Mappa + descrizione
+        # Mappa + testo
         dbc.Row(
             [
                 dbc.Col(
-                    dcc.Loading(
-                        dcc.Graph(
-                            id="home_map",
-                            figure=display_home_map(),
-                            style={"min-height": "55vh"},
-                            config={
-                                "displayModeBar": False,
-                                "editable": False,
-                            },
+                    [
+                        dcc.Loading(
+                            dcc.Graph(
+                                id="home_map",
+                                figure=display_home_map(),
+                                style={"height": "65vh"},
+                                responsive=True,
+                                config={"displayModeBar": False, "editable": False},
+                            ),
+                            color=SEQUENCE_COLOR[0],
                         ),
-                        color=SEQUENCE_COLOR[0],
-                    ),
+                        html.P(
+                            "Clicca su una regione per aprire la scheda dettagliata.",
+                            className="text-muted text-center mt-1",
+                            style={"font-size": "0.8rem"},
+                        ),
+                    ],
                     lg=5,
                     xs=12,
                     align="center",
+                    className="order-2 order-lg-1",
                 ),
                 dbc.Col(
                     children=[
-                        html.H4(f"Indice Infanzia {YEAR_DEFAULT}", className="mt-2"),
-                        dcc.Markdown(description_text),
+                        dcc.Markdown(intro_text, className="mb-3"),
+                        dcc.Markdown(edition_text, className="mb-4"),
+                        dcc.Markdown(cta_text),
                     ],
                     lg=7,
                     xs=12,
                     align="center",
+                    className="order-1 order-lg-2",
                 ),
             ],
-            className="mt-3",
         ),
     ],
     fluid=True,

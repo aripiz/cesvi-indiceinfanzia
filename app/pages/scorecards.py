@@ -8,3 +8,4 @@ register_page(__name__, name=TITLE, path="/scorecards")
 from layout.layout_scorecards import scorecard_layout
 
 layout = scorecard_layout
+

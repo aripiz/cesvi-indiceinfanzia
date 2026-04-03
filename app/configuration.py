@@ -7,39 +7,49 @@ CREDITS_LINK = "https://github.com/aripiz"
 
 # Theme (Bootswatch)
 TEMPLATE = "minty"
-TEMPLATE_CSS = f"https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/{TEMPLATE}/bootstrap.min.css"
+TEMPLATE_CSS = f"https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/{TEMPLATE}/bootstrap.min.css"
 FIGURE_TEMPLATE = TEMPLATE.lower()
 DBC_CSS = "https://cdn.jsdelivr.net/gh/AnnMarieW/dash-bootstrap-templates/dbc.min.css"
 
-# Brand colors Cesvi (arancione = colore principale)
-BRAND_COLOR = "#ea7a2d"        # arancione Cesvi
+# Font
+FONT_FAMILY = "Raleway"
+FONT_URL = "https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap"
 
-# Palette divergente per z-score: verde (sotto media) → bianco → arancione (sopra media)
+# Brand colors Cesvi (dal brandbook ufficiale)
+BRAND_COLOR = "#eb6608"            # arancione principale
+BRAND_SECONDARY_COLOR = "#94A4A4"  # grigio
+BRAND_WHITE = "#FFFFFF"            # bianco
+
+# Logo
+LOGO = "assets/cesvi-logo_horizontal.png"
+
+# Palette divergente per z-score: grigio (sotto media) → bianco (media) → arancione (sopra media)
 DIVERGING_COLORS = [
-    "#1B7A70",   # verde scuro  (z ≤ -1.5)
-    "#2DA89B",   # verde Cesvi  (z ≈ -1)
-    "#8FCFC9",   # verde chiaro (z ≈ -0.5)
-    "#F5F5F5",   # bianco       (z ≈ 0)
-    "#F3D08E",   # giallo chiaro (z ≈ 0.5)
-    "#E7AD49",   # giallo Cesvi  (z ≈ 1)
-    "#ea7a2d",   # arancione Cesvi (z ≥ 1.5)
+    "#3d4646",   # grigio scuro  (z ≤ -1.5)
+    "#94A4A4",   # grigio Cesvi  (z ≈ -1.0)
+    "#D0DADB",   # grigio chiaro (z ≈ -0.5)
+    "#F5F5F5",   # bianco        (z =  0)
+    "#F7CFA0",   # arancione chiaro (z ≈ +0.5)
+    "#F39840",   # arancione medio  (z ≈ +1.0)
+    "#eb6608",   # arancione Cesvi  (z ≥ +1.5)
 ]
 
 # Palette qualitativa per serie multiple
+# Brand primari + varianti interpolate, no verde
 SEQUENCE_COLOR = [
-    "#ea7a2d",   # arancione Cesvi (principale)
-    "#2DA89B",   # verde Cesvi
-    "#E7AD49",   # giallo Cesvi
-    "#3c3c3c",   # grigio scuro
-    "#a64d79",   # viola
-    "#439acf",   # azzurro
-    "#2e8b57",   # verde foresta
-    "#ff6f00",   # arancione vivido
-    "#41c072",   # verde chiaro
-    "#1B7A70",   # verde scuro
+    "#eb6608",   # arancione Cesvi (principale)
+    "#94A4A4",   # grigio Cesvi
+    "#F39840",   # arancione medio
+    "#D0DADB",   # grigio chiaro
+    "#F7CFA0",   # arancione chiaro
+    "#3d4646",   # grigio scuro
+    "#439acf",   # azzurro (accento neutro)
+    "#a64d79",   # viola (accento neutro)
+    "#e8c13a",   # giallo (accento neutro)
+    "#3c3c3c",   # antracite
 ]
 
-# Classificazione z-score (per etichette e colori mappa)
+# Classificazione z-score
 ZSCORE_BINS = [-10, -1.0, -0.5, 0.0, 0.5, 1.0, 10]
 ZSCORE_LABELS = [
     "Molto sotto media",
@@ -50,102 +60,51 @@ ZSCORE_LABELS = [
     "Molto sopra media",
 ]
 ZSCORE_TIER_COLORS = {
-    "Molto sotto media":         "#1B7A70",
-    "Sotto media":               "#2DA89B",
-    "Leggermente sotto media":   "#8FCFC9",
-    "Leggermente sopra media":   "#F3D08E",
-    "Sopra media":               "#E7AD49",
-    "Molto sopra media":         "#ea7a2d",
+    "Molto sotto media":          "#3d4646",
+    "Sotto media":                "#94A4A4",
+    "Leggermente sotto media":    "#D0DADB",
+    "Leggermente sopra media":    "#F7CFA0",
+    "Sopra media":                "#F39840",
+    "Molto sopra media":          "#eb6608",
 }
 
-# Colori per ranking
+# Scala continua per ranking: grigio → arancione
 RANK_COLOR_SCALE = [
-    [0.0, "#2DA89B"],    # teal (rank peggiore)
-    [0.5, "#E7AD49"],
-    [1.0, "#ea7a2d"],    # arancione Cesvi (rank migliore)
+    [0.0, "#94A4A4"],   # grigio Cesvi (rank peggiore)
+    [0.5, "#F39840"],   # arancione medio
+    [1.0, "#eb6608"],   # arancione Cesvi (rank migliore)
 ]
 
 # Map
-LAND_COLOR = "#3B3B3B"
+LAND_COLOR  = "#3B3B3B"
 OCEAN_COLOR = "#F2F2F2"
-GEO_KEY = "properties.reg_istat_code_num"
-
-# Indici e dimensioni
-INDEX_KEY = "indice_totale"
-
-# Indicatori principali (ordinati per visualizzazione)
-SUMMARY_INDICATORS = [
-    "indice_totale",
-    "indice_rischio",
-    "indice_prevenzione",
-    "cap_cura",
-    "cap_vita_sana",
-    "cap_vita_sicura",
-    "cap_conoscenza_sapere",
-    "cap_lavorare",
-    "cap_accedere_risorse",
-]
-
-# Componenti di dettaglio (15 sotto-indici)
-SUB_INDICATORS = [
-    "cap_cura_rischio",
-    "cap_cura_serv_maltrattanti",
-    "cap_cura_serv_infanzia",
-    "cap_vita_sana_rischio",
-    "cap_vita_sana_sintomi",
-    "cap_vita_sana_serv_maltrattanti",
-    "cap_vita_sana_serv_infanzia",
-    "cap_vita_sicura_rischio",
-    "cap_vita_sicura_servizi",
-    "cap_conoscenza_rischio",
-    "cap_conoscenza_servizi",
-    "cap_lavorare_rischio",
-    "cap_lavorare_servizi",
-    "cap_accedere_risorse_rischio",
-    "cap_accedere_risorse_servizi",
-]
-
-# Etichette leggibili per ogni indicatore
-INDICATOR_LABELS = {
-    "indice_totale":                   "Indice totale",
-    "indice_rischio":                  "Sottoindice rischio",
-    "indice_prevenzione":              "Sottoindice prevenzione",
-    "cap_cura":                        "Cura",
-    "cap_vita_sana":                   "Vita sana",
-    "cap_vita_sicura":                 "Vita sicura",
-    "cap_conoscenza_sapere":           "Conoscenza e sapere",
-    "cap_lavorare":                    "Lavorare",
-    "cap_accedere_risorse":            "Accedere alle risorse",
-    "cap_cura_rischio":                "Cura — fattori rischio",
-    "cap_cura_serv_maltrattanti":      "Cura — servizi maltrattanti",
-    "cap_cura_serv_infanzia":          "Cura — servizi infanzia",
-    "cap_vita_sana_rischio":           "Vita sana — fattori rischio",
-    "cap_vita_sana_sintomi":           "Vita sana — sintomi vulnerabilità",
-    "cap_vita_sana_serv_maltrattanti": "Vita sana — servizi maltrattanti",
-    "cap_vita_sana_serv_infanzia":     "Vita sana — servizi infanzia",
-    "cap_vita_sicura_rischio":         "Vita sicura — fattori rischio",
-    "cap_vita_sicura_servizi":         "Vita sicura — servizi",
-    "cap_conoscenza_rischio":          "Conoscenza — fattori rischio",
-    "cap_conoscenza_servizi":          "Conoscenza — servizi",
-    "cap_lavorare_rischio":            "Lavorare — fattori rischio",
-    "cap_lavorare_servizi":            "Lavorare — servizi",
-    "cap_accedere_risorse_rischio":    "Accedere risorse — fattori rischio",
-    "cap_accedere_risorse_servizi":    "Accedere risorse — servizi",
-}
-
-# Le 6 capacità per il radar/profilo
-CAPACITY_DIMS = {
-    "cap_cura":               "Cura",
-    "cap_vita_sana":          "Vita sana",
-    "cap_vita_sicura":        "Vita sicura",
-    "cap_conoscenza_sapere":  "Conoscenza e sapere",
-    "cap_lavorare":           "Lavorare",
-    "cap_accedere_risorse":   "Accedere alle risorse",
-}
-
-YEARS_AVAILABLE = [2018, 2019, 2020, 2021, 2022, 2024]
-YEAR_DEFAULT = 2024
+GEO_KEY     = "properties.reg_istat_code_num"
 
 # Files
-DATA_FILE = "../data/cesvi-indiceinfanzia_long.csv"
-GEO_FILE = "../data/limits_IT_regions.geojson"
+DATA_FILE = "../data/cesvi-indiceinfanzia_data.csv"
+GEO_FILE  = "../data/limits_IT_regions.geojson"
+METADATA_FILE = "../data/cesvi-indiceinfanzia_metadata.csv"
+
+# Years
+YEARS = [2019, 2020, 2021, 2022, 2024]
+YEARS_AVAILABLE = YEARS  # alias
+YEAR_DEFAULT = 2024
+YEAR_MIN = YEARS[0]
+YEAR_MAX = YEARS[-1]
+
+# Etichette indici aggregati (chiave CSV → etichetta leggibile)
+INDEX_LABELS = {
+    "totale":  "Totale",
+    "rischio": "Fattori di rischio",
+    "servizi": "Servizi",
+}
+
+# Capacità — chiave CSV → etichetta breve
+CAPACITY_DIMS = {
+    "accedere_risorse":  "Accedere alle Risorse",
+    "conoscenza_sapere": "Conoscenza e Sapere",
+    "cura":              "Cura",
+    "lavorare":          "Lavorare",
+    "vita_sana":         "Vita Sana",
+    "vita_sicura":       "Vita Sicura",
+}

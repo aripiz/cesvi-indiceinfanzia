@@ -4,15 +4,7 @@ from index import app
 from dash import Input, Output
 from dash.exceptions import PreventUpdate
 
-from layout.layout_data import tab_content_map
-
-
-@app.callback(
-    Output("data_tab_content", "children"),
-    Input("data_tabs", "active_tab"),
-)
-def render_data_tab(active_tab):
-    return tab_content_map.get(active_tab, "Seleziona una scheda.")
+# TODO: aggiungere render_data_tab quando layout_data è implementato
 
 
 # Click sulla mappa home → vai alla scheda della regione
