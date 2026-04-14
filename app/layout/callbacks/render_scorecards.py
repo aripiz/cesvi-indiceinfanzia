@@ -15,6 +15,7 @@ from configuration import (
     SEQUENCE_COLOR,
     ZSCORE_BINS,
     ZSCORE_LABELS,
+    ZSCORE_TIER_COLORS,
     CAPACITY_DIMS,
     INDEX_LABELS,
     YEARS,
@@ -255,6 +256,8 @@ def update_scorecard_evolution(territory):
 
 # ── Profilo per capacità (radar) ──────────────────────────────────────────────
 
+_N_REGIONS = 20  # numero totale di regioni
+
 @app.callback(
     Output("scorecard_radar", "figure"),
     Input("scorecard_territory", "value"),
@@ -262,14 +265,19 @@ def update_scorecard_evolution(territory):
 )
 def update_scorecard_radar(territory, year):
     cap_keys   = list(CAPACITY_DIMS.keys())
-    cap_labels = list(CAPACITY_DIMS.values())
+    cap_labels = [f.replace(' ', '<br>') for f in CAPACITY_DIMS.values()]
 
-    values = [_cap_avg(territory, year, k) for k in cap_keys]
-    values = [v if v is not None else 0.0 for v in values]
+    ranks = [_cap_rank(territory, year, k) for k in cap_keys]
+    # Trasforma: rank 1 (migliore) → valore alto (esterno),
+    #            rank 20 (peggiore) → valore basso (centro)
+    # formula: valore = N + 1 - rank  →  range [1, N]
+    plot_vals  = [(_N_REGIONS + 1 - r) if r is not None else 0 for r in ranks]
+    hover_ranks = [str(r) if r is not None else "N/D" for r in ranks]
 
     # Chiudi il poligono
-    vals_closed   = values + [values[0]]
+    vals_closed   = plot_vals + [plot_vals[0]]
     labels_closed = cap_labels + [cap_labels[0]]
+    hover_closed  = hover_ranks + [hover_ranks[0]]
 
     fig = go.Figure()
     fig.add_trace(
@@ -281,15 +289,20 @@ def update_scorecard_radar(territory, year):
             line_color=SEQUENCE_COLOR[0],
             fillcolor=SEQUENCE_COLOR[0],
             opacity=0.55,
+            customdata=hover_closed,
+            hovertemplate="<b>%{theta}</b><br>Posizione: %{customdata}<extra></extra>",
         )
     )
     fig.update_layout(
         polar=dict(
             radialaxis=dict(
                 visible=True,
-                range=[-2.5, 2.5],
-                tickformat=".1f",
-            )
+                range=[0, _N_REGIONS],   # 0 = centro (peggior rank), N = esterno (miglior rank)
+                tickvals=list(range(0, _N_REGIONS + 1, 5)),
+                ticktext=[str(_N_REGIONS + 1 - v) if v > 0 else str(_N_REGIONS)
+                          for v in range(0, _N_REGIONS + 1, 5)],
+            ),
+            #angularaxis=dict(tickpadding=15),
         ),
         showlegend=False,
         margin={"r": 40, "t": 20, "l": 40, "b": 20},
@@ -297,35 +310,52 @@ def update_scorecard_radar(territory, year):
     return fig
 
 
-# ── Tabella ranking per capacità ──────────────────────────────────────────────
+# ── Barre z-score per capacità ────────────────────────────────────────────────
 
 @app.callback(
-    Output("scorecard_dim_table", "children"),
+    Output("scorecard_dim_table", "figure"),
     Input("scorecard_territory", "value"),
     Input("scorecard_year", "value"),
 )
 def update_scorecard_dim_table(territory, year):
-    rows = []
-    for key, label in CAPACITY_DIMS.items():
-        rank = _cap_rank(territory, year, key)
-        rows.append(
-            html.Tr([
-                html.Td(label),
-                html.Td(str(rank) if rank is not None else "N/D", className="text-center"),
-            ])
-        )
-    table = dbc.Table(
-        [
-            html.Thead(html.Tr([
-                html.Th("Capacità"),
-                html.Th(f"Posizione {year}", className="text-center"),
-            ])),
-            html.Tbody(rows),
-        ],
-        bordered=True,
-        hover=True,
-        responsive=True,
-        striped=True,
-        size="sm",
+    cap_keys   = list(CAPACITY_DIMS.keys())
+    cap_labels = list(CAPACITY_DIMS.values())
+
+    values = [_cap_avg(territory, year, k) for k in cap_keys]
+
+    rows = [
+        {"capacity": label, "zscore": v if v is not None else float("nan")}
+        for label, v in zip(cap_labels, values)
+    ]
+    df = pd.DataFrame(rows).sort_values("zscore", ascending=True)
+
+    df["tier"] = pd.cut(
+        df["zscore"],
+        bins=ZSCORE_BINS,
+        labels=ZSCORE_LABELS,
+        right=False,
+    ).astype(str)
+
+    fig = px.bar(
+        df,
+        x="zscore",
+        y="capacity",
+        orientation="h",
+        color="tier",
+        color_discrete_map=ZSCORE_TIER_COLORS,
+        category_orders={"tier": ZSCORE_LABELS},
+        labels={"zscore": "Punteggio", "capacity": "", "tier": ""},
+        custom_data=["tier"],
     )
-    return table
+    fig.add_vline(x=0, line_dash="dash", line_color="gray", line_width=1)
+    fig.update_traces(
+        hovertemplate="<b>%{y}</b><br>Punteggio: %{x:.2f}<br>%{customdata[0]}<extra></extra>"
+    )
+    fig.update_layout(
+        showlegend=False,
+        xaxis=dict(title="Punteggio", zeroline=False),
+        yaxis=dict(title=""),
+        margin={"t": 10, "b": 10, "l": 10, "r": 10},
+        height=280,
+    )
+    return fig

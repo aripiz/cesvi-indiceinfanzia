@@ -61,16 +61,19 @@ scorecard_layout = dbc.Container(
                 ),
                 dbc.Col(
                     [
-                        html.H5("Indice totale"),
+                        html.H5("Punteggio"),
                         html.P(id="scorecard_score"),
-                        html.H5("Posizione in classifica"),
+                        html.H5("Posizione"),
                         html.P(id="scorecard_rank"),
-                        html.H5("Anno"),
+                        #html.H5("Anno"),
+                        #html.P(str(YEAR_DEFAULT)),
+                        # Selezione anno disabilitata — fissa a YEAR_DEFAULT
                         dbc.RadioItems(
                             id="scorecard_year",
                             options=[{"label": str(y), "value": y} for y in YEARS],
                             value=YEAR_DEFAULT,
                             inline=True,
+                            style={"display": "none"},
                         ),
                     ],
                     lg=4,
@@ -81,7 +84,7 @@ scorecard_layout = dbc.Container(
                     [
                         html.H5("Fascia"),
                         html.P(id="scorecard_tier"),
-                        html.H5("Variazione"),
+                        html.H5("Variazione posizione"),
                         html.P(id="scorecard_change"),
                     ],
                     lg=5,
@@ -97,7 +100,7 @@ scorecard_layout = dbc.Container(
             [
                 dbc.Col(
                     [
-                        html.H4("Andamento posizione in classifica"),
+                        html.H4("Evoluzione posizione"),
                         dcc.Loading(
                             dcc.Graph(
                                 id="scorecard_evolution",
@@ -117,7 +120,7 @@ scorecard_layout = dbc.Container(
                 ),
                 dbc.Col(
                     [
-                        html.H4("Profilo per capacità"),
+                        html.H4("Posizione per capacità"),
                         dcc.Loading(
                             dcc.Graph(
                                 id="scorecard_radar",
@@ -132,12 +135,18 @@ scorecard_layout = dbc.Container(
             ],
             className="mt-4",
         ),
-        # ── Tabella ranking per capacità ──────────────────────────────────────
+        # ── Barre z-score per capacità ──────────────────────────────
         dbc.Row(
             dbc.Col(
                 [
-                    html.H4("Posizione per capacità"),
-                    html.Div(id="scorecard_dim_table"),
+                    html.H4("Punteggio per capacità"),
+                    dcc.Loading(
+                        dcc.Graph(
+                            id="scorecard_dim_table",
+                            config={"displayModeBar": False},
+                        ),
+                        color=SEQUENCE_COLOR[0],
+                    ),
                 ],
                 lg=12,
                 xs=12,
