@@ -1,23 +1,25 @@
 FROM python:3.11-slim
 
-# Set envionment variables
-# ENV PYTHONUNBUFFERED 1
+# Dipendenze di sistema per geopandas/pyogrio
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libgdal-dev \
+    && rm -rf /var/lib/apt/lists/*
 
-# Run this before copying requirements for cache efficiency
+# Upgrade pip
 RUN pip install --upgrade pip
 
-# Adding requirements file to current directory
-COPY requirements.txt /requirements.txt
+# Installa dipendenze Python
+COPY app/requirements.txt /requirements.txt
+RUN pip install --no-cache-dir -r /requirements.txt
 
-# Install dependencies
-RUN pip install -r /requirements.txt
-
-# Copy code itself from context to image
-COPY ./app /app
+# Copia il codice mantenendo la struttura attesa dai path relativi
+# configuration.py usa "../data/..." relativo a /app → i dati vanno in /data
+COPY app/ /app/
+COPY data/ /data/
 
 WORKDIR /app
 
 EXPOSE 8080
 
-# Run from working directory, and separate args in the json syntax
-CMD ["gunicorn"  , "-b", "0.0.0.0:8080", "app:server"]
+# Railway inietta $PORT; fallback a 8080
+CMD gunicorn app:server --workers 1 --bind 0.0.0.0:${PORT:-8080}
