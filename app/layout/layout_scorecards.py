@@ -27,6 +27,8 @@ scorecard_layout = dbc.Container(
                             id="scorecard_territory",
                             options=territories_list,
                             value=territories_list[0],
+                            clearable=False,
+                            labels={"search": "Cerca..."},
                         ),
                     ],
                     lg=4,
@@ -63,7 +65,7 @@ scorecard_layout = dbc.Container(
                         html.H5("Punteggio"), html.P(id="scorecard_score"),
                         html.H5("Posizione"), html.P(id="scorecard_rank"),
                         html.H5("Fascia"), html.P(id="scorecard_tier"),
-                        html.H5("Variazione posizione"), html.P(id="scorecard_change"),
+                        html.H5("Variazione"), html.P(id="scorecard_change"),
                         dbc.RadioItems(
                             id="scorecard_year",
                             options=[{"label": str(y), "value": y} for y in YEARS],

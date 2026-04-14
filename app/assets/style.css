@@ -234,6 +234,56 @@ p, li {
     text-decoration: none;
 }
 
+/* ── dcc.Dropdown Dash 4 — colore accento Cesvi ──────────────────────────── */
+/* Il trigger usa la variabile CSS; il menu è un portale fuori dal DOM tree
+   quindi servono regole esplicite su .dash-dropdown-content */
+.dash-dropdown,
+.dash-dropdown-content {
+    --Dash-Fill-Interactive-Strong: var(--cesvi-orange);
+    --Dash-Fill-Interactive-Weak: rgba(235, 102, 8, 0.15);
+}
+/* Hover su singola opzione */
+.dash-dropdown-option:hover {
+    background-color: rgba(235, 102, 8, 0.12) !important;
+}
+/* Input radio/checkbox dentro le opzioni (single/multi select) */
+.dash-dropdown-options input[type="radio"],
+.dash-dropdown-options input[type="checkbox"] {
+    accent-color: var(--cesvi-orange) !important;
+}
+
+/* ── Frecce variazione scorecard ─────────────────────────────────────────── */
+.arrow-up {
+    display: inline-block;
+    margin-right: 6px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 10px solid #eb6608; /* arancione Cesvi */
+    vertical-align: middle;
+}
+.arrow-right {
+    display: inline-block;
+    margin-right: 6px;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 10px solid #F39840;   /* arancione chiaro */
+    vertical-align: middle;
+}
+.arrow-down {
+    display: inline-block;
+    margin-right: 6px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 10px solid #3d4646;    /* grigio scuro */
+    vertical-align: middle;
+}
+
 /* ── Grafico evoluzione: altezza responsive ─────────────────────────────── */
 #scorecard_evolution {
     height: 280px !important;

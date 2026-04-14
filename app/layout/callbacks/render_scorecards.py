@@ -24,7 +24,7 @@ from configuration import (
     BRAND_COLOR,
 )
 from index import app, data, geodata
-from utilis import zscore_format, get_zscore_tier
+from utilis import zscore_format, get_zscore_tier, get_score_change_arrow
 
 load_figure_template(FIGURE_TEMPLATE)
 pio.templates.default = FIGURE_TEMPLATE
@@ -142,18 +142,19 @@ def update_scorecard_info(territory, year):
         first_rank = _get_rank(territory, first_year)
         if first_rank is not None:
             delta = rank - first_rank          # negativo = miglioramento
-            if delta < 0:
-                delta_str = f"▲ {abs(delta)} posizioni (dal {first_year})"
-            elif delta > 0:
-                delta_str = f"▼ {delta} posizioni (dal {first_year})"
+            arrow = get_score_change_arrow(delta)
+            if delta == 0:
+                delta_children = [html.Span(className="arrow-right"), f" Stabile (dal {first_year})"]
+            elif delta < 0:
+                delta_children = [html.Span(className="arrow-up"), f" {abs(delta)} posizioni (dal {first_year})"]
             else:
-                delta_str = f"Stabile (dal {first_year})"
+                delta_children = [html.Span(className="arrow-down"), f" {delta} posizioni (dal {first_year})"]
         else:
-            delta_str = "N/D"
+            delta_children = "N/D"
     else:
-        delta_str = "Non disponibile"
+        delta_children = "Non disponibile"
 
-    return score_str, rank_str, tier_str, delta_str
+    return score_str, rank_str, tier_str, delta_children
 
 
 # ── Mappa ─────────────────────────────────────────────────────────────────────
@@ -250,8 +251,9 @@ def update_scorecard_evolution(territory):
         title_text="Posizione",
     )
     fig.update_xaxes(
-        tickvals=YEARS,
-        ticktext=[str(y) for y in YEARS],
+        range=[YEARS[0] - 0.3, YEARS[-1] + 0.3],
+        tickvals=list(range(YEARS[0], YEARS[-1] + 1)),
+        ticktext=[str(y) for y in range(YEARS[0], YEARS[-1] + 1)],
         title_text="Anno",
     )
     fig.update_layout(
@@ -382,7 +384,7 @@ def update_scorecard_lollipop(territory, year):
 
     fig.update_layout(
         xaxis=dict(
-            range=[20.5, 0.5],   # invertito: 1° (migliore) a destra
+            range=[20.5, -0.5],   # centro esatto a 10, padding simmetrico
             tickvals=[5, 10, 15, 20],
             title="Posizione",
             zeroline=False,
@@ -391,9 +393,10 @@ def update_scorecard_lollipop(territory, year):
             title="",
             categoryorder="array",
             categoryarray=y_order,
+            automargin=True,
         ),
         showlegend=False,
-        margin={"t": 10, "b": 30, "l": 10, "r": 10},
+        margin={"t": 10, "b": 40, "l": 10, "r": 25},
         height=300,
     )
     return fig
@@ -450,8 +453,9 @@ def update_scorecard_dim_table(territory, year):
             title="",
             categoryorder="array",
             categoryarray=y_order,
+            automargin=True,
         ),
-        margin={"t": 10, "b": 10, "l": 10, "r": 10},
+        margin={"t": 10, "b": 40, "l": 10, "r": 15},
         height=300,
     )
     return fig
@@ -522,18 +526,20 @@ def update_scorecard_scatter(territory):
 
     fig.update_xaxes(
         title="Posizione - Servizi",
-        range=[21, 0],
+        range=[20.5, -0.5],   # centro esatto a 10, padding simmetrico
         tickvals=[5, 10, 15, 20],
         autorange=False,
+        automargin=True,
     )
     fig.update_yaxes(
         title="Posizione - Fattori di rischio",
-        range=[21, 0],
+        range=[20.5, -0.5],   # centro esatto a 10, padding simmetrico
         tickvals=[5, 10, 15, 20],
         autorange=False,
+        automargin=True,
     )
     fig.update_layout(
-        margin={"t": 20, "b": 40, "l": 10, "r": 10},
+        margin={"t": 30, "b": 50, "l": 10, "r": 30},
         height=420,
     )
     return fig

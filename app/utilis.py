@@ -39,14 +39,20 @@ def get_zscore_tier(z):
     return ZSCORE_LABELS[-1]
 
 
-def get_score_change_arrow(value, equal_buffer=0.1):
-    """Restituisce un'icona HTML per indicare la variazione."""
-    if -equal_buffer <= value <= equal_buffer:
-        return html.Span("→", className="text-muted")
-    elif value > equal_buffer:
-        return html.Span("↑", className="text-success fw-bold")
+def get_score_change_arrow(delta):
+    """Restituisce una freccia colorata per la variazione di posizione in classifica.
+    delta = rank_attuale - rank_primo_anno (negativo = miglioramento).
+    """
+    if delta == 0:
+        return html.Span([" Stabile ", html.Span(className="arrow-right")])
+    elif delta < 0:
+        return html.Span([
+            f" ▲ {abs(delta)} ", html.Span(className="arrow-up")
+        ])
     else:
-        return html.Span("↓", className="text-danger fw-bold")
+        return html.Span([
+            f" ▼ {delta} ", html.Span(className="arrow-down")
+        ])
 
 
 def area_centroid(geodata, regions):
