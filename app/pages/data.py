@@ -22,8 +22,9 @@ tabs = dbc.Tabs(
 
 layout = dbc.Container(
     children=[
-        dbc.Row(dbc.Col(tabs)),
-        dbc.Row(dbc.Col(id="data_tab_content"), className="mt-2"),
+        html.P("Esplora — in costruzione.", className="mt-4 text-muted"),
+        #dbc.Row(dbc.Col(tabs)),
+        #dbc.Row(dbc.Col(id="data_tab_content"), className="mt-2"),
     ],
     class_name="mt-4",
 )

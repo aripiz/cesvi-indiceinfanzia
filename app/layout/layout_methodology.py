@@ -102,5 +102,5 @@ methodology_layout = dbc.Container(
             className="mt-4 mb-4",
         ),
     ],
-    fluid=True,
+    fluid=False,
 )

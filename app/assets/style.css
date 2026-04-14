@@ -115,3 +115,132 @@ p, li {
     text-decoration: none;
 }
 .link:hover { text-decoration: underline; }
+
+/* ── Hero section ─────────────────────────────────────────────────────────── */
+/* Sostituire /assets/hero.jpg con l'immagine definitiva */
+.hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 78vh;
+    background-image: url('/assets/hero.jpg');
+    background-size: cover;
+    background-position: center top;
+    background-color: var(--cesvi-gray-dark); /* fallback se l'immagine non è presente */
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(20, 20, 20, 0.88) 0%,
+        rgba(20, 20, 20, 0.60) 45%,
+        rgba(20, 20, 20, 0.00) 75%
+    );
+}
+
+.hero-text {
+    position: relative;
+    z-index: 10;
+    padding: 4rem 3rem 4rem 3rem;
+    max-width: 55%;
+    color: #fff;
+}
+.hero-text h1, .hero-text h2 { color: #fff !important; }
+
+.hero-accent {
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--cesvi-orange);
+    margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    .hero-section { min-height: 60vh; }
+    .hero-text { max-width: 92%; padding: 2rem 1.5rem; }
+}
+
+/* ── Stats strip ──────────────────────────────────────────────────────────── */
+.stats-strip {
+    width: 100%;
+    background-color: var(--cesvi-orange);
+}
+
+.stats-strip .stat-value {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #fff !important;
+    line-height: 1.1;
+}
+
+.stats-strip .stat-label {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.85) !important;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+}
+
+.stat-divider {
+    border-left: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+@media (max-width: 576px) {
+    .stat-divider { border-left: none; border-top: 1px solid rgba(255, 255, 255, 0.28); }
+}
+
+/* ── Footer ───────────────────────────────────────────────────────────────── */
+.footer-section {
+    background-color: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+}
+
+.footer-rule {
+    border-color: #dee2e6;
+    opacity: 1;
+}
+
+.footer-heading {
+    font-size: 0.7rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--cesvi-gray-dark) !important;
+}
+
+.footer-text {
+    font-size: 0.78rem;
+    color: var(--cesvi-text-muted) !important;
+}
+
+.footer-link {
+    font-size: 0.78rem;
+    color: var(--cesvi-text-muted) !important;
+    text-decoration: none;
+    line-height: 2;
+}
+.footer-link:hover {
+    color: var(--cesvi-orange) !important;
+    text-decoration: none;
+}
+
+/* ── Grafico evoluzione: altezza responsive ─────────────────────────────── */
+#scorecard_evolution {
+    height: 280px !important;
+}
+@media (min-width: 1400px) {
+    #scorecard_evolution { height: 340px !important; }
+}
+@media (min-width: 1800px) {
+    #scorecard_evolution { height: 400px !important; }
+}

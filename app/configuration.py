@@ -108,3 +108,13 @@ CAPACITY_DIMS = {
     "vita_sana":         "Vita Sana",
     "vita_sicura":       "Vita Sicura",
 }
+
+# Ordine di visualizzazione delle capacità nei grafici (modifica qui per cambiare l'ordine)
+CAPACITY_ORDER = [
+    "accedere_risorse",
+    "conoscenza_sapere",
+    "cura",
+    "lavorare",
+    "vita_sana",
+    "vita_sicura",
+]
