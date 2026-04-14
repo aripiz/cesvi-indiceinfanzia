@@ -109,7 +109,7 @@ footer = html.Footer(
                     ),
                     dbc.Col(
                         html.P(
-                            ["Dashboard: ", html.A("aripiz", href=CREDITS_LINK, className="footer-link", target="_blank")],
+                            ["Credits: ", html.A("aripiz", href=CREDITS_LINK, className="footer-link", target="_blank")],
                             className="footer-text mb-0 text-md-end",
                         ),
                         md=3, xs=12,

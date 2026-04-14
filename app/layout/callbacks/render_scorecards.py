@@ -259,7 +259,7 @@ def update_scorecard_evolution(territory):
         margin={"t": 40, "b": 30, "l": 10, "r": 10},
     )
     fig.update_traces(
-        hovertemplate="<b>%{fullData.name}</b><br>Anno: %{x}<br>Posizione: %{y}<extra></extra>"
+        hovertemplate="<b>%{fullData.name}</b><br>Anno: %{x}<br>Posizione: %{y} / 20<extra></extra>"
     )
     return fig
 
@@ -497,7 +497,7 @@ def update_scorecard_scatter(territory):
         textposition="top center",
         textfont=dict(size=9, color="#3d4646"),
         marker=dict(color="#D0DADB", size=9, line=dict(color="#94A4A4", width=1)),
-        hovertemplate="<b>%{text}</b><br>Servizi: %{x}°<br>Fattori di rischio: %{y}°<extra></extra>",
+        hovertemplate="<b>%{text}</b><br>Servizi: %{x} / 20<br>Fattori di rischio: %{y} / 20<extra></extra>",
         showlegend=False,
     ))
 
@@ -512,7 +512,7 @@ def update_scorecard_scatter(territory):
             textposition="top center",
             textfont=dict(size=11, color=BRAND_COLOR),
             marker=dict(color=BRAND_COLOR, size=14, line=dict(color="white", width=1.5)),
-            hovertemplate="<b>%{text}</b><br>Servizi: %{x}°<br>Fattori di rischio: %{y}°<extra></extra>",
+            hovertemplate="<b>%{text}</b><br>Servizi: %{x} / 20<br>Fattori di rischio: %{y} / 20<extra></extra>",
             showlegend=False,
         ))
 
