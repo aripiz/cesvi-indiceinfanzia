@@ -21,7 +21,7 @@ BRAND_SECONDARY_COLOR = "#94A4A4"  # grigio
 BRAND_WHITE = "#FFFFFF"            # bianco
 
 # Logo
-LOGO = "assets/cesvi-logo_horizontal.png"
+LOGO = "assets/logo_h_grey.png"
 
 # Palette divergente per z-score: grigio (sotto media) → bianco (media) → arancione (sopra media)
 DIVERGING_COLORS = [

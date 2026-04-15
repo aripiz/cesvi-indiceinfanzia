@@ -144,15 +144,15 @@ def update_scorecard_info(territory, year):
             delta = rank - first_rank          # negativo = miglioramento
             arrow = get_score_change_arrow(delta)
             if delta == 0:
-                delta_children = [html.Span(className="arrow-right"), f" Stabile (dal {first_year})"]
+                delta_children = [html.Span(className="arrow-right"), f" Stabile"]
             elif delta < 0:
-                delta_children = [html.Span(className="arrow-up"), f" {abs(delta)} posizioni (dal {first_year})"]
+                delta_children = [html.Span(className="arrow-up"), f" {abs(delta)} posizioni"]
             else:
-                delta_children = [html.Span(className="arrow-down"), f" {delta} posizioni (dal {first_year})"]
+                delta_children = [html.Span(className="arrow-down"), f" {delta} posizioni"]
         else:
             delta_children = "N/D"
     else:
-        delta_children = "Non disponibile"
+        delta_children = "N/D"
 
     return score_str, rank_str, tier_str, delta_children
 
@@ -525,14 +525,14 @@ def update_scorecard_scatter(territory):
     fig.add_hline(y=10, line_dash="dot", line_color="#aaaaaa", line_width=1)
 
     fig.update_xaxes(
-        title="Posizione - Servizi",
+        title="Servizi",
         range=[20.5, -0.5],   # centro esatto a 10, padding simmetrico
         tickvals=[5, 10, 15, 20],
         autorange=False,
         automargin=True,
     )
     fig.update_yaxes(
-        title="Posizione - Fattori di rischio",
+        title="Fattori di rischio",
         range=[20.5, -0.5],   # centro esatto a 10, padding simmetrico
         tickvals=[5, 10, 15, 20],
         autorange=False,

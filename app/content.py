@@ -20,7 +20,7 @@ navbar = dbc.NavbarSimple(
     ],
    brand=html.Div([
         html.Img(
-            src="assets/cesvi-logo_horizontal.png", 
+            src=LOGO, 
             height="30px",
             # Rimosso verticalAlign, teniamo solo il margine
             style={"marginRight": "10px"} 
@@ -50,7 +50,7 @@ footer = html.Footer(
                     dbc.Col(
                         [
                             html.Img(
-                                src="assets/cesvi-logo_horizontal.png",
+                                src=LOGO,
                                 height="28px",
                                 className="mb-2",
                             ),
