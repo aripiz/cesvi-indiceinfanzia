@@ -4,20 +4,9 @@ services:
     restart: always
     expose:
       - "8080"
+    networks:
+      - proxy
 
-  npm:
-    image: jc21/nginx-proxy-manager:latest
-    restart: always
-    ports:
-      - "80:80"
-      - "443:443"
-      - "81:81"
-    volumes:
-      - npm_data:/data
-      - npm_letsencrypt:/etc/letsencrypt
-    depends_on:
-      - app
-
-volumes:
-  npm_data:
-  npm_letsencrypt:
+networks:
+  proxy:
+    external: true
