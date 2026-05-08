@@ -1,14 +1,17 @@
 # index.py — Cesvi Indice Infanzia
 
+import os
 from dash import Dash
 import dash_bootstrap_components as dbc
 import pandas as pd
 import geopandas as gpd
+from flask import send_from_directory, abort
 
 from configuration import (
     DATA_FILE,
     GEO_FILE,
     METADATA_FILE,
+    REPORTS_DIR,
     TITLE,
     DBC_CSS,
     TEMPLATE_CSS,
@@ -37,3 +40,14 @@ app = Dash(
 )
 
 server = app.server
+
+# ── Route Flask per i PDF (serviti da data/reports/) ─────────────────────────
+
+@server.route("/reports/<path:filename>")
+def serve_report(filename):
+    reports_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), REPORTS_DIR))
+    filepath = os.path.join(reports_dir, filename)
+    # Verifica che il file sia dentro reports_dir (path traversal prevention)
+    if not os.path.abspath(filepath).startswith(reports_dir):
+        abort(403)
+    return send_from_directory(reports_dir, filename, as_attachment=True)

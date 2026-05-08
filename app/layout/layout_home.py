@@ -27,7 +27,7 @@ pio.templates.default = FIGURE_TEMPLATE
 def display_home_map():
     year = YEAR_DEFAULT
     df = data[
-        (data["year"] == year) & (data["index"] == "totale") & data["capacity"].isna()
+        (data["year"] == year) & (data["type"] == "totale") & (data["capacity"] == "totale")
     ][["territory", "code", "score"]].copy()
     df["tier"] = pd.cut(
         df["score"],
@@ -228,7 +228,7 @@ home_layout = html.Div(
 def display_home_map():
     year = YEAR_DEFAULT
     df = data[
-        (data["year"] == year) & (data["index"] == "totale") & data["capacity"].isna()
+        (data["year"] == year) & (data["type"] == "totale") & (data["capacity"] == "totale")
     ][["territory", "code", "score"]].copy()
     df["tier"] = pd.cut(
         df["score"],

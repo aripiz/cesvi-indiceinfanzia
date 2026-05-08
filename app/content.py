@@ -4,8 +4,7 @@ from index import app
 from dash import dcc, html, page_container
 import dash_bootstrap_components as dbc
 
-from layout.callbacks import render_scorecards, navigation
-# TODO: aggiungere render_data quando implementato
+from layout.callbacks import render_scorecards, navigation, render_data
 
 from configuration import BRAND_LINK, CREDITS_LINK, TITLE, LOGO, BRAND_SECONDARY_COLOR
 
@@ -13,10 +12,11 @@ from configuration import BRAND_LINK, CREDITS_LINK, TITLE, LOGO, BRAND_SECONDARY
 
 navbar = dbc.NavbarSimple(
     children=[
-        dbc.NavItem(dbc.NavLink("Panoramica",   active="exact", href="/",            className="fw-bold")),
-        dbc.NavItem(dbc.NavLink("Regioni",      active="exact", href="/scorecards",  className="fw-bold")),
-        dbc.NavItem(dbc.NavLink("Esplora",      active="exact", href="/data",        className="fw-bold")),
-        dbc.NavItem(dbc.NavLink("Metodologia",  active="exact", href="/methodology", className="fw-bold")),
+        dbc.NavItem(dbc.NavLink("Panoramica",  active="exact", href="/",            className="fw-bold")),
+        dbc.NavItem(dbc.NavLink("Regioni",     active="exact", href="/scorecards",  className="fw-bold")),
+        dbc.NavItem(dbc.NavLink("Dati",        active="exact", href="/data",        className="fw-bold")),
+        dbc.NavItem(dbc.NavLink("Report",      active="exact", href="/report",      className="fw-bold")),
+        dbc.NavItem(dbc.NavLink("Metodologia", active="exact", href="/methodology", className="fw-bold")),
     ],
    brand=html.Div([
         html.Img(
@@ -70,7 +70,8 @@ footer = html.Footer(
                                 [
                                     html.Li(html.A("Panoramica",  href="/",            className="footer-link")),
                                     html.Li(html.A("Regioni",     href="/scorecards",  className="footer-link")),
-                                    html.Li(html.A("Esplora",     href="/data",        className="footer-link")),
+                                    html.Li(html.A("Dati",        href="/data",        className="footer-link")),
+                                    html.Li(html.A("Report",      href="/report",      className="footer-link")),
                                     html.Li(html.A("Metodologia", href="/methodology", className="footer-link")),
                                 ],
                                 className="list-unstyled mb-0",

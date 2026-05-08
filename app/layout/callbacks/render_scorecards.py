@@ -35,7 +35,7 @@ pio.templates.default = FIGURE_TEMPLATE
 def _totale(year):
     """Righe dell'indice totale per un dato anno (tutti i territori)."""
     return data[
-        (data["year"] == year) & (data["index"] == "totale") & data["capacity"].isna()
+        (data["year"] == year) & (data["type"] == "totale") & (data["capacity"] == "totale")
     ][["territory", "code", "score"]].copy()
 
 
@@ -54,9 +54,9 @@ def _get_rank(territory, year):
 
 
 def _get_rank_by_index(territory, year, index_key):
-    """Posizione (1 = migliore) per un qualsiasi index_key (capacity isNaN)."""
+    """Posizione (1 = migliore) per un qualsiasi type (aggregato, capacity == 'totale')."""
     df = data[
-        (data["year"] == year) & (data["index"] == index_key) & data["capacity"].isna()
+        (data["year"] == year) & (data["type"] == index_key) & (data["capacity"] == "totale")
     ][["territory", "score"]].dropna(subset=["score"])
     if df.empty:
         return None
@@ -472,7 +472,7 @@ def update_scorecard_scatter(territory):
 
     def _ranks(index_key):
         df = data[
-            (data["year"] == year) & (data["index"] == index_key) & data["capacity"].isna()
+            (data["year"] == year) & (data["type"] == index_key) & (data["capacity"] == "totale")
         ][["territory", "score"]].dropna(subset=["score"])
         df = df.sort_values("score", ascending=False).reset_index(drop=True)
         df["rank"] = range(1, len(df) + 1)

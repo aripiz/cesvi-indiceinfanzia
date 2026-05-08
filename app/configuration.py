@@ -81,14 +81,16 @@ OCEAN_COLOR = "#F2F2F2"
 GEO_KEY     = "properties.reg_istat_code_num"
 
 # Files
-DATA_FILE = "../data/cesvi-indiceinfanzia_data.csv"
-GEO_FILE  = "../data/limits_IT_regions.geojson"
+DATA_FILE     = "../data/cesvi-indiceinfanzia_data.csv"
+GEO_FILE      = "../data/limits_IT_regions.geojson"
 METADATA_FILE = "../data/cesvi-indiceinfanzia_metadata.csv"
+REPORTS_FILE  = "../data/cesvi-indiceinfanzia_reports.csv"
+REPORTS_DIR   = "../data/reports"
 
 # Years
-YEARS = [2019, 2020, 2021, 2022, 2024]
+YEARS = [2018, 2019, 2020, 2021, 2022, 2024, 2026]
 YEARS_AVAILABLE = YEARS  # alias
-YEAR_DEFAULT = 2024
+YEAR_DEFAULT = 2026
 YEAR_MIN = YEARS[0]
 YEAR_MAX = YEARS[-1]
 
