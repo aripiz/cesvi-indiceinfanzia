@@ -59,7 +59,7 @@ footer = html.Footer(
                                 className="footer-text mb-0",
                             ),
                         ],
-                        md=5, xs=12,
+                        md=7, xs=12,
                         className="mb-3 mb-md-0",
                     ),
                     # Navigazione
@@ -77,22 +77,7 @@ footer = html.Footer(
                                 className="list-unstyled mb-0",
                             ),
                         ],
-                        md=3, xs=6,
-                        className="mb-3 mb-md-0",
-                    ),
-                    # Info
-                    dbc.Col(
-                        [
-                            html.P("Risorse", className="footer-heading mb-2"),
-                            html.Ul(
-                                [
-                                    html.Li(html.A("Scarica i dati", href="#", className="footer-link", target="_blank")),
-                                    html.Li(html.A("Scarica il report", href="#", className="footer-link")),
-                                ],
-                                className="list-unstyled mb-0",
-                            ),
-                        ],
-                        md=2, xs=6,
+                        md=3, xs=12,
                         className="mb-3 mb-md-0",
                     ),
                 ],

@@ -77,6 +77,23 @@ def _kpi_card(label, element_id):
 
 scorecard_layout = dbc.Container(
     children=[
+        # ── Titolo pagina ─────────────────────────────────────────────────────
+        dbc.Row(
+            dbc.Col([
+                html.H2("Regioni", className="mb-1"),
+                html.Div(style={
+                    "width": "40px", "height": "4px",
+                    "backgroundColor": "#eb6608", "marginBottom": "0.5rem",
+                }),
+                html.P(
+                    "Approfondisci i risultati di ciascuna regione nell\u2019Indice. "
+                    "I dati mostrati si riferiscono all\u2019edizione 2026.",
+                    className="text-muted mb-2",
+                    style={"fontSize": "0.92rem"},
+                ),
+            ], xs=12),
+            className="mb-2",
+        ),
         # ── Selezione territorio ──────────────────────────────────────────────
         dbc.Row(
             dbc.Col(
@@ -129,7 +146,7 @@ scorecard_layout = dbc.Container(
         dbc.Row(
             dbc.Col(
                 [
-                    html.H2(id="scorecard_header", className="mb-1"),
+                    html.H4(id="scorecard_header", className="mb-1 fw-bold"),
                     # Idea 1: accent bar arancione sotto il titolo
                     html.Div(style={
                         "width": "60px",

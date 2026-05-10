@@ -278,7 +278,7 @@ def display_home_map():
 
 intro_text = f"""
 L'*Indice regionale sul maltrattamento e la cura all'infanzia in Italia* è uno strumento
-di analisi originale di **[Cesvi]({BRAND_LINK})** che dal 2018 monitora annualmente
+di analisi originale di **[CESVI]({BRAND_LINK})** che dal 2018 monitora annualmente
 la capacità delle regioni italiane di prevenire e contrastare il maltrattamento minorile.
 
 Costruito su **64 indicatori statistici** aggregati in **6 capacità territoriali**

@@ -19,13 +19,18 @@ from configuration import (
     CAPACITY_DIMS,
     CAPACITY_ORDER,
     INDEX_LABELS,
+    YEARS,
     YEAR_DEFAULT,
+    BRAND_COLOR,
 )
 from index import app, data, geodata
 from layout.layout_data import tab_content_map
 
 load_figure_template(FIGURE_TEMPLATE)
 pio.templates.default = FIGURE_TEMPLATE
+
+_N_REGIONS  = 20
+_POP_DISPLAY = {"adulti": "Adulti", "bambini": "Bambini"}
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
@@ -38,24 +43,35 @@ def _label(key):
     return key
 
 
-def _pop_label(pop):
-    return {"adulti": "Adulti", "bambini": "Bambini", "totale": "Totale"}.get(pop, pop)
-
-
-def _resolve_selector(index_type, capacity, population):
-    """Traduce selezione utente in (type_key, cap_key, pop_key) per il filtro CSV.
-
-    Logica:
-      - index_type == "totale"  → type=totale, cap=totale, pop=totale (aggregato)
-      - index_type == "rischio" o "servizi" e capacity == None → aggregato di quella dim
-      - index_type == "rischio" o "servizi" e capacity != None → dettaglio capacità
-    """
-    if index_type == "totale":
+def _parse_indicatore(value):
+    """Ritorna (type_key, cap_key, pop_key) dal dropdown 'type||capacity||population'."""
+    if not value or str(value).startswith("_"):
         return "totale", "totale", "totale"
-    type_key = index_type or "totale"
-    cap_key  = capacity if capacity else "totale"
-    pop_key  = population if population else "totale"
+    parts = str(value).split("||")
+    type_key = parts[0] if len(parts) > 0 else "totale"
+    cap_key  = parts[1] if len(parts) > 1 else "totale"
+    pop_key  = parts[2] if len(parts) > 2 else "totale"
     return type_key, cap_key, pop_key
+
+
+def _resolve(indicatore):
+    """Ritorna (type_key, cap_key, pop_key) dall'indicatore."""
+    return _parse_indicatore(indicatore)
+
+
+def _indicatore_label(value):
+    """Etichetta leggibile per il dropdown indicatore."""
+    if not value or str(value).startswith("_"):
+        return "Indice totale"
+    type_key, cap_key, pop_key = _parse_indicatore(value)
+    if type_key == "totale":
+        return INDEX_LABELS.get("totale", "Indice totale")
+    base = INDEX_LABELS.get(type_key, type_key)
+    if cap_key != "totale":
+        base = f"{CAPACITY_DIMS.get(cap_key, cap_key)} — {base}"
+    if pop_key in _POP_DISPLAY:
+        base += f" · {_POP_DISPLAY[pop_key]}"
+    return base
 
 
 def _fetch(year, type_key, cap_key, pop_key):
@@ -65,17 +81,6 @@ def _fetch(year, type_key, cap_key, pop_key):
         & (data["capacity"] == cap_key)
         & (data["population"] == pop_key)
     ][["territory", "code", "score"]].copy()
-
-
-def _feat_label(index_type, capacity, population):
-    if index_type == "totale":
-        return INDEX_LABELS["totale"]
-    lbl = INDEX_LABELS.get(index_type, index_type)
-    if capacity:
-        lbl += f" — {_label(capacity)}"
-        if population and population != "totale":
-            lbl += f" ({_pop_label(population)})"
-    return lbl
 
 
 def _no_data(msg="Nessun dato disponibile"):
@@ -100,29 +105,59 @@ def _map_geo():
     )
 
 
-# ── Toggle capacità/popolazione: abilitati solo se indice != totale ───────────
+def _compute_ranks(year, type_key, cap_key, pop_key):
+    """DataFrame con territory e rank (1=migliore)."""
+    df = data[
+        (data["year"] == year)
+        & (data["type"] == type_key)
+        & (data["capacity"] == cap_key)
+        & (data["population"] == pop_key)
+    ][["territory", "score"]].dropna(subset=["score"])
+    if df.empty:
+        return pd.DataFrame(columns=["territory", "rank"])
+    df = df.sort_values("score", ascending=False).reset_index(drop=True)
+    df["rank"] = range(1, len(df) + 1)
+    return df[["territory", "rank"]]
 
-def _cap_disabled_props(index_type, default_cap):
-    """Ritorna (disabled, value) per il dropdown Capacità."""
-    if index_type == "totale":
-        return True, None
-    return False, default_cap
 
-
-for _prefix, _default in [("map", CAPACITY_ORDER[0]),
-                           ("ranking", CAPACITY_ORDER[0]),
-                           ("evo", CAPACITY_ORDER[0])]:
-    @app.callback(
-        Output(f"{_prefix}_capacity", "disabled"),
-        Output(f"{_prefix}_capacity", "value"),
-        Input(f"{_prefix}_index_type", "value"),
+def _cap_avg_for_territory(territory, year, cap_key, type_key="totale", pop_key="totale"):
+    """Media z-score per una capacità di un territorio (con filtro opzionale type e pop)."""
+    mask = (
+        (data["territory"] == territory)
+        & (data["year"] == year)
+        & (data["capacity"] == cap_key)
     )
-    def _toggle_capacity(index_type, default=_default):
-        disabled, value = _cap_disabled_props(index_type, default)
-        return disabled, value
+    if type_key != "totale":
+        mask = mask & (data["type"] == type_key)
+    if pop_key != "totale":
+        mask = mask & (data["population"] == pop_key)
+    df = data[mask]
+    if df.empty:
+        return None
+    v = df["score"].mean()
+    return float(v) if pd.notna(v) else None
 
 
-# ── Tab content ───────────────────────────────────────────────────────────────
+def _cap_rank_for_territory(territory, year, cap_key, type_key="totale", pop_key="totale"):
+    """Posizione del territorio per una capacità."""
+    mask = (data["year"] == year) & (data["capacity"] == cap_key)
+    if type_key != "totale":
+        mask = mask & (data["type"] == type_key)
+    if pop_key != "totale":
+        mask = mask & (data["population"] == pop_key)
+    df = data[mask].copy()
+    if df.empty:
+        return None
+    agg = df.groupby("territory")["score"].mean().reset_index()
+    agg = agg.dropna(subset=["score"]).sort_values("score", ascending=False).reset_index(drop=True)
+    agg["rank"] = range(1, len(agg) + 1)
+    row = agg[agg["territory"] == territory]
+    if row.empty:
+        return None
+    return int(row["rank"].values[0])
+
+
+# ── Tab content router ────────────────────────────────────────────────────────
 
 @app.callback(
     Output("data_viz_content", "children"),
@@ -136,15 +171,13 @@ def render_tab(tab):
 
 @app.callback(
     Output("data_map", "figure"),
-    Input("map_index_type", "value"),
-    Input("map_capacity",   "value"),
-    Input("map_population", "value"),
+    Input("map_indicatore", "value"),
     Input("map_year",       "value"),
 )
-def display_map(index_type, capacity, population, year):
+def display_map(indicatore, year):
     yr = year or YEAR_DEFAULT
-    type_key, cap_key, pop_key = _resolve_selector(index_type, capacity, population)
-    feat_label = _feat_label(index_type, capacity, population)
+    type_key, cap_key, pop_key = _resolve(indicatore)
+    feat_label = _indicatore_label(indicatore)
 
     df = _fetch(yr, type_key, cap_key, pop_key)
     if df.empty or df["score"].isna().all():
@@ -173,19 +206,17 @@ def display_map(index_type, capacity, population, year):
     return fig
 
 
-# ── Classifica ────────────────────────────────────────────────────────────────
+# ── Graduatoria ───────────────────────────────────────────────────────────────
 
 @app.callback(
     Output("data_ranking", "figure"),
-    Input("ranking_index_type", "value"),
-    Input("ranking_capacity",   "value"),
-    Input("ranking_population", "value"),
+    Input("ranking_indicatore", "value"),
     Input("ranking_year",       "value"),
 )
-def display_ranking(index_type, capacity, population, year):
+def display_ranking(indicatore, year):
     yr = year or YEAR_DEFAULT
-    type_key, cap_key, pop_key = _resolve_selector(index_type, capacity, population)
-    feat_label = _feat_label(index_type, capacity, population)
+    type_key, cap_key, pop_key = _resolve(indicatore)
+    feat_label = _indicatore_label(indicatore)
 
     df = _fetch(yr, type_key, cap_key, pop_key)
     if df.empty or df["score"].isna().all():
@@ -200,252 +231,369 @@ def display_ranking(index_type, capacity, population, year):
         color="score",
         color_continuous_scale=DIVERGING_COLORS,
         color_continuous_midpoint=0,
-        labels={"score": feat_label, "territory": "Regione"},
-        text=df["score"].map(lambda v: f"{v:+.3f}"),
+        labels={"score": feat_label, "territory": ""},
+        text=df["score"].map(lambda v: f"{v:+.2f}"),
         custom_data=["territory", "rank"],
     )
-    fig.update_traces(textposition="outside")
-    fig.update_layout(
-        showlegend=False, coloraxis_showscale=False,
-        yaxis_title=None, xaxis_title=feat_label,
-        margin=dict(l=10, r=30),
-    )
     fig.update_traces(
+        textposition="outside",
         hovertemplate=(
             "<b>%{customdata[0]}</b><br>"
-            f"{feat_label}: " + "%{x:.3f}<br>"
-            "Rank: %{customdata[1]}<br><extra></extra>"
-        )
+            f"{feat_label}: " + "%{x:+.3f}<br>"
+            "Posizione: %{customdata[1]} / 20<br><extra></extra>"
+        ),
     )
-    fig.add_vline(x=0, line_dash="dash", line_color="gray", line_width=1)
+    fig.update_layout(
+        showlegend=False,
+        coloraxis_showscale=False,
+        yaxis_title=None,
+        xaxis_title=feat_label,
+        margin=dict(l=10, r=60, t=10, b=30),
+    )
+    fig.add_vline(x=0, line_dash="dash", line_color="#aaaaaa", line_width=1)
     return fig
 
 
-# ── Serie storica ─────────────────────────────────────────────────────────────
+# ── Serie storica (posizione/rank) ────────────────────────────────────────────
 
 @app.callback(
     Output("data_evolution", "figure"),
     Input("evo_territories", "value"),
-    Input("evo_index_type",  "value"),
-    Input("evo_capacity",    "value"),
-    Input("evo_population",  "value"),
+    Input("evo_indicatore",  "value"),
 )
-def display_evolution(territories, index_type, capacity, population):
+def display_evolution(territories, indicatore):
     if not territories:
         raise PreventUpdate
 
-    type_key, cap_key, pop_key = _resolve_selector(index_type, capacity, population)
-    feat_label = _feat_label(index_type, capacity, population)
+    type_key, cap_key, pop_key = _resolve(indicatore)
 
-    df = data[
-        (data["territory"].isin(territories))
-        & (data["type"] == type_key)
-        & (data["capacity"] == cap_key)
-        & (data["population"] == pop_key)
-    ][["territory", "year", "score"]].copy()
+    rows = []
+    for yr in YEARS:
+        df_yr = data[
+            (data["year"] == yr)
+            & (data["type"] == type_key)
+            & (data["capacity"] == cap_key)
+            & (data["population"] == pop_key)
+        ][["territory", "score"]].dropna(subset=["score"])
+        if df_yr.empty:
+            continue
+        df_yr = df_yr.sort_values("score", ascending=False).reset_index(drop=True)
+        df_yr["rank"] = range(1, len(df_yr) + 1)
+        df_yr["year"] = yr
+        rows.append(df_yr)
 
-    if df.empty:
-        return _no_data(f"Nessun dato per '{feat_label}'")
+    if not rows:
+        return _no_data(f"Nessun dato per '{_indicatore_label(indicatore)}'")
+
+    df_all = pd.concat(rows)
+    df_sel = df_all[df_all["territory"].isin(territories)].copy()
+
+    if df_sel.empty:
+        return _no_data("Nessun dato per le regioni selezionate")
+
+    years_present = sorted(df_sel["year"].unique())
 
     fig = px.line(
-        df, x="year", y="score", color="territory", markers=True,
-        labels={"year": "Anno", "score": feat_label, "territory": "Regione"},
+        df_sel,
+        x="year", y="rank", color="territory", markers=True,
+        labels={"year": "Anno", "rank": "Posizione", "territory": "Regione"},
         color_discrete_sequence=SEQUENCE_COLOR,
-        custom_data=["territory"],
     )
-    fig.add_hline(y=0, line_dash="dash", line_color="gray", line_width=1)
-    years_present = sorted(df["year"].unique())
+    fig.update_yaxes(
+        range=[_N_REGIONS + 0.5, 0.5],
+        tickvals=[1, 5, 10, 15, 20],
+        title_text="Posizione",
+    )
+    fig.update_xaxes(
+        tickvals=years_present,
+        ticktext=[str(y) for y in years_present],
+        title_text="Anno",
+    )
     fig.update_layout(
-        xaxis=dict(tickvals=years_present, ticktext=[str(y) for y in years_present]),
-        legend=dict(title_text="Regione"),
+        legend=dict(
+            title_text="Regione", orientation="h",
+            yanchor="bottom", y=1.02, xanchor="left", x=0,
+        ),
     )
     fig.update_traces(
-        hovertemplate=(
-            "<b>%{customdata[0]}</b><br>"
-            "Anno: %{x}<br>"
-            f"{feat_label}: " + "%{y:.3f}<br><extra></extra>"
-        )
+        hovertemplate="<b>%{fullData.name}</b><br>Anno: %{x}<br>Posizione: %{y} / 20<extra></extra>"
     )
     return fig
 
 
-# ── Profilo per capacità (radar) ──────────────────────────────────────────────
+# ── Profilo per capacità: lollipop ────────────────────────────────────────────
 
 @app.callback(
-    Output("data_radar", "figure"),
-    Input("radar_territories", "value"),
-    Input("radar_dim_type",    "value"),
-    Input("radar_population",  "value"),
-    Input("radar_year",        "value"),
+    Output("data_lollipop", "figure"),
+    Input("profilo_territory",  "value"),
+    Input("profilo_dim_type",   "value"),
+    Input("profilo_year",       "value"),
 )
-def display_radar(territories, dim_type, population, year):
-    if not territories:
+def display_profilo_lollipop(territory, dim_type, year):
+    if not territory:
         raise PreventUpdate
+    yr       = year or YEAR_DEFAULT
+    type_key = dim_type or "rischio"
+    pop_key  = "totale"
 
-    territories = territories[:3]
-    yr      = year or YEAR_DEFAULT
-    pop_key = population or "totale"
+    cap_keys   = CAPACITY_ORDER
+    cap_labels = [CAPACITY_DIMS[k] for k in cap_keys]
+    y_order    = list(reversed(cap_labels))
 
-    if dim_type == "totale":
-        # Media tra rischio e servizi per ciascuna capacità
-        df = (
-            data[
-                (data["year"] == yr)
-                & (data["capacity"].isin(CAPACITY_ORDER))
-                & (data["population"] == "totale")
-                & (data["type"].isin(["rischio", "servizi"]))
-            ]
-            .groupby(["territory", "capacity"])["score"]
-            .mean()
-            .reset_index()
-        )
-    else:
-        df = data[
-            (data["year"] == yr)
-            & (data["type"] == dim_type)
-            & (data["capacity"].isin(CAPACITY_ORDER))
-            & (data["population"] == pop_key)
-        ][["territory", "capacity", "score"]].copy()
+    ranks   = [_cap_rank_for_territory(territory, yr, k, type_key, pop_key) for k in cap_keys]
+    zscores = [_cap_avg_for_territory(territory, yr, k, type_key, pop_key)  for k in cap_keys]
 
-    if df.empty:
-        return _no_data("Nessun dato per il profilo selezionato")
-
-    dim_labels = [CAPACITY_DIMS[k] for k in CAPACITY_ORDER]
-    all_vals   = df["score"].dropna()
-    r_min = min(-2.0, float(all_vals.min()) - 0.2) if not all_vals.empty else -2.0
-    r_max = max(2.0,  float(all_vals.max()) + 0.2) if not all_vals.empty else  2.0
+    df = pd.DataFrame({"capacity": cap_labels, "rank": ranks, "zscore": zscores})
+    df["tier"] = pd.cut(
+        df["zscore"].fillna(0), bins=ZSCORE_BINS, labels=ZSCORE_LABELS, right=False,
+    ).astype(str)
+    df["color"]    = df["tier"].map(ZSCORE_TIER_COLORS)
+    df["rank_int"] = df["rank"].apply(
+        lambda r: int(r) if r is not None and not pd.isna(r) else None
+    )
 
     fig = go.Figure()
-    for i, territory in enumerate(territories):
-        tdf = df[df["territory"] == territory].set_index("capacity")
-        values = [
-            float(tdf.loc[k, "score"])
-            if k in tdf.index and pd.notna(tdf.loc[k, "score"])
-            else 0
-            for k in CAPACITY_ORDER
-        ]
-        values_closed = values + [values[0]]
-        labels_closed = dim_labels + [dim_labels[0]]
-        fig.add_trace(go.Scatterpolar(
-            r=values_closed, theta=labels_closed,
-            fill="toself", name=territory,
-            line_color=SEQUENCE_COLOR[i % len(SEQUENCE_COLOR)],
-            opacity=0.7,
-        ))
 
+    for _, row in df.iterrows():
+        if row["rank_int"] is not None:
+            fig.add_shape(
+                type="line",
+                x0=10, x1=row["rank_int"],
+                y0=row["capacity"], y1=row["capacity"],
+                line=dict(color="#cccccc", width=2),
+                layer="below",
+            )
+
+    fig.add_trace(
+        go.Scatter(
+            x=df["rank_int"],
+            y=df["capacity"],
+            mode="markers+text",
+            marker=dict(size=30, color=df["color"], line=dict(width=1.5, color="white")),
+            text=df["rank_int"].apply(lambda r: str(r) if r is not None else ""),
+            textfont=dict(color="white", size=11),
+            textposition="middle center",
+            hovertemplate="<b>%{y}</b><br>Posizione: %{x} / 20<extra></extra>",
+        )
+    )
+
+    fig.add_vline(x=10, line_dash="dot", line_color="#aaaaaa", line_width=1)
     fig.update_layout(
-        polar=dict(radialaxis=dict(visible=True, title="z-score", range=[r_min, r_max])),
-        showlegend=True, legend=dict(title_text="Regione"),
+        xaxis=dict(range=[20.5, -0.5], tickvals=[5, 10, 15, 20], title="Posizione", zeroline=False),
+        yaxis=dict(title="", categoryorder="array", categoryarray=y_order, automargin=True),
+        showlegend=False,
+        margin={"t": 10, "b": 40, "l": 10, "r": 25},
+        height=300,
     )
     return fig
 
 
-# ── Heatmap ───────────────────────────────────────────────────────────────────
+# ── Profilo per capacità: dim_table ───────────────────────────────────────────
+
+@app.callback(
+    Output("data_dim_table", "figure"),
+    Input("profilo_territory",  "value"),
+    Input("profilo_dim_type",   "value"),
+    Input("profilo_year",       "value"),
+)
+def display_profilo_dim_table(territory, dim_type, year):
+    if not territory:
+        raise PreventUpdate
+    yr       = year or YEAR_DEFAULT
+    type_key = dim_type or "rischio"
+    pop_key  = "totale"
+
+    cap_keys   = CAPACITY_ORDER
+    cap_labels = [CAPACITY_DIMS[k] for k in cap_keys]
+    y_order    = list(reversed(cap_labels))
+
+    values = [_cap_avg_for_territory(territory, yr, k, type_key, pop_key) for k in cap_keys]
+    df = pd.DataFrame([
+        {"capacity": label, "zscore": v if v is not None else float("nan")}
+        for label, v in zip(cap_labels, values)
+    ])
+    df["tier"] = pd.cut(
+        df["zscore"], bins=ZSCORE_BINS, labels=ZSCORE_LABELS, right=False
+    ).astype(str)
+
+    fig = px.bar(
+        df, x="zscore", y="capacity", orientation="h",
+        color="tier", color_discrete_map=ZSCORE_TIER_COLORS,
+        category_orders={"tier": ZSCORE_LABELS},
+        labels={"zscore": "Punteggio", "capacity": "", "tier": ""},
+        custom_data=["tier"],
+    )
+    fig.add_vline(x=0, line_dash="dot", line_color="#aaaaaa", line_width=1)
+    fig.update_traces(
+        hovertemplate="<b>%{y}</b><br>Punteggio: %{x:.2f}<br>%{customdata[0]}<extra></extra>"
+    )
+    fig.update_layout(
+        showlegend=False,
+        xaxis=dict(title="Punteggio", zeroline=False),
+        yaxis=dict(title="", categoryorder="array", categoryarray=y_order, automargin=True),
+        margin={"t": 10, "b": 40, "l": 10, "r": 15},
+        height=300,
+    )
+    return fig
+
+
+# ── Riepilogo: heatmap per punteggi (z-score) ────────────────────────────────
 
 @app.callback(
     Output("data_heatmap", "figure"),
-    Input("heatmap_dim_type",   "value"),
-    Input("heatmap_population", "value"),
-    Input("heatmap_year",       "value"),
+    Input("heatmap_dim_type", "value"),
+    Input("heatmap_year",     "value"),
 )
-def display_heatmap(dim_type, population, year):
-    yr      = year or YEAR_DEFAULT
-    pop_key = population or "totale"
+def display_heatmap(dim_type, year):
+    yr = year or YEAR_DEFAULT
 
-    if dim_type == "all":
-        # Colonne = i 3 indici aggregati (capacity="totale")
-        frames = []
-        for t in ["rischio", "servizi", "totale"]:
-            tmp = data[
-                (data["year"] == yr) & (data["type"] == t) & (data["capacity"] == "totale")
-            ][["territory", "score"]].copy()
-            tmp["col"] = _label(t)
-            frames.append(tmp)
-        col_order = [_label(t) for t in ["rischio", "servizi", "totale"]]
+    if dim_type == "indici" or not dim_type:
+        cols_config = [
+            ("rischio", "totale", "totale", "Fattori di rischio"),
+            ("servizi",  "totale", "totale", "Servizi"),
+        ]
     else:
-        # Colonne = le 6 capacità per la dimensione scelta
-        frames = []
-        for cap in CAPACITY_ORDER:
-            tmp = data[
-                (data["year"] == yr)
-                & (data["type"] == dim_type)
-                & (data["capacity"] == cap)
-                & (data["population"] == pop_key)
-            ][["territory", "score"]].copy()
-            tmp["col"] = CAPACITY_DIMS.get(cap, cap)
-            frames.append(tmp)
-        col_order = [CAPACITY_DIMS[k] for k in CAPACITY_ORDER]
+        cols_config = [
+            (dim_type, cap, None, CAPACITY_DIMS[cap])
+            for cap in CAPACITY_ORDER
+        ]
 
-    if not frames:
+    all_territories = sorted(data["territory"].unique())
+    scores_data = {}
+    for type_k, cap_k, pop_k, col_label in cols_config:
+        mask = (
+            (data["year"] == yr)
+            & (data["type"] == type_k)
+            & (data["capacity"] == cap_k)
+        )
+        if pop_k is not None:
+            mask = mask & (data["population"] == pop_k)
+        df_col = data[mask][["territory", "score"]].dropna(subset=["score"])
+        if not df_col.empty:
+            # media tra popolazioni disponibili per quel territorio
+            scores_data[col_label] = df_col.groupby("territory")["score"].mean()
+        else:
+            scores_data[col_label] = pd.Series(dtype=float)
+
+    col_labels = [c[3] for c in cols_config]
+    df_wide = pd.DataFrame(scores_data, index=all_territories)
+    present_cols = [c for c in col_labels if c in df_wide.columns]
+    if df_wide.empty or not present_cols:
         return _no_data()
 
-    df_wide = pd.concat(frames).pivot_table(
-        index="territory", columns="col", values="score", aggfunc="first"
-    )
-    col_order = [c for c in col_order if c in df_wide.columns]
-    if df_wide.empty or not col_order:
-        return _no_data()
+    df_wide["_avg"] = df_wide[present_cols].mean(axis=1)
+    df_wide = df_wide.sort_values("_avg", ascending=False).drop(columns="_avg")  # score alto → in cima
 
-    df_wide = df_wide[col_order]
-    df_wide["_avg"] = df_wide.mean(axis=1)
-    df_wide = df_wide.sort_values("_avg", ascending=False).drop(columns="_avg")
-
-    z           = df_wide.values
+    z           = df_wide[present_cols].values
     territories = df_wide.index.tolist()
-    cols        = df_wide.columns.tolist()
+
+    # Scala divergente centrata su 0
+    zabs = max(abs(float(pd.DataFrame(z).stack().min())), abs(float(pd.DataFrame(z).stack().max())), 0.1)
 
     fig = go.Figure(data=go.Heatmap(
-        z=z, x=cols, y=territories,
-        colorscale=DIVERGING_COLORS, zmid=0,
-        text=[[f"{v:.3f}" if pd.notna(v) else "N/D" for v in row] for row in z],
+        z=z, x=present_cols, y=territories,
+        colorscale=DIVERGING_COLORS,
+        zmid=0, zmin=-zabs, zmax=zabs,
+        text=[[f"{v:.2f}" if not pd.isna(v) else "—" for v in row] for row in z],
         texttemplate="%{text}",
-        colorbar=dict(title="z-score"),
+        colorbar=dict(title="Punteggio"),
         hovertemplate="<b>%{y}</b><br>%{x}: %{z:.3f}<br><extra></extra>",
     ))
-    fig.update_layout(margin=dict(l=10, r=10, t=20, b=10))
+    fig.update_layout(
+        margin=dict(l=10, r=10, t=20, b=10),
+        xaxis=dict(tickangle=-20, side="top"),
+    )
     return fig
 
 
-# ── Correlazioni ──────────────────────────────────────────────────────────────
+# ── Correlazioni: scatter con evidenziazione regione ─────────────────────────
 
 @app.callback(
     Output("data_correlations", "figure"),
     Input("corr_x",          "value"),
     Input("corr_y",          "value"),
-    Input("corr_dim_type",   "value"),
-    Input("corr_population", "value"),
+    Input("corr_highlight",  "value"),
     Input("corr_year",       "value"),
 )
-def display_correlations(cap_x, cap_y, dim_type, population, year):
-    if not cap_x or not cap_y:
+def display_correlations(ind_x, ind_y, highlight, year):
+    if not ind_x or not ind_y:
         raise PreventUpdate
-    if cap_x == cap_y:
-        return _no_data("Seleziona due capacità diverse")
+    if ind_x == ind_y:
+        return _no_data("Seleziona due indicatori diversi per i due assi")
 
-    yr       = year or YEAR_DEFAULT
-    type_key = dim_type or "rischio"
-    pop_key  = population or "totale"
+    yr   = year or YEAR_DEFAULT
+    df_x = _compute_ranks(yr, *_resolve(ind_x)).rename(columns={"rank": "rank_x"})
+    df_y = _compute_ranks(yr, *_resolve(ind_y)).rename(columns={"rank": "rank_y"})
+    df   = df_x.merge(df_y, on="territory")
 
-    def _fetch_cap(cap):
-        return data[
-            (data["year"] == yr)
-            & (data["type"] == type_key)
-            & (data["capacity"] == cap)
-            & (data["population"] == pop_key)
-        ][["territory", "score"]].rename(columns={"score": cap})
-
-    df = _fetch_cap(cap_x).merge(_fetch_cap(cap_y), on="territory")
     if df.empty:
-        return _no_data(f"Nessun dato per {_label(cap_x)} vs {_label(cap_y)}")
+        return _no_data("Nessun dato disponibile per il confronto selezionato")
 
-    lx, ly = _label(cap_x), _label(cap_y)
-    fig = px.scatter(
-        df, x=cap_x, y=cap_y, text="territory",
-        labels={cap_x: lx, cap_y: ly},
-        color_discrete_sequence=SEQUENCE_COLOR,
+    lx = _indicatore_label(ind_x)
+    ly = _indicatore_label(ind_y)
+    median = 10  # centro della scala 1-20
+
+    # Separa la regione evidenziata (come in Regioni scatter)
+    df["is_selected"] = df["territory"] == highlight if highlight else False
+    df = df.sort_values("is_selected")   # evidenziata disegnata per ultima (sopra)
+
+    other = df[~df["is_selected"]]
+    sel   = df[df["is_selected"]]
+
+    fig = go.Figure()
+
+    fig.add_trace(go.Scatter(
+        x=other["rank_x"],
+        y=other["rank_y"],
+        mode="markers+text",
+        text=other["territory"],
+        textposition="top center",
+        textfont=dict(size=9, color="#3d4646"),
+        marker=dict(color="#D0DADB", size=9, line=dict(color="#94A4A4", width=1)),
+        hovertemplate=(
+            "<b>%{text}</b><br>"
+            + lx + ": %{x} / 20<br>"
+            + ly + ": %{y} / 20<extra></extra>"
+        ),
+        showlegend=False,
+    ))
+
+    if not sel.empty:
+        fig.add_trace(go.Scatter(
+            x=sel["rank_x"],
+            y=sel["rank_y"],
+            mode="markers+text",
+            text=sel["territory"],
+            textposition="top center",
+            textfont=dict(size=11, color=BRAND_COLOR),
+            marker=dict(color=BRAND_COLOR, size=14, line=dict(color="white", width=1.5)),
+            hovertemplate=(
+                "<b>%{text}</b><br>"
+                + lx + ": %{x} / 20<br>"
+                + ly + ": %{y} / 20<extra></extra>"
+            ),
+            showlegend=False,
+        ))
+
+    fig.add_vline(x=median, line_dash="dot", line_color="#aaaaaa", line_width=1)
+    fig.add_hline(y=median, line_dash="dot", line_color="#aaaaaa", line_width=1)
+
+    fig.update_xaxes(
+        title=lx,
+        range=[20.5, -0.5],
+        tickvals=[5, 10, 15, 20],
+        autorange=False,
+        automargin=True,
     )
-    fig.update_traces(textposition="top center", marker=dict(size=8))
-    fig.add_hline(y=0, line_dash="dash", line_color="gray", line_width=1)
-    fig.add_vline(x=0, line_dash="dash", line_color="gray", line_width=1)
-    fig.update_layout(xaxis_title=lx, yaxis_title=ly, margin=dict(l=10, r=10))
+    fig.update_yaxes(
+        title=ly,
+        range=[20.5, -0.5],
+        tickvals=[5, 10, 15, 20],
+        autorange=False,
+        automargin=True,
+    )
+    fig.update_layout(
+        margin={"t": 30, "b": 50, "l": 10, "r": 30},
+        height=420,
+    )
     return fig

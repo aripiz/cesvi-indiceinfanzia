@@ -16,11 +16,42 @@ from configuration import (
 territories_list = sorted(data["territory"].unique().tolist())
 years_list = YEARS
 
-# ── Opzioni dropdown / radio riusate più tab ──────────────────────────────────
+# ── Opzioni dropdown ──────────────────────────────────────────────────────────
 
-index_options    = [{"label": v, "value": k} for k, v in INDEX_LABELS.items()]
-capacity_options = [{"label": CAPACITY_DIMS[k], "value": k} for k in CAPACITY_ORDER]
-pop_options      = [
+_POP_LABELS = {"adulti": "Adulti", "bambini": "Bambini", "totale": "Totale"}
+
+# Combinazioni effettivamente presenti nel dataset
+_valid_combos = set(
+    data[["type", "capacity", "population"]]
+    .drop_duplicates()
+    .apply(lambda r: f"{r['type']}||{r['capacity']}||{r['population']}", axis=1)
+)
+
+
+def _opt(label, value, disabled=False):
+    """Crea opzione dropdown solo se la combo è presente nei dati."""
+    if not disabled and not value.startswith("_") and value not in _valid_combos:
+        return None
+    d = {"label": label, "value": value}
+    if disabled:
+        d["disabled"] = True
+    return d
+
+
+# Dropdown unico "Indicatore": "type||capacity||population"
+_raw_options = [
+    _opt("── Indici totali ──", "_ih", disabled=True),
+    _opt("Indice totale", "totale||totale||totale"),
+    *[_opt(f"Fattori di rischio — {_POP_LABELS[p]}", f"rischio||totale||{p}") for p in ["totale", "adulti", "bambini"]],
+    *[_opt(f"Servizi — {_POP_LABELS[p]}", f"servizi||totale||{p}") for p in ["totale", "adulti", "bambini"]],
+    _opt("── Per capacità · Rischio ──", "_crf", disabled=True),
+    *[_opt(f"{CAPACITY_DIMS[k]} · {_POP_LABELS[p]}", f"rischio||{k}||{p}") for k in CAPACITY_ORDER for p in ["adulti", "bambini", "totale"]],
+    _opt("── Per capacità · Servizi ──", "_csf", disabled=True),
+    *[_opt(f"{CAPACITY_DIMS[k]} · {_POP_LABELS[p]}", f"servizi||{k}||{p}") for k in CAPACITY_ORDER for p in ["adulti", "bambini", "totale"]],
+]
+indicatore_options = [o for o in _raw_options if o is not None]
+
+pop_options = [
     {"label": "Adulti",  "value": "adulti"},
     {"label": "Bambini", "value": "bambini"},
     {"label": "Totale",  "value": "totale"},
@@ -30,10 +61,11 @@ dim_options = [
     {"label": "Servizi",            "value": "servizi"},
 ]
 
-# ── Helpers UI (same visual language as layout_scorecards_new) ────────────────
+# ── Helpers UI ────────────────────────────────────────────────────────────────
 
 ACCENT = "#eb6608"
 MUTED  = "#6b7280"
+
 
 def _section_label(text):
     return html.Span(
@@ -47,8 +79,8 @@ def _section_label(text):
         },
     )
 
+
 def _filter_box(children):
-    """Riquadro filtri con accent bar a sinistra (come la selezione regione)."""
     return html.Div(
         children,
         style={
@@ -60,16 +92,17 @@ def _filter_box(children):
         className="mb-3",
     )
 
-def _year_slider(slider_id, className=""):
+
+def _year_slider(slider_id):
     return dcc.Slider(
         years_list[0], years_list[-1],
         step=None,
         id=slider_id,
         value=YEAR_DEFAULT,
         marks={str(y): str(y) for y in years_list},
-        tooltip={"placement": "bottom", "always_visible": True},
-        className=className,
+        tooltip={"placement": "bottom", "always_visible": False},
     )
+
 
 def _graph(graph_id, min_height="65vh"):
     return dcc.Loading(
@@ -84,86 +117,56 @@ def _graph(graph_id, min_height="65vh"):
         color=SEQUENCE_COLOR[0],
     )
 
+
+def _indicatore_dropdown(component_id, value="totale||totale||totale"):
+    return dcc.Dropdown(
+        id=component_id,
+        options=indicatore_options,
+        value=value,
+        clearable=False,
+        className="mt-1",
+    )
+
+
+def _pop_radio(component_id, value="totale"):
+    return dbc.RadioItems(
+        id=component_id,
+        options=pop_options,
+        value=value,
+        inline=True,
+        inputCheckedClassName="border-warning bg-warning",
+        className="mt-1",
+    )
+
+
 # ── Tab: Mappa ────────────────────────────────────────────────────────────────
 
 tab_map = html.Div([
     _filter_box(dbc.Row([
         dbc.Col([
-            _section_label("Indice"),
-            dbc.RadioItems(
-                id="map_index_type",
-                options=index_options,
-                value="totale",
-                inline=True,
-                className="mt-1",
-            ),
-        ], lg=3, xs=12),
-        dbc.Col([
-            _section_label("Capacità"),
-            dcc.Dropdown(
-                id="map_capacity",
-                options=capacity_options,
-                value=None,
-                placeholder="Solo per indici rischio/servizi…",
-                disabled=True,
-            ),
-        ], lg=3, xs=12),
-        dbc.Col([
-            _section_label("Popolazione"),
-            dbc.RadioItems(
-                id="map_population",
-                options=pop_options,
-                value="totale",
-                inline=True,
-                className="mt-1",
-            ),
-        ], lg=3, xs=12),
+            _section_label("Indicatore"),
+            _indicatore_dropdown("map_indicatore"),
+        ], lg=8, xs=12),
         dbc.Col([
             _section_label("Anno"),
             _year_slider("map_year"),
-        ], lg=3, xs=12),
+        ], lg=4, xs=12),
     ], className="g-3 align-items-start")),
     _graph("data_map"),
 ])
 
-# ── Tab: Classifica ───────────────────────────────────────────────────────────
+# ── Tab: Graduatoria ──────────────────────────────────────────────────────────
 
 tab_ranking = html.Div([
     _filter_box(dbc.Row([
         dbc.Col([
-            _section_label("Indice"),
-            dbc.RadioItems(
-                id="ranking_index_type",
-                options=index_options,
-                value="totale",
-                inline=True,
-                className="mt-1",
-            ),
-        ], lg=3, xs=12),
-        dbc.Col([
-            _section_label("Capacità"),
-            dcc.Dropdown(
-                id="ranking_capacity",
-                options=capacity_options,
-                value=None,
-                placeholder="Solo per indici rischio/servizi…",
-                disabled=True,
-            ),
-        ], lg=3, xs=12),
-        dbc.Col([
-            _section_label("Popolazione"),
-            dbc.RadioItems(
-                id="ranking_population",
-                options=pop_options,
-                value="totale",
-                inline=True,
-                className="mt-1",
-            ),
-        ], lg=3, xs=12),
+            _section_label("Indicatore"),
+            _indicatore_dropdown("ranking_indicatore"),
+        ], lg=8, xs=12),
         dbc.Col([
             _section_label("Anno"),
             _year_slider("ranking_year"),
-        ], lg=3, xs=12),
+        ], lg=4, xs=12),
     ], className="g-3 align-items-start")),
     _graph("data_ranking"),
 ])
@@ -182,108 +185,92 @@ tab_evolution = html.Div([
                 placeholder="Seleziona una o più regioni…",
                 className="mt-1",
             ),
-        ], lg=4, xs=12),
+        ], lg=5, xs=12),
         dbc.Col([
-            _section_label("Indice"),
-            dbc.RadioItems(
-                id="evo_index_type",
-                options=index_options,
-                value="totale",
-                inline=True,
-                className="mt-1",
-            ),
-        ], lg=3, xs=12),
-        dbc.Col([
-            _section_label("Capacità"),
-            dcc.Dropdown(
-                id="evo_capacity",
-                options=capacity_options,
-                value=None,
-                placeholder="Solo per indici rischio/servizi…",
-                disabled=True,
-            ),
-        ], lg=3, xs=12),
-        dbc.Col([
-            _section_label("Popolazione"),
-            dbc.RadioItems(
-                id="evo_population",
-                options=pop_options,
-                value="totale",
-                inline=True,
-                className="mt-1",
-            ),
-        ], lg=2, xs=12),
+            _section_label("Indicatore"),
+            _indicatore_dropdown("evo_indicatore"),
+        ], lg=7, xs=12),
     ], className="g-3 align-items-start")),
     _graph("data_evolution", min_height="60vh"),
 ])
 
-# ── Tab: Profilo regionale (radar) ────────────────────────────────────────────
+# ── Tab: Profilo per capacità ─────────────────────────────────────────────────
 
-tab_radar = html.Div([
+tab_profilo = html.Div([
     _filter_box(dbc.Row([
         dbc.Col([
-            _section_label("Regioni da confrontare (max 3)"),
+            _section_label("Regione"),
             dcc.Dropdown(
-                id="radar_territories",
+                id="profilo_territory",
                 options=territories_list,
-                value=[territories_list[0]],
-                multi=True,
-                placeholder="Seleziona fino a 3 regioni…",
+                value=territories_list[0],
+                clearable=False,
                 className="mt-1",
             ),
         ], lg=4, xs=12),
         dbc.Col([
             _section_label("Dimensione"),
             dbc.RadioItems(
-                id="radar_dim_type",
-                options=[{"label": "Totale (media)", "value": "totale"}] + dim_options,
-                value="totale",
+                id="profilo_dim_type",
+                options=dim_options,
+                value="rischio",
                 inline=True,
-                className="mt-1",
-            ),
-        ], lg=3, xs=12),
-        dbc.Col([
-            _section_label("Popolazione"),
-            dbc.RadioItems(
-                id="radar_population",
-                options=pop_options,
-                value="totale",
-                inline=True,
+                inputCheckedClassName="border-warning bg-warning",
                 className="mt-1",
             ),
         ], lg=3, xs=12),
         dbc.Col([
             _section_label("Anno"),
-            _year_slider("radar_year"),
-        ], lg=2, xs=12),
+            _year_slider("profilo_year"),
+        ], lg=5, xs=12),
     ], className="g-3 align-items-start")),
-    _graph("data_radar", min_height="55vh"),
+    dbc.Row([
+        dbc.Col([
+            html.Div(
+                html.Span(
+                    "Posizione per capacità",
+                    style={"fontSize": "0.7rem", "fontWeight": "700",
+                           "textTransform": "uppercase", "letterSpacing": "0.08em",
+                           "color": MUTED},
+                ),
+                className="mb-1",
+            ),
+            _graph("data_lollipop", min_height="40vh"),
+        ], lg=6, xs=12),
+        dbc.Col([
+            html.Div(
+                html.Span(
+                    "Punteggio per capacità",
+                    style={"fontSize": "0.7rem", "fontWeight": "700",
+                           "textTransform": "uppercase", "letterSpacing": "0.08em",
+                           "color": MUTED},
+                ),
+                className="mb-1",
+            ),
+            _graph("data_dim_table", min_height="40vh"),
+        ], lg=6, xs=12),
+    ]),
 ])
 
-# ── Tab: Heatmap ──────────────────────────────────────────────────────────────
+# ── Tab: Riepilogo (ex Panoramica / Heatmap) ──────────────────────────────────
 
 tab_heatmap = html.Div([
     _filter_box(dbc.Row([
         dbc.Col([
-            _section_label("Dimensione"),
+            _section_label("Vista"),
             dbc.RadioItems(
                 id="heatmap_dim_type",
-                options=[{"label": "Tutti gli indici", "value": "all"}] + dim_options,
-                value="all",
+                options=[
+                    {"label": "Indici aggregati", "value": "indici"},
+                    {"label": "Capacità · Rischio", "value": "rischio"},
+                    {"label": "Capacità · Servizi", "value": "servizi"},
+                ],
+                value="indici",
                 inline=True,
+                inputCheckedClassName="border-warning bg-warning",
                 className="mt-1",
             ),
-        ], lg=4, xs=12),
-        dbc.Col([
-            _section_label("Popolazione"),
-            dbc.RadioItems(
-                id="heatmap_population",
-                options=pop_options,
-                value="totale",
-                inline=True,
-                className="mt-1",
-            ),
-        ], lg=3, xs=12),
+        ], lg=7, xs=12),
         dbc.Col([
             _section_label("Anno"),
             _year_slider("heatmap_year"),
@@ -297,49 +284,28 @@ tab_heatmap = html.Div([
 tab_correlations = html.Div([
     _filter_box(dbc.Row([
         dbc.Col([
-            _section_label("Asse X — capacità"),
+            _section_label("Asse X"),
+            _indicatore_dropdown("corr_x", value="rischio||totale||totale"),
+        ], lg=3, xs=12),
+        dbc.Col([
+            _section_label("Asse Y"),
+            _indicatore_dropdown("corr_y", value="servizi||totale||totale"),
+        ], lg=3, xs=12),
+        dbc.Col([
+            _section_label("Evidenzia regione"),
             dcc.Dropdown(
-                id="corr_x",
-                options=capacity_options,
-                value=CAPACITY_ORDER[0],
-                clearable=False,
+                id="corr_highlight",
+                options=[{"label": t, "value": t} for t in territories_list],
+                value=None,
+                clearable=True,
+                placeholder="Nessuna…",
                 className="mt-1",
             ),
-        ], lg=3, xs=12),
-        dbc.Col([
-            _section_label("Asse Y — capacità"),
-            dcc.Dropdown(
-                id="corr_y",
-                options=capacity_options,
-                value=CAPACITY_ORDER[1],
-                clearable=False,
-                className="mt-1",
-            ),
-        ], lg=3, xs=12),
-        dbc.Col([
-            _section_label("Dimensione"),
-            dbc.RadioItems(
-                id="corr_dim_type",
-                options=dim_options,
-                value="rischio",
-                inline=True,
-                className="mt-1",
-            ),
-        ], lg=3, xs=12),
-        dbc.Col([
-            _section_label("Popolazione"),
-            dbc.RadioItems(
-                id="corr_population",
-                options=pop_options,
-                value="totale",
-                inline=True,
-                className="mt-1",
-            ),
-        ], lg=1, xs=12),
+        ], lg=2, xs=12),
         dbc.Col([
             _section_label("Anno"),
             _year_slider("corr_year"),
-        ], lg=2, xs=12),
+        ], lg=4, xs=12),
     ], className="g-3 align-items-start")),
     _graph("data_correlations", min_height="60vh"),
 ])
@@ -350,8 +316,8 @@ tab_content_map = {
     "map":          tab_map,
     "ranking":      tab_ranking,
     "evolution":    tab_evolution,
-    "radar":        tab_radar,
-    "heatmap":      tab_heatmap,
+    "profilo":      tab_profilo,
+    "riepilogo":    tab_heatmap,
     "correlations": tab_correlations,
 }
 
@@ -359,7 +325,6 @@ tab_content_map = {
 
 data_layout = dbc.Container(
     [
-        # Intestazione
         dbc.Row(
             dbc.Col([
                 html.H2("Dati", className="mb-1"),
@@ -369,23 +334,22 @@ data_layout = dbc.Container(
                 }),
                 html.P(
                     "Esplora i risultati dell\u2019Indice attraverso diverse visualizzazioni: "
-                    "mappe, classifiche, serie storiche, profili per capacità e correlazioni.",
+                    "mappe, graduatorie, serie storiche, profili per capacità e correlazioni.",
                     className="text-muted mb-3",
                     style={"fontSize": "0.92rem"},
                 ),
             ], xs=12),
         ),
-        # Tab
         dbc.Tabs(
             id="data_viz_tabs",
             active_tab="map",
             class_name="d-flex justify-content-around",
             children=[
                 dbc.Tab(label="Mappa",         tab_id="map"),
-                dbc.Tab(label="Classifica",    tab_id="ranking"),
+                dbc.Tab(label="Graduatoria",   tab_id="ranking"),
                 dbc.Tab(label="Serie storica", tab_id="evolution"),
-                dbc.Tab(label="Profilo",       tab_id="radar"),
-                dbc.Tab(label="Heatmap",       tab_id="heatmap"),
+                dbc.Tab(label="Profilo",       tab_id="profilo"),
+                dbc.Tab(label="Riepilogo",     tab_id="riepilogo"),
                 dbc.Tab(label="Correlazioni",  tab_id="correlations"),
             ],
         ),

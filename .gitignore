@@ -1,9 +1,26 @@
 __pycache__/
 *.py[cod]
 *$py.class
-.DS_store
 *.pyc
-*.ipynb_checkpoints
+.DS_Store
 *.env
-*pyc
+.ipynb_checkpoints/
+
+# VSCode
+.vscode/
+
+# Python
+*.egg-info/
+dist/
+build/
+
+# Docker
+.dockerignore
+
+# Mac
+._*
+.Spotlight-V100
+.Trashes
+
+# Old
 _old/
