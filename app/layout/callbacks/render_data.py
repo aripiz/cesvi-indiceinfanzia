@@ -437,7 +437,7 @@ def display_profilo_dim_table(territory, dim_type, year):
     return fig
 
 
-# ── Riepilogo: heatmap per punteggi (z-score) ────────────────────────────────
+# ── Correlazione punteggi: heatmap correlazioni tra indicatori ───────────────
 
 @app.callback(
     Output("data_heatmap", "figure"),
@@ -470,38 +470,40 @@ def display_heatmap(dim_type, year):
             mask = mask & (data["population"] == pop_k)
         df_col = data[mask][["territory", "score"]].dropna(subset=["score"])
         if not df_col.empty:
-            # media tra popolazioni disponibili per quel territorio
             scores_data[col_label] = df_col.groupby("territory")["score"].mean()
         else:
             scores_data[col_label] = pd.Series(dtype=float)
 
     col_labels = [c[3] for c in cols_config]
-    df_wide = pd.DataFrame(scores_data, index=all_territories)
-    present_cols = [c for c in col_labels if c in df_wide.columns]
-    if df_wide.empty or not present_cols:
-        return _no_data()
+    df_wide = pd.DataFrame(scores_data, index=all_territories)[col_labels].dropna(how="all")
+    present_cols = [c for c in col_labels if c in df_wide.columns and df_wide[c].notna().sum() > 1]
+    if df_wide.empty or len(present_cols) < 2:
+        return _no_data("Non ci sono abbastanza dati per calcolare le correlazioni")
 
-    df_wide["_avg"] = df_wide[present_cols].mean(axis=1)
-    df_wide = df_wide.sort_values("_avg", ascending=False).drop(columns="_avg")  # score alto → in cima
+    corr = df_wide[present_cols].corr()
+    z    = corr.values
+    labels = corr.columns.tolist()
 
-    z           = df_wide[present_cols].values
-    territories = df_wide.index.tolist()
-
-    # Scala divergente centrata su 0
-    zabs = max(abs(float(pd.DataFrame(z).stack().min())), abs(float(pd.DataFrame(z).stack().max())), 0.1)
+    text = [[f"{v:.2f}" for v in row] for row in z]
 
     fig = go.Figure(data=go.Heatmap(
-        z=z, x=present_cols, y=territories,
-        colorscale=DIVERGING_COLORS,
-        zmid=0, zmin=-zabs, zmax=zabs,
-        text=[[f"{v:.2f}" if not pd.isna(v) else "—" for v in row] for row in z],
+        z=z, x=labels, y=labels,
+        colorscale="RdYlGn",
+        zmin=-1, zmax=1,
+        zmid=0,
+        text=text,
         texttemplate="%{text}",
-        colorbar=dict(title="Punteggio"),
-        hovertemplate="<b>%{y}</b><br>%{x}: %{z:.3f}<br><extra></extra>",
+        colorbar=dict(
+            title="r",
+            tickvals=[-1, -0.5, 0, 0.5, 1],
+            ticktext=["-1", "-0.5", "0", "+0.5", "+1"],
+        ),
+        hovertemplate="<b>%{x}</b> × <b>%{y}</b><br>r = %{z:.3f}<extra></extra>",
     ))
     fig.update_layout(
-        margin=dict(l=10, r=10, t=20, b=10),
+        margin=dict(l=10, r=10, t=30, b=10),
         xaxis=dict(tickangle=-20, side="top"),
+        yaxis=dict(autorange="reversed"),
     )
     return fig
 

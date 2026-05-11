@@ -317,8 +317,8 @@ tab_content_map = {
     "ranking":      tab_ranking,
     "evolution":    tab_evolution,
     "profilo":      tab_profilo,
-    "riepilogo":    tab_heatmap,
-    "correlations": tab_correlations,
+    "corrpunteggi": tab_heatmap,
+    "confronto":    tab_correlations,
 }
 
 # ── Layout principale ─────────────────────────────────────────────────────────
@@ -333,8 +333,8 @@ data_layout = dbc.Container(
                     "backgroundColor": ACCENT, "marginBottom": "0.5rem",
                 }),
                 html.P(
-                    "Esplora i risultati dell\u2019Indice attraverso diverse visualizzazioni: "
-                    "mappe, graduatorie, serie storiche, profili per capacità e correlazioni.",
+                    "Esplora i risultati numerici dell\u2019Indice attraverso diverse visualizzazioni: "
+                    "mappe, classifiche, serie storiche, profili per capacità e correlazioni.",
                     className="text-muted mb-3",
                     style={"fontSize": "0.92rem"},
                 ),
@@ -345,12 +345,12 @@ data_layout = dbc.Container(
             active_tab="map",
             class_name="d-flex justify-content-around",
             children=[
-                dbc.Tab(label="Mappa",         tab_id="map"),
-                dbc.Tab(label="Graduatoria",   tab_id="ranking"),
-                dbc.Tab(label="Serie storica", tab_id="evolution"),
-                dbc.Tab(label="Profilo",       tab_id="profilo"),
-                dbc.Tab(label="Riepilogo",     tab_id="riepilogo"),
-                dbc.Tab(label="Correlazioni",  tab_id="correlations"),
+                dbc.Tab(label="Mappa",                  tab_id="map"),
+                dbc.Tab(label="Classifica",             tab_id="ranking"),
+                dbc.Tab(label="Serie storiche",         tab_id="evolution"),
+                dbc.Tab(label="Profili",                tab_id="profilo"),
+                dbc.Tab(label="Correlazione punteggi",  tab_id="corrpunteggi"),
+                dbc.Tab(label="Confronto posizioni",    tab_id="confronto"),
             ],
         ),
         html.Div(id="data_viz_content", className="mt-3"),

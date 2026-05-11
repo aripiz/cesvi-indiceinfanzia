@@ -275,4 +275,5 @@ scorecard_layout = dbc.Container(
         ),
     ],
     fluid=False,
+    class_name="mt-4",
 )
