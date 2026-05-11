@@ -4,7 +4,7 @@ from index import app
 from dash import dcc, html, page_container
 import dash_bootstrap_components as dbc
 
-from layout.callbacks import render_scorecards, navigation, render_data
+from layout.callbacks import render_scorecards, navigation, render_data, download
 
 from configuration import BRAND_LINK, CREDITS_LINK, TITLE, LOGO, BRAND_SECONDARY_COLOR
 
