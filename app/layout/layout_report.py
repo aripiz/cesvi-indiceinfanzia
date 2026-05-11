@@ -5,16 +5,7 @@ from dash import html
 import dash_bootstrap_components as dbc
 
 from configuration import BRAND_COLOR
-
-# ── Carica metadati report ────────────────────────────────────────────────────
-
-REPORTS_FILE = "../data/cesvi-indiceinfanzia_reports.csv"
-
-try:
-    _reports_df = pd.read_csv(REPORTS_FILE).sort_values("year", ascending=False)
-    _reports = _reports_df.to_dict(orient="records")
-except Exception:
-    _reports = []
+from index import reports
 
 # ── Helper: singola card ──────────────────────────────────────────────────────
 
@@ -41,22 +32,20 @@ def _report_card(report):
         card_body_children.append(
             html.P(description, className="card-text small mb-3",
                    style={"color": "#555"}))
-    card_body_children.append(
-        dbc.Button(
-            [html.I(className="bi bi-file-earmark-pdf me-2"), "Scarica il report"],
-            href=pdf_href or "#",
-            target="_blank",
-            size="sm",
-            disabled=(pdf_href is None),
-            external_link=True,
-            style={"backgroundColor": BRAND_COLOR, "borderColor": BRAND_COLOR, "color": "white"},
+
+    # Hint cliccabile invece del bottone
+    if pdf_href:
+        card_body_children.append(
+            html.Span(
+                [html.I(className="bi bi-box-arrow-up-right me-1"), "Apri il report"],
+                style={"fontSize": "0.78rem", "color": BRAND_COLOR, "fontWeight": "600"},
+            )
         )
-    )
 
     if cover_src:
-        card_inner = html.Div(
+        # Tutta la card è un link al PDF
+        img_block = html.A(
             [
-                # Immagine a piena altezza (formato A4 ≈ 1:1.414)
                 html.Div(
                     html.Img(
                         src=cover_src,
@@ -72,7 +61,7 @@ def _report_card(report):
                         "overflow": "hidden",
                     },
                 ),
-                # overlay sfumato chiaro in basso
+                # overlay sfumato in basso con titolo e hint
                 html.Div(
                     dbc.CardBody(card_body_children),
                     style={
@@ -82,10 +71,16 @@ def _report_card(report):
                     },
                 ),
             ],
+            href=pdf_href,
+            target="_blank",
+            style={"textDecoration": "none", "display": "block", "cursor": "pointer"},
+        )
+        card_inner = html.Div(
+            img_block,
             style={"position": "relative", "overflow": "hidden"},
         )
     else:
-        card_inner = html.Div(
+        card_inner = html.A(
             [
                 html.Div(
                     html.Span(str(year), className="display-4 fw-bold text-white"),
@@ -93,7 +88,10 @@ def _report_card(report):
                     style={"height": "200px", "backgroundColor": BRAND_COLOR},
                 ),
                 dbc.CardBody(card_body_children),
-            ]
+            ],
+            href=pdf_href or "#",
+            target="_blank",
+            style={"textDecoration": "none", "color": "inherit"},
         )
 
     return dbc.Col(
@@ -109,9 +107,9 @@ def _report_card(report):
 
 # ── Layout ────────────────────────────────────────────────────────────────────
 
-if _reports:
+if reports:
     cards_row = dbc.Row(
-        [_report_card(r) for r in _reports],
+        [_report_card(r) for r in reports],
         className="g-3",
     )
 else:

@@ -40,14 +40,18 @@ def _opt(label, value, disabled=False):
 
 # Dropdown unico "Indicatore": "type||capacity||population"
 _raw_options = [
-    _opt("── Indici totali ──", "_ih", disabled=True),
-    _opt("Indice totale", "totale||totale||totale"),
-    *[_opt(f"Fattori di rischio — {_POP_LABELS[p]}", f"rischio||totale||{p}") for p in ["totale", "adulti", "bambini"]],
-    *[_opt(f"Servizi — {_POP_LABELS[p]}", f"servizi||totale||{p}") for p in ["totale", "adulti", "bambini"]],
-    _opt("── Per capacità · Rischio ──", "_crf", disabled=True),
-    *[_opt(f"{CAPACITY_DIMS[k]} · {_POP_LABELS[p]}", f"rischio||{k}||{p}") for k in CAPACITY_ORDER for p in ["adulti", "bambini", "totale"]],
-    _opt("── Per capacità · Servizi ──", "_csf", disabled=True),
-    *[_opt(f"{CAPACITY_DIMS[k]} · {_POP_LABELS[p]}", f"servizi||{k}||{p}") for k in CAPACITY_ORDER for p in ["adulti", "bambini", "totale"]],
+    _opt("── Indici aggregati ──", "_ih", disabled=True),
+    _opt("Indici aggregati - Totale",                "totale||totale||totale"),
+    _opt("Indici aggregati - Fattori di rischio",            "rischio||totale||totale"),
+    _opt("Indici aggregati - Fattori di rischio - Adulti",   "rischio||totale||adulti"),
+    _opt("Indici aggregati - Fattori di rischio - Bambini",  "rischio||totale||bambini"),
+    _opt("Indici aggregati - Servizi",           "servizi||totale||totale"),
+    _opt("Indici aggregati - Servizi - Adulti",  "servizi||totale||adulti"),
+    _opt("Indici aggregati - Servizi - Bambini", "servizi||totale||bambini"),
+    _opt("── Capacità - Fattori di rischio ──", "_crf", disabled=True),
+    *[_opt(f"Capacità - Fattori di rischio - {CAPACITY_DIMS[k]} - {_POP_LABELS[p]}", f"rischio||{k}||{p}") for k in CAPACITY_ORDER for p in ["adulti", "bambini", "totale"]],
+    _opt("── Capacità - Servizi ──", "_csf", disabled=True),
+    *[_opt(f"Capacità - Servizi - {CAPACITY_DIMS[k]} - {_POP_LABELS[p]}", f"servizi||{k}||{p}") for k in CAPACITY_ORDER for p in ["adulti", "bambini", "totale"]],
 ]
 indicatore_options = [o for o in _raw_options if o is not None]
 
@@ -262,8 +266,8 @@ tab_heatmap = html.Div([
                 id="heatmap_dim_type",
                 options=[
                     {"label": "Indici aggregati", "value": "indici"},
-                    {"label": "Capacità · Rischio", "value": "rischio"},
-                    {"label": "Capacità · Servizi", "value": "servizi"},
+                    {"label": "Capacità - Fattori di rischio", "value": "rischio"},
+                    {"label": "Capacità - Servizi", "value": "servizi"},
                 ],
                 value="indici",
                 inline=True,
@@ -307,6 +311,7 @@ tab_correlations = html.Div([
             _year_slider("corr_year"),
         ], lg=4, xs=12),
     ], className="g-3 align-items-start")),
+    html.Div(id="corr_spearman_badge", className="mb-2"),
     _graph("data_correlations", min_height="60vh"),
 ])
 
@@ -317,7 +322,6 @@ tab_content_map = {
     "ranking":      tab_ranking,
     "evolution":    tab_evolution,
     "profilo":      tab_profilo,
-    "corrpunteggi": tab_heatmap,
     "confronto":    tab_correlations,
 }
 
@@ -349,7 +353,6 @@ data_layout = dbc.Container(
                 dbc.Tab(label="Classifica",             tab_id="ranking"),
                 dbc.Tab(label="Serie storiche",         tab_id="evolution"),
                 dbc.Tab(label="Profili",                tab_id="profilo"),
-                dbc.Tab(label="Correlazione punteggi",  tab_id="corrpunteggi"),
                 dbc.Tab(label="Confronto posizioni",    tab_id="confronto"),
             ],
         ),

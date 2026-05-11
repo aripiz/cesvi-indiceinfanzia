@@ -15,7 +15,8 @@ from configuration import (
     TITLE,
     DBC_CSS,
     TEMPLATE_CSS,
-    FONT_URL
+    FONT_URL,
+    REPORTS_FILE,
 )
 
 # ── Caricamento dati ──────────────────────────────────────────────────────────
@@ -23,6 +24,13 @@ from configuration import (
 data = pd.read_csv(DATA_FILE)  
 metadata = pd.read_csv(METADATA_FILE)
 geodata = gpd.read_file(GEO_FILE)
+
+try:
+    reports_df = pd.read_csv(REPORTS_FILE).sort_values("year", ascending=False)
+    reports = reports_df.to_dict(orient="records")
+except Exception:
+    reports = []
+
 
 # Aggiungi colonna 'code' (reg_istat_code_num) al dataframe dati per il join con geodata
 if "reg_name" in geodata.columns and "reg_istat_code_num" in geodata.columns:
@@ -50,4 +58,21 @@ def serve_report(filename):
     # Verifica che il file sia dentro reports_dir (path traversal prevention)
     if not os.path.abspath(filepath).startswith(reports_dir):
         abort(403)
-    return send_from_directory(reports_dir, filename, as_attachment=True)
+    return send_from_directory(reports_dir, filename, as_attachment=False)
+
+
+@server.route("/reports/download/<path:filename>")
+def download_report(filename):
+    """Scarica il PDF con nome normalizzato cesvi-indiceinfanzia_report_XXXX.pdf."""
+    reports_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), REPORTS_DIR))
+    filepath = os.path.join(reports_dir, filename)
+    if not os.path.abspath(filepath).startswith(reports_dir):
+        abort(403)
+    # Estrai l'anno dal nome originale (primo gruppo di 4 cifre)
+    import re
+    m = re.search(r"(\d{4})", filename)
+    year_str = m.group(1) if m else "0000"
+    download_name = f"cesvi-indiceinfanzia_report_{year_str}.pdf"
+    return send_from_directory(reports_dir, filename,
+                               as_attachment=True,
+                               download_name=download_name)

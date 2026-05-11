@@ -30,7 +30,6 @@ load_figure_template(FIGURE_TEMPLATE)
 pio.templates.default = FIGURE_TEMPLATE
 
 _N_REGIONS  = 20
-_POP_DISPLAY = {"adulti": "Adulti", "bambini": "Bambini"}
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
@@ -59,18 +58,30 @@ def _resolve(indicatore):
     return _parse_indicatore(indicatore)
 
 
+_POP_LABELS_ALL = {"adulti": "Adulti", "bambini": "Bambini", "totale": "Totale"}
+_TYPE_LABELS     = {"rischio": "Fattori di rischio", "servizi": "Servizi"}
+
 def _indicatore_label(value):
-    """Etichetta leggibile per il dropdown indicatore."""
+    """Etichetta leggibile coerente col dropdown: Sezione - Sottovoce - Popolazione."""
     if not value or str(value).startswith("_"):
-        return "Indice totale"
+        return "Indici aggregati - Totale"
     type_key, cap_key, pop_key = _parse_indicatore(value)
     if type_key == "totale":
-        return INDEX_LABELS.get("totale", "Indice totale")
-    base = INDEX_LABELS.get(type_key, type_key)
-    if cap_key != "totale":
-        base = f"{CAPACITY_DIMS.get(cap_key, cap_key)} — {base}"
-    if pop_key in _POP_DISPLAY:
-        base += f" · {_POP_DISPLAY[pop_key]}"
+        return "Indici aggregati - Totale"
+    type_label = _TYPE_LABELS.get(type_key, type_key)
+    if cap_key == "totale":
+        # Indice aggregato
+        base = f"Indici aggregati - {type_label}"
+        if pop_key != "totale":
+            base += f" - {_POP_LABELS_ALL.get(pop_key, pop_key)}"
+        return base
+    # Capacità specifica
+    cap_label = CAPACITY_DIMS.get(cap_key, cap_key)
+    base = f"Capacità - {type_label} - {cap_label}"
+    if pop_key != "totale":
+        base += f" - {_POP_LABELS_ALL.get(pop_key, pop_key)}"
+    else:
+        base += " - Totale"
     return base
 
 
@@ -511,7 +522,8 @@ def display_heatmap(dim_type, year):
 # ── Correlazioni: scatter con evidenziazione regione ─────────────────────────
 
 @app.callback(
-    Output("data_correlations", "figure"),
+    Output("data_correlations",    "figure"),
+    Output("corr_spearman_badge",  "children"),
     Input("corr_x",          "value"),
     Input("corr_y",          "value"),
     Input("corr_highlight",  "value"),
@@ -521,7 +533,7 @@ def display_correlations(ind_x, ind_y, highlight, year):
     if not ind_x or not ind_y:
         raise PreventUpdate
     if ind_x == ind_y:
-        return _no_data("Seleziona due indicatori diversi per i due assi")
+        return _no_data("Seleziona due indicatori diversi per i due assi"), ""
 
     yr   = year or YEAR_DEFAULT
     df_x = _compute_ranks(yr, *_resolve(ind_x)).rename(columns={"rank": "rank_x"})
@@ -529,7 +541,13 @@ def display_correlations(ind_x, ind_y, highlight, year):
     df   = df_x.merge(df_y, on="territory")
 
     if df.empty:
-        return _no_data("Nessun dato disponibile per il confronto selezionato")
+        return _no_data("Nessun dato disponibile per il confronto selezionato"), ""
+
+    # ── Spearman ρ ────────────────────────────────────────────────────────────
+    from scipy.stats import spearmanr
+    rho, pval = spearmanr(df["rank_x"], df["rank_y"])
+    p_str = "< 0.001" if pval < 0.001 else f"= {pval:.3f}"
+    badge = f"Coefficiente di correlazione: {rho:.2f}"
 
     lx = _indicatore_label(ind_x)
     ly = _indicatore_label(ind_y)
@@ -598,4 +616,4 @@ def display_correlations(ind_x, ind_y, highlight, year):
         margin={"t": 30, "b": 50, "l": 10, "r": 30},
         height=420,
     )
-    return fig
+    return fig, badge

@@ -11,13 +11,13 @@ from index import data, geodata
 from configuration import (
     FIGURE_TEMPLATE,
     GEO_KEY,
-    INDEX_LABELS,
     ZSCORE_BINS,
     ZSCORE_LABELS,
     ZSCORE_TIER_COLORS,
     BRAND_LINK,
     SEQUENCE_COLOR,
     YEAR_DEFAULT,
+    TITLE
 )
 
 load_figure_template(FIGURE_TEMPLATE)
@@ -92,7 +92,7 @@ persistenti che richiedono interventi strutturali di lungo periodo.
 """
 
 edition_text = f"""
-#### Sesta edizione · *Le parole sono importanti* · {YEAR_DEFAULT}
+#### Settima edizione · *Generazione sola* · {YEAR_DEFAULT}
 
 Il focus dell'edizione {YEAR_DEFAULT} è dedicato al ruolo del **linguaggio nel maltrattamento
 e nella cura all'infanzia**. Secondo l'OMS, l'abuso psicologico — di cui la violenza
@@ -134,15 +134,15 @@ home_layout = html.Div(
                     children=[
                         html.Span(className="hero-accent"),
                         html.P(
-                            f"Sesta edizione · {YEAR_DEFAULT}",
+                            f"Settima edizione · {YEAR_DEFAULT}",
                             className="hero-subtitle mb-3",
                         ),
                         html.H1(
-                            "Indice regionale sul maltrattamento e la cura all'infanzia in Italia",
+                            TITLE,
                             className="display-5 fw-bold mb-3",
                         ),
                         html.P(
-                            "Le parole sono importanti",
+                            "Gnerazione sola",
                             className="fs-5 mb-0",
                             style={"color": "rgba(255,255,255,0.75)"},
                         ),
@@ -277,7 +277,7 @@ def display_home_map():
 # ── Testi ────────────────────────────────────────────────────────────────────
 
 intro_text = f"""
-L'*Indice regionale sul maltrattamento e la cura all'infanzia in Italia* è uno strumento
+L'*{TITLE}* è uno strumento
 di analisi originale di **[CESVI]({BRAND_LINK})** che dal 2018 monitora annualmente
 la capacità delle regioni italiane di prevenire e contrastare il maltrattamento minorile.
 
@@ -293,7 +293,7 @@ persistenti che richiedono interventi strutturali di lungo periodo.
 """
 
 edition_text = f"""
-#### Sesta edizione · *Le parole sono importanti* · {YEAR_DEFAULT}
+#### Settima edizione · *Generazione sola* · {YEAR_DEFAULT}
 
 Il focus dell'edizione {YEAR_DEFAULT} è dedicato al ruolo del **linguaggio nel maltrattamento
 e nella cura all'infanzia**. Secondo l'OMS, l'abuso psicologico — di cui la violenza

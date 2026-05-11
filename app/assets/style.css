@@ -99,6 +99,26 @@ p, li {
     border-top: 3px solid var(--cesvi-orange) !important;
 }
 
+/* Slider anno — colore Cesvi (Dash 4 / Radix UI) */
+.dash-slider-range {
+    background-color: var(--cesvi-orange) !important;
+}
+.dash-slider-thumb {
+    background-color: var(--cesvi-orange) !important;
+    border-color: var(--cesvi-orange) !important;
+}
+.dash-slider-thumb:hover,
+.dash-slider-thumb:focus {
+    background-color: var(--cesvi-orange-dark) !important;
+    box-shadow: 0 0 0 5px rgba(235,102,8,.25) !important;
+}
+.dash-slider-dot {
+    border-color: var(--cesvi-orange) !important;
+}
+.dash-slider-dot-outside-selection {
+    border-color: #d1d5db !important;
+}
+
 /* Form focus */
 .form-control:focus,
 .form-select:focus {
@@ -234,7 +254,12 @@ p, li {
     text-decoration: none;
 }
 
-/* ── dcc.Dropdown Dash 4 — colore accento Cesvi ──────────────────────────── */
+.report-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,.13) !important;
+    transform: translateY(-2px);
+    transition: box-shadow .2s, transform .2s;
+}
+
 /* Il trigger usa la variabile CSS; il menu è un portale fuori dal DOM tree
    quindi servono regole esplicite su .dash-dropdown-content */
 .dash-dropdown,

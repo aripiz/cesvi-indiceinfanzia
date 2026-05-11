@@ -1,71 +1,136 @@
 # layout_download.py — Cesvi Indice Infanzia
 
+import pandas as pd
 from dash import dcc, html
 import dash_bootstrap_components as dbc
 
-modal_data_download = dbc.Modal(
-    [
-        dbc.ModalHeader(dbc.ModalTitle("Scarica i dati")),
-        dbc.ModalBody(
+from configuration import BRAND_COLOR
+from index import reports
+
+# ── Helper: riga report ───────────────────────────────────────────────────────
+
+def _report_row(report):
+    year      = report.get("year", "")
+    title     = report.get("title", f"Report {year}")
+    pdf_file  = report.get("pdf_file", "")
+    # Route separata che forza il download con nome personalizzato
+    dl_href   = f"/reports/download/{pdf_file}" if pdf_file else None
+
+    return dbc.ListGroupItem(
+        dbc.Row(
             [
-                html.P(
-                    "I dataset dell'Indice di Infanzia Cesvi sono disponibili per il download in formato CSV."
-                ),
-                dbc.ListGroup(
+                dbc.Col(
                     [
-                        dbc.ListGroupItem(
-                            [
-                                html.Div(
-                                    [
-                                        html.Strong("Dataset completo (formato wide)"),
-                                        html.P(
-                                            "Indice totale, capacità e ranking dimensionali per tutte le regioni e anni.",
-                                            className="mb-1 text-muted small",
-                                        ),
-                                    ]
-                                ),
-                                dbc.Button(
-                                    "Scarica CSV",
-                                    id="download_wide_btn",
-                                    color="primary",
-                                    size="sm",
-                                    className="ms-auto",
-                                ),
-                                dcc.Download(id="download_wide"),
-                            ],
-                            className="d-flex justify-content-between align-items-center",
-                        ),
-                        dbc.ListGroupItem(
-                            [
-                                html.Div(
-                                    [
-                                        html.Strong("Dataset (formato long)"),
-                                        html.P(
-                                            "Stessa informazione in formato long/tidy, con una riga per osservazione.",
-                                            className="mb-1 text-muted small",
-                                        ),
-                                    ]
-                                ),
-                                dbc.Button(
-                                    "Scarica CSV",
-                                    id="download_long_btn",
-                                    color="primary",
-                                    size="sm",
-                                    className="ms-auto",
-                                ),
-                                dcc.Download(id="download_long"),
-                            ],
-                            className="d-flex justify-content-between align-items-center",
-                        ),
-                    ]
+                        html.Strong(title),
+                        html.Span(f" — {year}", className="text-muted small ms-1"),
+                    ],
+                    xs=9,
+                    className="d-flex align-items-center",
                 ),
-            ]
+                dbc.Col(
+                    dbc.Button(
+                        [html.I(className="bi bi-download me-1"), "Scarica PDF"],
+                        href=dl_href or "#",
+                        size="sm",
+                        disabled=(dl_href is None),
+                        external_link=True,
+                        style={
+                            "backgroundColor": BRAND_COLOR,
+                            "borderColor": BRAND_COLOR,
+                            "color": "white",
+                        },
+                    ),
+                    xs=3,
+                    className="text-end",
+                ),
+            ],
+            align="center",
         ),
-        dbc.ModalFooter(
-            dbc.Button("Chiudi", id="close_download_modal_btn", className="ms-auto")
+        className="py-2",
+    )
+
+
+# ── Layout ────────────────────────────────────────────────────────────────────
+
+download_layout = dbc.Container(
+    [
+        dbc.Row(
+            dbc.Col(
+                [
+                    html.H2("Download", className="mb-1"),
+                    html.Div(
+                        style={
+                            "width": "40px",
+                            "height": "4px",
+                            "backgroundColor": BRAND_COLOR,
+                            "marginBottom": "0.5rem",
+                        }
+                    ),
+                    html.P(
+                        "Scarica i report annuali e i dataset dell'Indice regionale sul maltrattamento e la cura all'infanzia in Italia.",
+                        className="text-muted mb-4",
+                        style={"fontSize": "0.92rem"},
+                    ),
+                ],
+                xs=12,
+            )
+        ),
+
+        # ── Report PDF ───────────────────────────────────────────────────────
+        dbc.Row(
+            dbc.Col(
+                [
+                    html.H5("Report annuali", className="fw-bold mb-3"),
+                    html.P(
+                        "Scarica i report annuali in formato PDF.",
+                        className="text-muted small mb-3",
+                    ),
+                    dbc.ListGroup(
+                        [_report_row(r) for r in reports]
+                        if reports
+                        else [
+                            dbc.ListGroupItem(
+                                "Nessun report disponibile.",
+                                className="text-muted",
+                            )
+                        ],
+                        flush=True,
+                        className="mb-5",
+                    ),
+                ],
+                lg=8,
+                xs=12,
+            )
+        ),
+
+        # ── Dataset Excel ─────────────────────────────────────────────────────
+        dbc.Row(
+            dbc.Col(
+                [
+                    html.H5("Dataset", className="fw-bold mb-1"),
+                    html.P(
+                        "Scarica l'intero dataset dell'Indice in formato Excel.",
+                        className="text-muted small mb-3",
+                    ),
+                    dbc.Button(
+                        [
+                            html.I(className="bi bi-file-earmark-excel me-2"),
+                            "Scarica Excel",
+                        ],
+                        id="download_excel_btn",
+                        style={
+                            "backgroundColor": BRAND_COLOR,
+                            "borderColor": BRAND_COLOR,
+                            "color": "white",
+                        },
+                    ),
+                    dcc.Download(id="download_excel"),
+                ],
+                lg=8,
+                xs=12,
+            )
         ),
     ],
-    id="download_modal",
-    is_open=False,
-    size="lg",
+    class_name="mt-4",
+    fluid=False,
 )

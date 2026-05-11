@@ -14,9 +14,11 @@ navbar = dbc.NavbarSimple(
     children=[
         dbc.NavItem(dbc.NavLink("Panoramica",  active="exact", href="/",            className="fw-bold")),
         dbc.NavItem(dbc.NavLink("Regioni",     active="exact", href="/scorecards",  className="fw-bold")),
-        dbc.NavItem(dbc.NavLink("Dati",        active="exact", href="/data",        className="fw-bold")),
         dbc.NavItem(dbc.NavLink("Report",      active="exact", href="/report",      className="fw-bold")),
+        dbc.NavItem(dbc.NavLink("Dati",        active="exact", href="/data",        className="fw-bold")),
         dbc.NavItem(dbc.NavLink("Metodologia", active="exact", href="/methodology", className="fw-bold")),
+        dbc.NavItem(dbc.NavLink("Download",    active="exact", href="/download",    className="fw-bold")),
+
     ],
    brand=html.Div([
         html.Img(
@@ -55,29 +57,43 @@ footer = html.Footer(
                                 className="mb-2",
                             ),
                             html.P(
-                                "Indice regionale sul maltrattamento e la cura all'infanzia in Italia",
+                                TITLE,
                                 className="footer-text mb-0",
                             ),
                         ],
                         md=7, xs=12,
                         className="mb-3 mb-md-0",
                     ),
-                    # Navigazione
+                    # Navigazione — due colonne
                     dbc.Col(
                         [
                             html.P("Sezioni", className="footer-heading mb-2"),
-                            html.Ul(
-                                [
-                                    html.Li(html.A("Panoramica",  href="/",            className="footer-link")),
-                                    html.Li(html.A("Regioni",     href="/scorecards",  className="footer-link")),
-                                    html.Li(html.A("Dati",        href="/data",        className="footer-link")),
-                                    html.Li(html.A("Report",      href="/report",      className="footer-link")),
-                                    html.Li(html.A("Metodologia", href="/methodology", className="footer-link")),
-                                ],
-                                className="list-unstyled mb-0",
-                            ),
+                            dbc.Row([
+                                dbc.Col(
+                                    html.Ul(
+                                        [
+                                            html.Li(html.A("Panoramica",  href="/",            className="footer-link")),
+                                            html.Li(html.A("Regioni",     href="/scorecards",  className="footer-link")),
+                                            html.Li(html.A("Report",        href="/report",        className="footer-link")),
+                                        ],
+                                        className="list-unstyled mb-0",
+                                    ),
+                                    xs=6,
+                                ),
+                                dbc.Col(
+                                    html.Ul(
+                                        [
+                                            html.Li(html.A("Dati",      href="/data",      className="footer-link")),
+                                            html.Li(html.A("Metodologia", href="/methodology", className="footer-link")),
+                                            html.Li(html.A("Download",    href="/download",    className="footer-link")),
+                                        ],
+                                        className="list-unstyled mb-0",
+                                    ),
+                                    xs=6,
+                                ),
+                            ]),
                         ],
-                        md=3, xs=12,
+                        md=5, xs=12,
                         className="mb-3 mb-md-0",
                     ),
                 ],
@@ -88,7 +104,7 @@ footer = html.Footer(
                 [
                     dbc.Col(
                         html.P(
-                            ["© 2026 ", html.A("CESVI - Fondazione ETS", href=BRAND_LINK, className="footer-link"),],# " — Tutti i diritti riservati"],
+                            ["© 2026 CESVI - Fondazione ETS"],# " — Tutti i diritti riservati"],
                             className="footer-text mb-0",
                         ),
                         md=9, xs=12,

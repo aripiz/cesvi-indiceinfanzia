@@ -538,8 +538,29 @@ def update_scorecard_scatter(territory):
         autorange=False,
         automargin=True,
     )
+    # ── Etichette quadranti esterne — centrate per quadrante, colorate per scala ──
+    # Senso orario da top-left: Stabili (medio), Virtuose (bene), Reattive (medio), Elevata criticità (male)
+    _base = dict(xref="paper", yref="paper", showarrow=False,
+                 borderwidth=1, borderpad=5, xanchor="center", yanchor="middle")
+    _quadrants = [
+        dict(text="<b>Regioni stabili</b>",              x=0.25, y=1.07,
+             bgcolor="rgba(254,243,199,0.95)", bordercolor="#d97706",
+             font=dict(size=10, family="Raleway", color="#92400e")),
+        dict(text="<b>Regioni virtuose</b>",             x=0.75, y=1.07,
+             bgcolor="rgba(209,250,229,0.95)", bordercolor="#15803d",
+             font=dict(size=10, family="Raleway", color="#166534")),
+        dict(text="<b>Regioni reattive</b>",             x=0.75, y=-0.13,
+             bgcolor="rgba(254,243,199,0.95)", bordercolor="#d97706",
+             font=dict(size=10, family="Raleway", color="#92400e")),
+        dict(text="<b>Regioni a elevata criticità</b>",  x=0.25, y=-0.13,
+             bgcolor="rgba(254,226,226,0.95)", bordercolor="#dc2626",
+             font=dict(size=10, family="Raleway", color="#991b1b")),
+    ]
+    for q in _quadrants:
+        fig.add_annotation(**{**_base, **q})
+
     fig.update_layout(
-        margin={"t": 30, "b": 50, "l": 10, "r": 30},
-        height=420,
+        margin={"t": 65, "b": 75, "l": 10, "r": 30},
+        height=460,
     )
     return fig
