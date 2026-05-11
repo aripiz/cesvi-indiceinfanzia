@@ -76,8 +76,8 @@ def display_home_map():
 # ── Testi ────────────────────────────────────────────────────────────────────
 
 intro_text = f"""
-L'*Indice regionale sul maltrattamento e la cura all'infanzia in Italia* è uno strumento
-di analisi originale di **[Cesvi]({BRAND_LINK})** che dal 2018 monitora annualmente
+L'*{TITLE}* è uno strumento
+di analisi originale di **[CESVI]({BRAND_LINK})** che dal 2018 monitora annualmente
 la capacità delle regioni italiane di prevenire e contrastare il maltrattamento minorile.
 
 Costruito su **64 indicatori statistici** aggregati in **6 capacità territoriali**
@@ -106,7 +106,10 @@ che l'Indice indica come prioritaria.
 
 cta_text = """
 Esplora la dashboard:
-**[Regioni](/scorecards)** · **[Esplora](/data)** · **[Metodologia](/methodology)**
+**[Regioni](/scorecards)** · **[Report](/report)** · **[Dati](/data)** · **[Metodologia](/methodology)**
+
+Scarica i report e i dati completi:
+**[Download](/download)**
 """
 
 # ── Dati chiave (placeholder — i valori saranno scelti dall'utente) ──────────
@@ -142,7 +145,7 @@ home_layout = html.Div(
                             className="display-5 fw-bold mb-3",
                         ),
                         html.P(
-                            "Gnerazione sola",
+                            "Generazione sola",
                             className="fs-5 mb-0",
                             style={"color": "rgba(255,255,255,0.75)"},
                         ),
@@ -223,89 +226,3 @@ home_layout = html.Div(
         ),
     ],
 )
-
-
-def display_home_map():
-    year = YEAR_DEFAULT
-    df = data[
-        (data["year"] == year) & (data["type"] == "totale") & (data["capacity"] == "totale")
-    ][["territory", "code", "score"]].copy()
-    df["tier"] = pd.cut(
-        df["score"],
-        bins=ZSCORE_BINS,
-        labels=ZSCORE_LABELS,
-        right=False,
-    ).cat.remove_unused_categories()
-
-    fig = px.choropleth(
-        df,
-        locations="code",
-        geojson=geodata,
-        featureidkey=GEO_KEY,
-        color="tier",
-        color_discrete_map=ZSCORE_TIER_COLORS,
-        category_orders={"tier": ZSCORE_LABELS},
-        custom_data=["territory", "score", "tier"],
-    )
-    fig.update_layout(
-        dragmode=False,
-        showlegend=False,
-        autosize=True,
-        margin={"r": 0, "t": 0, "l": 0, "b": 0, "pad": 0},
-        geo=dict(
-            fitbounds="locations",
-            projection_type="mercator",
-            showland=False,
-            showocean=False,
-            showlakes=False,
-            showrivers=False,
-            visible=False,
-        ),
-    )
-    fig.update_traces(
-        hovertemplate=(
-            "<b>%{customdata[0]}</b><br><br>"
-            "Indice totale: "
-            "%{customdata[1]}<br>"
-            "Fascia: %{customdata[2]}<br>"
-            "<extra></extra>"
-        )
-    )
-    return fig
-
-
-# ── Testi ────────────────────────────────────────────────────────────────────
-
-intro_text = f"""
-L'*{TITLE}* è uno strumento
-di analisi originale di **[CESVI]({BRAND_LINK})** che dal 2018 monitora annualmente
-la capacità delle regioni italiane di prevenire e contrastare il maltrattamento minorile.
-
-Costruito su **64 indicatori statistici** aggregati in **6 capacità territoriali**
-secondo l'approccio delle capacità di Amartya Sen, l'Indice restituisce una
-**classifica decrescente delle 20 regioni italiane**: in testa le regioni con
-minori fattori di rischio e sistemi di servizi più solidi, in fondo quelle con
-maggiori criticità strutturali.
-
-Il quadro che emerge è quello di **un'Italia a due velocità**: le regioni del Nord
-si confermano generalmente più virtuose, mentre il Mezzogiorno presenta criticità
-persistenti che richiedono interventi strutturali di lungo periodo.
-"""
-
-edition_text = f"""
-#### Settima edizione · *Generazione sola* · {YEAR_DEFAULT}
-
-Il focus dell'edizione {YEAR_DEFAULT} è dedicato al ruolo del **linguaggio nel maltrattamento
-e nella cura all'infanzia**. Secondo l'OMS, l'abuso psicologico — di cui la violenza
-verbale fa parte — è la forma più diffusa di maltrattamento infantile in Europa,
-con una prevalenza del **36,1%** tra i 55 milioni di bambine e bambini che subiscono abusi.
-
-Investire sull'educazione al linguaggio positivo — nelle famiglie, nelle scuole,
-nei tavoli di coordinamento territoriale — è una delle leve di prevenzione
-che l'Indice indica come prioritaria.
-"""
-
-cta_text = """
-Esplora la dashboard:
-**[Regioni](/scorecards)** · **[Esplora](/data)** · **[Metodologia](/methodology)**
-"""
