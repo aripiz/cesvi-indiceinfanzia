@@ -43,7 +43,7 @@ def _report_card(report):
                    style={"color": "#555"}))
     card_body_children.append(
         dbc.Button(
-            [html.I(className="bi bi-file-earmark-pdf me-2"), "Scarica il report"],1. 
+            [html.I(className="bi bi-file-earmark-pdf me-2"), "Scarica il report"],
             href=pdf_href or "#",
             target="_blank",
             size="sm",
