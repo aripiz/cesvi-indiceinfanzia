@@ -63,7 +63,7 @@ def download_excel_file(n_clicks):
     if not n_clicks:
         raise PreventUpdate
     buf = BytesIO()
-    with pd.ExcelWriter(buf, engine="openpyxl") as writer:
+    with pd.ExcelWriter(buf, engine="xlsxwriter") as writer:
         data.to_excel(writer, sheet_name="Dati", index=False)
         metadata.to_excel(writer, sheet_name="Metadati", index=False)
     buf.seek(0)

@@ -544,9 +544,7 @@ def display_correlations(ind_x, ind_y, highlight, year):
         return _no_data("Nessun dato disponibile per il confronto selezionato"), ""
 
     # ── Spearman ρ ────────────────────────────────────────────────────────────
-    from scipy.stats import spearmanr
-    rho, pval = spearmanr(df["rank_x"], df["rank_y"])
-    p_str = "< 0.001" if pval < 0.001 else f"= {pval:.3f}"
+    rho = df["rank_x"].corr(df["rank_y"], method="spearman")
     badge = f"Coefficiente di correlazione: {rho:.2f}"
 
     lx = _indicatore_label(ind_x)
