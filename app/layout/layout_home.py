@@ -168,12 +168,12 @@ home_layout = html.Div(
                                 ],
                                 xs=6,
                                 md=3,
-                                className="text-center py-3"
+                                className="text-center py-3 d-flex flex-column justify-content-center align-items-center"
                                 + (" stat-divider" if i > 0 else ""),
                             )
                             for i, s in enumerate(_KEY_STATS)
                         ],
-                        className="g-0 align-items-center",
+                        className="g-0 align-items-stretch",
                     ),
                     fluid=True,
                     class_name="px-4",

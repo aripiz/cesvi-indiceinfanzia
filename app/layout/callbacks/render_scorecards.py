@@ -100,7 +100,6 @@ def _cap_rank(territory, year, capacity):
 @app.callback(
     Output("scorecard_territory", "value"),
     Input("store_territory", "data"),
-    prevent_initial_call=True,
 )
 def set_territory_from_store(stored_territory):
     if stored_territory:
