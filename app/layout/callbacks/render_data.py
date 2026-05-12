@@ -206,7 +206,17 @@ def display_map(indicatore, year):
         custom_data=["territory", "score", "tier"],
         labels={"tier": "Fascia"},
     )
-    fig.update_layout(**_map_geo(), legend=dict(title_text="Fascia"))
+    fig.update_layout(
+        **_map_geo(),
+        legend=dict(
+            title_text="Fascia",
+            orientation="h",
+            yanchor="top",
+            y=-0.02,
+            xanchor="center",
+            x=0.5,
+        ),
+    )
     fig.update_traces(
         hovertemplate=(
             "<b>%{customdata[0]}</b><br>"

@@ -113,10 +113,7 @@ def _graph(graph_id, min_height="65vh"):
         dcc.Graph(
             id=graph_id,
             style={"min-height": min_height},
-            config={
-                "displaylogo": False,
-                "modeBarButtonsToRemove": ["pan2d", "select2d", "lasso2d", "zoom2d"],
-            },
+            config={"displayModeBar": False, "editable": False},
         ),
         color=SEQUENCE_COLOR[0],
     )

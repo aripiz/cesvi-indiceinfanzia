@@ -175,6 +175,7 @@ scorecard_layout = dbc.Container(
                     lg=2,
                     xs=12,
                     align="center",
+                    className="d-flex justify-content-center",
                 ),
 
                 # Idea 2 + 4: blocco KPI con sfondo grigio chiaro e bordo radius

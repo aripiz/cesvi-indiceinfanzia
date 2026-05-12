@@ -104,7 +104,9 @@ def _cap_rank(territory, year, capacity):
 def set_territory_from_store(stored_territory):
     if stored_territory:
         return stored_territory
-    raise PreventUpdate
+    # Store vuoto (prima visita): restituisce il default del dropdown
+    # così i callback downstream scattano correttamente
+    return sorted(data["territory"].dropna().unique().tolist())[0]
 
 
 # ── Header ────────────────────────────────────────────────────────────────────
