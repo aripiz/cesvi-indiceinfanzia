@@ -554,7 +554,8 @@ def display_correlations(ind_x, ind_y, highlight, year):
         return _no_data("Nessun dato disponibile per il confronto selezionato"), ""
 
     # ── Spearman ρ ────────────────────────────────────────────────────────────
-    rho = df["rank_x"].corr(df["rank_y"], method="spearman")
+    # rank_x e rank_y sono già ranghi interi → Pearson su ranghi = Spearman, senza scipy
+    rho = df["rank_x"].corr(df["rank_y"])
     badge = f"Coefficiente di correlazione: {rho:.2f}"
 
     lx = _indicatore_label(ind_x)
