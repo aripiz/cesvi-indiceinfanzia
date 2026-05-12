@@ -82,7 +82,7 @@ GEO_KEY     = "properties.reg_istat_code_num"
 
 # Files
 DATA_FILE     = "../data/cesvi-indiceinfanzia_data.csv"
-GEO_FILE      = "../data/limits_IT_regions.geojson"
+GEO_FILE      = "../data/limits_IT_regions.topo.json"
 METADATA_FILE = "../data/cesvi-indiceinfanzia_metadata.csv"
 REPORTS_FILE  = "../data/cesvi-indiceinfanzia_reports.csv"
 REPORTS_DIR   = "../data/reports"
