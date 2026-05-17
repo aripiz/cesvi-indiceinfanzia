@@ -3,6 +3,7 @@ pandas
 xlsxwriter
 geopandas
 pyogrio
+pyarrow
 plotly
 dash
 dash-bootstrap-components
