@@ -52,7 +52,7 @@ footer = html.Footer(
                     dbc.Col(
                         [
                             html.Img(
-                                src=LOGO_VERTICAL,
+                                src=LOGO,
                                 height="28px",
                                 className="mb-2",
                             ),
