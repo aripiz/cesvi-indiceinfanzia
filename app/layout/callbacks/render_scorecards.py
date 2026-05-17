@@ -258,6 +258,7 @@ def update_scorecard_evolution(territory):
         title_text="Anno",
     )
     fig.update_layout(
+        dragmode=False,
         showlegend=True,
         legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="left", x=0),
         margin={"t": 40, "b": 30, "l": 10, "r": 10},
@@ -396,6 +397,7 @@ def update_scorecard_lollipop(territory, year):
             categoryarray=y_order,
             automargin=True,
         ),
+        dragmode=False,
         showlegend=False,
         margin={"t": 10, "b": 40, "l": 10, "r": 25},
         height=300,
@@ -448,6 +450,7 @@ def update_scorecard_dim_table(territory, year):
         hovertemplate="<b>%{y}</b><br>Punteggio: %{x:.2f}<br>%{customdata[0]}<extra></extra>"
     )
     fig.update_layout(
+        dragmode=False,
         showlegend=False,
         xaxis=dict(title="Punteggio", zeroline=False),
         yaxis=dict(
@@ -550,10 +553,10 @@ def update_scorecard_scatter(territory):
         dict(text="<b>Regioni virtuose</b>",             x=0.75, y=1.07,
              bgcolor="rgba(209,250,229,0.95)", bordercolor="#15803d",
              font=dict(size=10, family="Raleway", color="#166534")),
-        dict(text="<b>Regioni reattive</b>",             x=0.75, y=-0.13,
+        dict(text="<b>Regioni reattive</b>",             x=0.75, y=-0.22,
              bgcolor="rgba(254,243,199,0.95)", bordercolor="#d97706",
              font=dict(size=10, family="Raleway", color="#92400e")),
-        dict(text="<b>Regioni a elevata criticità</b>",  x=0.25, y=-0.13,
+        dict(text="<b>Regioni a elevata criticità</b>",  x=0.25, y=-0.22,
              bgcolor="rgba(254,226,226,0.95)", bordercolor="#dc2626",
              font=dict(size=10, family="Raleway", color="#991b1b")),
     ]
@@ -561,7 +564,8 @@ def update_scorecard_scatter(territory):
         fig.add_annotation(**{**_base, **q})
 
     fig.update_layout(
-        margin={"t": 65, "b": 75, "l": 10, "r": 30},
+        dragmode=False,
+        margin={"t": 65, "b": 95, "l": 10, "r": 30},
         height=460,
     )
     return fig

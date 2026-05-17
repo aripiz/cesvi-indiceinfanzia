@@ -1,6 +1,5 @@
 FROM python:3.11-slim
 
-# Dipendenze di sistema per geopandas/pyogrio
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libgdal-dev \
     && rm -rf /var/lib/apt/lists/*

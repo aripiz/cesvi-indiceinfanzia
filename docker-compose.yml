@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    restart: always
+    expose:
+      - "8080"
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true
