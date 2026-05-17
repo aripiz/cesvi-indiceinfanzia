@@ -212,7 +212,7 @@ scorecard_layout = dbc.Container(
                         dcc.Loading(
                             dcc.Graph(
                                 id="scorecard_evolution",
-                                config={"displayModeBar": False, "editable": False},
+                                config={"displayModeBar": False, "editable": False, "doubleClick": False},
                             ),
                             color=SEQUENCE_COLOR[0],
                         ),
@@ -236,7 +236,7 @@ scorecard_layout = dbc.Container(
                     dcc.Loading(
                         dcc.Graph(
                             id="scorecard_lollipop",
-                            config={"displayModeBar": False, "editable": False},
+                            config={"displayModeBar": False, "editable": False, "doubleClick": False},
                         ),
                         color=SEQUENCE_COLOR[0],
                     ),
@@ -247,7 +247,7 @@ scorecard_layout = dbc.Container(
                     dcc.Loading(
                         dcc.Graph(
                             id="scorecard_dim_table",
-                            config={"displayModeBar": False, "editable": False},
+                            config={"displayModeBar": False, "editable": False, "doubleClick": False},
                         ),
                         color=SEQUENCE_COLOR[0],
                     ),
@@ -266,7 +266,7 @@ scorecard_layout = dbc.Container(
                 dcc.Loading(
                     dcc.Graph(
                         id="scorecard_scatter",
-                        config={"displayModeBar": False, "editable": False},
+                        config={"displayModeBar": False, "editable": False, "doubleClick": False},
                     ),
                     color=SEQUENCE_COLOR[0],
                 ),
