@@ -36,7 +36,7 @@ def _totale(year):
     """Righe dell'indice totale per un dato anno (tutti i territori)."""
     return data[
         (data["year"] == year) & (data["type"] == "totale") & (data["capacity"] == "totale")
-    ][["territory", "code", "score"]].copy()
+    ][["territory", "score"]].copy()
 
 
 def _get_score(territory, year):
@@ -172,7 +172,7 @@ def update_scorecard_map(territory, year):
     )
     fig = px.choropleth(
         df,
-        locations="code",
+        locations="territory",
         geojson=geodata,
         featureidkey=GEO_KEY,
         color="highlight",

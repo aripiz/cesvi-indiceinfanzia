@@ -28,7 +28,7 @@ def display_home_map():
     year = YEAR_DEFAULT
     df = data[
         (data["year"] == year) & (data["type"] == "totale") & (data["capacity"] == "totale")
-    ][["territory", "code", "score"]].copy()
+    ][["territory", "score"]].copy()
     df["tier"] = pd.cut(
         df["score"],
         bins=ZSCORE_BINS,
@@ -38,7 +38,7 @@ def display_home_map():
 
     fig = px.choropleth(
         df,
-        locations="code",
+        locations="territory",
         geojson=geodata,
         featureidkey=GEO_KEY,
         color="tier",

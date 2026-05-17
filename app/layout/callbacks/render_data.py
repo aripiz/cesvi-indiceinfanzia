@@ -23,7 +23,7 @@ from configuration import (
     YEAR_DEFAULT,
     BRAND_COLOR,
 )
-from index import app, data, geodata
+from index import app, data, geodata, cache
 from layout.layout_data import tab_content_map
 
 load_figure_template(FIGURE_TEMPLATE)
@@ -91,7 +91,7 @@ def _fetch(year, type_key, cap_key, pop_key):
         & (data["type"] == type_key)
         & (data["capacity"] == cap_key)
         & (data["population"] == pop_key)
-    ][["territory", "code", "score"]].copy()
+    ][["territory", "score"]].copy()
 
 
 def _no_data(msg="Nessun dato disponibile"):
@@ -185,6 +185,7 @@ def render_tab(tab):
     Input("map_indicatore", "value"),
     Input("map_year",       "value"),
 )
+@cache.memoize()
 def display_map(indicatore, year):
     yr = year or YEAR_DEFAULT
     type_key, cap_key, pop_key = _resolve(indicatore)
@@ -200,7 +201,7 @@ def display_map(indicatore, year):
 
     fig = px.choropleth(
         df,
-        locations="code", geojson=geodata, featureidkey=GEO_KEY,
+        locations="territory", geojson=geodata, featureidkey=GEO_KEY,
         color="tier", color_discrete_map=ZSCORE_TIER_COLORS,
         category_orders={"tier": ZSCORE_LABELS},
         custom_data=["territory", "score", "tier"],
@@ -234,6 +235,7 @@ def display_map(indicatore, year):
     Input("ranking_indicatore", "value"),
     Input("ranking_year",       "value"),
 )
+@cache.memoize()
 def display_ranking(indicatore, year):
     yr = year or YEAR_DEFAULT
     type_key, cap_key, pop_key = _resolve(indicatore)
@@ -282,6 +284,7 @@ def display_ranking(indicatore, year):
     Input("evo_territories", "value"),
     Input("evo_indicatore",  "value"),
 )
+@cache.memoize()
 def display_evolution(territories, indicatore):
     if not territories:
         raise PreventUpdate
