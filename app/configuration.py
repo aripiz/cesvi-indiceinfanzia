@@ -78,11 +78,11 @@ RANK_COLOR_SCALE = [
 # Map
 LAND_COLOR  = "#3B3B3B"
 OCEAN_COLOR = "#F2F2F2"
-GEO_KEY     = "properties.reg_istat_code_num"
+GEO_KEY     = "properties.reg_name"
 
 # Files
 DATA_FILE     = "../data/cesvi-indiceinfanzia_data.csv"
-GEO_FILE      = "../data/limits_IT_regions.topo.json"
+GEO_FILE      = "../data/IT_regions.parquet"
 METADATA_FILE = "../data/cesvi-indiceinfanzia_metadata.csv"
 REPORTS_FILE  = "../data/cesvi-indiceinfanzia_reports.csv"
 REPORTS_DIR   = "../data/reports"

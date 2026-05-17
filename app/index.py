@@ -6,6 +6,7 @@ import dash_bootstrap_components as dbc
 import pandas as pd
 import geopandas as gpd
 from flask import send_from_directory, abort
+from flask_caching import Cache
 
 from configuration import (
     DATA_FILE,
@@ -23,19 +24,12 @@ from configuration import (
 
 data = pd.read_csv(DATA_FILE)  
 metadata = pd.read_csv(METADATA_FILE)
-geodata = gpd.read_file(GEO_FILE)
-
-try:
-    reports_df = pd.read_csv(REPORTS_FILE).sort_values("year", ascending=False)
-    reports = reports_df.to_dict(orient="records")
-except Exception:
-    reports = []
+geodata = gpd.read_parquet(GEO_FILE)
 
 
-# Aggiungi colonna 'code' (reg_istat_code_num) al dataframe dati per il join con geodata
-if "reg_name" in geodata.columns and "reg_istat_code_num" in geodata.columns:
-    code_map = dict(zip(geodata["reg_name"], geodata["reg_istat_code_num"]))
-    data["code"] = data["territory"].map(code_map)
+reports_df = pd.read_csv(REPORTS_FILE).sort_values("year", ascending=False)
+reports = reports_df.to_dict(orient="records")
+
 
 # ── App Dash ──────────────────────────────────────────────────────────────────
 
@@ -48,6 +42,14 @@ app = Dash(
 )
 
 server = app.server
+
+# ── Cache (filesystem, condivisa tra worker via --preload) ────────────────────
+
+cache = Cache(server, config={
+    "CACHE_TYPE": "FileSystemCache",
+    "CACHE_DIR": "/tmp/cesvi-indiceinfanzia",
+    "CACHE_DEFAULT_TIMEOUT": 3600,   # 1 ora
+})
 
 # ── Route Flask per i PDF (serviti da data/reports/) ─────────────────────────
 

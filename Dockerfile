@@ -17,4 +17,4 @@ WORKDIR /app
 
 EXPOSE 8080
 
-CMD gunicorn app:server --workers 1 --bind 0.0.0.0:8080
+CMD gunicorn app:server --workers 2 --worker-class gevent --preload --bind 0.0.0.0:8080
