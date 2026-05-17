@@ -6,7 +6,7 @@ import dash_bootstrap_components as dbc
 
 from layout.callbacks import render_scorecards, navigation, render_data, download
 
-from configuration import BRAND_LINK, CREDITS_LINK, TITLE, LOGO, BRAND_SECONDARY_COLOR
+from configuration import BRAND_LINK, CREDITS_LINK, TITLE, LOGO, LOGO_VERTICAL
 
 # ── Navbar ────────────────────────────────────────────────────────────────────
 
@@ -52,7 +52,7 @@ footer = html.Footer(
                     dbc.Col(
                         [
                             html.Img(
-                                src=LOGO,
+                                src=LOGO_VERTICAL,
                                 height="28px",
                                 className="mb-2",
                             ),

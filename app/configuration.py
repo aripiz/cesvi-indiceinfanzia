@@ -21,7 +21,8 @@ BRAND_SECONDARY_COLOR = "#94A4A4"  # grigio
 BRAND_WHITE = "#FFFFFF"            # bianco
 
 # Logo
-LOGO = "assets/logo_h_grey.png"
+LOGO = "assets/logos/logo_h_grey.png"
+LOGO_VERTICAL = "assets/logos/logo_v_grey.png"
 
 # Palette divergente per z-score: grigio (sotto media) → bianco (media) → arancione (sopra media)
 DIVERGING_COLORS = [
