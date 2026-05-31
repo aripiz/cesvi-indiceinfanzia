@@ -82,7 +82,9 @@ p, li {
 }
 .navbar-cesvi .nav-link.active {
     color: var(--cesvi-orange) !important;
-    font-weight: 600;
+    font-weight: 700;
+    border-bottom: 2px solid var(--cesvi-orange);
+    padding-bottom: 2px;
 }
 
 /* Buttons */

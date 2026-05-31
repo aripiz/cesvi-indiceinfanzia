@@ -18,6 +18,8 @@ from configuration import (
     TEMPLATE_CSS,
     FONT_URL,
     REPORTS_FILE,
+    UMAMI_URL,
+    UMAMI_WEBSITE_ID,
 )
 
 # ── Caricamento dati ──────────────────────────────────────────────────────────
@@ -33,12 +35,37 @@ reports = reports_df.to_dict(orient="records")
 
 # ── App Dash ──────────────────────────────────────────────────────────────────
 
+_umami_script = (
+    f'<script defer src="{UMAMI_URL}" data-website-id="{UMAMI_WEBSITE_ID}"></script>'
+    if UMAMI_WEBSITE_ID else ""
+)
+
 app = Dash(
     __name__,
     title=TITLE,
     external_stylesheets=[FONT_URL, TEMPLATE_CSS, DBC_CSS],
     suppress_callback_exceptions=True,
     use_pages=True,
+    index_string="""
+<!DOCTYPE html>
+<html>
+    <head>
+        {%metas%}
+        <title>{%title%}</title>
+        {%favicon%}
+        {%css%}
+        """ + _umami_script + """
+    </head>
+    <body>
+        {%app_entry%}
+        <footer>
+            {%config%}
+            {%scripts%}
+            {%renderer%}
+        </footer>
+    </body>
+</html>
+""",
 )
 
 server = app.server
