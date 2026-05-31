@@ -5,6 +5,10 @@ TITLE = "Indice regionale sul maltrattamento e la cura all'infanzia in Italia"
 BRAND_LINK = "https://www.cesvi.org/"
 CREDITS_LINK = "https://github.com/aripiz"
 
+# Analytics (Umami) — set UMAMI_WEBSITE_ID to enable; leave empty to disable
+UMAMI_URL        = "https://analytics.tuodominio.it/script.js"  # aggiorna con il tuo dominio
+UMAMI_WEBSITE_ID = ""  # incolla qui il Website ID da Umami
+
 # Theme (Bootswatch)
 TEMPLATE = "minty"
 TEMPLATE_CSS = f"https://cdn.jsdelivr.net/npm/bootswatch@5.3.8/dist/{TEMPLATE}/bootstrap.min.css"
