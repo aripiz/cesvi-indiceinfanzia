@@ -7,13 +7,13 @@ import dash_bootstrap_components as dbc
 from configuration import BRAND_COLOR
 from index import reports
 
-# ── Helper: riga report ───────────────────────────────────────────────────────
+# ── Helper: report row ──────────────────────────────────────────────────────
 
 def _report_row(report):
     year      = report.get("year", "")
     title     = report.get("title", f"Report {year}")
     pdf_file  = report.get("pdf_file", "")
-    # Route separata che forza il download con nome personalizzato
+    # Separate route that forces download with custom filename
     dl_href   = f"/reports/download/{pdf_file}" if pdf_file else None
 
     return dbc.ListGroupItem(
@@ -57,17 +57,9 @@ download_layout = dbc.Container(
         dbc.Row(
             dbc.Col(
                 [
-                    html.H2("Download", className="mb-1"),
-                    html.Div(
-                        style={
-                            "width": "40px",
-                            "height": "4px",
-                            "backgroundColor": BRAND_COLOR,
-                            "marginBottom": "0.5rem",
-                        }
-                    ),
+                    html.H3("Download", className="page-title"),
                     html.P(
-                        "Scarica i report annuali e i dataset dell'Indice regionale sul maltrattamento e la cura all'infanzia in Italia.",
+                        "Scarica le pubblicazioni e il dataset dell'Indice regionale sul maltrattamento e la cura all'infanzia in Italia.",
                         className="text-muted mb-4",
                         style={"fontSize": "0.92rem"},
                     ),
@@ -80,9 +72,9 @@ download_layout = dbc.Container(
         dbc.Row(
             dbc.Col(
                 [
-                    html.H5("Report annuali", className="fw-bold mb-3"),
+                    html.H5("Pubblicazioni annuali", className="fw-bold mb-3"),
                     html.P(
-                        "Scarica i report annuali in formato PDF.",
+                        "Scarica le pubblicazioni in formato PDF.",
                         className="text-muted small mb-3",
                     ),
                     dbc.ListGroup(

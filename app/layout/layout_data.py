@@ -16,11 +16,11 @@ from configuration import (
 territories_list = sorted(data["territory"].unique().tolist())
 years_list = YEARS
 
-# ── Opzioni dropdown ──────────────────────────────────────────────────────────
+# ── Dropdown options ────────────────────────────────────────────────────────
 
 _POP_LABELS = {"adulti": "Adulti", "bambini": "Bambini", "totale": "Totale"}
 
-# Combinazioni effettivamente presenti nel dataset
+# Valid indicator combinations present in the dataset
 _valid_combos = set(
     data[["type", "capacity", "population"]]
     .drop_duplicates()
@@ -65,7 +65,7 @@ dim_options = [
     {"label": "Servizi",            "value": "servizi"},
 ]
 
-# ── Helpers UI ────────────────────────────────────────────────────────────────
+# ── UI helpers ──────────────────────────────────────────────────────────────
 
 ACCENT = "#eb6608"
 MUTED  = "#6b7280"
@@ -92,6 +92,24 @@ def _filter_box(children):
             "borderLeft": f"3px solid {ACCENT}",
             "borderRadius": "6px",
             "padding": "12px 16px",
+        },
+        className="mb-3",
+    )
+
+
+def _info_box(text):
+    return html.Div(
+        [
+            html.Span("ℹ", style={"color": ACCENT, "fontWeight": "700", "marginRight": "0.5rem", "fontSize": "1rem"}),
+            html.Span(text, style={"fontSize": "0.88rem", "color": MUTED}),
+        ],
+        style={
+            "backgroundColor": "#fff",
+            "border": "1px solid #e9ecef",
+            "borderLeft": f"3px solid {ACCENT}",
+            "borderRadius": "4px",
+            "padding": "8px 14px",
+            "lineHeight": "1.65",
         },
         className="mb-3",
     )
@@ -140,7 +158,7 @@ def _pop_radio(component_id, value="totale"):
     )
 
 
-# ── Tab: Mappa ────────────────────────────────────────────────────────────────
+# ── Tab: Map ────────────────────────────────────────────────────────────────
 
 tab_map = html.Div([
     _filter_box(dbc.Row([
@@ -153,10 +171,16 @@ tab_map = html.Div([
             _year_slider("map_year"),
         ], lg=4, xs=12),
     ], className="g-3 align-items-start")),
+    _info_box(
+        "La mappa mostra il punteggio dell\u2019indicatore selezionato per ciascuna regione italiana. "
+        "Scegli l\u2019indicatore (indice aggregato, fattori di rischio o servizi per capacit\u00e0) e l\u2019anno "
+        "di riferimento dal pannello sopra. Le regioni sono colorate in base al livello relativo rispetto "
+        "alla media nazionale."
+    ),
     _graph("data_map"),
 ])
 
-# ── Tab: Graduatoria ──────────────────────────────────────────────────────────
+# ── Tab: Ranking ────────────────────────────────────────────────────────────
 
 tab_ranking = html.Div([
     _filter_box(dbc.Row([
@@ -169,10 +193,15 @@ tab_ranking = html.Div([
             _year_slider("ranking_year"),
         ], lg=4, xs=12),
     ], className="g-3 align-items-start")),
+    _info_box(
+        "La classifica ordina le regioni italiane in base al punteggio dell\u2019indicatore e dell\u2019anno selezionati. "
+        "Punteggi positivi indicano una performance migliore della media nazionale; punteggi negativi indicano "
+        "una performance peggiore. Il colore delle barre riflette l\u2019area geografica di appartenenza."
+    ),
     _graph("data_ranking"),
 ])
 
-# ── Tab: Serie storica ────────────────────────────────────────────────────────
+# ── Tab: Time series ────────────────────────────────────────────────────────
 
 tab_evolution = html.Div([
     _filter_box(dbc.Row([
@@ -192,10 +221,15 @@ tab_evolution = html.Div([
             _indicatore_dropdown("evo_indicatore"),
         ], lg=7, xs=12),
     ], className="g-3 align-items-start")),
+    _info_box(
+        "Il grafico mostra l\u2019andamento del punteggio nel tempo. "
+        "Seleziona una o pi\u00f9 regioni e l\u2019indicatore di interesse per confrontarne l\u2019evoluzione "
+        "dalla prima rilevazione disponibile (2018) ad oggi. Le regioni selezionate appaiono come linee distinte."
+    ),
     _graph("data_evolution", min_height="60vh"),
 ])
 
-# ── Tab: Profilo per capacità ─────────────────────────────────────────────────
+# ── Tab: Regional profile ────────────────────────────────────────────────────
 
 tab_profilo = html.Div([
     _filter_box(dbc.Row([
@@ -225,6 +259,11 @@ tab_profilo = html.Div([
             _year_slider("profilo_year"),
         ], lg=5, xs=12),
     ], className="g-3 align-items-start")),
+    _info_box(
+        "Il pannello mostra il profilo della regione selezionata rispetto alle 6 capacit\u00e0 dell\u2019Indice, "
+        "distinguendo tra fattori di rischio e servizi. Il grafico a sinistra indica la posizione in classifica "
+        "per ciascuna capacit\u00e0; quello a destra riporta i punteggi normalizzati rispetto alla media nazionale."
+    ),
     dbc.Row([
         dbc.Col([
             html.Div(
@@ -253,7 +292,7 @@ tab_profilo = html.Div([
     ]),
 ])
 
-# ── Tab: Riepilogo (ex Panoramica / Heatmap) ──────────────────────────────────
+# ── Tab: Heatmap overview ────────────────────────────────────────────────────
 
 tab_heatmap = html.Div([
     _filter_box(dbc.Row([
@@ -280,7 +319,7 @@ tab_heatmap = html.Div([
     _graph("data_heatmap"),
 ])
 
-# ── Tab: Correlazioni ─────────────────────────────────────────────────────────
+# ── Tab: Correlations ────────────────────────────────────────────────────────
 
 tab_correlations = html.Div([
     _filter_box(dbc.Row([
@@ -308,11 +347,17 @@ tab_correlations = html.Div([
             _year_slider("corr_year"),
         ], lg=4, xs=12),
     ], className="g-3 align-items-start")),
+    _info_box(
+        "Il grafico a dispersione confronta la posizione delle regioni rispetto a due indicatori contemporaneamente. "
+        "Ogni punto rappresenta una regione: la distanza dagli assi riflette la performance relativa nelle due "
+        "dimensioni selezionate. \u00c8 possibile evidenziare una regione specifica dal menu. "
+        "Il coefficiente di correlazione di Spearman \u03c1\u209b \u00e8 riportato sopra il grafico."
+    ),
     html.Div(id="corr_spearman_badge", className="mb-2"),
     _graph("data_correlations", min_height="60vh"),
 ])
 
-# ── Mappa tab → contenuto ─────────────────────────────────────────────────────
+# ── Tab content map ─────────────────────────────────────────────────────────
 
 tab_content_map = {
     "map":          tab_map,
@@ -322,17 +367,13 @@ tab_content_map = {
     "confronto":    tab_correlations,
 }
 
-# ── Layout principale ─────────────────────────────────────────────────────────
+# ── Main layout ─────────────────────────────────────────────────────────────
 
 data_layout = dbc.Container(
     [
         dbc.Row(
             dbc.Col([
-                html.H2("Dati", className="mb-1"),
-                html.Div(style={
-                    "width": "40px", "height": "4px",
-                    "backgroundColor": ACCENT, "marginBottom": "0.5rem",
-                }),
+                html.H3("Dati", className="page-title"),
                 html.P(
                     "Esplora i risultati numerici dell\u2019Indice attraverso diverse visualizzazioni: "
                     "mappe, classifiche, serie storiche, profili per capacità e correlazioni.",
@@ -349,7 +390,7 @@ data_layout = dbc.Container(
                 dbc.Tab(label="Mappa",                  tab_id="map"),
                 dbc.Tab(label="Classifica",             tab_id="ranking"),
                 dbc.Tab(label="Serie storiche",         tab_id="evolution"),
-                dbc.Tab(label="Profili",                tab_id="profilo"),
+                dbc.Tab(label="Profili capacità",                tab_id="profilo"),
                 dbc.Tab(label="Confronto posizioni",    tab_id="confronto"),
             ],
         ),

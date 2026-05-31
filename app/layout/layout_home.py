@@ -14,10 +14,8 @@ from configuration import (
     ZSCORE_BINS,
     ZSCORE_LABELS,
     ZSCORE_TIER_COLORS,
-    BRAND_LINK,
     SEQUENCE_COLOR,
     YEAR_DEFAULT,
-    TITLE
 )
 
 load_figure_template(FIGURE_TEMPLATE)
@@ -73,50 +71,153 @@ def display_home_map():
     return fig
 
 
-# ── Testi ────────────────────────────────────────────────────────────────────
+# ── Text content ────────────────────────────────────────────────────────────
 
-intro_text = f"""
-L'*{TITLE}* è uno strumento
-di analisi originale di **[CESVI]({BRAND_LINK})** che dal 2018 monitora annualmente
-la capacità delle regioni italiane di prevenire e contrastare il maltrattamento minorile.
-
-Costruito su **64 indicatori statistici** aggregati in **6 capacità territoriali**
-secondo l'approccio delle capacità di Amartya Sen, l'Indice restituisce una
-**classifica decrescente delle 20 regioni italiane**: in testa le regioni con
-minori fattori di rischio e sistemi di servizi più solidi, in fondo quelle con
-maggiori criticità strutturali.
-
-Il quadro che emerge è quello di **un'Italia a due velocità**: le regioni del Nord
-si confermano generalmente più virtuose, mentre il Mezzogiorno presenta criticità
-persistenti che richiedono interventi strutturali di lungo periodo.
+intro_text = """
+L'Indice regionale sul maltrattamento e la cura all'infanzia in Italia, giunto alla
+sua settima edizione, continua a rappresentare uno strumento attraverso il quale leggere
+e comprendere i contesti in cui bambini e bambine crescono, con l'obiettivo di migliorare
+la capacità dei territori di prevenire e contrastare il maltrattamento all'infanzia.
 """
 
-edition_text = f"""
-#### Settima edizione · *Generazione sola* · {YEAR_DEFAULT}
-
-Il focus dell'edizione {YEAR_DEFAULT} è dedicato al ruolo del **linguaggio nel maltrattamento
-e nella cura all'infanzia**. Secondo l'OMS, l'abuso psicologico — di cui la violenza
-verbale fa parte — è la forma più diffusa di maltrattamento infantile in Europa,
-con una prevalenza del **36,1%** tra i 55 milioni di bambine e bambini che subiscono abusi.
-
-Investire sull'educazione al linguaggio positivo — nelle famiglie, nelle scuole,
-nei tavoli di coordinamento territoriale — è una delle leve di prevenzione
-che l'Indice indica come prioritaria.
+intro_text_2 = """
+In questa edizione si conferma con sempre maggiore evidenza come il maltrattamento
+all'infanzia stia assumendo i tratti di un'emergenza strutturale, alimentata da un contesto
+sociale segnato da incertezza diffusa, crisi economiche e tensioni geopolitiche, che si
+riflettono sul benessere psicologico degli adulti e, di conseguenza, sulle dinamiche familiari.
 """
 
-cta_text = """
-Esplora la dashboard:
-**[Regioni](/scorecards)** · **[Report](/report)** · **[Dati](/data)** · **[Metodologia](/methodology)**
+body_col1_text = """
+L'Indice evidenzia una stretta correlazione tra il deterioramento della salute mentale
+collettiva, le crisi socio-economiche e l'aumento di trascuratezza e violenza assistita.
 
-Scarica i report e i dati completi:
-**[Download](/download)**
+I dati più recenti mostrano infatti un aumento significativo dei casi presi in carico dai
+servizi sociali, con forme di maltrattamento che si sviluppano spesso in contesti di
+fragilità relazionale, stress e difficoltà prolungate.
+
+Il focus di questa edizione è dedicato alla povertà relazionale, una dimensione che negli
+ultimi anni è diventata sempre più centrale nel leggere i fattori di rischio.
+L'indebolimento dei legami sociali e comunitari, aggravato anche dalle conseguenze della
+pandemia, incide infatti profondamente sulla qualità delle relazioni familiari e sul benessere
+delle nuove generazioni, rendendo ancora più urgente il ruolo dei servizi e delle politiche
+nel sostenere reti di supporto solide e inclusive.
 """
 
-# ── Dati chiave (placeholder — i valori saranno scelti dall'utente) ──────────
+body_col2_text = """
+L'Indice, attraverso un sistema articolato di indicatori, offre una lettura dei diversi
+territori regionali mettendo in relazione fattori di rischio, fattori protettivi e capacità
+di risposta dei servizi. In questo modo consente di osservare non solo la presenza del
+problema, ma anche il contesto entro cui esso si sviluppa, restituendo uno strumento utile
+per orientare politiche e interventi.
+
+In questa prospettiva, la tutela dell'infanzia si conferma una responsabilità condivisa, che
+richiede attenzione continua e la capacità di rafforzare, insieme, le condizioni sociali ed
+educative in cui bambini, bambine e adolescenti crescono.
+"""
+
+focus_intro_text = """
+Questa edizione dell'Indice propone una riflessione sulla povertà relazionale come dimensione fondamentale della
+povertà infantile, mettendo al centro lo sguardo e le esperienze dirette di bambini e bambine che vivono in contesti
+socio-economicamente svantaggiati. Dalle loro parole emerge soprattutto come la povertà non sia vissuta soltanto come
+mancanza di risorse materiali, ma anche come carenza o fragilità di relazioni significative, di ascolto e di opportunità
+di condivisione. In questo senso, la qualità dei legami diventa una componente essenziale del loro benessere e sviluppo.
+"""
+
+focus_col1_text = """
+Le relazioni familiari rappresentano il primo e più importante punto di riferimento nel quale la famiglia, spesso anche
+nella sua dimensione allargata, è descritta come uno spazio di protezione, affetto e sostegno, capace di offrire sicurezza
+emotiva e supporto concreto. Allo stesso tempo, non mancano elementi di fragilità: conflitti tra genitori, difficoltà
+comunicative e, in alcuni casi, situazioni di violenza o anche solo l'assenza incidono profondamente sul vissuto dei più
+piccoli. In particolare, emerge una distanza significativa rispetto alla figura paterna, percepita come meno presente sul piano
+emotivo, mentre madri e nonni hanno sempre un ruolo centrale nella cura e nell'ascolto.
+"""
+
+focus_col2_text = """
+Le relazioni tra pari occupano un posto altrettanto rilevante nella vita di bambini e bambine. Gli amici rappresentano una
+fonte di gioia, appartenenza e condivisione, ma anche il luogo in cui si manifestano dinamiche problematiche, come ad esempio
+il bullismo. I racconti dei bambini e delle bambine, infatti, restituiscono esperienze diffuse di esclusione e discriminazione,
+spesso legate all'aspetto fisico, all'origine o all'orientamento sessuale, che producono conseguenze importanti sul piano emotivo,
+tra cui tristezza, insicurezza e senso di solitudine. In questo contesto, la possibilità di trovare adulti disponibili all'ascolto
+e al supporto rappresenta un fattore decisivo per superare questo tipo di avversità.
+"""
+
+focus_col3_text = """
+La dimensione economica si intreccia strettamente con quella relazionale, dal momento che le difficoltà materiali influenzano
+la qualità della vita quotidiana, limitano il tempo che i genitori possono dedicare ai figli e possono generare tensioni
+all'interno della famiglia. Su questo tema i bambini e le bambine mostrano una consapevolezza sorprendente delle condizioni
+economiche difficili e dei sacrifici degli adulti, arrivando talvolta a farsi carico di preoccupazioni che hanno un impatto
+sul loro benessere.
+"""
+
+focus_col4_text = """
+Accanto alla famiglia, assume grande importanza anche la rete sociale allargata composta da educatori, educatrici e altri adulti
+di riferimento che rappresentano anch'essi figure significative per molti bambini e bambine, capaci di offrire ascolto, sostegno
+e opportunità di crescita. I centri educativi, in particolare, vengono percepiti come luoghi sicuri e accoglienti dove è possibile
+costruire relazioni positive, sentirsi riconosciuti e sviluppare competenze emotive e relazionali. Anche il contesto territoriale
+gioca un ruolo rilevante, soprattutto se si parla di quartieri segnati da insicurezza, violenza e carenza di servizi, alimentando
+un senso diffuso di paura e limitando le possibilità di socializzazione. Per questo la presenza di spazi educativi e di comunità
+rappresenta un'importante risorsa, capace di offrire alternative e opportunità di crescita.
+"""
+
+focus2_col1_text = """
+Il benessere dell'infanzia è una condizione dinamica risultante dall'interazione tra famiglia, amici e contesto territoriale,
+analizzata attraverso il modello ecologico di Bronfenbrenner. La povertà relazionale è il risultato di un ambiente sfavorevole,
+posizionandosi su un continuum tra fattori di rischio e protettivi, influenzato dalle circostanze socio-economiche.
+
+Il maltrattamento all'infanzia e la povertà relazionale sono problematiche strettamente interconnesse che si alimentano a vicenda,
+influenzando la vita del minore in ambito familiare, scolastico e territoriale. La protezione dei minori si costruisce attraverso
+legami significativi, il supporto alle famiglie e la creazione di spazi educativi accessibili, in cui i bambini agiscono come
+soggetti attivi nel definire le priorità per il proprio benessere.
+"""
+
+focus2_col2_text = """
+Contrastare il maltrattamento e la povertà relazionale richiede un approccio sistemico che ponga il bambino al centro di una
+"comunità di cura". Le priorità includono politiche integrate per scuole e servizi, sostegno strutturale alle famiglie e
+l'integrazione delle voci dei minori nella ricerca per strategie di prevenzione mirate.
+"""
+
+riflessioni_intro_text = """
+La settima edizione dell'Indice CESVI conferma che il maltrattamento all'infanzia è un problema strutturale e non
+esclusivamente riconducibile alla dimensione privata, influenzato dal contesto sociale e dalla crescente fragilità
+familiare. Bisogna quindi rafforzare approcci multidimensionali e di medio-lungo periodo, capaci di agire in modo
+integrato su prevenzione, cura e sostegno alle famiglie, riducendo le disuguaglianze territoriali e rafforzando il
+capitale sociale delle comunità. In questa prospettiva:
+"""
+
+prop1_text = """
+È necessario rafforzare la rete dei servizi territoriali integrando pubblico, privato e "antenne" come pediatri
+e scuole, per garantire un monitoraggio precoce e interventi multidisciplinari che proteggano i minorenni.
+"""
+
+prop2_text = """
+È urgente adottare parametri di valutazione omogenei e banche dati condivise tra pubblico e privato per
+misurare l'impatto reale degli interventi, trasformando le singole buone pratiche innovative in politiche strutturali
+basate su evidenze tempestive.
+"""
+
+prop3_text = """
+È prioritario investire in una formazione trasversale e specialistica per tutti gli operatori e le "antenne"
+del territorio, affinché dispongano di strumenti avanzati per intercettare precocemente le nuove forme di
+maltrattamento e agire come una rete coordinata.
+"""
+
+prop4_text = """
+È prioritario contrastare la povertà relazionale promuovendo politiche che ricostruiscano i legami sociali
+e potenzino le capacità affettive, trasformando il supporto della comunità in un fattore protettivo essenziale per
+superare l'isolamento e l'incomunicabilità.
+"""
+
+prop5_text = """
+È necessario un cambio di paradigma che integri stabilmente la prevenzione del maltrattamento nelle politiche
+pubbliche, come il Piano Nazionale di Prevenzione Sanitaria, garantendo una governance coordinata e il passaggio da
+un approccio emergenziale a strategie preventive strutturate su tutto il territorio.
+"""
+
+# ── Key stats ───────────────────────────────────────────────────────────────
 
 _KEY_STATS = [
     {"value": "20",  "label": "Regioni monitorate"},
-    {"value": "64",  "label": "Indicatori statistici"},
+    {"value": "65",  "label": "Indicatori statistici"},
     {"value": "6",   "label": "Capacità territoriali"},
     {"value": "7",   "label": "Edizioni dal 2018"},
 ]
@@ -127,34 +228,36 @@ home_layout = html.Div(
     children=[
 
         # ── 1. Hero ───────────────────────────────────────────────────────────
-        # Sostituisci /assets/hero.jpg con l'immagine scelta
         html.Div(
             className="hero-section",
             children=[
                 html.Div(className="hero-overlay"),
+                # Badges posizionati in basso a sinistra tramite CSS
                 html.Div(
-                    className="hero-text",
+                    className="hero-badges",
                     children=[
-                        html.Span(className="hero-accent"),
-                        html.P(
-                            f"Settima edizione · {YEAR_DEFAULT}",
-                            className="hero-subtitle mb-3",
+                        html.Div(
+                            className="hero-badge-left",
+                            children=[
+                                "INDICE REGIONALE SUL MALTRATTAMENTO",
+                                html.Br(),
+                                "E LA CURA ALL\u2019INFANZIA IN ITALIA ",
+                                html.Span(str(YEAR_DEFAULT), className="hero-badge-year"),
+                            ],
                         ),
-                        html.H1(
-                            TITLE,
-                            className="display-5 fw-bold mb-3",
-                        ),
-                        html.P(
-                            "Generazione sola",
-                            className="fs-5 mb-0",
-                            style={"color": "rgba(255,255,255,0.75)"},
+                        html.Div(
+                            className="hero-badge-right",
+                            children=[
+                                html.Span("GENERAZIONE", className="d-block"),
+                                html.Span("SOLA", className="d-block"),
+                            ],
                         ),
                     ],
                 ),
             ],
         ),
 
-        # ── 2. Fascia dati chiave ─────────────────────────────────────────────
+        # ── 2. Key stats strip ─────────────────────────────────────────────
         html.Div(
             className="stats-strip",
             children=[
@@ -181,46 +284,158 @@ home_layout = html.Div(
             ],
         ),
 
-        # ── 3. Mappa + intro ──────────────────────────────────────────────────
+        # ── 3. Map + intro column ──────────────────────────────────────────
         dbc.Container(
-            dbc.Row(
-                [
-                    dbc.Col(
-                        [
-                            dcc.Loading(
-                                dcc.Graph(
-                                    id="home_map",
-                                    figure=display_home_map(),
-                                    style={"height": "65vh"},
-                                    responsive=True,
-                                    config={"displayModeBar": False, "editable": False},
+            [
+                dbc.Row(
+                    [
+                        dbc.Col(
+                            [
+                                dcc.Loading(
+                                    dcc.Graph(
+                                        id="home_map",
+                                        figure=display_home_map(),
+                                        style={"height": "65vh"},
+                                        responsive=True,
+                                        config={"displayModeBar": False, "editable": False},
+                                    ),
+                                    color=SEQUENCE_COLOR[0],
                                 ),
-                                color=SEQUENCE_COLOR[0],
-                            ),
-                            html.P(
-                                "Clicca su una regione per aprire la scheda dettagliata.",
-                                className="text-muted text-center mt-1",
-                                style={"font-size": "0.8rem"},
-                            ),
-                        ],
-                        lg=5,
-                        xs=12,
-                        align="center",
-                        className="order-2 order-lg-1",
+                                html.P(
+                                    "Clicca su una regione per aprire la scheda dettagliata.",
+                                    className="text-muted text-center mt-1",
+                                    style={"font-size": "0.8rem"},
+                                ),
+                            ],
+                            lg=5,
+                            xs=12,
+                            align="center",
+                            className="order-2 order-lg-1",
+                        ),
+                        dbc.Col(
+                            [
+                                dcc.Markdown(intro_text, className="intro-lead mb-3"),
+                                dcc.Markdown(intro_text_2, className="mb-4"),
+                                html.Hr(className="my-3"),
+                                html.P("Esplora la dashboard:", className="text-muted small mb-2"),
+                                html.Div(
+                                    [
+                                        dbc.Button("Regioni",      href="/scorecards",  color="primary", outline=True, size="sm", className="me-2 mb-2"),
+                                        dbc.Button("Dati",         href="/data",        color="primary", outline=True, size="sm", className="me-2 mb-2"),
+                                        dbc.Button("Metodologia",  href="/methodology", color="primary", outline=True, size="sm", className="me-2 mb-2"),
+                                        dbc.Button("Pubblicazioni", href="/report",     color="primary", outline=True, size="sm", className="me-2 mb-2"),
+                                    ],
+                                    className="mb-2",
+                                ),
+                                html.P("Scarica i dati completi:", className="text-muted small mb-2"),
+                                dbc.Button("Download", href="/download", color="primary", size="sm", className="me-2"),
+                            ],
+                            lg=7,
+                            xs=12,
+                            align="center",
+                            className="order-1 order-lg-2",
+                        ),
+                    ],
+                ),
+                html.Hr(className="my-4"),
+                html.H3("GENERAZIONE SOLA", className="page-title mb-4"),
+                dbc.Row(
+                    [
+                        dbc.Col(
+                            dcc.Markdown(body_col1_text),
+                            lg=6,
+                            xs=12,
+                        ),
+                        dbc.Col(
+                            dcc.Markdown(body_col2_text),
+                            lg=6,
+                            xs=12,
+                        ),
+                    ],
+                    className="mb-4",
+                ),
+
+                # ── 4. Edition focus section ────────────────────────────────
+                html.Div(
+                    [
+                        html.H4(
+                            "LA POVERTÀ RELAZIONALE E IL MALTRATTAMENTO INFANTILE: "
+                            "IL PUNTO DI VISTA DEI BAMBINI E DELLE BAMBINE",
+                            className="page-title",
+                        ),
+                        dcc.Markdown(focus_intro_text, className="intro-lead pt-3 pb-2"),
+                    ],
+                    className="mb-3",
+                ),
+                dbc.Accordion(
+                    [
+                        dbc.AccordionItem(
+                            dcc.Markdown(focus_col1_text),
+                            title="Le relazioni familiari",
+                        ),
+                        dbc.AccordionItem(
+                            dcc.Markdown(focus_col2_text),
+                            title="Le relazioni tra pari",
+                        ),
+                        dbc.AccordionItem(
+                            dcc.Markdown(focus_col3_text),
+                            title="La dimensione economica",
+                        ),
+                        dbc.AccordionItem(
+                            dcc.Markdown(focus_col4_text),
+                            title="La rete sociale allargata e il territorio",
+                        ),
+                    ],
+                    start_collapsed=True,
+                    flush=True,
+                    className="mb-5",
+                ),
+
+                # ── 5. Interpretive box ───────────────────────────────────────
+                dbc.Card(
+                    dbc.CardBody(
+                        dbc.Row([
+                            dbc.Col(dcc.Markdown(focus2_col1_text), lg=7, xs=12),
+                            dbc.Col(dcc.Markdown(focus2_col2_text), lg=5, xs=12),
+                        ])
                     ),
-                    dbc.Col(
-                        [
-                            dcc.Markdown(intro_text, className="mb-3"),
-                            dcc.Markdown(edition_text, className="mb-4"),
-                            dcc.Markdown(cta_text),
-                        ],
-                        lg=7,
-                        xs=12,
-                        align="center",
-                        className="order-1 order-lg-2",
-                    ),
-                ],
-            ),
+                    className="mb-5 interpretive-box",
+                ),
+
+                # ── 6. Proposals section ─────────────────────────────────────
+                html.H4(
+                    "RIFLESSIONI E PROPOSTE PER POLITICHE DI PREVENZIONE, CONTRASTO E CURA",
+                    className="page-title mb-3",
+                ),
+                dcc.Markdown(riflessioni_intro_text, className="intro-lead pb-3"),
+                dbc.Accordion(
+                    [
+                        dbc.AccordionItem(
+                            dcc.Markdown(prop1_text),
+                            title="Rafforzare la rete dei servizi territoriali",
+                        ),
+                        dbc.AccordionItem(
+                            dcc.Markdown(prop2_text),
+                            title="Adottare parametri di valutazione omogenei e banche dati condivise",
+                        ),
+                        dbc.AccordionItem(
+                            dcc.Markdown(prop3_text),
+                            title="Investire nella formazione trasversale e specialistica",
+                        ),
+                        dbc.AccordionItem(
+                            dcc.Markdown(prop4_text),
+                            title="Contrastare la povertà relazionale",
+                        ),
+                        dbc.AccordionItem(
+                            dcc.Markdown(prop5_text),
+                            title="Un cambio di paradigma nelle politiche pubbliche",
+                        ),
+                    ],
+                    start_collapsed=True,
+                    flush=True,
+                    className="mb-4",
+                ),
+            ],
             class_name="py-5",
             fluid=False,
         ),

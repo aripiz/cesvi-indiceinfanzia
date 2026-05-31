@@ -44,6 +44,18 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700 !important;
 }
 
+/* Titoli pagina: sfondo arancione, testo bianco */
+.page-title {
+    color: #ffffff !important;
+    background-color: var(--cesvi-orange);
+    font-weight: 800 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 0.4rem 0.9rem;
+    display: inline-block;
+    margin-bottom: 1rem !important;
+}
+
 /* Testo secondario (sottotitoli, date, note) */
 .text-muted {
     color: var(--cesvi-text-muted) !important;
@@ -82,6 +94,15 @@ p, li {
 .btn-primary:hover {
     background-color: var(--cesvi-orange-dark) !important;
     border-color: var(--cesvi-orange-dark) !important;
+}
+.btn-outline-primary {
+    color: var(--cesvi-orange) !important;
+    border-color: var(--cesvi-orange) !important;
+}
+.btn-outline-primary:hover {
+    background-color: var(--cesvi-orange) !important;
+    border-color: var(--cesvi-orange) !important;
+    color: #fff !important;
 }
 
 /* Tabs Bootstrap/dbc */
@@ -144,51 +165,98 @@ p, li {
     min-height: 78vh;
     background-image: url('/assets/hero.jpg');
     background-size: cover;
-    background-position: center top;
+    background-position: center center;
     background-color: var(--cesvi-gray-dark); /* fallback se l'immagine non è presente */
     display: flex;
-    align-items: flex-end;
+    align-items: flex-end;        /* badge ancorati in basso */
+    justify-content: flex-start;  /* badge ancorati a sinistra */
     overflow: hidden;
 }
 
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        to right,
-        rgba(20, 20, 20, 0.88) 0%,
-        rgba(20, 20, 20, 0.60) 45%,
-        rgba(20, 20, 20, 0.00) 75%
-    );
+    background: rgba(10, 10, 10, 0.0);
 }
 
-.hero-text {
+/* Contenitore unico: rettangolo smussato con overflow hidden */
+.hero-badges {
     position: relative;
     z-index: 10;
-    padding: 4rem 3rem 4rem 3rem;
-    max-width: 55%;
-    color: #fff;
-}
-.hero-text h1, .hero-text h2 { color: #fff !important; }
-
-.hero-accent {
-    display: block;
-    width: 60px;
-    height: 4px;
-    background-color: var(--cesvi-orange);
-    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    margin: 0 0 3rem 3.5rem;
+    border-radius: 1.2rem;
+    overflow: hidden;
+    background-color: #ffffff;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
 }
 
-.hero-subtitle {
-    color: rgba(255, 255, 255, 0.75);
-    font-size: 0.9rem;
-    letter-spacing: 0.08em;
+/* Metà sinistra grigia con freccia */
+.hero-badge-left {
+    background-color: rgba(190, 193, 195, 0.95);
+    padding: 2rem 5rem 2rem 2.5rem;
+    clip-path: polygon(0 0, 87% 0, 96% 50%, 87% 100%, 0 100%);
+    font-weight: 800;
     text-transform: uppercase;
+    color: #2a2a2a;
+    letter-spacing: 0.03em;
+    line-height: 1.35;
+    font-size: 1.25rem;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-badge-year {
+    color: var(--cesvi-orange);
+}
+
+/* Metà destra bianca */
+.hero-badge-right {
+    background-color: #ffffff;
+    padding: 1.8rem 2.8rem;
+    font-weight: 900;
+    color: var(--cesvi-orange);
+    text-transform: uppercase;
+    line-height: 1.0;
+    font-size: 2.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
 }
 
 @media (max-width: 768px) {
-    .hero-section { min-height: 60vh; }
-    .hero-text { max-width: 92%; padding: 2rem 1.5rem; }
+    .hero-section {
+        min-height: 60vh;
+        align-items: flex-end;
+        justify-content: flex-start;
+    }
+    .hero-badges {
+        flex-direction: column;
+        margin: 0 1rem 2rem 1rem;
+        border-radius: 0.8rem;
+    }
+    .hero-badge-left {
+        clip-path: none;
+        padding: 1.2rem 1.5rem;
+        font-size: 0.85rem;
+        border-radius: 0.6rem 0.6rem 0 0;
+    }
+    .hero-badge-right {
+        font-size: 2rem;
+        padding: 1rem 1.5rem;
+    }
+}
+
+/* Intro lead (primo paragrafo arancione) */
+.intro-lead p {
+    color: var(--cesvi-orange) !important;
+    font-size: 1.05rem;
+    line-height: 1.75;
 }
 
 /* ── Stats strip ──────────────────────────────────────────────────────────── */
@@ -280,7 +348,7 @@ p, li {
     accent-color: var(--cesvi-orange) !important;
 }
 
-/* ── Frecce variazione scorecard ─────────────────────────────────────────── */
+/* ── Frecce variazione scorecard
 .arrow-up {
     display: inline-block;
     margin-right: 6px;
@@ -321,4 +389,34 @@ p, li {
 }
 @media (min-width: 1800px) {
     #scorecard_evolution { height: 400px !important; }
+}
+
+/* ── Box interpretativo (sintesi teorica) ────────────────────────────────── */
+.interpretive-box {
+    background-color: #f5f5f5;
+    border-left: 4px solid var(--cesvi-orange);
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+/* ── Accordion sezione focus ─────────────────────────────────────────────── */.accordion-button {
+    font-weight: 700;
+    color: var(--cesvi-gray-dark) !important;
+    background-color: #f8f8f8 !important;
+}
+.accordion-button:not(.collapsed) {
+    color: #ffffff !important;
+    background-color: var(--cesvi-orange) !important;
+    box-shadow: none;
+}
+.accordion-button::after {
+    filter: none;
+}
+.accordion-button:not(.collapsed)::after {
+    filter: brightness(0) invert(1);
+}
+.accordion-body {
+    color: var(--cesvi-gray-dark);
+    line-height: 1.75;
 }

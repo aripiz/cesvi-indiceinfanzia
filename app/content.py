@@ -12,28 +12,31 @@ from configuration import BRAND_LINK, CREDITS_LINK, TITLE, LOGO, LOGO_VERTICAL
 
 navbar = dbc.NavbarSimple(
     children=[
-        dbc.NavItem(dbc.NavLink("Panoramica",  active="exact", href="/",            className="fw-bold")),
-        dbc.NavItem(dbc.NavLink("Regioni",     active="exact", href="/scorecards",  className="fw-bold")),
-        dbc.NavItem(dbc.NavLink("Report",      active="exact", href="/report",      className="fw-bold")),
-        dbc.NavItem(dbc.NavLink("Dati",        active="exact", href="/data",        className="fw-bold")),
-        dbc.NavItem(dbc.NavLink("Metodologia", active="exact", href="/methodology", className="fw-bold")),
-        dbc.NavItem(dbc.NavLink("Download",    active="exact", href="/download",    className="fw-bold")),
-
+        dbc.NavItem(dbc.NavLink("Panoramica",    active="exact", href="/",            className="fw-bold")),
+        dbc.NavItem(dbc.NavLink("Regioni",       active="exact", href="/scorecards",  className="fw-bold")),
+        dbc.NavItem(dbc.NavLink("Dati",          active="exact", href="/data",        className="fw-bold")),
+        dbc.NavItem(dbc.NavLink("Metodologia",   active="exact", href="/methodology", className="fw-bold")),
+        dbc.NavItem(dbc.NavLink("Pubblicazioni",  active="exact", href="/report",      className="fw-bold")),
+        dbc.NavItem(dbc.NavLink("Download",      active="exact", href="/download",    className="fw-bold")),
     ],
    brand=html.Div([
-        html.Img(
-            src=LOGO, 
-            height="30px",
-            # Rimosso verticalAlign, teniamo solo il margine
-            style={"marginRight": "10px"} 
+        html.A(
+            html.Img(src=LOGO, height="30px", style={"marginRight": "10px"}),
+            href=BRAND_LINK,
+            target="_blank",
+            style={"lineHeight": "0"},
         ),
-        html.Span(
-            "Indice sul Maltrattamento e la Cura all'Infanzia".upper(),
-            className="fw-bold d-none d-md-inline mb-0",
-            style={"color": "#eb6608", "letter-spacing": "0.05em"},
+        html.A(
+            html.Span(
+                "Indice sul Maltrattamento e la Cura all'Infanzia".upper(),
+                className="fw-bold d-none d-md-inline mb-0",
+                style={"letter-spacing": "0.05em"},
+            ),
+            href="/",
+            style={"textDecoration": "none", "color": "inherit"},
         ),
-    ], className="d-flex align-items-center"), 
-    brand_href=BRAND_LINK,
+    ], className="d-flex align-items-center"),
+    brand_href=None,
     fixed="top",
     color="white",
     dark=False,
@@ -61,7 +64,7 @@ footer = html.Footer(
                                 className="footer-text mb-0",
                             ),
                         ],
-                        md=7, xs=12,
+                        md=4, xs=12,
                         className="mb-3 mb-md-0",
                     ),
                     # Navigazione — due colonne
@@ -72,9 +75,9 @@ footer = html.Footer(
                                 dbc.Col(
                                     html.Ul(
                                         [
-                                            html.Li(html.A("Panoramica",  href="/",            className="footer-link")),
-                                            html.Li(html.A("Regioni",     href="/scorecards",  className="footer-link")),
-                                            html.Li(html.A("Report",        href="/report",        className="footer-link")),
+                                            html.Li(html.A("Panoramica",    href="/",            className="footer-link")),
+                                            html.Li(html.A("Regioni",       href="/scorecards",  className="footer-link")),
+                                            html.Li(html.A("Dati",          href="/data",        className="footer-link")),
                                         ],
                                         className="list-unstyled mb-0",
                                     ),
@@ -83,9 +86,9 @@ footer = html.Footer(
                                 dbc.Col(
                                     html.Ul(
                                         [
-                                            html.Li(html.A("Dati",      href="/data",      className="footer-link")),
-                                            html.Li(html.A("Metodologia", href="/methodology", className="footer-link")),
-                                            html.Li(html.A("Download",    href="/download",    className="footer-link")),
+                                            html.Li(html.A("Metodologia",  href="/methodology", className="footer-link")),
+                                            html.Li(html.A("Pubblicazioni", href="/report",      className="footer-link")),
+                                            html.Li(html.A("Download",      href="/download",    className="footer-link")),
                                         ],
                                         className="list-unstyled mb-0",
                                     ),
@@ -93,7 +96,23 @@ footer = html.Footer(
                                 ),
                             ]),
                         ],
-                        md=5, xs=12,
+                        md=4, xs=12,
+                        className="mb-3 mb-md-0",
+                    ),
+                    # Cesvi
+                    dbc.Col(
+                        [
+                            html.P("Cesvi", className="footer-heading mb-2"),
+                            html.Ul(
+                                [
+                                    html.Li(html.A("Home", href="https://cesvi.org/", className="footer-link", target="_blank")),
+                                    #html.Li(html.A("Indice regionale", href="https://cesvi.org/approfondimenti/indice-regionale-sul-maltrattamento-allinfanzia-italia/", className="footer-link", target="_blank")),
+                                    html.Li(html.A("Chi siamo", href="https://cesvi.org/chi-siamo/", className="footer-link", target="_blank")),
+                                ],
+                                className="list-unstyled mb-0",
+                            ),
+                        ],
+                        md=4, xs=12,
                         className="mb-3 mb-md-0",
                     ),
                 ],
