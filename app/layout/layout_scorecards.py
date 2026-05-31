@@ -1,9 +1,4 @@
-# layout_scorecards_new.py — Cesvi Indice Infanzia (versione provvisoria con nuovi stili)
-# Idee implementate:
-#   1. Accent bar arancione sotto il titolo regione
-#   2. KPI card per le 4 metriche (bordo sinistro arancione, valore grande)
-#   3. Section divider con accent line prima di ogni sezione grafico
-#   4. Sfondo leggero (#f8f9fa + border-radius) sulla colonna dati KPI
+# layout_scorecards.py — Cesvi Indice Infanzia
 
 from dash import dcc, html
 import dash_bootstrap_components as dbc
@@ -15,7 +10,7 @@ territories_list = sorted(data["territory"].unique().tolist())
 
 
 def _section_divider(title):
-    """Separatore di sezione: linea arancione + label testo muted."""
+    """Section divider: short orange line + muted uppercase label + full-width grey rule."""
     return html.Div(
         [
             html.Div(
@@ -50,7 +45,7 @@ def _section_divider(title):
 
 
 def _kpi_card(label, element_id):
-    """KPI card con bordo sinistro arancione, valore grande, label piccola."""
+    """KPI card: left orange border, large value, small uppercase label."""
     return html.Div(
         [
             html.P(
@@ -77,24 +72,35 @@ def _kpi_card(label, element_id):
 
 scorecard_layout = dbc.Container(
     children=[
-        # ── Titolo pagina ─────────────────────────────────────────────────────
+        # ── Page title ───────────────────────────────────────────────────────
         dbc.Row(
             dbc.Col([
-                html.H2("Regioni", className="mb-1"),
-                html.Div(style={
-                    "width": "40px", "height": "4px",
-                    "backgroundColor": "#eb6608", "marginBottom": "0.5rem",
-                }),
+                html.H3("Regioni", className="page-title"),
                 html.P(
-                    "Approfondisci i risultati di ciascuna regione nell\u2019Indice. "
-                    "I dati mostrati si riferiscono all\u2019edizione 2026.",
-                    className="text-muted mb-2",
+                    "Approfondisci i risultati di ciascuna regione nell\u2019Indice.",
+                    className="text-muted mb-3",
                     style={"fontSize": "0.92rem"},
+                ),
+                html.Div(
+                    [
+                        html.Span("\u2139", style={"color": "#eb6608", "fontWeight": "700", "marginRight": "0.5rem", "fontSize": "1rem"}),
+                        html.Span("I dati mostrati si riferiscono all\u2019edizione 2026.", style={"fontSize": "0.88rem", "color": "#6b7280"}),
+                    ],
+                    style={
+                        "backgroundColor": "#fff",
+                        "border": "1px solid #e9ecef",
+                        "borderLeft": "3px solid #eb6608",
+                        "borderRadius": "4px",
+                        "padding": "8px 14px",
+                        "lineHeight": "1.65",
+                        "display": "inline-block",
+                    },
+                    className="mb-2",
                 ),
             ], xs=12),
             className="mb-2",
         ),
-        # ── Selezione territorio ──────────────────────────────────────────────
+        # ── Territory selection ───────────────────────────────────────────────
         dbc.Row(
             dbc.Col(
                 html.Div(
@@ -142,25 +148,16 @@ scorecard_layout = dbc.Container(
             className="mt-2",
         ),
 
-        # ── Header regione con accent bar ────────────────────────────────────
+        # ── Region header ─────────────────────────────────────────────────────
         dbc.Row(
             dbc.Col(
-                [
-                    html.H4(id="scorecard_header", className="mb-1 fw-bold"),
-                    # Idea 1: accent bar arancione sotto il titolo
-                    html.Div(style={
-                        "width": "60px",
-                        "height": "4px",
-                        "backgroundColor": "#eb6608",
-                        "marginBottom": "0.75rem",
-                    }),
-                ],
+                html.H5(id="scorecard_header", className="page-title"),
                 lg=12,
             ),
             className="mt-3",
         ),
 
-        # ── Mappa + KPI card + evoluzione ────────────────────────────────────
+        # ── Map + KPI cards + evolution ───────────────────────────────────────
         dbc.Row(
             [
                 dbc.Col(
@@ -178,7 +175,7 @@ scorecard_layout = dbc.Container(
                     className="d-flex justify-content-center",
                 ),
 
-                # Idea 2 + 4: blocco KPI con sfondo grigio chiaro e bordo radius
+                # KPI block
                 dbc.Col(
                     html.Div(
                         [
@@ -196,7 +193,7 @@ scorecard_layout = dbc.Container(
                         ],
                         style={
                             "backgroundColor": "#f8f9fa",
-                            "borderRadius": "8px",
+                            "borderRadius": "6px",
                             "padding": "16px 14px",
                             "height": "100%",
                         },
@@ -212,7 +209,7 @@ scorecard_layout = dbc.Container(
                         dcc.Loading(
                             dcc.Graph(
                                 id="scorecard_evolution",
-                                config={"displayModeBar": False},
+                                config={"displayModeBar": False, "editable": False, "doubleClick": False},
                             ),
                             color=SEQUENCE_COLOR[0],
                         ),
@@ -229,14 +226,14 @@ scorecard_layout = dbc.Container(
         # Idea 3: section divider
         _section_divider("Posizione e punteggio per capacità"),
 
-        # ── Posizione per capacità + Punteggio per capacità ──────────────────
+        # ── Rank by capacity + Score by capacity ────────────────────────────
         dbc.Row(
             [
                 dbc.Col(
                     dcc.Loading(
                         dcc.Graph(
                             id="scorecard_lollipop",
-                            config={"displayModeBar": False},
+                            config={"displayModeBar": False, "editable": False, "doubleClick": False},
                         ),
                         color=SEQUENCE_COLOR[0],
                     ),
@@ -247,7 +244,7 @@ scorecard_layout = dbc.Container(
                     dcc.Loading(
                         dcc.Graph(
                             id="scorecard_dim_table",
-                            config={"displayModeBar": False},
+                            config={"displayModeBar": False, "editable": False, "doubleClick": False},
                         ),
                         color=SEQUENCE_COLOR[0],
                     ),
@@ -260,13 +257,13 @@ scorecard_layout = dbc.Container(
         # Idea 3: section divider
         _section_divider("Correlazione fattori di rischio · servizi"),
 
-        # ── Scatter Servizi vs Rischio ────────────────────────────────────────
+        # ── Scatter: Services vs Risk ──────────────────────────────────────────
         dbc.Row(
             dbc.Col(
                 dcc.Loading(
                     dcc.Graph(
                         id="scorecard_scatter",
-                        config={"displayModeBar": False},
+                        config={"displayModeBar": False, "editable": False, "doubleClick": False},
                     ),
                     color=SEQUENCE_COLOR[0],
                 ),

@@ -16,12 +16,11 @@ FONT_FAMILY = "Raleway"
 FONT_URL = "https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap"
 
 # Brand colors Cesvi (dal brandbook ufficiale)
-BRAND_COLOR = "#eb6608"            # arancione principale
-BRAND_SECONDARY_COLOR = "#94A4A4"  # grigio
-BRAND_WHITE = "#FFFFFF"            # bianco
+BRAND_COLOR = "#eb6608"  # primary orange
 
 # Logo
-LOGO = "assets/logo_h_grey.png"
+LOGO = "assets/logos/logo_h_grey.png"
+LOGO_VERTICAL = "assets/logos/logo_v_grey.png"
 
 # Palette divergente per z-score: grigio (sotto media) → bianco (media) → arancione (sopra media)
 DIVERGING_COLORS = [
@@ -76,9 +75,7 @@ RANK_COLOR_SCALE = [
 ]
 
 # Map
-LAND_COLOR  = "#3B3B3B"
-OCEAN_COLOR = "#F2F2F2"
-GEO_KEY     = "properties.reg_name"
+GEO_KEY = "properties.reg_name"
 
 # Files
 DATA_FILE     = "../data/cesvi-indiceinfanzia_data.csv"
@@ -89,7 +86,6 @@ REPORTS_DIR   = "../data/reports"
 
 # Years
 YEARS = [2018, 2019, 2020, 2021, 2022, 2024, 2026]
-YEARS_AVAILABLE = YEARS  # alias
 YEAR_DEFAULT = 2026
 YEAR_MIN = YEARS[0]
 YEAR_MAX = YEARS[-1]

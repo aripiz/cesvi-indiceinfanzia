@@ -7,7 +7,7 @@ import dash_bootstrap_components as dbc
 from configuration import BRAND_COLOR
 from index import reports
 
-# ── Helper: singola card ──────────────────────────────────────────────────────
+# ── Helper: single card ─────────────────────────────────────────────────────
 
 def _report_card(report):
     year        = report.get("year", "")
@@ -123,13 +123,9 @@ report_layout = dbc.Container(
         dbc.Row(
             dbc.Col(
                 [
-                    html.H2("Report", className="mb-1"),
-                    html.Div(style={
-                        "width": "40px", "height": "4px",
-                        "backgroundColor": BRAND_COLOR, "marginBottom": "0.5rem",
-                    }),
+                    html.H3("Pubblicazioni", className="page-title"),
                     html.P(
-                        "Tutti i report annuali dell'Indice regionale sul maltrattamento e la cura all'infanzia in Italia.",
+                        "Approfondisci le pubblicazioni di ogni edizione dell'Indice regionale sul maltrattamento e la cura all'infanzia in Italia.",
                         className="text-muted mb-4",
                         style={"fontSize": "0.92rem"},
                     ),
