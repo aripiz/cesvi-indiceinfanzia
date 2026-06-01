@@ -125,7 +125,7 @@ report_layout = dbc.Container(
                 [
                     html.H3("Pubblicazioni", className="page-title"),
                     html.P(
-                        "Approfondisci le pubblicazioni di ogni edizione dell'Indice regionale sul maltrattamento e la cura all'infanzia in Italia.",
+                        "Leggi le pubblicazioni di ogni edizione dell'Indice regionale sul maltrattamento e la cura all'infanzia in Italia.",
                         className="text-muted mb-4",
                         style={"fontSize": "0.92rem"},
                     ),
