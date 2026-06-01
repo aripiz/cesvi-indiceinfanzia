@@ -220,8 +220,8 @@ def display_map(indicatore, year):
     )
     fig.update_traces(
         hovertemplate=(
-            "<b>%{customdata[0]}</b><br>"
-            f"{feat_label}: " + "%{customdata[1]:.3f}<br>"
+            "<b>%{customdata[0]}</b><br><br>"
+            f"{feat_label}: " + "%{customdata[1]:.2f}<br>"
             "Fascia: %{customdata[2]}<br><extra></extra>"
         )
     )
@@ -261,8 +261,8 @@ def display_ranking(indicatore, year):
     fig.update_traces(
         textposition="outside",
         hovertemplate=(
-            "<b>%{customdata[0]}</b><br>"
-            f"{feat_label}: " + "%{x:+.3f}<br>"
+            "<b>%{customdata[0]}</b><br><br>"
+            f"{feat_label}: " + "%{x:+.2f}<br>"
             "Posizione: %{customdata[1]} / 20<br><extra></extra>"
         ),
     )
@@ -285,32 +285,50 @@ def display_ranking(indicatore, year):
     Input("evo_indicatore",  "value"),
 )
 @cache.memoize()
-def display_evolution(territories, indicatore):
+def display_evolution(territories, indicatori):
     if not territories:
         raise PreventUpdate
 
-    type_key, cap_key, pop_key = _resolve(indicatore)
+    # Normalizza: accetta sia stringa singola che lista
+    if isinstance(indicatori, str):
+        indicatori = [indicatori]
+    if not indicatori:
+        indicatori = ["totale||totale||totale"]
 
     rows = []
-    for yr in YEARS:
-        df_yr = data[
-            (data["year"] == yr)
-            & (data["type"] == type_key)
-            & (data["capacity"] == cap_key)
-            & (data["population"] == pop_key)
-        ][["territory", "score"]].dropna(subset=["score"])
-        if df_yr.empty:
-            continue
-        df_yr = df_yr.sort_values("score", ascending=False).reset_index(drop=True)
-        df_yr["rank"] = range(1, len(df_yr) + 1)
-        df_yr["year"] = yr
-        rows.append(df_yr)
+    for indicatore in indicatori:
+        type_key, cap_key, pop_key = _resolve(indicatore)
+        feat_label = _indicatore_label(indicatore)
+
+        for yr in YEARS:
+            df_yr = data[
+                (data["year"] == yr)
+                & (data["type"] == type_key)
+                & (data["capacity"] == cap_key)
+                & (data["population"] == pop_key)
+            ][["territory", "score"]].dropna(subset=["score"])
+            if df_yr.empty:
+                continue
+            df_yr = df_yr.sort_values("score", ascending=False).reset_index(drop=True)
+            df_yr["rank"] = range(1, len(df_yr) + 1)
+            df_yr["year"] = yr
+            # Serie = "Regione — Indicatore" se più indicatori, altrimenti solo regione
+            if len(indicatori) > 1:
+                df_yr["serie"] = df_yr["territory"].apply(
+                    lambda t: f"{t} — {feat_label}" if t in territories else None
+                )
+            else:
+                df_yr["serie"] = df_yr["territory"]
+            rows.append(df_yr)
 
     if not rows:
-        return _no_data(f"Nessun dato per '{_indicatore_label(indicatore)}'")
+        return _no_data("Nessun dato disponibile")
 
     df_all = pd.concat(rows)
-    df_sel = df_all[df_all["territory"].isin(territories)].copy()
+    if len(indicatori) > 1:
+        df_sel = df_all[df_all["serie"].notna()].copy()
+    else:
+        df_sel = df_all[df_all["territory"].isin(territories)].copy()
 
     if df_sel.empty:
         return _no_data("Nessun dato per le regioni selezionate")
@@ -319,8 +337,8 @@ def display_evolution(territories, indicatore):
 
     fig = px.line(
         df_sel,
-        x="year", y="rank", color="territory", markers=True,
-        labels={"year": "Anno", "rank": "Posizione", "territory": "Regione"},
+        x="year", y="rank", color="serie", markers=True,
+        labels={"year": "Anno", "rank": "Posizione", "serie": ""},
         color_discrete_sequence=SEQUENCE_COLOR,
     )
     fig.update_yaxes(
@@ -335,12 +353,12 @@ def display_evolution(territories, indicatore):
     )
     fig.update_layout(
         legend=dict(
-            title_text="Regione", orientation="h",
+            title_text="", orientation="h",
             yanchor="bottom", y=1.02, xanchor="left", x=0,
         ),
     )
     fig.update_traces(
-        hovertemplate="<b>%{fullData.name}</b><br>Anno: %{x}<br>Posizione: %{y} / 20<extra></extra>"
+        hovertemplate="<b>%{fullData.name}</b><br><br>Anno: %{x}<br>Posizione: %{y} / 20<extra></extra>"
     )
     return fig
 
@@ -397,7 +415,7 @@ def display_profilo_lollipop(territory, dim_type, year):
             text=df["rank_int"].apply(lambda r: str(r) if r is not None else ""),
             textfont=dict(color="white", size=11),
             textposition="middle center",
-            hovertemplate="<b>%{y}</b><br>Posizione: %{x} / 20<extra></extra>",
+            hovertemplate="<b>%{y}</b><br><br>Posizione: %{x} / 20<extra></extra>",
         )
     )
 
@@ -449,7 +467,7 @@ def display_profilo_dim_table(territory, dim_type, year):
     )
     fig.add_vline(x=0, line_dash="dot", line_color="#aaaaaa", line_width=1)
     fig.update_traces(
-        hovertemplate="<b>%{y}</b><br>Punteggio: %{x:.2f}<br>%{customdata[0]}<extra></extra>"
+        hovertemplate="<b>%{y}</b><br><br>Punteggio: %{x:.2f}<br>Fascia: %{customdata[0]}<extra></extra>"
     )
     fig.update_layout(
         showlegend=False,
@@ -583,7 +601,7 @@ def display_correlations(ind_x, ind_y, highlight, year):
         textfont=dict(size=9, color="#3d4646"),
         marker=dict(color="#D0DADB", size=9, line=dict(color="#94A4A4", width=1)),
         hovertemplate=(
-            "<b>%{text}</b><br>"
+            "<b>%{text}</b><br><br>"
             + lx + ": %{x} / 20<br>"
             + ly + ": %{y} / 20<extra></extra>"
         ),
@@ -600,7 +618,7 @@ def display_correlations(ind_x, ind_y, highlight, year):
             textfont=dict(size=11, color=BRAND_COLOR),
             marker=dict(color=BRAND_COLOR, size=14, line=dict(color="white", width=1.5)),
             hovertemplate=(
-                "<b>%{text}</b><br>"
+                "<b>%{text}</b><br><br>"
                 + lx + ": %{x} / 20<br>"
                 + ly + ": %{y} / 20<extra></extra>"
             ),

@@ -218,7 +218,14 @@ tab_evolution = html.Div([
         ], lg=5, xs=12),
         dbc.Col([
             _section_label("Indicatore"),
-            _indicatore_dropdown("evo_indicatore"),
+            dcc.Dropdown(
+                id="evo_indicatore",
+                options=indicatore_options,
+                value=["totale||totale||totale"],
+                multi=True,
+                placeholder="Seleziona uno o più indicatori…",
+                className="mt-1",
+            ),
         ], lg=7, xs=12),
     ], className="g-3 align-items-start")),
     _info_box(
