@@ -1,6 +1,7 @@
 /* scroll_top.js — Cesvi Indice Infanzia
    Riporta la pagina in cima ad ogni navigazione interna (SPA).
-   Chiude la navbar Bootstrap mobile dopo il click su un link. */
+   Chiude la navbar Bootstrap mobile dopo il click su un link.
+   Scroll al click sul chevron hero. */
 
 (function () {
     "use strict";
@@ -22,7 +23,6 @@
         if (!link) return;
         const collapse = document.querySelector(".navbar-collapse.show");
         if (!collapse) return;
-        // Usa Bootstrap collapse API se disponibile, altrimenti rimuovi classe
         if (window.bootstrap && window.bootstrap.Collapse) {
             const bsCollapse = window.bootstrap.Collapse.getInstance(collapse);
             if (bsCollapse) {
@@ -33,5 +33,28 @@
         } else {
             collapse.classList.remove("show");
         }
+    });
+
+    // ── Scroll al click sullo chevron hero ───────────────────────────────────
+    document.addEventListener("click", function (e) {
+        const btn = e.target.closest("#hero-scroll-btn");
+        if (!btn) return;
+        const heroHeight = document.querySelector(".hero-split")?.offsetHeight || window.innerHeight;
+        window.scrollTo({ top: heroHeight, behavior: "smooth" });
+    });
+
+    // ── Dropdown search placeholder: "Search" → "Cerca" ──────────────────────
+    function patchDropdownPlaceholders() {
+        document.querySelectorAll("input.dash-dropdown-search").forEach(function (el) {
+            if (el.getAttribute("placeholder") !== "Cerca") {
+                el.setAttribute("placeholder", "Cerca");
+            }
+        });
+    }
+    // Esegui subito e ad ogni mutazione (nuovo nodo o attributo placeholder resettato da React)
+    patchDropdownPlaceholders();
+    new MutationObserver(patchDropdownPlaceholders).observe(document.body, {
+        childList: true, subtree: true,
+        attributes: true, attributeFilter: ["placeholder"],
     });
 })();

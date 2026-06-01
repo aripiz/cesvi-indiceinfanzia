@@ -33,6 +33,8 @@ def display_home_map():
         labels=ZSCORE_LABELS,
         right=False,
     ).cat.remove_unused_categories()
+    df = df.sort_values("score", ascending=False).reset_index(drop=True)
+    df["rank"] = range(1, len(df) + 1)
 
     fig = px.choropleth(
         df,
@@ -42,7 +44,7 @@ def display_home_map():
         color="tier",
         color_discrete_map=ZSCORE_TIER_COLORS,
         category_orders={"tier": ZSCORE_LABELS},
-        custom_data=["territory", "score", "tier"],
+        custom_data=["territory", "score", "tier", "rank"],
     )
     fig.update_layout(
         dragmode=False,
@@ -62,8 +64,8 @@ def display_home_map():
     fig.update_traces(
         hovertemplate=(
             "<b>%{customdata[0]}</b><br><br>"
-            "Indice totale: "
-            "%{customdata[1]}<br>"
+            "Punteggio: %{customdata[1]:.2f}<br>"
+            "Posizione: %{customdata[3]} / 20<br>"
             "Fascia: %{customdata[2]}<br>"
             "<extra></extra>"
         )
@@ -227,33 +229,44 @@ _KEY_STATS = [
 home_layout = html.Div(
     children=[
 
-        # ── 1. Hero ───────────────────────────────────────────────────────────
+        # ── 1. Hero split (testo sx | foto dx) ───────────────────────────────
         html.Div(
-            className="hero-section",
+            className="hero-split",
             children=[
-                html.Div(className="hero-overlay"),
-                # Badges posizionati in basso a sinistra tramite CSS
+                # Colonna sinistra — testo su sfondo scuro
                 html.Div(
-                    className="hero-badges",
+                    className="hero-split-left",
                     children=[
                         html.Div(
-                            className="hero-badge-left",
+                            className="hero-left-content",
                             children=[
-                                "INDICE REGIONALE SUL MALTRATTAMENTO",
-                                html.Br(),
-                                "E LA CURA ALL\u2019INFANZIA IN ITALIA ",
-                                html.Span(str(YEAR_DEFAULT), className="hero-badge-year"),
+                                html.H1(
+                                    [
+                                        "Indice regionale sul maltrattamento",
+                                        html.Br(),
+                                        "e la cura all\u2019infanzia in Italia ",
+                                        html.Span(str(YEAR_DEFAULT), style={"color": "var(--cesvi-orange)"}),
+                                    ],
+                                    className="hero-title",
+                                ),
+                                html.Div(
+                                    className="hero-focus-tag",
+                                    children=[
+                                        html.Span("GENERAZIONE", className="d-block"),
+                                        html.Span("SOLA", className="d-block"),
+                                    ],
+                                ),
                             ],
                         ),
                         html.Div(
-                            className="hero-badge-right",
-                            children=[
-                                html.Span("GENERAZIONE", className="d-block"),
-                                html.Span("SOLA", className="d-block"),
-                            ],
+                            className="hero-scroll-hint",
+                            id="hero-scroll-btn",
+                            n_clicks=0,
                         ),
                     ],
                 ),
+                # Colonna destra — foto
+                html.Div(className="hero-split-right"),
             ],
         ),
 

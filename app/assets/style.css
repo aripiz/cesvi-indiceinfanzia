@@ -152,6 +152,13 @@ p, li {
 /* Chart container */
 .chart-container { min-height: 400px; }
 
+/* ── Dropdown (Dash 4 / dcc.Dropdown) ───────────────────────────────────── */
+/* Placeholder "Search" → "Cerca" (via JS in scroll_top.js) */
+input.dash-dropdown-search::placeholder { color: #adb5bd; }
+/* Nascondi checkbox sulle opzioni disabilitate (separatori) */
+input.dash-options-list-option-checkbox[disabled] { display: none !important; }
+.dash-options-list-option-wrapper:has(input[disabled]) { display: none !important; }
+
 /* Footer / link generici */
 .link {
     color: var(--cesvi-orange) !important;
@@ -159,98 +166,120 @@ p, li {
 }
 .link:hover { text-decoration: underline; }
 
-/* ── Hero section ─────────────────────────────────────────────────────────── */
-/* Sostituire /assets/hero.jpg con l'immagine definitiva */
-.hero-section {
-    position: relative;
+/* ── Hero split (testo sx | foto dx) ─────────────────────────────────────── */
+.hero-split {
+    display: flex;
+    height: 100vh;
     width: 100%;
-    min-height: 78vh;
-    background-image: url('/assets/hero.jpg');
-    background-size: cover;
-    background-position: center center;
-    background-color: var(--cesvi-gray-dark); /* fallback se l'immagine non è presente */
-    display: flex;
-    align-items: flex-end;        /* badge ancorati in basso */
-    justify-content: flex-start;  /* badge ancorati a sinistra */
-    overflow: hidden;
 }
 
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(10, 10, 10, 0.0);
-}
-
-/* Contenitore unico: rettangolo smussato con overflow hidden */
-.hero-badges {
-    position: relative;
-    z-index: 10;
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    margin: 0 0 3rem 3.5rem;
-    border-radius: 1.2rem;
-    overflow: hidden;
-    background-color: #ffffff;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
-}
-
-/* Metà sinistra grigia con freccia */
-.hero-badge-left {
-    background-color: rgba(190, 193, 195, 0.95);
-    padding: 2rem 5rem 2rem 2.5rem;
-    clip-path: polygon(0 0, 87% 0, 96% 50%, 87% 100%, 0 100%);
-    font-weight: 800;
-    text-transform: uppercase;
-    color: #2a2a2a;
-    letter-spacing: 0.03em;
-    line-height: 1.35;
-    font-size: 1.25rem;
-    flex: 0 0 auto;
+/* Colonna sinistra — sfondo scuro */
+.hero-split-left {
+    width: 42%;
+    background-color: #000000;  /* #1a1a1a;*/
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    padding: 5.5rem 3.5rem 3rem 4rem;
+    position: relative;
 }
 
-.hero-badge-year {
-    color: var(--cesvi-orange);
-}
-
-/* Metà destra bianca */
-.hero-badge-right {
-    background-color: #ffffff;
-    padding: 1.8rem 2.8rem;
-    font-weight: 900;
-    color: var(--cesvi-orange);
-    text-transform: uppercase;
-    line-height: 1.0;
-    font-size: 2.8rem;
+.hero-left-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     flex: 1;
 }
 
+.hero-title {
+    color: #ffffff !important;
+    font-size: 1.35rem !important;
+    font-weight: 800 !important;
+    text-transform: uppercase;
+    line-height: 1.35 !important;
+    letter-spacing: 0.03em;
+    margin-bottom: 2.2rem !important;
+}
+
+/* Blocco arancione "GENERAZIONE SOLA" */
+.hero-focus-tag {
+    display: inline-block;
+    background-color: var(--cesvi-orange);
+    padding: 1rem 1.6rem;
+    margin-bottom: 2rem;
+}
+
+.hero-focus-tag span {
+    display: block;
+    color: #ffffff;
+    font-size: 2.4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1.05;
+    letter-spacing: 0.01em;
+}
+
+.hero-year {
+    color: rgba(255,255,255,0.45);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* ── Scroll hint ─────────────────────────────────────────────────────────── */
+.hero-scroll-hint {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    animation: scrollBounce 1.8s ease-in-out infinite;
+    opacity: 0.5;
+    margin-bottom: 2.5rem;
+    cursor: pointer;
+}
+.hero-scroll-hint::before,
+.hero-scroll-hint::after {
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    transform: rotate(45deg);
+}
+@keyframes scrollBounce {
+    0%, 100% { transform: translateY(0);   opacity: 0.5; }
+    50%       { transform: translateY(6px); opacity: 0.9; }
+}
+
+/* Colonna destra — foto */
+.hero-split-right {
+    width: 58%;
+    background-image: url('/assets/hero.jpeg');
+    background-size: cover;
+    background-position: center top;
+}
+
+/* Mobile: immagine sopra, testo sotto */
 @media (max-width: 768px) {
-    .hero-section {
-        min-height: 60vh;
-        align-items: flex-end;
-        justify-content: flex-start;
-    }
-    .hero-badges {
+    .hero-split {
         flex-direction: column;
-        margin: 0 1rem 2rem 1rem;
-        border-radius: 0.8rem;
+        height: auto;
     }
-    .hero-badge-left {
-        clip-path: none;
-        padding: 1.2rem 1.5rem;
-        font-size: 0.85rem;
-        border-radius: 0.6rem 0.6rem 0 0;
+    .hero-split-right {
+        width: 100%;
+        height: 45vh;
     }
-    .hero-badge-right {
-        font-size: 2rem;
-        padding: 1rem 1.5rem;
+    .hero-split-left {
+        width: 100%;
+        padding: 2.5rem 1.8rem 2rem;
+    }
+    .hero-title {
+        font-size: 1.1rem !important;
+    }
+    .hero-focus-tag span {
+        font-size: 1.8rem;
     }
 }
 
