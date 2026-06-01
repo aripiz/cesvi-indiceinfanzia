@@ -144,7 +144,7 @@ methodology_layout = dbc.Container(
         dbc.Row(dbc.Col([
             html.H3("Metodologia", className="page-title"),
             html.P(
-                "La struttura metodologica, gli indicatori e le scelte di aggregazione dell’Indice.",
+                "Scopri la struttura metodologica, gli indicatori e le scelte di aggregazione dell’Indice.",
                 className="text-muted mb-3",
                 style={"fontSize": "0.92rem"},
             ),

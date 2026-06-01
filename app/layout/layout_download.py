@@ -22,7 +22,7 @@ def _report_row(report):
                 dbc.Col(
                     [
                         html.Strong(title),
-                        html.Span(f" — {year}", className="text-muted small ms-1"),
+                        html.Span(f" {year}", className="text-muted small ms-1"),
                     ],
                     xs=9,
                     className="d-flex align-items-center",
@@ -72,9 +72,9 @@ download_layout = dbc.Container(
         dbc.Row(
             dbc.Col(
                 [
-                    html.H5("Pubblicazioni annuali", className="fw-bold mb-3"),
+                    html.H5("Pubblicazioni", className="fw-bold mb-3"),
                     html.P(
-                        "Scarica le pubblicazioni in formato PDF.",
+                        "Scarica le pubblicazioni di ogni edizione dell'Indice in formato PDF.",
                         className="text-muted small mb-3",
                     ),
                     dbc.ListGroup(
