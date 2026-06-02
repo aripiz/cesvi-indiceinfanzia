@@ -221,7 +221,7 @@ def display_map(indicatore, year):
     fig.update_traces(
         hovertemplate=(
             "<b>%{customdata[0]}</b><br><br>"
-            f"{feat_label}: " + "%{customdata[1]:.2f}<br>"
+            f"{feat_label}: " + "%{customdata[1]:.3f}<br>"
             "Fascia: %{customdata[2]}<br><extra></extra>"
         )
     )
@@ -255,14 +255,14 @@ def display_ranking(indicatore, year):
         color_continuous_scale=DIVERGING_COLORS,
         color_continuous_midpoint=0,
         labels={"score": feat_label, "territory": ""},
-        text=df["score"].map(lambda v: f"{v:+.2f}"),
+        text=df["score"].map(lambda v: f"{v:+.3f}"),
         custom_data=["territory", "rank"],
     )
     fig.update_traces(
         textposition="outside",
         hovertemplate=(
             "<b>%{customdata[0]}</b><br><br>"
-            f"{feat_label}: " + "%{x:+.2f}<br>"
+            f"{feat_label}: " + "%{x:+.3f}<br>"
             "Posizione: %{customdata[1]} / 20<br><extra></extra>"
         ),
     )
@@ -467,7 +467,7 @@ def display_profilo_dim_table(territory, dim_type, year):
     )
     fig.add_vline(x=0, line_dash="dot", line_color="#aaaaaa", line_width=1)
     fig.update_traces(
-        hovertemplate="<b>%{y}</b><br><br>Punteggio: %{x:.2f}<br>Fascia: %{customdata[0]}<extra></extra>"
+        hovertemplate="<b>%{y}</b><br><br>Punteggio: %{x:.3f}<br>Fascia: %{customdata[0]}<extra></extra>"
     )
     fig.update_layout(
         showlegend=False,

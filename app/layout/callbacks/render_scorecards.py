@@ -447,7 +447,7 @@ def update_scorecard_dim_table(territory, year):
     )
     fig.add_vline(x=0, line_dash="dot", line_color="#aaaaaa", line_width=1)
     fig.update_traces(
-        hovertemplate="<b>%{y}</b><br><br>Punteggio: %{x:.2f}<br>Fascia: %{customdata[0]}<extra></extra>"
+        hovertemplate="<b>%{y}</b><br><br>Punteggio: %{x:.3f}<br>Fascia: %{customdata[0]}<extra></extra>"
     )
     fig.update_layout(
         dragmode=False,

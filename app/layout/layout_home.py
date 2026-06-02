@@ -64,7 +64,7 @@ def display_home_map():
     fig.update_traces(
         hovertemplate=(
             "<b>%{customdata[0]}</b><br><br>"
-            "Punteggio: %{customdata[1]:.2f}<br>"
+            "Punteggio: %{customdata[1]:.3f}<br>"
             "Posizione: %{customdata[3]} / 20<br>"
             "Fascia: %{customdata[2]}<br>"
             "<extra></extra>"
