@@ -159,4 +159,4 @@ content = dbc.Container(
 
 # ── Main layout ───────────────────────────────────────────────────────────────
 
-app.layout = html.Div([navbar, content, footer])
+app.layout = html.Div([navbar, content, footer], className="app-initial-fade")
