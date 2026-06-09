@@ -4,7 +4,7 @@ from index import app
 from dash import dcc, html, page_container
 import dash_bootstrap_components as dbc
 
-from layout.callbacks import render_scorecards, navigation, render_data, download
+from layout.callbacks import render_scorecards, navigation, render_data, download, news
 
 from configuration import BRAND_LINK, CREDITS_LINK, TITLE, LOGO, LOGO_VERTICAL
 
@@ -17,7 +17,7 @@ navbar = dbc.NavbarSimple(
         dbc.NavItem(dbc.NavLink("Dati",          active="exact", href="/data",        className="fw-bold")),
         dbc.NavItem(dbc.NavLink("Metodologia",   active="exact", href="/methodology", className="fw-bold")),
         dbc.NavItem(dbc.NavLink("Pubblicazioni",  active="exact", href="/report",      className="fw-bold")),
-        dbc.NavItem(dbc.NavLink("Download",      active="exact", href="/download",    className="fw-bold")),
+        dbc.NavItem(dbc.NavLink("Notizie",        active="exact", href="/news",       className="fw-bold")),
     ],
    brand=html.Div([
         html.A(
@@ -88,7 +88,7 @@ footer = html.Footer(
                                         [
                                             html.Li(html.A("Metodologia",  href="/methodology", className="footer-link")),
                                             html.Li(html.A("Pubblicazioni", href="/report",      className="footer-link")),
-                                            html.Li(html.A("Download",      href="/download",    className="footer-link")),
+                                            html.Li(html.A("Notizie",       href="/news",        className="footer-link")),
                                         ],
                                         className="list-unstyled mb-0",
                                     ),

@@ -18,7 +18,7 @@ def _report_card(report):
     cover_image = report.get("cover_image", "")
 
     cover_src = f"assets/reports/covers/{cover_image}" if cover_image else None
-    pdf_href  = f"/reports/{pdf_file}" if pdf_file else None
+    pdf_href  = f"/reports/download/{pdf_file}" if pdf_file else None
 
     card_body_children = [
         html.H5(title, className="card-title fw-bold mb-1",

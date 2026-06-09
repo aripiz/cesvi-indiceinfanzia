@@ -18,8 +18,7 @@ from configuration import (
     TEMPLATE_CSS,
     FONT_URL,
     REPORTS_FILE,
-    UMAMI_URL,
-    UMAMI_WEBSITE_ID,
+    GA_MEASUREMENT_ID,
 )
 
 # ── Caricamento dati ──────────────────────────────────────────────────────────
@@ -35,9 +34,11 @@ reports = reports_df.to_dict(orient="records")
 
 # ── App Dash ──────────────────────────────────────────────────────────────────
 
-_umami_script = (
-    f'<script defer src="{UMAMI_URL}" data-website-id="{UMAMI_WEBSITE_ID}"></script>'
-    if UMAMI_WEBSITE_ID else ""
+_ga_script = (
+    f'<script async src="https://www.googletagmanager.com/gtag/js?id={GA_MEASUREMENT_ID}"></script>'
+    f'<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}'
+    f'gtag("js",new Date());gtag("config","{GA_MEASUREMENT_ID}");</script>'
+    if GA_MEASUREMENT_ID else ""
 )
 
 app = Dash(
@@ -54,7 +55,7 @@ app = Dash(
         <title>{%title%}</title>
         {%favicon%}
         {%css%}
-        """ + _umami_script + """
+        """ + _ga_script + """
     </head>
     <body>
         {%app_entry%}

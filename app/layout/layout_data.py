@@ -8,7 +8,7 @@ from configuration import (
     SEQUENCE_COLOR,
     CAPACITY_DIMS,
     CAPACITY_ORDER,
-    INDEX_LABELS,
+    BRAND_COLOR,
     YEARS,
     YEAR_DEFAULT,
 )
@@ -402,6 +402,32 @@ data_layout = dbc.Container(
             ],
         ),
         html.Div(id="data_viz_content", className="mt-3"),
+        dbc.Row(
+            dbc.Col(
+                [
+                    html.H5("Download", className="fw-bold mb-1"),
+                    html.P(
+                        "Scarica l'intero dataset dell'Indice in formato Excel.",
+                        className="text-muted small mb-3",
+                    ),
+                    dbc.Button(
+                        [
+                            html.I(className="bi bi-file-earmark-excel me-2"),
+                            "Scarica Excel",
+                        ],
+                        id="download_excel_btn",
+                        style={
+                            "backgroundColor": BRAND_COLOR,
+                            "borderColor": BRAND_COLOR,
+                            "color": "white",
+                        },
+                    ),
+                    dcc.Download(id="download_excel"),
+                ],
+                lg=8,
+                xs=12,
+            )
+        ),
     ],
     class_name="mt-4",
     fluid=False,
