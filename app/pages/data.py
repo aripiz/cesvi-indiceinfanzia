@@ -1,6 +1,6 @@
 # data.py — pagina Dati
 
-from dash import register_page
+from dash import register_page, html
 from configuration import TITLE
 
 register_page(__name__, name=TITLE, path="/data")

@@ -1,1 +1,1 @@
-from layout.callbacks import navigation, render_scorecards
+from layout.callbacks import navigation, render_scorecards, news

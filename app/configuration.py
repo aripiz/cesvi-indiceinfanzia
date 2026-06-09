@@ -5,9 +5,10 @@ TITLE = "Indice regionale sul maltrattamento e la cura all'infanzia in Italia"
 BRAND_LINK = "https://www.cesvi.org/"
 CREDITS_LINK = "https://github.com/aripiz"
 
-# Analytics (Umami) — set UMAMI_WEBSITE_ID to enable; leave empty to disable
-UMAMI_URL        = "https://analytics.tuodominio.it/script.js"  # aggiorna con il tuo dominio
-UMAMI_WEBSITE_ID = ""  # incolla qui il Website ID da Umami
+# Analytics (Google Analytics 4)
+# Incolla qui il Measurement ID del tuo stream GA4 (es. "G-XXXXXXXXXX")
+# Lascia vuoto ("") per disabilitare
+GA_MEASUREMENT_ID = "G-1QK6SZ95SB"
 
 # Theme (Bootswatch)
 TEMPLATE = "minty"
@@ -87,6 +88,11 @@ GEO_FILE      = "../data/IT_regions.parquet"
 METADATA_FILE = "../data/cesvi-indiceinfanzia_metadata.csv"
 REPORTS_FILE  = "../data/cesvi-indiceinfanzia_reports.csv"
 REPORTS_DIR   = "../data/reports"
+
+# Notizie — URL del CSV pubblicato da Google Sheets
+# Per ottenere l'URL: Foglio Google → File → Condividi → Pubblica sul Web → CSV
+# Lascia vuoto ("") per disabilitare il fetch remoto (usa lista statica vuota)
+NEWS_CSV_URL  = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQcAzaSvC7H52XWtL4r96SYHeDlJ3aqhle4Dw5AuAQyl6j0C9IGZ_t6uyo0s0Hrog/pub?gid=2035082402&single=true&output=csv"
 
 # Years
 YEARS = [2018, 2019, 2020, 2021, 2022, 2024, 2026]

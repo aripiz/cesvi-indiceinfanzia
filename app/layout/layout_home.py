@@ -340,8 +340,6 @@ home_layout = html.Div(
                                     ],
                                     className="mb-2",
                                 ),
-                                html.P("Scarica i dati completi:", className="text-muted small mb-2"),
-                                dbc.Button("Download", href="/download", color="primary", size="sm", className="me-2"),
                             ],
                             lg=7,
                             xs=12,

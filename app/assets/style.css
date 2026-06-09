@@ -36,6 +36,21 @@ input, select, textarea {
 body {
     color: var(--cesvi-text) !important;
     background-color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Il wrapper dell'app occupa tutta l'altezza disponibile */
+.app-initial-fade {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Il contenuto principale cresce per spingere il footer in fondo */
+.app-initial-fade > .container-fluid {
+    flex: 1 0 auto;
 }
 
 /* Titoli più scuri e leggermente pesanti */
