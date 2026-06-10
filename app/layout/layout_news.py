@@ -18,9 +18,10 @@ NEWS_REFRESH_MS = 60 * 60 * 1000  # 1 ora in millisecondi
 
 def _news_item(item):
     return dbc.ListGroupItem(
-        dbc.Row(
+        html.Div(
             [
-                dbc.Col(
+                # Riga 1: data + badge fonte
+                html.Div(
                     [
                         html.Span(
                             item.get("date", ""),
@@ -28,25 +29,24 @@ def _news_item(item):
                         ),
                         html.Span(
                             item.get("source", ""),
-                            className="badge me-2",
+                            className="badge",
                             style={"backgroundColor": "#eb6608", "color": "#fff",
                                    "fontSize": "0.72rem", "verticalAlign": "middle"},
                         ),
-                        html.A(
-                            item.get("title", ""),
-                            href=item.get("url", "#"),
-                            target="_blank",
-                            className="fw-semibold text-decoration-none",
-                            style={"color": "#1a1a1a"},
-                        ),
                     ],
-                    xs=12,
-                    className="d-flex align-items-center flex-wrap gap-1 py-1",
+                    className="d-flex align-items-center mb-1",
                 ),
-            ],
-            align="center",
+                # Riga 2: titolo link
+                html.A(
+                    item.get("title", ""),
+                    href=item.get("url", "#"),
+                    target="_blank",
+                    className="fw-semibold text-decoration-none d-block",
+                    style={"color": "#1a1a1a", "fontSize": "0.95rem"},
+                ),
+            ]
         ),
-        className="py-2 px-3",
+        className="py-3 px-3",
     )
 
 

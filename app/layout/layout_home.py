@@ -16,6 +16,7 @@ from configuration import (
     ZSCORE_TIER_COLORS,
     SEQUENCE_COLOR,
     YEAR_DEFAULT,
+    YEARS,
 )
 
 load_figure_template(FIGURE_TEMPLATE)
@@ -64,9 +65,72 @@ def display_home_map():
     fig.update_traces(
         hovertemplate=(
             "<b>%{customdata[0]}</b><br><br>"
-            "Punteggio: %{customdata[1]:.2f}<br>"
+            "Punteggio: %{customdata[1]:.3f}<br>"
             "Posizione: %{customdata[3]} / 20<br>"
             "Fascia: %{customdata[2]}<br>"
+            "<extra></extra>"
+        )
+    )
+    return fig
+
+
+def display_home_map_v2():
+    """Mappa bicolore: arancione Cesvi sopra media, #B0281E sotto media.
+    Hover: punteggio, posizione, variazione rispetto all'edizione precedente.
+    """
+    year = YEAR_DEFAULT
+    prev_year = YEARS[YEARS.index(year) - 1] if year in YEARS and YEARS.index(year) > 0 else None
+
+    df = data[
+        (data["year"] == year) & (data["type"] == "totale") & (data["capacity"] == "totale")
+    ][["territory", "score"]].copy()
+    df = df.sort_values("score", ascending=False).reset_index(drop=True)
+    df["rank"] = range(1, len(df) + 1)
+    df["above_avg"] = df["score"] >= 0
+
+    # Calcola variazione rispetto all'anno precedente
+    if prev_year is not None:
+        df_prev = data[
+            (data["year"] == prev_year) & (data["type"] == "totale") & (data["capacity"] == "totale")
+        ][["territory", "score"]].rename(columns={"score": "score_prev"})
+        df = df.merge(df_prev, on="territory", how="left")
+        df["delta"] = df["score"] - df["score_prev"]
+    else:
+        df["delta"] = float("nan")
+
+    color_map = {True: "#eb6608", False: "#B0281E"}
+
+    fig = px.choropleth(
+        df,
+        locations="territory",
+        geojson=geodata,
+        featureidkey=GEO_KEY,
+        color="above_avg",
+        color_discrete_map=color_map,
+        custom_data=["territory", "score", "rank", "delta"],
+    )
+    fig.update_layout(
+        dragmode=False,
+        showlegend=False,
+        autosize=True,
+        margin={"r": 0, "t": 0, "l": 0, "b": 0, "pad": 0},
+        geo=dict(
+            fitbounds="locations",
+            projection_type="mercator",
+            showland=False,
+            showocean=False,
+            showlakes=False,
+            showrivers=False,
+            visible=False,
+        ),
+    )
+    fig.update_traces(
+        marker_line_color="white",
+        marker_line_width=1.5,
+        hovertemplate=(
+            "<b>%{customdata[0]}</b><br><br>"
+            "Punteggio: %{customdata[1]:.3f}<br>"
+            "Posizione: %{customdata[2]} / 20<br>"
             "<extra></extra>"
         )
     )
@@ -307,7 +371,7 @@ home_layout = html.Div(
                                 dcc.Loading(
                                     dcc.Graph(
                                         id="home_map",
-                                        figure=display_home_map(),
+                                        figure=display_home_map_v2(),
                                         style={"height": "65vh"},
                                         responsive=True,
                                         config={"displayModeBar": False, "editable": False},
